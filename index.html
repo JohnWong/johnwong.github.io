@@ -1,6 +1,5 @@
 <!DOCTYPE>
-<html>
-
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb">
 <head>
   <title>John Wong's Blog</title>
   <!--
@@ -18,6 +17,7 @@
   <link rel="stylesheet" href="css/highlight.css">
   <script src="js/highlight.min.js"></script>
   <script src="js/marked.js"></script>
+  <script src=" http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=1166443256" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
   <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
@@ -78,11 +78,10 @@
             $("#preview").html(marked(data));
             $('#preview pre code').each(function(i, block) {
               hljs.highlightBlock(block);
-              console.log(block);
             });
           });
         </script>
-        <ul class="pagination jw-pageination">
+        <ul class="pagination pagination-lg">
           <li><a href="#">&laquo;</a></li>
           <li><a href="#">1</a></li>
           <li><a href="#">2</a></li>
@@ -96,6 +95,58 @@
       </div>
     </div>
   </div>
+<footer class="bs-docs-footer" role="contentinfo">
+  <div class="container">
+    <div class="bs-docs-social">
+  <ul class="bs-docs-social-buttons">
+    <li>
+      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=johnwong&type=follow&count=true&size=small" width="150" height="20" title="Star on GitHub"></iframe>
+    </li>
+    <li class="follow-btn">
+      <a id="wb-follow" href="https://twitter.com/twbootstrap" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @twbootstrap</a>
+      <script type="type/javascript">
+        // $.get("https://api.weibo.com/2/users/show.json?screen_name=%E4%BB%A3%E7%A0%81%E4%B8%8E%E5%8D%95%E8%BD%A6&source=1166443256", function(data){
+        //   $("#wb-follow").html(data);
+        // });
+        WB2.anyWhere(function(W){
+          W.widget.followButton({
+            'nick_name': '姚晨', //用户昵称
+            'id': "wb-follow" //关注按钮容器ID
+          });
+        });
+      </script>
+    </li>
+    <li class="tweet-btn">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://getbootstrap.com/" data-count="horizontal" data-via="twbootstrap" data-related="mdo:Creator of Bootstrap">Tweet</a>
+    </li>
+  </ul>
+</div>
+
+
+    <p>Designed and built with all the love in the world by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+    <p>Maintained by the <a href="https://github.com/twbs?tab=members">core team</a> with the help of <a href="https://github.com/twbs/bootstrap/graphs/contributors">our contributors</a>.</p>
+    <p>Code licensed under <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank">MIT</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+    <ul class="bs-docs-footer-links muted">
+      <li>Currently v3.2.0</li>
+      <li>·</li>
+      <li><a href="https://github.com/twbs/bootstrap">GitHub</a></li>
+      <li>·</li>
+      <li><a href="../getting-started/#examples">Examples</a></li>
+      <li>·</li>
+      <li><a href="../2.3.2/">v2.3.2 docs</a></li>
+      <li>·</li>
+      <li><a href="../about/">About</a></li>
+      <li>·</li>
+      <li><a href="http://expo.getbootstrap.com">Expo</a></li>
+      <li>·</li>
+      <li><a href="http://blog.getbootstrap.com">Blog</a></li>
+      <li>·</li>
+      <li><a href="https://github.com/twbs/bootstrap/issues?state=open">Issues</a></li>
+      <li>·</li>
+      <li><a href="https://github.com/twbs/bootstrap/releases">Releases</a></li>
+    </ul>
+  </div>
+</footer>
 </body>
 
 </html>
