@@ -17,7 +17,6 @@
   <link rel="stylesheet" href="css/highlight.css">
   <script src="js/highlight.min.js"></script>
   <script src="js/marked.js"></script>
-  <script src=" http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=1166443256" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
   <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
@@ -100,21 +99,10 @@
     <div class="bs-docs-social">
   <ul class="bs-docs-social-buttons">
     <li>
-      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=johnwong&type=follow&count=true&size=small" width="150" height="20" title="Star on GitHub"></iframe>
+      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=johnwong&type=follow&count=true&size=small" width="180" height="20" title="Star on GitHub"></iframe>
     </li>
     <li class="follow-btn">
-      <a id="wb-follow" href="https://twitter.com/twbootstrap" class="twitter-follow-button" data-link-color="#0069D6" data-show-count="true">Follow @twbootstrap</a>
-      <script type="type/javascript">
-        // $.get("https://api.weibo.com/2/users/show.json?screen_name=%E4%BB%A3%E7%A0%81%E4%B8%8E%E5%8D%95%E8%BD%A6&source=1166443256", function(data){
-        //   $("#wb-follow").html(data);
-        // });
-        WB2.anyWhere(function(W){
-          W.widget.followButton({
-            'nick_name': '姚晨', //用户昵称
-            'id': "wb-follow" //关注按钮容器ID
-          });
-        });
-      </script>
+      <iframe class="github-btn" src="http://localhost:8000/weibo-btn.html?user=2180280355&type=follow&count=true&size=small" width="180" height="20" title="Star on GitHub"></iframe>
     </li>
     <li class="tweet-btn">
       <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://getbootstrap.com/" data-count="horizontal" data-via="twbootstrap" data-related="mdo:Creator of Bootstrap">Tweet</a>
