@@ -5,18 +5,20 @@
   <!--
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="css/style.css">
   <script src="//lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
--->
+ -->
+
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="css/style.css">
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/highlight.css">
+  <link rel="stylesheet" href="css/highlight-github.css">
   <script src="js/highlight.min.js"></script>
+
   <script src="js/marked.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  
 </head>
 <body>
   <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
@@ -75,7 +77,7 @@
         <script>
           $.get("data/README.md", function(data) {
             $("#preview").html(marked(data));
-            $('#preview pre code').each(function(i, block) {
+            $('#preview code.highlight').each(function(i, block) {
               hljs.highlightBlock(block);
             });
           });
