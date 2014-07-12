@@ -1,142 +1,182 @@
 <!DOCTYPE>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb">
+
 <head>
-  <title>John Wong's Blog</title>
-  <!--
+    <title>John Wong's Blog</title>
+    <!--
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <script src="//lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
  -->
 
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-  <script src="js/jquery.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/highlight-github.css">
-  <script src="js/highlight.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/highlight-github.css">
+    <script src="js/highlight.min.js"></script>
 
-  <script src="js/marked.js"></script>
-  <link rel="stylesheet" href="css/style.css">
-  
+    <script src="js/marked.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript">
+      $(document).on("scroll", function() {
+        $(this).scrollTop() > 20 ? $("#top").addClass("scrolled") : $("#top").removeClass("scrolled");
+      });
+    </script>
 </head>
+
 <body>
-  <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
-    <div class="container">
-      <div class="navbar-header">
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a href="/" class="navbar-brand"><img src="images/gravatar.png"><span>John Wong</span></a>
-      </div>
-      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-        <ul class="nav navbar-nav">
-          <li>
-            <a href="../getting-started">iOS</a>
-          </li>
-          <li class="active">
-            <a href="../components">Front End</a>
-          </li>
-          <li>
-            <a href="../css">点滴</a>
-          </li>
-          <li>
-            <a href="http://wooyun.org/whitehats/JohnWong">白帽子</a>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="https://github.com/JohnWong">Expo</a>
-          </li>
-          <li><a href="about.html">About Me</a></li>
-          <!-- <li><a href="http://blog.csdn.net/yellowxz">CSDN</a>
+    <header class="navbar navbar-responsive-top jw-docs-nav" id="top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".jw-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">
+                    <img class="gravatar img-circle" src="images/gravatar.jpg">
+                    <!-- <span>John Wong</span> -->
+                </a>
+            </div>
+            <nav class="collapse navbar-collapse jw-navbar-collapse" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="../getting-started">Mobile</a>
+                    </li>
+                    <li class="active">
+                        <a href="../components">Front End</a>
+                    </li>
+                    <li>
+                        <a href="../css">点滴</a>
+                    </li>
+                    <li>
+                        <a href="http://wooyun.org/whitehats/JohnWong">白帽子</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="https://github.com/JohnWong">Expo</a>
+                    </li>
+                    <li><a href="about.html">About Me</a>
+                    </li>
+                    <!-- <li><a href="http://blog.csdn.net/yellowxz">CSDN</a>
           </li>
           <li><a href="https://www.linkedin.com/pub/xiaozhe-huang/4b/204/71b">LinkedIn</a>
           </li> -->
-        </ul>
-      </nav>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!--
+    <div class="jumbotron jw-header">
+        <div class="container">
+            <h1>John Wong</h1>
+            <p>一个热爱编程的傻瓜</p>
+        </div>
     </div>
-  </header>
-  <div class="jumbotron jw-header">
-    <div class="container">
-      <h1>John Wong</h1>
-      <p>一个热爱编程的傻瓜</p>
+  -->
+    <div class="container  body">
+        <div class="row">
+            <div class="col-md-9" role="main">
+                <ol class="breadcrumb category-nav">
+                    <li><a href="#">Home</a>
+                    </li>
+                    <li><a href="#">Mobile</a>
+                    </li>
+                    <li class="active">Detail</li>
+                </ol>
+                <div class="post-poster">
+                  <img src="http://a.36krcnd.com/photo/2014/85b9ba90f0733923675ddb8c1126df7c.jpg" alt="">
+                </div>
+                <div class="post-author"><a class="" href="#" target="_blank">John Wong</a> • 07/04 21:54</div>
+                <h1 class="post-title">从估值一亿到一夜分家：一个曾经存在过的教育产品的故事</h1>
+                <div id="preview" class="markdown-body"></div>
+                <script>
+                $.get("data/README.md", function(data) {
+                    $("#preview").html(marked(data));
+                    $('#preview code.highlight').each(function(i, block) {
+                        hljs.highlightBlock(block);
+                    });
+                });
+                </script>
+                <!--
+                <ul class="pagination pagination-lg">
+                    <li><a href="#">&laquo;</a>
+                    </li>
+                    <li><a href="#">1</a>
+                    </li>
+                    <li><a href="#">2</a>
+                    </li>
+                    <li><a href="#">3</a>
+                    </li>
+                    <li><a href="#">4</a>
+                    </li>
+                    <li><a href="#">5</a>
+                    </li>
+                    <li><a href="#">&raquo;</a>
+                    </li>
+                </ul>
+              -->
+            </div>
+            <div id="latest-posts" class="col-md-3 nav-right">
+                <script>
+                  $.get("data/nav-right.tpl", function(data) {
+                    $("#latest-posts").html(data);
+                  });
+                </script>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-9" role="main">
-        <ol class="breadcrumb">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Library</a></li>
-          <li class="active">Data</li>
-        </ol>
-        <div id="preview" class="markdown-body"> </div>
-        <script>
-          $.get("data/README.md", function(data) {
-            $("#preview").html(marked(data));
-            $('#preview code.highlight').each(function(i, block) {
-              hljs.highlightBlock(block);
-            });
-          });
-        </script>
-        <ul class="pagination pagination-lg">
-          <li><a href="#">&laquo;</a></li>
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
-          <li><a href="#">&raquo;</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3">
-      </div>
-    </div>
-  </div>
-<footer class="bs-docs-footer" role="contentinfo">
-  <div class="container">
-    <div class="bs-docs-social">
-  <ul class="bs-docs-social-buttons">
-    <li class="github-btn">
-      <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=johnwong&type=follow&count=true&size=small" width="160" height="20" title="Follow on GitHub"></iframe>
-    </li>
-    <li class="github-btn">
-      <iframe class="github-btn" src="http://pytool.sinaapp.com/wb-btn?user=2180280355&type=follow&count=true&size=small" width="146" height="20" title="Follow on Weibo"></iframe>
-    </li>
-    <li class="github-btn">
-      <iframe class="github-btn" src="http://pytool.sinaapp.com/in-btn?user=xiaozhe-huang/4b/204/71b&count=true&size=small&encoding=utf-8" width="200" height="20" title="Follow on Weibo"></iframe>
-    </li>
-  </ul>
-</div>
+    <footer class="jw-docs-footer" role="contentinfo">
+        <div class="container">
+            <div class="jw-docs-social">
+                <ul class="jw-docs-social-buttons">
+                    <li class="github-btn">
+                        <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=JohnWong&type=follow&count=true&size=small" width="165" height="20" title="Follow on GitHub"></iframe>
+                    </li>
+                    <li class="github-btn">
+                        <iframe class="github-btn" src="http://pytool.sinaapp.com/wb-btn?user=2180280355&type=follow&count=true&size=small" width="150" height="20" title="Follow on Weibo"></iframe>
+                    </li>
+                    <li class="github-btn">
+                        <iframe class="github-btn" src="http://pytool.sinaapp.com/in-btn?user=xiaozhe-huang/4b/204/71b&count=true&size=small&encoding=utf-8" width="202" height="20" title="Follow on Weibo"></iframe>
+                    </li>
+                </ul>
+            </div>
 
 
-    <p>Designed and built with all the love in the world by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
-    <p>Maintained by the <a href="https://github.com/twbs?tab=members">core team</a> with the help of <a href="https://github.com/twbs/bootstrap/graphs/contributors">our contributors</a>.</p>
-    <p>Code licensed under <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" target="_blank">MIT</a>, documentation under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
-    <ul class="bs-docs-footer-links muted">
-      <li>Currently v3.2.0</li>
-      <li>·</li>
-      <li><a href="https://github.com/twbs/bootstrap">GitHub</a></li>
-      <li>·</li>
-      <li><a href="../getting-started/#examples">Examples</a></li>
-      <li>·</li>
-      <li><a href="../2.3.2/">v2.3.2 docs</a></li>
-      <li>·</li>
-      <li><a href="../about/">About</a></li>
-      <li>·</li>
-      <li><a href="http://expo.getbootstrap.com">Expo</a></li>
-      <li>·</li>
-      <li><a href="http://blog.getbootstrap.com">Blog</a></li>
-      <li>·</li>
-      <li><a href="https://github.com/twbs/bootstrap/issues?state=open">Issues</a></li>
-      <li>·</li>
-      <li><a href="https://github.com/twbs/bootstrap/releases">Releases</a></li>
-    </ul>
-  </div>
-</footer>
+            <p>Designed and built with all the love in the world by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+            <p>Maintained by the <a href="https://github.com/twbs?tab=members">core team</a> with the help of <a href="https://github.com/twbs/bootstrap/graphs/contributors">our contributors</a>.</p>
+            <ul class="jw-docs-footer-links muted">
+                <li>Currently v3.2.0</li>
+                <li>·</li>
+                <li><a href="https://github.com/twbs/bootstrap">GitHub</a>
+                </li>
+                <li>·</li>
+                <li><a href="../getting-started/#examples">Examples</a>
+                </li>
+                <li>·</li>
+                <li><a href="../2.3.2/">v2.3.2 docs</a>
+                </li>
+                <li>·</li>
+                <li><a href="../about/">About</a>
+                </li>
+                <li>·</li>
+                <li><a href="http://expo.getbootstrap.com">Expo</a>
+                </li>
+                <li>·</li>
+                <li><a href="http://blog.getbootstrap.com">Blog</a>
+                </li>
+                <li>·</li>
+                <li><a href="https://github.com/twbs/bootstrap/issues?state=open">Issues</a>
+                </li>
+                <li>·</li>
+                <li><a href="https://github.com/twbs/bootstrap/releases">Releases</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
 </body>
 
 </html>
