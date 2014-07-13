@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript">
       $(document).on("scroll", function() {
-        $(this).scrollTop() > 20 ? $("#top").addClass("scrolled") : $("#top").removeClass("scrolled");
+        $(this).scrollTop() > 25 ? $("#top").addClass("scrolled") : $("#top").removeClass("scrolled");
       });
     </script>
 </head>
@@ -37,8 +37,8 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a href="/" class="navbar-brand">
-                    <img class="gravatar img-circle" src="images/gravatar.jpg">
-                    <!-- <span>John Wong</span> -->
+                    <img class="gravatar" src="images/gravatar.jpg">
+                    <span class="name">John Wong</span>
                 </a>
             </div>
             <nav class="collapse navbar-collapse jw-navbar-collapse" role="navigation">
@@ -50,21 +50,21 @@
                         <a href="../components">Front End</a>
                     </li>
                     <li>
-                        <a href="../css">点滴</a>
+                        <a href="../css">Life</a>
                     </li>
                     <li>
-                        <a href="http://wooyun.org/whitehats/JohnWong">白帽子</a>
+                        <a href="../css">Travel</a>
+                    </li>
+                    <li>
+                        <a href="http://wooyun.org/whitehats/JohnWong">White Hat</a>
+                    </li>
+                    <li>
+                        <a href="#">Bookmarks</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="https://github.com/JohnWong">Expo</a>
-                    </li>
                     <li><a href="about.html">About Me</a>
                     </li>
-                    <!-- <li><a href="http://blog.csdn.net/yellowxz">CSDN</a>
-          </li>
-          <li><a href="https://www.linkedin.com/pub/xiaozhe-huang/4b/204/71b">LinkedIn</a>
-          </li> -->
                 </ul>
             </nav>
         </div>
@@ -77,21 +77,15 @@
         </div>
     </div>
   -->
-    <div class="container  body">
+    <div class="container  middle">
         <div class="row">
             <div class="col-md-9" role="main">
-                <ol class="breadcrumb category-nav">
-                    <li><a href="#">Home</a>
-                    </li>
-                    <li><a href="#">Mobile</a>
-                    </li>
-                    <li class="active">Detail</li>
-                </ol>
                 <div class="post-poster">
                   <img src="http://a.36krcnd.com/photo/2014/85b9ba90f0733923675ddb8c1126df7c.jpg" alt="">
                 </div>
-                <div class="post-author"><a class="" href="#" target="_blank">John Wong</a> • 07/04 21:54</div>
-                <h1 class="post-title">从估值一亿到一夜分家：一个曾经存在过的教育产品的故事</h1>
+                <h1 class="post-big-title">从估值一亿到一夜分家：一个曾经存在过的教育产品的故事</h1>
+                <div class="post-author"><a class="category" href="cat.html"><span class="glyphicon glyphicon-phone"
+                    ></span>Mobile</a> | <a class="author" href="#" target="_blank">John Wong</a> • 07/04/2014</div>
                 <div id="preview" class="markdown-body"></div>
                 <script>
                 $.get("data/README.md", function(data) {
@@ -144,36 +138,9 @@
                     </li>
                 </ul>
             </div>
-
-
-            <p>Designed and built with all the love in the world by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
-            <p>Maintained by the <a href="https://github.com/twbs?tab=members">core team</a> with the help of <a href="https://github.com/twbs/bootstrap/graphs/contributors">our contributors</a>.</p>
+            <p>自豪地采用自己做的博客系统 <br class="footer-desc-endline">with the help of <a href="http://getbootstrap.com/">Twitter Bootstrap</a> & <a href="https://pages.github.com/">Github Pages</a><p>
             <ul class="jw-docs-footer-links muted">
-                <li>Currently v3.2.0</li>
-                <li>·</li>
-                <li><a href="https://github.com/twbs/bootstrap">GitHub</a>
-                </li>
-                <li>·</li>
-                <li><a href="../getting-started/#examples">Examples</a>
-                </li>
-                <li>·</li>
-                <li><a href="../2.3.2/">v2.3.2 docs</a>
-                </li>
-                <li>·</li>
-                <li><a href="../about/">About</a>
-                </li>
-                <li>·</li>
-                <li><a href="http://expo.getbootstrap.com">Expo</a>
-                </li>
-                <li>·</li>
-                <li><a href="http://blog.getbootstrap.com">Blog</a>
-                </li>
-                <li>·</li>
-                <li><a href="https://github.com/twbs/bootstrap/issues?state=open">Issues</a>
-                </li>
-                <li>·</li>
-                <li><a href="https://github.com/twbs/bootstrap/releases">Releases</a>
-                </li>
+                <li>© 2014 <a href="https://github.com/JohnWong">John Wong</a></li>
             </ul>
         </div>
     </footer>

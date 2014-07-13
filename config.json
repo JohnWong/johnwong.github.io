@@ -1,0 +1,22 @@
+{
+    "template": [{
+        "id": "article-middle",
+        "output": "false",
+        "config": {
+            "base": "article-middle.html",
+            "inject": {
+                "nav-right": "nav-right.html"
+            }
+        }
+    }, {
+        "id": "article.html",
+        "output": "true",
+        "config": {
+            "base": "frame.html",
+            "script": ["js/article.js"],
+            "inject": {
+                "middle":"article-middle"
+            }
+        }
+    }]
+}

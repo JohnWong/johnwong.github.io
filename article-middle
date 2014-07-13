@@ -1,4 +1,14 @@
-<div class="box box-small">
+<div class="row">
+    <div class="col-md-9" role="main">
+        <div class="post-poster">
+        </div>
+        <h1 class="post-big-title"></h1>
+        <div class="post-author">
+        </div>
+        <div id="preview" class="markdown-body"></div>
+    </div>
+    <div id="latest-posts" class="col-md-3 nav-right">
+        <div class="box box-small">
     <div class="box-header">
         <h3 class="box-title">Latest Posts</h3>
     </div>
@@ -34,15 +44,6 @@
                     <span class="css-truncate-target post-title">JavaScript-Garden</span>
                 </a>
             </li>
-        </ul>
-    </div>
-</div>
-<div class="box box-small">
-    <div class="box-header">
-        <h3 class="box-title">Recommend Posts</h3>
-    </div>
-    <div class="box-body">
-        <ul class="post-list">
             <li>
                 <a href="/BonsaiDen/JavaScript-Garden" class="post-list-item">
                     <span class="post-icon glyphicon glyphicon-book"></span>
@@ -74,5 +75,7 @@
                 </a>
             </li>
         </ul>
+    </div>
+</div>
     </div>
 </div>

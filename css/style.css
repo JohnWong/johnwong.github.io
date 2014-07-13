@@ -1,19 +1,39 @@
 .jw-docs-nav .navbar-brand, .jw-docs-nav .navbar-nav>li>a {
     font-weight: 500;
 }
-.navbar-nav>li>a {
-    border-top: 2px solid transparent;
-    border-bottom: 2px solid transparent;
+@media(min-width: 1px){
+    .navbar-nav>li>a {
+        border-left: 2px solid transparent;
+    }
+    .navbar-nav>li>a:hover, .navbar-nav>li>a:focus {
+        border-left: 2px solid #2a6496;
+    }
 }
-.navbar-nav>li>a:hover, .navbar-nav>li>a:focus {
-    border-bottom: 2px solid #2a6496;
+@media(min-width: 768px) {
+    .navbar-nav>li>a {
+        border-left: none;
+        border-top: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+    }
+    .navbar-nav>li>a:hover, .navbar-nav>li>a:focus {
+        border-left: none;
+        border-bottom: 2px solid #2a6496;
+    }
 }
 .navbar-brand {
-    padding: 3px 0 3px 15px;
+    padding: 0 0 3px 15px;
 }
 .navbar-brand .gravatar {
     width: 44px;
-    margin: 0 10px 0 0;
+    margin: 4px 0 0 0;
+    border-radius: 50%;
+}
+@media (min-width: 768px) {
+    .navbar-brand .gravatar {
+        width: 80px;
+        margin-top: 0;
+        border-radius: 0;
+    }
 }
 .jw-docs-nav .navbar-header .navbar-toggle:hover, .jw-docs-nav .navbar-header .navbar-toggle:focus {
     background-color: #f9f9f9;
@@ -37,7 +57,6 @@
 /* markdown */
 
 .markdown-body {
-    margin-top: 20px;
     font-size: 15px;
     line-height: 1.7;
     overflow: hidden;
@@ -78,9 +97,7 @@
     background-color: transparent;
     border: none;
     word-wrap: normal;
-    max-width: initial;
     display: inline;
-    overflow: initial;
     line-height: inherit;
 }
 .markdown-body h2 {
@@ -108,26 +125,29 @@
     border-top: 1px solid #e5e5e5;
 }
 .jw-docs-social {
-    margin-bottom: 20px;
     text-align: center;
+    margin: 4px auto;
 }
 .jw-docs-social-buttons {
     display: inline-block;
-    padding-left: 0;
     margin-bottom: 0;
     list-style: none;
 }
 .jw-docs-social-buttons li {
-    display: inline-block;
-    padding: 5px 8px;
+    padding: 4px 8px;
     line-height: 1;
+}
+@media(min-width: 680px) {
+    .jw-docs-social-buttons li {
+        display: inline-block;
+    }
 }
 .jw-docs-footer p {
     margin-bottom: 0;
 }
 .jw-docs-footer-links {
     padding-left: 0;
-    margin-top: 20px;
+    margin-top: 10px;
     color: #999;
 }
 .jw-docs-footer-links li:first-child {
@@ -137,9 +157,14 @@
     display: inline;
     padding: 0 2px;
 }
-@media (max-width: 991px) {
-    .col-md-3.nav-right {
+@media (min-width: 1px) {
+    .nav-right {
         display: none;
+    }
+}
+@media (min-width: 992px) {
+    .nav-right {
+        display: block;
     }
 }
 .css-truncate-target {
@@ -204,8 +229,8 @@
     ;
 }
 @media (min-width: 768px) {
-    .container.body {
-        margin-top: 80px;
+    .middle {
+        margin-top: 100px;
     }
     .navbar-responsive-top {
         position: fixed;
@@ -213,6 +238,7 @@
         right: 0;
         left: 0;
         z-index: 1030;
+        border-radius: 0;
         -webkit-transform: translate3d(0, 0, 0);
         -o-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
@@ -221,8 +247,12 @@
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     }
     .scrolled .gravatar {
-        width: 64px;
-        margin-top: 16px;
+        width: 44px;
+        margin-top: 5px;
+        border-radius: 50%;
+    }
+    .name {
+        display: none;
     }
 }
 .post-poster img {
@@ -237,19 +267,34 @@
         width: 970px;
     }
 }*/
+
 .post-author {
-    margin-top: 20px;
+    margin-top: 8px;
     color: #747F8C;
 }
-.post-author a {
-    color: #38485a;
+.post-author .category {
+    text-decoration: underline;
 }
-.post-author a:hover, .post-author a:focus {
+.post-author .author {
+    color: #747F8C;
+}
+.post-author .author:hover, .post-author .author:focus {
     text-decoration: none;
     color: #2a6496;
 }
-.post-title {
+.post-big-title {
     font-weight: bold;
     line-height: 1.5;
     color: #38485a;
+    font-size: 32px;
+    margin-top: 35px;
+    margin-bottom: 0px;
+}
+.footer-desc-endline {
+    display: none;
+}
+@media(max-width: 500px) {
+    .footer-desc-endline {
+        display: block;
+    }
 }
