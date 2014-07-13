@@ -1,7 +1,6 @@
 import json
 import codecs
 
-
 class BlogBuiler:
 
     def __init__(self, name="config.json", dir="template"):
@@ -15,7 +14,7 @@ class BlogBuiler:
         for build_item in build_config:
             result = self.buildhtml(build_item['config'])
             self._temp[build_item['id']] = result
-            if build_item['output']:
+            if build_item['output'] == "true":
                 with codecs.open(build_item['id'], 'w', encoding="utf-8") as f:
                     f.write(result)
         pass
@@ -38,7 +37,7 @@ class BlogBuiler:
                 inject_content = self._temp.get(inject_config)
             else:
                 inject_content = self.readfile(self.dir + '/' + inject_config)
-            result = result.replace(u'${' + inject_id + '}', inject_content)
+            result = result.replace('${' + inject_id + '}', inject_content)
         return result
 
 

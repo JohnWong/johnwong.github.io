@@ -18,5 +18,24 @@
                 "middle":"article-middle"
             }
         }
+    },{
+        "id": "category-middle",
+        "output": "false",
+        "config": {
+            "base": "category-middle.html",
+            "inject": {
+                "nav-right": "nav-right.html"
+            }
+        }
+    }, {
+        "id": "category.html",
+        "output": "true",
+        "config": {
+            "base": "frame.html",
+            "script": ["js/category.js"],
+            "inject": {
+                "middle":"category-middle"
+            }
+        }
     }]
 }
