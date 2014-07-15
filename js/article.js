@@ -17,7 +17,7 @@ $(document).ready(function() {
             var author = item['author'];
             var time = item['time'];
             var cover_url = item['cover_url'];
-            $(".post-poster").html('<img src="' + cover_url + '" alt="' + id + '">');
+            $(".post-poster").html('<img src="' + cover_url + '">');
             var icon;
             switch (params['cat']) {
                 case "Mobile":
