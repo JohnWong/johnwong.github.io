@@ -228,20 +228,12 @@
     text-decoration: underline;
     ;
 }
-@media (min-width: 1px) {
-    .middle {
-        margin-top: 30px;
-    }
-    .navbar {
-        border-bottom: 1px solid #e6eaed;
-    }
+.navbar {
+    border-bottom: 1px solid #e6eaed;
 }
 @media (min-width: 768px) {
     .navbar {
         border-bottom: none;
-    }
-    .middle {
-        margin-top: 100px;
     }
     .navbar-responsive-top {
         position: fixed;
@@ -361,10 +353,6 @@
 .posts .left-col {
     position: relative;
 }
-.articles {
-    margin-top: 30px;
-    border-top: 1px solid #e6eaed;
-}
 .posts {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -372,16 +360,66 @@
 }
 .posts .left-col .feature-img {
     width: 60px;
-    height: 60px;
     max-width: 100%;
 }
+.posts .item-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-top: 16px;
+}
+.posts .item-desc {
+    display: none;
+    font-size: 1.2em;
+    color: #747F8C;
+}
+.category {
+    font-size: 0.6em;
+}
+.articles {
+    margin-top: 20px;
+    border-top: 1px solid #e6eaed;
+}
+.middle {
+    margin-top: 20px;
+}
+@media(min-width: 480px) {
+    .articles {
+        margin-top: 20px;
+    }
+    .category {
+        font-size: 0.8em;
+    }
+    .posts .left-col .feature-img {
+        width: 100px;
+    }
+    .posts .item-title {
+        font-size: 1.4em;
+    }
+    .posts .right-col {
+        margin-left: 120px;
+    }
+}
 @media(min-width: 768px) {
+    .middle {
+        margin-top: 100px;
+    }
+    .articles {
+        margin-top: 30px;
+    }
+    .category {
+        font-size: 1em;
+    }
     .posts .left-col .feature-img {
         width: 180px;
-        height: 120px;
     }
     .posts .right-col {
         margin-left: 200px;
+    }
+    .posts .item-title {
+        font-size: 1.6em;
+    }
+    .posts .item-desc {
+        display: block;
     }
 }
 .info .postmeta {
@@ -389,10 +427,6 @@
     color: #747F8C;
     position: absolute;
     right: 20px;
-}
-.articles a {
-    margin-top: 10px;
-    font-size: 0.8em;
 }
 .articles a {
     color: #38485A;
