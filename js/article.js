@@ -1,19 +1,22 @@
 $(document).ready(function() {
-    var params = function() {
-        for (var t, e = [], o = window.location.href.slice(window.location.href.indexOf("?") + 1).split("&"), r = 0; r < o.length; r++)
-            t = o[r].split("="), e.push(t[0]), e[t[0]] = t[1];
-        return e;
-    }();
     var cat = params['cat'], id = params['id'];
     if (!cat || !id) {
         $(".post-big-title").html('未找到该文章');
         return;
-    };
+    }
     id = decodeURI(id), cat = decodeURI(cat);
     $(".post-big-title").html(id);
     $.get('data/list.json', function(data) {
-        if (data[cat] && data[cat][id]) {
-            var item = data[cat][id];
+        if (!data[cat]) {
+            return;
+        }
+        var item;
+        for (var i = 0; i < data[cat].length; i++) {
+            if (data[cat][i]['title'] == id) {
+                item = data[cat][i];
+            }
+        }
+        if (item) {
             var author = item['author'];
             var time = item['time'];
             var cover_url = item['cover_url'];

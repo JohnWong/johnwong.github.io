@@ -318,7 +318,7 @@
 .category-header-status {
     font-size: 3em;
 }
-.week {
+.month {
     border-right: 1px solid #e6eaed;
 }
 .category-header .category-header-status span {
@@ -434,4 +434,7 @@
 .articles a:hover {
     text-decoration: none;
     color: #428bca;
+}
+.template {
+    display: none;
 }
