@@ -119,7 +119,7 @@
 .jw-docs-footer {
     padding-top: 20px;
     padding-bottom: 20px;
-    margin-top: 60px;
+    margin-top: 10px;
     color: #777;
     text-align: center;
     border-top: 1px solid #e5e5e5;
@@ -306,7 +306,7 @@
     font-weight: bold;
 }
 .category-header-title {
-    font-size: 3.2em;
+    font-size: 4.8em;
     margin-top: 0;
 }
 .left {

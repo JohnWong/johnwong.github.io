@@ -87,7 +87,7 @@
         </div>
         <div class="articles">
         </div>
-        <div id="article-template" class="template">
+        <textarea id="article-template" class="template">
             <article class="posts cf">
 
                 <div class="info">
@@ -96,7 +96,7 @@
                 <div class="left left-col">
                     <div class="image feature-img thumb-180">
                         <a href="@{article-link}">
-                            <img class="feature-img" src="@{article-cover}">
+                            <img class="feature-img" src="@{article-thumb}">
                         </a>
                     </div>
                 </div>
@@ -107,7 +107,13 @@
                 </div>
 
             </article>
-        </div>
+        </textarea>
+        <ul id="pagination" class="pagination">
+            <li class="disabled"><a href="#">«</a>
+            </li>
+            <li class="disabled"><a href="#">»</a>
+            </li>
+        </ul>
     </div>
     <div id="latest-posts" class="col-md-3 nav-right">
         <div class="box box-small">

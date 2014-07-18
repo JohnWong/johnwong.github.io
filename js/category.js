@@ -1,9 +1,4 @@
 $(document).ready(function() {
-    var params = function() {
-        for (var t, e = [], o = window.location.href.slice(window.location.href.indexOf("?") + 1).split("&"), r = 0; r < o.length; r++)
-            t = o[r].split("="), e.push(t[0]), e[t[0]] = t[1];
-        return e;
-    }();
     var cat = params['cat'];
     if (!cat) {
         // $(".post-big-title").html('未找到该文章');
@@ -28,26 +23,72 @@ $(document).ready(function() {
             }
             $(".total span").html(total);
             $(".month span").html(monthly);
-            goPage(1);
+            Page.init();
         }
     });
-    var pageSize = 4;
-
-    function goPage(num) {
-        var start = (num - 1) * pageSize;
-        var to = num * pageSize;
-        var template = $("#article-template").html();
-        var content = '';
-        var sub_articles = articles.slice(start, to);
-        for (var i in sub_articles) {
-            var article = sub_articles[i];
-            content += template.replace("@{article-author}", article.author)
-                .replace("@{article-time}", article.time)
-                .replace("@{article-link}", "link") //todo
-                .replace("@{article-title}", article.title)
-                .replace("@{article-description}", article.description)
-                .replace("@{article-cover}", article.cover_url);
+    window.Page = {
+        pageSize: 10,
+        pageCount: 0,
+        currentPage: 0,
+        init: function(){
+            var page_size = 4;
+            var count = articles.length;
+            var pagination = $("#pagination");
+            if (count === 0){
+                pagination.hide();
+                return;
+            }
+            Page.pageCount = Math.floor((count + Page.pageSize - 1) / Page.pageSize);
+            $("#pagination li:first-child").click(Page.goPrev);
+            $("#pagination li:last-child").click(Page.goNext);
+            for (var i = Page.pageCount; i > 0; i--) {
+                var content = $('<li><a href="#" onclick="Page.goPage(' + i + ')">' + i + '</a></li>');
+                content.insertAfter("#pagination li:nth-child(1)");
+            }
+            Page.goPage(1);
+        },
+        goNext: function(evt){
+            evt.preventDefault();
+            if (Page.currentPage + 1 <= Page.pageCount) {
+                Page.goPage(Page.currentPage + 1);
+            }
+        },
+        goPrev: function(evt){
+            evt.preventDefault();
+            if (Page.currentPage - 1 > 0) {
+                Page.goPage(Page.currentPage - 1);
+            }
+        },
+        goPage: function(num) {
+            var start = (num - 1) * Page.pageSize;
+            var to = num * Page.pageSize;
+            var template = $("#article-template").text();
+            var content = '';
+            var sub_articles = articles.slice(start, to);
+            for (var i in sub_articles) {
+                var article = sub_articles[i];
+                content += template.replace(/@{article-author}/g, article.author)
+                    .replace(/@{article-time}/g, article.time)
+                    .replace(/@{article-link}/g, "link") //todo
+                    .replace(/@{article-title}/g, article.title)
+                    .replace(/@{article-description}/g, article.description)
+                    .replace(/@{article-thumb}/g, article.thumb_url);
+            }
+            $(".articles").html(content);
+            Page.currentPage = num;
+            var pagination = $("#pagination");
+            if (num === 1) {
+                pagination.find("li:first-child").addClass("disabled");
+            } else {
+                pagination.find("li:first-child").removeClass("disabled");
+            }
+            if (num === Page.pageCount) {
+                pagination.find("li:last-child").addClass("disabled");
+            } else {
+                pagination.find("li:last-child").removeClass("disabled");
+            }
+            pagination.find(".active").removeClass("active");
+            pagination.find("li:nth-child(" + (num + 1) + ")").addClass("active");
         }
-        $(".articles").html(content);
-    }
+    };
 });
