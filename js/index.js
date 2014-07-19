@@ -1,42 +1,6 @@
 $(document).ready(function() {
-    var cat = params['cat'];
-    if (!cat) {
-        $(".category").html('<h1 class="post-big-title">不存在该分类！</h1>');
-        $(".pagination").hide();
-        $(".articles").hide();
-        return;
-    }
-    cat = decodeURI(cat);
-    $(".navbar-nav li a").each(function(k, v){
-        v = $(v);
-        if (v.html() === cat) {
-            v.parent().addClass("active");
-        }
-    });
-    var articles;
-    $(".category-header-title").html(cat);
     $.get("data/list.json", function(data) {
-        articles = data[cat];
-        if (articles) {
-            var monthly = 0,
-                total = 0;
-            var current_date = new Date();
-            for (var i in articles) {
-                var article = articles[i];
-                total++;
-                var article_date = new Date(article['time']);
-                if (current_date - article_date <= 1000 * 60 * 60 * 24 * 31) {
-                    monthly++;
-                }
-            }
-            $(".total").html(total + '<i>Total</i>');
-            $(".month").html(monthly + '<i>Monthly</i>');
-            Page.init();
-        } else {
-            $(".category").html('<h1 class="post-big-title">不存在该分类！</h1>');
-            $(".pagination").hide();
-            $(".articles").hide();
-        }
+        
     });
     window.Page = {
         pageSize: 10,

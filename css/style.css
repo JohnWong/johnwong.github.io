@@ -1,13 +1,14 @@
 .jw-docs-nav .navbar-brand, .jw-docs-nav .navbar-nav>li>a {
     font-weight: 500;
 }
-@media(min-width: 1px) {
-    .navbar-nav>li>a {
-        border-left: 2px solid transparent;
-    }
-    .navbar-nav>li>a:hover, .navbar-nav>li>a:focus {
-        border-left: 2px solid #2a6496;
-    }
+.jw-docs-nav .navbar-nav>.active>a, .jw-docs-nav .navbar-nav>.active>a:hover {
+    color: #2a6496;
+    font-weight: 600;
+    background-color: #eee;
+    border-left: 2px solid #2a6496;
+}
+.navbar-nav>li>a {
+    border-left: 2px transparent;
 }
 @media(min-width: 768px) {
     .navbar-nav>li>a {
@@ -17,7 +18,13 @@
     }
     .navbar-nav>li>a:hover, .navbar-nav>li>a:focus {
         border-left: none;
+    }
+    .jw-docs-nav .navbar-nav>.active>a, .jw-docs-nav .navbar-nav>.active>a:hover {
+        color: #2a6496;
+        font-weight: 600;
+        background-color: #eee;
         border-bottom: 2px solid #2a6496;
+        border-left: none;
     }
 }
 .navbar-brand {
@@ -426,7 +433,7 @@
     margin-top: -12px;
     color: #747F8C;
     position: absolute;
-    right: 20px;
+    right: 30px;
 }
 .articles a {
     color: #38485A;
