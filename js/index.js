@@ -1,16 +1,20 @@
 $(document).ready(function() {
-    $.get("data/list.json", function(data) {
-        
+    var articles;
+    $.get("data/list-index.json", function(data) {
+        articles = data["Posts"];
+        if (articles) {
+            Page.init();
+        }
     });
     window.Page = {
         pageSize: 10,
         pageCount: 0,
         currentPage: 0,
-        init: function(){
+        init: function() {
             var page_size = 4;
             var count = articles.length;
             var pagination = $("#pagination");
-            if (count === 0){
+            if (count === 0) {
                 pagination.hide();
                 return;
             }
@@ -23,13 +27,13 @@ $(document).ready(function() {
             }
             Page.goPage(1);
         },
-        goNext: function(evt){
+        goNext: function(evt) {
             evt.preventDefault();
             if (Page.currentPage + 1 <= Page.pageCount) {
                 Page.goPage(Page.currentPage + 1);
             }
         },
-        goPrev: function(evt){
+        goPrev: function(evt) {
             evt.preventDefault();
             if (Page.currentPage - 1 > 0) {
                 Page.goPage(Page.currentPage - 1);
@@ -45,10 +49,14 @@ $(document).ready(function() {
                 var article = sub_articles[i];
                 content += template.replace(/@{article-author}/g, article.author)
                     .replace(/@{article-time}/g, article.time)
-                    .replace(/@{article-link}/g, "link") //todo
+                    .replace(/@{article-link}/g, "article.html?cat=" + article.category + "&id=" + article.title)
                     .replace(/@{article-title}/g, article.title)
                     .replace(/@{article-description}/g, article.description)
-                    .replace(/@{article-thumb}/g, article.thumb_url);
+                    .replace(/@{article-thumb}/g, article.thumb_url)
+                    .replace(/@{category-name}/g, article.category)
+                    .replace(/@{category-link}/g, "category.html?cat=" + article.category)
+                    .replace(/@{category-icon}/g, iconFromCategory(article.category))
+                    .replace(/@{category-color}/g, colorFromCategory(article.category));
             }
             $(".articles").html(content);
             Page.currentPage = num;

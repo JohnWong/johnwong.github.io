@@ -1,47 +1,49 @@
-<div class="row">
-    <div class="col-md-9" role="main">
-        <div class="category">
-            <div class="category-header cf">
-                <h2 class="category-header-title left"></h2>
-                <div class="category-header-status right">
-                    <span class="month">
-                    </span>
-                    <span class="total">
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="articles">
-        </div>
-        <textarea id="article-template" class="template">
-            <article class="posts cf">
-
-                <div class="info">
-                    <div class="postmeta right">@{article-author} • @{article-time}</div>
-                </div>
-                <div class="left left-col">
-                    <div class="image feature-img thumb-180">
-                        <a href="@{article-link}">
-                            <img class="feature-img" src="@{article-thumb}">
-                        </a>
+<div class="container  middle">
+    <div class="row">
+        <div class="col-md-9" role="main">
+            <div class="category">
+                <div class="category-header cf">
+                    <h2 class="category-header-title left"></h2>
+                    <div class="category-header-status right">
+                        <span class="month">
+                        </span>
+                        <span class="total">
+                        </span>
                     </div>
                 </div>
-                <div class="right-col">
-                    <h1 class="item-title"><a href="@{article-link}" target="_blank">@{article-title}</a>
-                    </h1>
-                    <p class="item-desc">@{article-description}</p>
-                </div>
+            </div>
+            <div class="articles">
+            </div>
+            <textarea id="article-template" class="template">
+                <article class="posts cf">
 
-            </article>
-        </textarea>
-        <ul id="pagination" class="pagination">
-            <li class="disabled"><a href="#">«</a>
-            </li>
-            <li class="disabled"><a href="#">»</a>
-            </li>
-        </ul>
-    </div>
-    <div id="latest-posts" class="col-md-3 nav-right">
-        ${nav-right}
+                    <div class="info">
+                        <div class="postmeta right">@{article-author} • @{article-time}</div>
+                    </div>
+                    <div class="left left-col">
+                        <div class="image feature-img thumb-180">
+                            <a href="@{article-link}">
+                                <img class="feature-img" src="@{article-thumb}">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="right-col">
+                        <h1 class="item-title"><a href="@{article-link}" target="_blank">@{article-title}</a>
+                        </h1>
+                        <p class="item-desc">@{article-description}</p>
+                    </div>
+
+                </article>
+            </textarea>
+            <ul id="pagination" class="pagination">
+                <li class="disabled"><a href="#">«</a>
+                </li>
+                <li class="disabled"><a href="#">»</a>
+                </li>
+            </ul>
+        </div>
+        <div id="latest-posts" class="col-md-3 nav-right">
+            ${nav-right}
+        </div>
     </div>
 </div>

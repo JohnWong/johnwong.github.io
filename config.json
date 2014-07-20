@@ -37,15 +37,6 @@
                 "middle":"category-middle"
             }
         }
-    },{
-        "id": "index-middle",
-        "output": "false",
-        "config": {
-            "base": "index-middle.html",
-            "inject": {
-                "nav-right": "nav-right.html"
-            }
-        }
     }, {
         "id": "index.html",
         "output": "true",
@@ -53,7 +44,7 @@
             "base": "frame.html",
             "script": ["js/index.js"],
             "inject": {
-                "middle":"index-middle"
+                "middle":"index-middle.html"
             }
         }
     }]

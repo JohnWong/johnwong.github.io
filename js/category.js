@@ -77,11 +77,12 @@ $(document).ready(function() {
             var template = $("#article-template").text();
             var content = '';
             var sub_articles = articles.slice(start, to);
+            var link = "article.html?cat=" + cat + "&id=";
             for (var i in sub_articles) {
                 var article = sub_articles[i];
                 content += template.replace(/@{article-author}/g, article.author)
                     .replace(/@{article-time}/g, article.time)
-                    .replace(/@{article-link}/g, "link") //todo
+                    .replace(/@{article-link}/g, link + article.title)
                     .replace(/@{article-title}/g, article.title)
                     .replace(/@{article-description}/g, article.description)
                     .replace(/@{article-thumb}/g, article.thumb_url);

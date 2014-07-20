@@ -21,27 +21,10 @@ $(document).ready(function() {
             var time = item['time'];
             var cover_url = item['cover_url'];
             $(".post-poster").html('<img src="' + cover_url + '">');
-            var icon;
-            switch (params['cat']) {
-                case "Mobile":
-                    icon = 'glyphicon-phone';
-                    break;
-                case "Life":
-                    icon = 'glyphicon-home';
-                    break;
-                    // case "Bookmarks": icon = 'glyphicon-bookmark'; break;
-                case "Travel":
-                    icon = 'glyphicon-road';
-                    break;
-                    // case "White Hat": icon = 'glyphicon-lock';break;
-                case "Front End":
-                    icon = 'glyphicon-link';
-                    break;
-            };
-            var content = '<a class="category" href="cat.html?id=' + cat + '"><span class="glyphicon ' + icon + '"></span>' + params['cat'] + '</a> | <span id="author" class="author">' + author + '</span> • ' + time;
+            var icon = iconFromCategory(params['cat']);
+            var content = '<a class="category" href="category.html?cat=' + cat + '"><span class="glyphicon ' + icon + '"></span>' + params['cat'] + '</a> | <span id="author" class="author">' + author + '</span> • ' + time;
             $(".post-author").html(content);
-
-        };
+        }
     });
     $.get('data/' + cat + '/' + id + '.md', function(data) {
         $('#preview').html(marked(data));
