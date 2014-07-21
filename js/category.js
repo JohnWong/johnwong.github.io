@@ -7,6 +7,14 @@ $(document).ready(function() {
         return;
     }
     cat = decodeURI(cat);
+    var sep_index = cat.indexOf('/'), subcat;
+    if (sep_index >= 0) {
+        subcat = cat.substr(sep_index + 1);
+        cat = cat.substr(0, sep_index);
+        $(".category-header-title").html(subcat);
+    } else {
+        $(".category-header-title").html(cat);
+    }
     $(".navbar-nav li a").each(function(k, v){
         v = $(v);
         if (v.html() === cat) {
@@ -14,28 +22,50 @@ $(document).ready(function() {
         }
     });
     var articles;
-    $(".category-header-title").html(cat);
     $.get("data/list.json", function(data) {
         articles = data[cat];
         if (articles) {
+            if (subcat) {
+                for (var i = 0; i < articles.length; i++) {
+                    var article = articles[i];
+                    if (articles[i]['title'] == subcat) {
+                        articles = articles[i]['list'];
+                        break;
+                    }
+                }
+                if (i == articles.length) {
+                    $(".articles").html('<h1 class="post-big-title">该分类暂无文章！</h1>');
+                    $(".pagination").hide();
+                    return;
+                }
+            }
             var monthly = 0,
                 total = 0;
             var current_date = new Date();
             for (var i in articles) {
                 var article = articles[i];
-                total++;
-                var article_date = new Date(article['time']);
-                if (current_date - article_date <= 1000 * 60 * 60 * 24 * 31) {
-                    monthly++;
+                if (!article.list) {
+                    total++;
+                    var article_date = new Date(article['time']);
+                    if (current_date - article_date <= 1000 * 60 * 60 * 24 * 31) {
+                        monthly++;
+                    }
+                } else {
+                    for (var j in article.list) {
+                        total++;
+                        var article_date = new Date(article.list['time']);
+                        if (current_date - article_date <= 1000 * 60 * 60 * 24 * 31) {
+                            monthly++;
+                        }
+                    }
                 }
             }
             $(".total").html(total + '<i>Total</i>');
             $(".month").html(monthly + '<i>Monthly</i>');
             Page.init();
         } else {
-            $(".category").html('<h1 class="post-big-title">不存在该分类！</h1>');
+            $(".articles").html('<h1 class="post-big-title">该分类暂无文章！</h1>');
             $(".pagination").hide();
-            $(".articles").hide();
         }
     });
     window.Page = {
@@ -77,12 +107,12 @@ $(document).ready(function() {
             var template = $("#article-template").text();
             var content = '';
             var sub_articles = articles.slice(start, to);
-            var link = "article.html?cat=" + cat + "&id=";
+            var link = "article.html?cat=" + cat + (subcat? "/" + subcat: "") + "&id=";
+            var subcat_link = "category.html?cat=" + cat + "/";
             for (var i in sub_articles) {
                 var article = sub_articles[i];
-                content += template.replace(/@{article-author}/g, article.author)
-                    .replace(/@{article-time}/g, article.time)
-                    .replace(/@{article-link}/g, link + article.title)
+                content += template.replace(/@{article-meta}/g, article.list? '<span class="topics">专题 • Topics</span>': article.author + " • " + article.time)
+                    .replace(/@{article-link}/g, (article.list? subcat_link : link) + article.title)
                     .replace(/@{article-title}/g, article.title)
                     .replace(/@{article-description}/g, article.description)
                     .replace(/@{article-thumb}/g, article.thumb_url);
