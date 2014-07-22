@@ -1,6 +1,8 @@
+#!/usr/bin/python
 import json
 import shutil
 import os
+import time
 import codecs
 
 class BlogBuiler:
@@ -25,6 +27,11 @@ class BlogBuiler:
     def readfile(self, file_name):
         with codecs.open(file_name, 'r',  encoding='utf-8') as f:
             return f.read()
+        pass
+
+    def writefile(self, file_name, content):
+        with codecs.open(file_name, 'w',  encoding='utf-8') as f:
+            return f.write(content)
         pass
 
     def buildhtml(self, config):
@@ -56,39 +63,55 @@ class BlogBuiler:
             if not list_json.has_key(cat):
                 list_json[cat] = []
                 pass
-            print(len(list_json[cat]))
             self.buildCategory(list_json[cat], cat)
-            print(len(list_json[cat]))
-            for t in list_json[cat]:
-                print(t)
-            pass
-        pass    
+            # for t in list_json[cat]:
+            #     print(t)
+            # pass
+        pass
+        result = json.dumps(list_json, ensure_ascii=False)
+        print(result)
+        self.writefile(self.datadir + '/' + 'test.json', result)
 
     def buildCategory(self, cat_json, cat):
         cat_path = self.datadir + '/' + cat
         article_list = [line[:-3] for line in os.listdir(cat_path) if line[-2:]=='md']
         # delete unexisted articles
-        for article_json in cat_json:
-            title = article_json.get('title')
+        for k in range(len(cat_json) - 1, -1, -1):
+            title = cat_json[k].get('title')
             if title == None or not os.path.exists(cat_path + '/' + title + '.md'):
-                cat_json.remove(article_json)
+                cat_json.pop(k)
                 pass
             pass
-
+        pass
         
         for article in article_list:
             is_found = False
-            for k in cat_json:
-                print(k.get('title') == article.decode('utf8'), k.get('title'))
-                if k.get('title') == article.decode('utf8'):
+            for k in range(len(cat_json) - 1, -1, -1):
+                if cat_json[k].get('title') == article.decode('utf8'):
                     if is_found:
                         # delete repeated articles
-                        cat_json.remove(k)
+                        cat_json.pop(k)
                     else:
                         is_found = True
                     pass
                 pass
             pass
+            if not is_found:
+                # add new article
+                author = raw_input("Please input author name:")
+                current_time = raw_input("Please input publish time:")
+                cover_url = raw_input("Please input cover image url:")
+                thumb_url = raw_input("Please input thumbnail image url:")
+                description = raw_input("Please input description:")
+                cat_json.insert(0, {
+                    u"title": unicode(article, 'utf8'),
+                    u"author": unicode(author, 'utf8') if len(author) > 0 else u'John Wong',
+                    u"time": unicode(author, 'utf8') if len(current_time) > 0 else unicode(time.strftime("%H:%M:%S %m/%d %Y", time.localtime()), 'utf8'),
+                    u"cover_url": unicode(cover_url, 'utf8'),
+                    u"thumb_url": unicode(thumb_url, 'utf8'),
+                    u"description": unicode(description, 'utf8')
+                })
+                pass
         pass
 
 if __name__ == "__main__":
