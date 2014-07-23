@@ -1,11 +1,18 @@
 {
     "template": [{
+        "id": "disqus",
+        "output": "false",
+        "config": {
+            "base": "disqus.html"
+        }
+    },{
         "id": "article-middle",
         "output": "false",
         "config": {
             "base": "article-middle.html",
             "inject": {
-                "nav-right": "nav-right.html"
+                "nav-right": "nav-right.html",
+                "disqus": "disqus"
             }
         }
     }, {

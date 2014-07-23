@@ -42,12 +42,15 @@ class BlogBuiler:
                 scripts += '<script src="' + script + '"></script>'
             result = result.replace('${script}', scripts)
             pass
-        for (inject_id, inject_config) in config['inject'].items():
-            if self._temp.get(inject_config):
-                inject_content = self._temp.get(inject_config)
-            else:
-                inject_content = self.readfile(self.dir + '/' + inject_config)
-            result = result.replace('${' + inject_id + '}', inject_content)
+        if config.get('inject'):
+            for (inject_id, inject_config) in config['inject'].items():
+                if self._temp.get(inject_config):
+                    inject_content = self._temp.get(inject_config)
+                else:
+                    inject_content = self.readfile(self.dir + '/' + inject_config)
+                result = result.replace('${' + inject_id + '}', inject_content)
+            pass
+        pass
         return result
 
     def buildData(self):
@@ -98,6 +101,7 @@ class BlogBuiler:
             pass
             if not is_found:
                 # add new article
+                print('New article: ' + article)
                 author = raw_input("Please input author name:")
                 current_time = raw_input("Please input publish time:")
                 cover_url = raw_input("Please input cover image url:")
@@ -117,4 +121,4 @@ class BlogBuiler:
 if __name__ == "__main__":
     blogBuiler = BlogBuiler()
     blogBuiler.buildtemplate()
-    blogBuiler.buildData()
+    # blogBuiler.buildData()
