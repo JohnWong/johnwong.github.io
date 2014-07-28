@@ -158,13 +158,11 @@
     display: inline;
     padding: 0 2px;
 }
-@media (min-width: 1px) {
-    .nav-right {
-        display: none;
-    }
+.nav-right, .index-right {
+    display: none;
 }
 @media (min-width: 992px) {
-    .nav-right {
+    .nav-right, .index-right {
         display: block;
     }
 }
