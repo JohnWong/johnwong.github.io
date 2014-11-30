@@ -1,0 +1,65 @@
+---
+layout: index
+---
+
+<div class="index-latest">LATEST POSTS</div>
+<div class="articles index-articles">
+{% for post in paginator.posts %}
+  {% for category_item in site.category_info %}
+    {% if category_item.name == post.categories[0] %}
+      {% assign category = category_item %}
+    {% endif %}
+  {% endfor %}
+  <article class="index-posts posts cf">
+    <div class="info">
+      <div class="postmeta left">
+        <a style="color: {{ category.color }}" class="category" href="{{ "/category/" | prepend: site.baseurl | append: category.name | append: '.html' }}">
+          <span class="glyphicon {{ category.icon }}"></span>{{ category.name }}</a>
+      </div>
+      <div class="postmeta right">{{ post.author }} • {{ post.date | date: "%b %-d, %Y" }}</div>
+    </div>
+    <div class="left left-col">
+      <div class="image feature-img thumb-180">
+        <a href="{{ post.url | prepend: site.baseurl }}">
+          <img class="feature-img" src="{{ post.thumb | prepend: site.baseurl }}">
+        </a>
+      </div>
+    </div>
+    <div class="right-col">
+      <h1 class="item-title">
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h1>
+      <p class="item-desc">{{ post.description }}</p>
+    </div>
+  </article>
+{% endfor %}
+</div>
+<ul id="pagination" class="pagination">
+  <li class="{% if paginator.previous_page == null %}disabled{% endif %}">
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">«</a>
+  </li>
+  <li class="{% if paginator.next_page == null %}disabled{% endif %}">
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">»</a>
+  </li>
+</ul>
+
+<!-- 
+<div class="home">
+
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div> -->

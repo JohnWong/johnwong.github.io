@@ -1,0 +1,35 @@
+<header class="navbar navbar-responsive-top jw-docs-nav" id="top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".jw-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img class="gravatar" src="http://gravatar.duoshuo.com/avatar/{{ site.gravatar_hash}}?s=88">
+        <span class="name">{{ site.username }}</span>
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse jw-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        {% for category_item in site.category_info %}
+        <li class="{% if page.categories[0] == category_item.name %}active{% endif %}">
+          <a href="{{ "/category/" | prepend: site.baseurl | append: category_item.name | append: '.html' }}">{{ category_item.name }}</a>
+        </li>
+        {% endfor %}
+        <li>
+          <a href="#">Bookmarks</a>
+        </li>
+        <li>
+          <a href="http://wooyun.org/whitehats/JohnWong">乌云</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/about">About</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

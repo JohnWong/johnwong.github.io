@@ -1,0 +1,34 @@
+# Site settings
+title: John Wong's Blog
+email: huangxiaozhe1988@gmail.com
+description: > # John Wong's Blog.
+# baseurl: "" # the subpath of your site, e.g. /blog/
+# url: "http://localhost" # the base hostname & protocol for your site
+
+
+# Build settings
+markdown: redcarpet
+redcarpet:
+    extensions: ["fenced_code_blocks", "tables", "highlight", "strikethrough"]
+
+# Pagination
+paginate: 20
+paginate_path: ":num"
+
+# Extent settings
+username: John Wong
+motto: 一个热爱编程的傻瓜
+production: false
+gravatar_hash: 135dee388c0976f500748a64960038ee # used for gravater
+category_info: 
+    - {name: mobile, color: "#62bb47", icon: glyphicon-phone}
+    - {name: life, color: "#fbb726", icon: glyphicon-home}
+    - {name: travel, color: "#e03a3e", icon: glyphicon-road}
+    - {name: "front end", color: "#943b95", icon: glyphicon-link}
+
+# Github
+github:
+    url: "https://github.com/JohnWong"
+    followers: 18
+    starred: 43
+    following: 9

@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<div class="jumbotron jw-header index-middle">
+  <div class="container">
+    <h1>{{ site.username }}</h1>
+    <p>{{ site.motto }}</p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-9" role="main">
+      {{ content }}
+    </div>
+    <div class="col-md-3 index-right">
+
+      {% include index-side.html %}
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+---
+layout: category-basic
+---
+
+{% for category_item in site.category_info %}
+  {% if page.name contains category_item.name %}
+    {% assign category_info = category_item %}
+  {% endif %}
+{% endfor %}
+
+{% assign monthly = 0 %}
+{% for category_item in site.categories %}
+  {% if category_item.first == category_info.name %}
+    {% assign category = category_item | last %}
+    {% assign current_month = site.time | date: "%b, %Y" %}
+    {% assign monthly = 0 %}
+    {% for post in category_item.last %}
+      {% assign post_month = post.date | date: "%b, %Y" %}
+      {% if post_month == current_month %}
+        {% assign monthly = monthly | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+<div class="category">
+  <div class="category-header cf">
+    <h2 class="category-header-title left">{{ category_info.name }}</h2>
+    <div class="category-header-status right">
+      <span class="month">{{ monthly }}<i>Monthly</i></span>
+      <span class="total">{{ category | size }}<i>Total</i></span>
+    </div>
+  </div>
+</div>
+<div class="articles">
+{% if category %}
+  {% for post in category %}
+  <article class="index-posts posts cf">
+    <div class="info">
+      <div class="postmeta left">
+        <a style="color: {{ category_info.color }}" class="category" href="{{ "/category/" | prepend: site.baseurl | append: category_info.name | append: '.html' }}">
+          <span class="glyphicon {{ category_info.icon }}"></span>{{ category_info.name }}</a>
+      </div>
+      <div class="postmeta right">{{ post.author }} • {{ post.date | date: "%b %-d, %Y" }}</div>
+    </div>
+    <div class="left left-col">
+      <div class="image feature-img thumb-180">
+        <a href="{{ post.url | prepend: site.baseurl }}">
+          <img class="feature-img" src="{{ post.thumb | prepend: site.baseurl }}">
+        </a>
+      </div>
+    </div>
+    <div class="right-col">
+      <h1 class="item-title">
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h1>
+      <p class="item-desc">{{ post.description }}</p>
+    </div>
+  </article>
+  {% endfor %}
+{% else %}
+  <h1 class="post-big-empty">该分类暂无文章！</h1>
+{% endif %}
+</div>
