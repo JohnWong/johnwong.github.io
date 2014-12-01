@@ -5,6 +5,10 @@ description: > # John Wong's Blog.
 # baseurl: "" # the subpath of your site, e.g. /blog/
 # url: "http://localhost" # the base hostname & protocol for your site
 
+exclude:
+  - README.md
+  - .travis.yml
+  - Gemfile
 
 # Build settings
 markdown: redcarpet
