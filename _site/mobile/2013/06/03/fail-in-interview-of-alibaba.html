@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>阿里面试总结</title>
+  <meta name="description" content=""> 
+  
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css ">
+  
+  <script src="/js/common.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/pygments.css">
+  <link rel="stylesheet" href="/css/github-markdown.css">
+  <link rel="canonical" href="/mobile/2013/06/03/fail-in-interview-of-alibaba.html">
+</head>
+
+  <body>
+
+    <header class="navbar navbar-responsive-top jw-docs-nav" id="top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".jw-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img class="gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=88">
+        <span class="name">John Wong</span>
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse jw-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        
+        <li class="active">
+          <a href="/category/mobile.html">mobile</a>
+        </li>
+        
+        <li class="">
+          <a href="/category/life.html">life</a>
+        </li>
+        
+        <li class="">
+          <a href="/category/travel.html">travel</a>
+        </li>
+        
+        <li class="">
+          <a href="/category/front end.html">front end</a>
+        </li>
+        
+        <li>
+          <a href="#">Bookmarks</a>
+        </li>
+        <li>
+          <a href="http://wooyun.org/whitehats/JohnWong">乌云</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/about">About</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
+    <div class="page-content">
+      <div class="wrapper">
+        
+  
+    
+  
+
+  
+
+  
+
+  
+
+<div class="container post-middle">
+  <div class="row">
+    <div class="col-md-9" role="main">
+      <div class="post">
+        <div class="post-poster">
+          <img class="feature-img" src="">
+        </div>
+        <h1 class="post-big-title">
+          阿里面试总结
+        </h1>
+        <div class="post-author">
+          <a class="category" href="category.html?cat=Life"><span class="glyphicon glyphicon-phone"></span>mobile</a> | <span id="author" class="author"></span> • Jun 3, 2013
+        </div>
+        <div class="markdown-body">
+          <p>这次妥妥的倒在了一面上。还是基础不够扎实。
+1. 重载与多态区别
+重载（overload）一般是用于在一个类内实现若干重载的方法，这些方法的名称相同而参数形式不同。
+重载的规则：
+a、在使用重载时只能通过相同的方法名、不同的参数形式实现。不同的参数类型可以是不同的参数类型，不同的参数个数，不同的参数顺序（参数类型必须不一样）；
+b、不能通过访问权限、返回类型、抛出的异常进行重载；
+c、方法的异常类型和数目不会对重载造成影响；</p>
+
+<p>重写/覆盖（override），子类在继承父类时，重写父类中的方法。
+重写的规则：
+a、重写方法的参数列表必须完全与被重写的方法的相同,否则不能称其为重写而是重载.
+b、重写方法的访问修饰符一定要大于被重写方法的访问修饰符（public&gt;protected&gt;default&gt;private）。
+c、重写的方法的返回值必须和被重写的方法的返回一致；
+d、重写的方法所抛出的异常必须和被重写方法的所抛出的异常一致，或者是其子类；
+e、被重写的方法不能为private，否则在其子类中只是新定义了一个方法，并没有对其进行重写。
+f、静态方法不能被重写为非静态的方法（会编译出错）。</p>
+
+<p>多态为了避免在父类里大量重载引起代码臃肿且难于维护。通过重写实现。</p>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Shape</span> <span class="o">{</span>  
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>  
+        <span class="n">Triangle</span> <span class="n">tri</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Triangle</span><span class="o">();</span>  
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Triangle is a type of shape? &quot;</span> <span class="o">+</span> <span class="n">tri</span><span class="o">.</span><span class="na">isShape</span><span class="o">());</span><span class="c1">// 继承  </span>
+        <span class="n">Shape</span> <span class="n">shape</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Triangle</span><span class="o">();</span>  
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;My shape has &quot;</span> <span class="o">+</span> <span class="n">shape</span><span class="o">.</span><span class="na">getSides</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; sides.&quot;</span><span class="o">);</span> <span class="c1">// 多态  </span>
+        <span class="n">Rectangle</span> <span class="n">Rec</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">Rectangle</span><span class="o">();</span>  
+        <span class="n">Shape</span> <span class="n">shape2</span> <span class="o">=</span> <span class="n">Rec</span><span class="o">;</span>  
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;My shape has &quot;</span> <span class="o">+</span> <span class="n">shape2</span><span class="o">.</span><span class="na">getSides</span><span class="o">(</span><span class="n">Rec</span><span class="o">)</span> <span class="o">+</span> <span class="s">&quot; sides.&quot;</span><span class="o">);</span> <span class="c1">// 重载  </span>
+    <span class="o">}</span>  
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isShape</span><span class="o">()</span> <span class="o">{</span>  
+        <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>  
+    <span class="o">}</span>  
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getSides</span><span class="o">()</span> <span class="o">{</span>  
+        <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>  
+    <span class="o">}</span>  
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getSides</span><span class="o">(</span><span class="n">Triangle</span> <span class="n">tri</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// 重载  </span>
+        <span class="k">return</span> <span class="mi">3</span><span class="o">;</span>  
+    <span class="o">}</span>  
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getSides</span><span class="o">(</span><span class="n">Rectangle</span> <span class="n">rec</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// 重载  </span>
+        <span class="k">return</span> <span class="mi">4</span><span class="o">;</span>  
+    <span class="o">}</span>  
+<span class="o">}</span>  
+
+<span class="kd">class</span> <span class="nc">Triangle</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span>  
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getSides</span><span class="o">()</span> <span class="o">{</span> <span class="c1">// 重写,实现多态  </span>
+        <span class="k">return</span> <span class="mi">3</span><span class="o">;</span>  
+    <span class="o">}</span>  
+<span class="o">}</span>  
+
+<span class="kd">class</span> <span class="nc">Rectangle</span> <span class="kd">extends</span> <span class="n">Shape</span> <span class="o">{</span>  
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getSides</span><span class="o">()</span> <span class="o">{</span> <span class="c1">// 重写,实现多态  </span>
+        <span class="k">return</span> <span class="mi">4</span><span class="o">;</span>  
+    <span class="o">}</span>  
+<span class="o">}</span>
+</code></pre></div>
+<ol>
+<li><p>read()执行时操作系统完成的工作</p></li>
+<li><p>进程有哪些状态
+基本状态：运行-就绪-阻塞（也称为等待或睡眠）。实际的系统中经常引入新建态和终止态。有的系统引入了挂起态。
+Java线程状态共6个：NEW、RUNNABLE、BLOCKED、WAITING、TIMED_WAITING、TERMINATED</p></li>
+<li><p>url中参数去掉一部分的算法
+当时想到了切分字符串和正则替换，但是写的正则有问题。面试结束和面试官交流，他提示扫描一遍就可以。</p></li>
+</ol>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">monitor</span><span class="o">;</span>  
+
+<span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>  
+
+<span class="kd">class</span> <span class="nc">CheckHelper</span> <span class="o">{</span>  
+    <span class="kd">private</span> <span class="kt">char</span> <span class="n">temp</span><span class="o">[]</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="o">[</span><span class="mi">64</span><span class="o">];</span>  
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">params</span><span class="o">[];</span>  
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">check</span><span class="o">[];</span>  
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">tag</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>  
+
+    <span class="kd">public</span> <span class="nf">CheckHelper</span><span class="o">(</span><span class="n">String</span> <span class="n">params</span><span class="o">[])</span> <span class="o">{</span>  
+        <span class="k">this</span><span class="o">.</span><span class="na">params</span> <span class="o">=</span> <span class="n">params</span><span class="o">;</span>  
+        <span class="n">check</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">params</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>  
+    <span class="o">}</span>  
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">initCheck</span><span class="o">()</span> <span class="o">{</span>  
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">check</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span>  
+            <span class="n">check</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>  
+        <span class="n">tag</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>  
+    <span class="o">}</span>  
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doCheck</span><span class="o">(</span><span class="kt">char</span> <span class="n">c</span><span class="o">)</span> <span class="o">{</span>  
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">params</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>  
+            <span class="n">String</span> <span class="n">param</span> <span class="o">=</span> <span class="n">params</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>  
+            <span class="n">temp</span><span class="o">[</span><span class="n">tag</span><span class="o">]</span> <span class="o">=</span> <span class="n">c</span><span class="o">;</span>  
+            <span class="k">if</span> <span class="o">(</span><span class="n">tag</span> <span class="o">&gt;=</span> <span class="n">param</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">||</span> <span class="n">param</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">tag</span><span class="o">)</span> <span class="o">!=</span> <span class="n">c</span><span class="o">)</span> <span class="o">{</span>  
+                <span class="n">check</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>  
+            <span class="o">}</span>  
+        <span class="o">}</span>  
+        <span class="n">tag</span><span class="o">++;</span>  
+    <span class="o">}</span>  
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getResult</span><span class="o">()</span> <span class="o">{</span>  
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">params</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>  
+            <span class="n">String</span> <span class="n">param</span> <span class="o">=</span> <span class="n">params</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>  
+            <span class="k">if</span> <span class="o">(</span><span class="n">check</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">param</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">==</span> <span class="n">tag</span><span class="o">)</span> <span class="o">{</span>  
+                <span class="n">initCheck</span><span class="o">();</span>  
+                <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>  
+            <span class="o">}</span>  
+        <span class="o">}</span>  
+        <span class="n">String</span> <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">String</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">copyOf</span><span class="o">(</span><span class="n">temp</span><span class="o">,</span> <span class="n">tag</span><span class="o">));</span>  
+        <span class="n">initCheck</span><span class="o">();</span>  
+        <span class="k">return</span> <span class="n">ret</span><span class="o">;</span>  
+    <span class="o">}</span>  
+<span class="o">}</span>  
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>  
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">removeParam</span><span class="o">(</span><span class="n">String</span> <span class="n">url</span><span class="o">,</span> <span class="n">String</span><span class="o">[]</span> <span class="n">params</span><span class="o">)</span> <span class="o">{</span>  
+        <span class="n">CheckHelper</span> <span class="n">ch</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">CheckHelper</span><span class="o">(</span><span class="n">params</span><span class="o">);</span>  
+        <span class="n">ch</span><span class="o">.</span><span class="na">initCheck</span><span class="o">();</span>  
+        <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">StringBuilder</span><span class="o">();</span>  
+        <span class="kt">boolean</span> <span class="n">start</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>  
+        <span class="kt">boolean</span> <span class="n">rest</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>  
+        <span class="kt">boolean</span> <span class="n">copy</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>  
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">url</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>  
+            <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>  
+            <span class="k">if</span> <span class="o">(!</span><span class="n">start</span><span class="o">)</span> <span class="o">{</span>  
+                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>  
+                <span class="k">if</span> <span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">&#39;?&#39;</span><span class="o">)</span>  
+                    <span class="n">start</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>  
+            <span class="o">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">c</span> <span class="o">==</span> <span class="sc">&#39;=&#39;</span><span class="o">)</span> <span class="o">{</span>  
+                <span class="n">rest</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>  
+                <span class="n">String</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">ch</span><span class="o">.</span><span class="na">getResult</span><span class="o">();</span>  
+                <span class="k">if</span> <span class="o">(</span><span class="n">ret</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>  
+                    <span class="k">if</span> <span class="o">(</span><span class="n">sb</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">sb</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">!=</span> <span class="sc">&#39;?&#39;</span><span class="o">)</span>  
+                        <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="sc">&#39;&amp;&#39;</span><span class="o">);</span>  
+                    <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">ret</span><span class="o">);</span>  
+                    <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="sc">&#39;=&#39;</span><span class="o">);</span>  
+                    <span class="n">copy</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>  
+                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>  
+                    <span class="n">copy</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>  
+                <span class="o">}</span>  
+            <span class="o">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="o">(!</span><span class="n">rest</span><span class="o">)</span> <span class="o">{</span>  
+                <span class="n">ch</span><span class="o">.</span><span class="na">doCheck</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>  
+            <span class="o">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">c</span> <span class="o">!=</span> <span class="sc">&#39;&amp;&#39;</span><span class="o">)</span> <span class="o">{</span>  
+                <span class="k">if</span> <span class="o">(</span><span class="n">copy</span><span class="o">)</span>  
+                    <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>  
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>  
+                <span class="n">ch</span><span class="o">.</span><span class="na">initCheck</span><span class="o">();</span>  
+                <span class="n">rest</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>  
+                <span class="n">copy</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>  
+            <span class="o">}</span>  
+        <span class="o">}</span>  
+        <span class="k">return</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>  
+    <span class="o">}</span>  
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>  
+        <span class="n">String</span> <span class="n">url</span> <span class="o">=</span> <span class="s">&quot;http://s.taobao.com/search?spm=a230r.1.0.100.S98nmj&amp;&quot;</span> <span class="o">+</span>  
+                <span class="s">&quot;q=Apple%2F%C6%BB%B9%FB+MacBook+Pro+MD101CH%2FA&amp;v=product&amp;p=&quot;</span> <span class="o">+</span>  
+                <span class="s">&quot;detail&amp;pspuid=202666380&amp;cat=1101&amp;from_pos=55_1101.xlcombo_1_2_202666380&quot;</span><span class="o">;</span>  
+        <span class="n">String</span><span class="o">[]</span> <span class="n">params</span> <span class="o">=</span> <span class="o">{</span> <span class="s">&quot;spm&quot;</span><span class="o">,</span> <span class="s">&quot;pspuid&quot;</span><span class="o">,</span> <span class="s">&quot;cat&quot;</span> <span class="o">};</span>  
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">removeParam</span><span class="o">(</span><span class="n">url</span><span class="o">,</span> <span class="n">params</span><span class="o">));</span>  
+    <span class="o">}</span>  
+<span class="o">}</span>
+</code></pre></div>
+<p>PS. 2014年的今天已经是阿里巴巴的一员了。觉得应该对自己的Java有信心并提出让Java工程师来面试我。</p>
+
+        </div>
+        
+        <div id="disqus_head" class="disqus_head">
+  <h2>Comments</h2>
+</div>
+<div id="disqus_thread" class="disqus_thread"></div>
+<script type="text/javascript" async=true src="//johnwong.disqus.com/embed.js"></script>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      </div>
+    </div>
+    <div class="col-md-3 index-right">
+
+      <img class="gravatar index-gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=240">
+<h1 class="index-me">
+  <span>John Wong <a href="https://github.com/JohnWong">@Github</a></span>
+</h1>
+<div class="vcard-stats">
+  <a class="vcard-stat" href="https://github.com/JohnWong/followers">
+    <strong class="vcard-stat-count">18</strong> followers
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/stars">
+    <strong class="vcard-stat-count">43</strong> Starred
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/following">
+    <strong class="vcard-stat-count">9</strong> Following
+  </a>
+  <div class="cf"></div>
+</div>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    
+    <footer class="jw-docs-footer" role="contentinfo">
+  <div class="container">
+    <div class="jw-docs-social">
+      <ul class="jw-docs-social-buttons">
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=JohnWong&type=follow&count=true&size=small" width="165" height="20" title="Follow on GitHub"></iframe>
+        </li>
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://pytool.sinaapp.com/wb-btn?user=2180280355&type=follow&count=true&size=small&encoding=utf-8" width="160" height="20" title="Follow on Weibo"></iframe>
+        </li>
+        <!-- 解决linkedin抓数据500错误前关闭按钮
+                    <li class="github-btn">
+                        <iframe class="github-btn" src="http://pytool.sinaapp.com/in-btn?user=xiaozhe-huang/4b/204/71b&count=true&size=small&encoding=utf-8" width="202" height="20" title="Follow on Weibo"></iframe>
+                    </li>
+                -->
+      </ul>
+    </div>
+    <p>自豪地采用自己做的博客系统
+      <br class="footer-desc-endline">with the help of <a href="http://getbootstrap.com/">Twitter Bootstrap</a> & <a href="https://github.com/jekyll/jekyll">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>
+      <p>
+        <ul class="jw-docs-footer-links muted">
+          <li>© 2014 • <a href="https://github.com/JohnWong">John Wong</a> <span class="rss-subscribe"> | subscribe <a href="/feed.xml">via RSS</a></span>
+          </li>
+        </ul>
+  </div>
+  <div style="display:none">
+    <div style="display: none !important"
+<span id='cnzz_stat_icon_1252918306'></span>
+<script src=' http://s23.cnzz.com/z_stat.php?id=1252918306' type='text/javascript'></script>
+    <script>
+(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-53121297-1', 'auto');
+ga('send', 'pageview');
+</script>
+  </div>
+</footer>
+
+  </body>
+
+</html>
