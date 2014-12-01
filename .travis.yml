@@ -1,0 +1,6 @@
+# .travis.yml
+
+script: bundle exec rake travis
+branches:
+  only:
+    - master
