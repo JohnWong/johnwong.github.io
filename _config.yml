@@ -29,6 +29,7 @@ category_info:
     - {name: life, color: "#fbb726", icon: glyphicon-home}
     - {name: travel, color: "#e03a3e", icon: glyphicon-road}
     - {name: "front end", color: "#943b95", icon: glyphicon-link}
+    - {name: past, color: "#a9b7b7", icon: glyphicon-time}
 
 # Github
 github:

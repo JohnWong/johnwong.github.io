@@ -1,7 +1,8 @@
 ---
 layout: post
 title: iOS大图加载与切割
-category: Mobile
+category: Past
+description: 做cocos-2d-x开发的时候了解一点iOS大图加载切割的知识。
 ---
 
 cocos-2d开发的时候，了解了一些知识：
@@ -13,7 +14,7 @@ cocos-2d开发的时候，了解了一些知识：
 
 ImageMagic切图切出来和PhotoScroll所需的图片比较类似，命令如下：
 
-```PowerShell
+```
 convert bigimage.png -crop 256x256 -set filename:tile "%[fx:page.x/256+1]_%[fx:page.y/256+1]" +repage +adjoin "tile_25_%[filename:tile].png"
 ```
  

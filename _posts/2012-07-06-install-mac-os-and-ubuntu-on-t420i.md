@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  T420i安装Mac OS与Ubuntu
-category: Mobile
+category: Past
+description: 想当年花费了那么多时间来折腾黑苹果。
 ---
 
 这是一段蛋疼菊紧的岁月，被失败打击到痛不欲生，差点就要上虚拟机了。期间还装好又无法启动。最终不给自己找麻烦，用最简单的方法装好了系统，参考了[PCBeta一篇文章](http://bbs.pcbeta.com/viewthread-961776-1-1.html)

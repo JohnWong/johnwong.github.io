@@ -1,10 +1,12 @@
 ---
 layout: post
-title: Redmine on windows安装
-category: Mobile
+title: "Redmine on windows安装"
+category: Past
+description: Redmine是用Ruby开发的基于web的项目管理软件，是用ROR框架开发的一套跨平台项目管理系统，据说是源于Basecamp的ror版而来。
 ---
 
 Redmine是用Ruby开发的基于web的项目管理软件，是用ROR框架开发的一套跨平台项目管理系统，据说是源于Basecamp的ror版而来，支持多种数据库，有不少自己独特的功能，例如提供wiki、新闻台等，还可以集成其他版本管理系统和BUG跟踪系统，例如SVN、CVS、TD等等。这种 Web 形式的项目管理系统通过“项目（Project）”的形式把成员、任务（问题）、文档、讨论以及各种形式的资源组织在一起，大家参与更新任务、文档等内容来推动项目的进度，同时系统利用时间线索和各种动态的报表形式来自动给成员汇报项目进度。
+
 一直对Redmine心怀崇敬，所以就闲来无事试一试。参考[Redmine Install](http://www.redmine.org/projects/redmine/wiki/RedmineInstall)。环境如下：
 
 为了不在配环境上浪费时间，我找到了[RailsInstaller](http://railsinstaller.org/)，Ruby和Rails都集成其中。使用railsinstaller-2.1.0。

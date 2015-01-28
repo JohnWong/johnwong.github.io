@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>MySQL编码、Spring配置中编码、Struts中文问题</title>
+  <meta name="description" content=""> 
+  
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css ">
+  
+  <script src="/js/common.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/pygments.css">
+  <link rel="stylesheet" href="/css/github-markdown.css">
+  <link rel="canonical" href="/past/2012/06/01/encoding-in-java-web.html">
+</head>
+
+  <body>
+
+    <header class="navbar navbar-responsive-top jw-docs-nav" id="top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".jw-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img class="gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=88">
+        <span class="name">John Wong</span>
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse jw-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        
+        <li class="">
+          <a href="/category/mobile.html">mobile</a>
+        </li>
+        
+        <li class="">
+          <a href="/category/life.html">life</a>
+        </li>
+        
+        <li class="">
+          <a href="/category/travel.html">travel</a>
+        </li>
+        
+        <li class="">
+          <a href="/category/front end.html">front end</a>
+        </li>
+        
+        <li class="active">
+          <a href="/category/past.html">past</a>
+        </li>
+        
+        <li>
+          <a href="#">Bookmarks</a>
+        </li>
+        <li>
+          <a href="http://wooyun.org/whitehats/JohnWong">乌云</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/about">About</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
+    <div class="page-content">
+      <div class="wrapper">
+        
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+<div class="container post-middle">
+  <div class="row">
+    <div class="col-md-9" role="main">
+      <div class="post">
+        <div class="post-poster">
+          <img class="feature-img" src="">
+        </div>
+        <h1 class="post-big-title">
+          MySQL编码、Spring配置中编码、Struts中文问题
+        </h1>
+        <div class="post-author">
+          <a class="category" href="category.html?cat=Life"><span class="glyphicon glyphicon-time"></span>past</a> | <span id="author" class="author"></span> • Jun 1, 2012
+        </div>
+        <div class="markdown-body">
+          <p>今天遇到的编码有关的三个问题</p>
+
+<ol>
+<li><p>mysql存入和去除的数据乱码，原因是新建的数据库不支持中文，修改数据库编码为GBK或者UTF-8</p></li>
+<li><p>spring中配置数据连接，需要在jdbcUrl中指明数据编码：</p></li>
+</ol>
+<div class="highlight"><pre><code class="language-text" data-lang="text">jdbc:mysql://127.0.0.1:3306/auction?useUnicode=true&amp;;characterEncoding=gbk
+</code></pre></div>
+<p>需要注意的是这个xml文件中不能直接使用&amp;，而需要使用转移后的&;</p>
+
+<ol>
+<li>Struts中使用中文编码建议选utf-8，原因是ajax等，如果使用GBK会费一番周折，参见<a href="http://www.blogjava.net/errorfun/archive/2006/12/30/91000.html">当AJAX遭遇GBK的尴尬</a>与<a href="http://blog.csdn.net/feng_sundy/article/details/139647">struts中文问题解决方案</a>。</li>
+</ol>
+
+<p>UltraEdit对各种编码处理不好，Notepad++处理的非常好，大多数情况编码都能识别正确，还能自由转换。遇到不知道编码格式的用Notepad++打开就可以了解了</p>
+
+        </div>
+        
+        <div id="disqus_head" class="disqus_head">
+  <h2>Comments</h2>
+</div>
+<div id="disqus_thread" class="disqus_thread"></div>
+<script type="text/javascript" async=true src="//johnwong.disqus.com/embed.js"></script>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      </div>
+    </div>
+    <div class="col-md-3 index-right">
+
+      <img class="gravatar index-gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=240">
+<h1 class="index-me">
+  <span>John Wong <a href="https://github.com/JohnWong">@Github</a></span>
+</h1>
+<div class="vcard-stats">
+  <a class="vcard-stat" href="https://github.com/JohnWong/followers">
+    <strong class="vcard-stat-count">18</strong> followers
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/stars">
+    <strong class="vcard-stat-count">43</strong> Starred
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/following">
+    <strong class="vcard-stat-count">9</strong> Following
+  </a>
+  <div class="cf"></div>
+</div>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    
+    <footer class="jw-docs-footer" role="contentinfo">
+  <div class="container">
+    <div class="jw-docs-social">
+      <ul class="jw-docs-social-buttons">
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=JohnWong&type=follow&count=true&size=small" width="165" height="20" title="Follow on GitHub"></iframe>
+        </li>
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://pytool.sinaapp.com/wb-btn?user=2180280355&type=follow&count=true&size=small&encoding=utf-8" width="160" height="20" title="Follow on Weibo"></iframe>
+        </li>
+        <!-- 解决linkedin抓数据500错误前关闭按钮
+                    <li class="github-btn">
+                        <iframe class="github-btn" src="http://pytool.sinaapp.com/in-btn?user=xiaozhe-huang/4b/204/71b&count=true&size=small&encoding=utf-8" width="202" height="20" title="Follow on Weibo"></iframe>
+                    </li>
+                -->
+      </ul>
+    </div>
+    <p>自豪地采用自己做的博客系统
+      <br class="footer-desc-endline">with the help of <a href="http://getbootstrap.com/">Twitter Bootstrap</a> & <a href="https://github.com/jekyll/jekyll">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>
+      <p>
+        <ul class="jw-docs-footer-links muted">
+          <li>© 2014 • <a href="https://github.com/JohnWong">John Wong</a> <span class="rss-subscribe"> | subscribe <a href="/feed.xml">via RSS</a></span>
+          </li>
+        </ul>
+  </div>
+  <div style="display:none">
+    <div style="display: none !important"
+<span id='cnzz_stat_icon_1252918306'></span>
+<script src=' http://s23.cnzz.com/z_stat.php?id=1252918306' type='text/javascript'></script>
+    <script>
+(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-53121297-1', 'auto');
+ga('send', 'pageview');
+</script>
+  </div>
+</footer>
+
+  </body>
+
+</html>

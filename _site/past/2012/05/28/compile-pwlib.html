@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Pwlib编译</title>
+  <meta name="description" content=""> 
+  
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css ">
+  
+  <script src="/js/common.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/pygments.css">
+  <link rel="stylesheet" href="/css/github-markdown.css">
+  <link rel="canonical" href="/past/2012/05/28/compile-pwlib.html">
+</head>
+
+  <body>
+
+    <header class="navbar navbar-responsive-top jw-docs-nav" id="top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".jw-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img class="gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=88">
+        <span class="name">John Wong</span>
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse jw-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        
+        <li class="">
+          <a href="/category/mobile.html">mobile</a>
+        </li>
+        
+        <li class="">
+          <a href="/category/life.html">life</a>
+        </li>
+        
+        <li class="">
+          <a href="/category/travel.html">travel</a>
+        </li>
+        
+        <li class="">
+          <a href="/category/front end.html">front end</a>
+        </li>
+        
+        <li class="active">
+          <a href="/category/past.html">past</a>
+        </li>
+        
+        <li>
+          <a href="#">Bookmarks</a>
+        </li>
+        <li>
+          <a href="http://wooyun.org/whitehats/JohnWong">乌云</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/about">About</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
+    <div class="page-content">
+      <div class="wrapper">
+        
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+<div class="container post-middle">
+  <div class="row">
+    <div class="col-md-9" role="main">
+      <div class="post">
+        <div class="post-poster">
+          <img class="feature-img" src="">
+        </div>
+        <h1 class="post-big-title">
+          Pwlib编译
+        </h1>
+        <div class="post-author">
+          <a class="category" href="category.html?cat=Life"><span class="glyphicon glyphicon-time"></span>past</a> | <span id="author" class="author"></span> • May 28, 2012
+        </div>
+        <div class="markdown-body">
+          <p>参考文档有http://www.voxgratia.org/docs/pwlib_windows.html#download 和 http://www.cnblogs.com/VOIP/archive/2010/04/30/1724665.html </p>
+
+<p>1.使用VS2005，最新版pwlib http://sourceforge.net/project/showfiles.php?group_id=80674和winzip。 </p>
+
+<p>2.ptlib-v1<em>12</em>0-src.zip解压到D盘。到http://www.voxgratia.org/bin/flexbison.zip下载后解压到C盘根目录。 </p>
+
+<p>3.因为同时安装了VC6和VS2005了，所以需要添加环境变量VSNET2005<em>PWLIB</em>CONFIGURE<em>EXCLUDE</em>DIRS C:\Program Files\Microsoft Visual Studio来排除VC6的目录。用VS2005打开ptlib根目录下的pwlib_2005.sln。 
+将目录“C:\TOOLS”添加到IDE的“Executable Directories”中 
+将installdir\PWLIB\INCLUDE 添加到VC的 Include 目录列表 
+将installdir\PWLIB\LIB 添加到VC的 Executable目录列表 
+将installdir\PWLIB\LIB 添加到VC的 Library目录列表 </p>
+
+<p>4.Ptlib可选包有一堆，我安装了OpenSSL(http://www.slproweb.com/products/Win32OpenSSL.html ),Expat(http://sourceforge.net/project/showfiles.php?group<em>id=10127 ),OpenLDAP(http://www.voxgratia.org/bin/openldap-2.1.17</em>bin.zip),IPV6和DNSResolver已经在VS2005中得到了支持。编译后能不能使用这些特性还没有试过。 </p>
+
+<p>5.先单独编译Configure分别用Debug和Release 的版本.记得是仅编译(Configure项目). </p>
+
+<p>6.编译 PTLib Static </p>
+
+<p>7.编译MergeSym项目。把生成的MergeSym.exe可执行文件 复制到\ptlib\src\ptlib\msos文件下面</p>
+
+<p>8.编译PTLib Dll </p>
+
+<p>9.在Lib目录下面生成了编译好的库文件 
+(PTLib Static的Debug和Release版本) ptlibsd.lib，ptlibs.lib 
+(PTLib DLL的Debug和Release版本) (PTLibd.lib.PTLibd.dll) (PTLib.lib.PTLib.dll )</p>
+
+<p>国庆放假回家了，剩下的OpenH323等回来再做。</p>
+
+        </div>
+        
+        <div id="disqus_head" class="disqus_head">
+  <h2>Comments</h2>
+</div>
+<div id="disqus_thread" class="disqus_thread"></div>
+<script type="text/javascript" async=true src="//johnwong.disqus.com/embed.js"></script>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      </div>
+    </div>
+    <div class="col-md-3 index-right">
+
+      <img class="gravatar index-gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=240">
+<h1 class="index-me">
+  <span>John Wong <a href="https://github.com/JohnWong">@Github</a></span>
+</h1>
+<div class="vcard-stats">
+  <a class="vcard-stat" href="https://github.com/JohnWong/followers">
+    <strong class="vcard-stat-count">18</strong> followers
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/stars">
+    <strong class="vcard-stat-count">43</strong> Starred
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/following">
+    <strong class="vcard-stat-count">9</strong> Following
+  </a>
+  <div class="cf"></div>
+</div>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    
+    <footer class="jw-docs-footer" role="contentinfo">
+  <div class="container">
+    <div class="jw-docs-social">
+      <ul class="jw-docs-social-buttons">
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=JohnWong&type=follow&count=true&size=small" width="165" height="20" title="Follow on GitHub"></iframe>
+        </li>
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://pytool.sinaapp.com/wb-btn?user=2180280355&type=follow&count=true&size=small&encoding=utf-8" width="160" height="20" title="Follow on Weibo"></iframe>
+        </li>
+        <!-- 解决linkedin抓数据500错误前关闭按钮
+                    <li class="github-btn">
+                        <iframe class="github-btn" src="http://pytool.sinaapp.com/in-btn?user=xiaozhe-huang/4b/204/71b&count=true&size=small&encoding=utf-8" width="202" height="20" title="Follow on Weibo"></iframe>
+                    </li>
+                -->
+      </ul>
+    </div>
+    <p>自豪地采用自己做的博客系统
+      <br class="footer-desc-endline">with the help of <a href="http://getbootstrap.com/">Twitter Bootstrap</a> & <a href="https://github.com/jekyll/jekyll">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>
+      <p>
+        <ul class="jw-docs-footer-links muted">
+          <li>© 2014 • <a href="https://github.com/JohnWong">John Wong</a> <span class="rss-subscribe"> | subscribe <a href="/feed.xml">via RSS</a></span>
+          </li>
+        </ul>
+  </div>
+  <div style="display:none">
+    <div style="display: none !important"
+<span id='cnzz_stat_icon_1252918306'></span>
+<script src=' http://s23.cnzz.com/z_stat.php?id=1252918306' type='text/javascript'></script>
+    <script>
+(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-53121297-1', 'auto');
+ga('send', 'pageview');
+</script>
+  </div>
+</footer>
+
+  </body>
+
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Redmine on windows安装</title>
+  <meta name="description" content=""> 
+  
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css ">
+  
+  <script src="/js/common.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/pygments.css">
+  <link rel="stylesheet" href="/css/github-markdown.css">
+  <link rel="canonical" href="/past/2012/05/28/install-redmine-on-windows.html">
+</head>
+
+  <body>
+
+    <header class="navbar navbar-responsive-top jw-docs-nav" id="top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".jw-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img class="gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=88">
+        <span class="name">John Wong</span>
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse jw-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        
+        <li class="">
+          <a href="/category/mobile.html">mobile</a>
+        </li>
+        
+        <li class="">
+          <a href="/category/life.html">life</a>
+        </li>
+        
+        <li class="">
+          <a href="/category/travel.html">travel</a>
+        </li>
+        
+        <li class="">
+          <a href="/category/front end.html">front end</a>
+        </li>
+        
+        <li class="active">
+          <a href="/category/past.html">past</a>
+        </li>
+        
+        <li>
+          <a href="#">Bookmarks</a>
+        </li>
+        <li>
+          <a href="http://wooyun.org/whitehats/JohnWong">乌云</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/about">About</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
+    <div class="page-content">
+      <div class="wrapper">
+        
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+<div class="container post-middle">
+  <div class="row">
+    <div class="col-md-9" role="main">
+      <div class="post">
+        <div class="post-poster">
+          <img class="feature-img" src="">
+        </div>
+        <h1 class="post-big-title">
+          Redmine on windows安装
+        </h1>
+        <div class="post-author">
+          <a class="category" href="category.html?cat=Life"><span class="glyphicon glyphicon-time"></span>past</a> | <span id="author" class="author"></span> • May 28, 2012
+        </div>
+        <div class="markdown-body">
+          <p>Redmine是用Ruby开发的基于web的项目管理软件，是用ROR框架开发的一套跨平台项目管理系统，据说是源于Basecamp的ror版而来，支持多种数据库，有不少自己独特的功能，例如提供wiki、新闻台等，还可以集成其他版本管理系统和BUG跟踪系统，例如SVN、CVS、TD等等。这种 Web 形式的项目管理系统通过“项目（Project）”的形式把成员、任务（问题）、文档、讨论以及各种形式的资源组织在一起，大家参与更新任务、文档等内容来推动项目的进度，同时系统利用时间线索和各种动态的报表形式来自动给成员汇报项目进度。</p>
+
+<p>一直对Redmine心怀崇敬，所以就闲来无事试一试。参考<a href="http://www.redmine.org/projects/redmine/wiki/RedmineInstall">Redmine Install</a>。环境如下：</p>
+
+<p>为了不在配环境上浪费时间，我找到了<a href="http://railsinstaller.org/">RailsInstaller</a>，Ruby和Rails都集成其中。使用railsinstaller-2.1.0。</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Ruby 1.9.3-p125
+Rails 3.2
+Bundler 1.0.18
+Git 1.7.6
+Sqlite 3.7.3
+TinyTDS 0.4.5
+SQL Server support 3.3.3
+MySQL 5.5
+</code></pre></div>
+<ol>
+<li>安装RailsInstaller</li>
+<li>安装bundler，似乎安装了1就不必装这个了，以防万一又装了一下</li>
+</ol>
+<div class="highlight"><pre><code class="language-PowerShell" data-lang="PowerShell"><span class="n">gem</span> <span class="n">install</span> <span class="n">bundler</span>  
+<span class="no">[ruby]</span> <span class="n">view</span> <span class="n">plaincopy</span>
+<span class="n">bundle</span> <span class="n">install</span> <span class="p">-</span><span class="n">-without</span> <span class="n">development</span> <span class="n">test</span>
+</code></pre></div>
+<p>3.安装rmagick</p>
+
+<p>需要安装<a href="http://www.imagemagick.org/script/binary-releases.php#windows">imagemagick</a>，参考<a href="http://www.redmine.org/projects/redmine/wiki/HowTo_install_rmagick_gem_on_Windows">如何在Windows上安装rmagick</a>选择安装环境变量和C/C++头文件。</p>
+<div class="highlight"><pre><code class="language-PowerShell" data-lang="PowerShell"><span class="n">set</span> <span class="n">CPATH</span><span class="p">=</span><span class="n">C</span><span class="err">:</span><span class="p">\</span><span class="n">Program</span> <span class="n">Files</span><span class="p">\</span><span class="n">ImageMagick</span><span class="p">-</span><span class="n">6</span><span class="p">.</span><span class="n">7</span><span class="p">.</span><span class="n">7-Q16</span><span class="p">\</span><span class="n">include</span>  
+<span class="n">set</span> <span class="n">LIBRARY_PATH</span><span class="p">=</span><span class="n">C</span><span class="err">:</span><span class="p">\</span><span class="n">Program</span> <span class="n">Files</span><span class="p">\</span><span class="n">ImageMagick</span><span class="p">-</span><span class="n">6</span><span class="p">.</span><span class="n">7</span><span class="p">.</span><span class="n">7-Q16</span><span class="p">\</span><span class="n">lib</span>  
+<span class="no">[ruby]</span> <span class="n">view</span> <span class="n">plaincopy</span>
+<span class="n">gem</span> <span class="n">install</span> <span class="n">rmagick</span> <span class="n">or</span> <span class="n">bundle</span> <span class="n">install</span> <span class="p">-</span><span class="n">-without</span><span class="p">=</span><span class="n">development</span> <span class="n">test</span><span class="p">,</span> <span class="n">etc</span><span class="p">.</span> 
+</code></pre></div>
+<p>4.创建mysql数据库</p>
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">create</span> <span class="k">database</span> <span class="n">redmine</span> <span class="nb">character</span> <span class="k">set</span> <span class="n">utf8</span><span class="p">;</span>  
+<span class="k">create</span> <span class="k">user</span> <span class="s1">&#39;redmine&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span> <span class="n">identified</span> <span class="k">by</span> <span class="s1">&#39;my_password&#39;</span><span class="p">;</span>  
+<span class="k">grant</span> <span class="k">all</span> <span class="k">privileges</span> <span class="k">on</span> <span class="n">redmine</span><span class="p">.</span><span class="o">*</span> <span class="k">to</span> <span class="s1">&#39;redmine&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
+</code></pre></div>
+<ol>
+<li>复制config/database.yml.example到config/database.yml 修改 &quot;production&quot; 配置：</li>
+</ol>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">production</span><span class="p">:</span>  
+  <span class="ss">adapter</span><span class="p">:</span> <span class="n">mysql2</span>  
+  <span class="ss">database</span><span class="p">:</span> <span class="n">redmine</span>  
+  <span class="ss">host</span><span class="p">:</span> <span class="n">localhost</span>  
+  <span class="ss">username</span><span class="p">:</span> <span class="n">redmine</span>  
+  <span class="ss">password</span><span class="p">:</span> <span class="n">my_password</span>
+</code></pre></div>
+<p>6.创建session密钥</p>
+<div class="highlight"><pre><code class="language-PowerShell" data-lang="PowerShell"><span class="n">rake</span> <span class="n">generate_secret_token</span>
+</code></pre></div>
+<p>7.创建数据库结构</p>
+<div class="highlight"><pre><code class="language-PowerShell" data-lang="PowerShell"><span class="n">RAILS_ENV</span><span class="p">=</span><span class="n">production</span> <span class="n">rake</span> <span class="n">db</span><span class="err">:</span><span class="n">migrate</span>
+</code></pre></div>
+<p>到这里卡主了。。。
+找到问题是在windows下需要写成</p>
+<div class="highlight"><pre><code class="language-PowerShell" data-lang="PowerShell"><span class="n">rake</span> <span class="n">db</span><span class="err">:</span><span class="n">migrate</span> <span class="n">RAILS_ENV</span><span class="p">=</span><span class="s2">&quot;production&quot;</span>
+</code></pre></div>
+<p>提示错误 couldn&#39;t parse YAML at line 18 column 2，这是因为修改database.yml的时候需要在每个冒号后需要加空格。
+重新运行创建数据库，提示Incorrect MySQL client library version! This gem was compiled for 6.0.0 but the
+client library is 5.5.20.
+参考<a href="http://stackoverflow.com/questions/8740868/mysql2-gem-compiled-for-wrong-mysql-client-library">StackOverflow</a>可以解决</p>
+
+<p>然后继续报错Can&#39;t connect to MySQL server on &#39;localhost&#39; (10061)</p>
+
+<p>是因为使用ipv6导致localhost没指向到127.0.0.1，解决办法参考<a href="http://stackoverflow.com/questions/10792862/rails-development-cant-connect-to-mysql-server-on-localhost-10061">StackOverflow</a>。</p>
+
+<p>8.数据库载入默认数据</p>
+<div class="highlight"><pre><code class="language-PowerShell" data-lang="PowerShell"><span class="n">rake</span> <span class="n">redmine</span><span class="err">:</span><span class="n">load_default_data</span> <span class="n">RAILS_ENV</span><span class="p">=</span><span class="s2">&quot;production&quot;</span> 
+</code></pre></div>
+<p>选择语言的时候选zh</p>
+
+<p>9.运行webrick web server测试安装</p>
+<div class="highlight"><pre><code class="language-PowerShell" data-lang="PowerShell"><span class="n">ruby</span> <span class="n">script</span><span class="p">/</span><span class="n">rails</span> <span class="n">server</span> <span class="n">webrick</span> <span class="n">-e</span> <span class="n">production</span> 
+</code></pre></div>
+<p>至此安装完成 使用就以后再说。请看<a href="http://demo.redmine.org/">演示地址</a>。初步使用，具有权限控制、多项目管理、提交bug、新建及分配任务、任务日历以及甘特图。</p>
+
+        </div>
+        
+        <div id="disqus_head" class="disqus_head">
+  <h2>Comments</h2>
+</div>
+<div id="disqus_thread" class="disqus_thread"></div>
+<script type="text/javascript" async=true src="//johnwong.disqus.com/embed.js"></script>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      </div>
+    </div>
+    <div class="col-md-3 index-right">
+
+      <img class="gravatar index-gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=240">
+<h1 class="index-me">
+  <span>John Wong <a href="https://github.com/JohnWong">@Github</a></span>
+</h1>
+<div class="vcard-stats">
+  <a class="vcard-stat" href="https://github.com/JohnWong/followers">
+    <strong class="vcard-stat-count">18</strong> followers
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/stars">
+    <strong class="vcard-stat-count">43</strong> Starred
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/following">
+    <strong class="vcard-stat-count">9</strong> Following
+  </a>
+  <div class="cf"></div>
+</div>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    
+    <footer class="jw-docs-footer" role="contentinfo">
+  <div class="container">
+    <div class="jw-docs-social">
+      <ul class="jw-docs-social-buttons">
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=JohnWong&type=follow&count=true&size=small" width="165" height="20" title="Follow on GitHub"></iframe>
+        </li>
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://pytool.sinaapp.com/wb-btn?user=2180280355&type=follow&count=true&size=small&encoding=utf-8" width="160" height="20" title="Follow on Weibo"></iframe>
+        </li>
+        <!-- 解决linkedin抓数据500错误前关闭按钮
+                    <li class="github-btn">
+                        <iframe class="github-btn" src="http://pytool.sinaapp.com/in-btn?user=xiaozhe-huang/4b/204/71b&count=true&size=small&encoding=utf-8" width="202" height="20" title="Follow on Weibo"></iframe>
+                    </li>
+                -->
+      </ul>
+    </div>
+    <p>自豪地采用自己做的博客系统
+      <br class="footer-desc-endline">with the help of <a href="http://getbootstrap.com/">Twitter Bootstrap</a> & <a href="https://github.com/jekyll/jekyll">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>
+      <p>
+        <ul class="jw-docs-footer-links muted">
+          <li>© 2014 • <a href="https://github.com/JohnWong">John Wong</a> <span class="rss-subscribe"> | subscribe <a href="/feed.xml">via RSS</a></span>
+          </li>
+        </ul>
+  </div>
+  <div style="display:none">
+    <div style="display: none !important"
+<span id='cnzz_stat_icon_1252918306'></span>
+<script src=' http://s23.cnzz.com/z_stat.php?id=1252918306' type='text/javascript'></script>
+    <script>
+(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-53121297-1', 'auto');
+ga('send', 'pageview');
+</script>
+  </div>
+</footer>
+
+  </body>
+
+</html>

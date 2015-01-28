@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  从MyEclipse导入Eclipse导致不能识别为web项目
-category: Mobile
+category: Past
+description: 老师给的实例代码由MyEclipse生成。导入MyEclipse之后识别为Java项目。
 ---
 
 老师给的实例代码由MyEclipse生成。导入MyEclipse之后识别为Java项目。可以新建项目，然后把对应的配置文件、java源文件和页面文件放入相应目录，但是不想这么做。解决方法从网上找到了。

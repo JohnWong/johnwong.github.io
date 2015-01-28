@@ -1,10 +1,13 @@
 ---
 layout: post
-title: 2013编程之美全国挑战赛-树上的三角形
-category: Mobile
+title: 2013编程之美全国挑战赛第一场-树上的三角形
+category: Past
+description: 喜欢这样的比赛，只是自己能力有限。
 ---
 
-[题目](http://programming2013.cstnet.cn/qualification/problem/3)。思路很简单，Dijkstra算法求出最短路径，暂没考虑多条路径的情况。然后三角形判断。可是最后Wrong Answer。
+[题目](http://programming2013.cstnet.cn/qualification/problem/3)
+
+思路很简单，Dijkstra算法求出最短路径，暂没考虑多条路径的情况。然后三角形判断。可是最后Wrong Answer。
 
 ```java
 import java.util.ArrayList;  

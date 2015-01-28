@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  微软2013暑期实习生笔试题错误汇总
-category: Mobile
+category: Past
+description: 有幸通过了笔试。
 ---
 
 参见[微软2013暑期实习笔试题目](http://www.cnblogs.com/justcxtoworld/archive/2013/04/06/3002719.html)。

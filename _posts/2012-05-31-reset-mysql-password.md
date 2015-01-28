@@ -1,7 +1,8 @@
 ---
 layout: post
 title:  MySQL重置root密码
-category: Mobile
+category: Past
+description: 重置MySQL的root密码
 ---
 
 1. 停止mysql服务(以管理员身份,在cmd命令行下运行)使用如下命令：

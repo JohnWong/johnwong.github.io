@@ -1,7 +1,8 @@
 ---
 layout: post
-title: 2013编程之美全国挑战赛初赛第二场-集会
-category: Mobile
+title: 2013编程之美全国挑战赛第二场-集会
+category: Past
+description: 思路是对的，遗憾没AC。
 ---
 
 昨天做编程之美的题感觉只有这一道是水题。思路没问题但是写程序写错了一个地方没AC。今天翻出来想了一下终于解决了。
