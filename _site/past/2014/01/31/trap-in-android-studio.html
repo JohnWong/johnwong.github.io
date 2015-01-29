@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Android Studio踩坑记</title>
+  <meta name="description" content=""> 
+  
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css ">
+  
+  <script src="/js/common.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/pygments.css">
+  <link rel="stylesheet" href="/css/github-markdown.css">
+  <link rel="canonical" href="/past/2014/01/31/trap-in-android-studio.html">
+</head>
+
+  <body>
+
+    <header class="navbar navbar-responsive-top jw-docs-nav" id="top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".jw-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img class="gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=88">
+        <span class="name">John Wong</span>
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse jw-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        
+        <li class="">
+          <a href="/category/mobile.html">mobile</a>
+        </li>
+        
+        <li class="active">
+          <a href="/category/past.html">past</a>
+        </li>
+        
+        <li>
+          <a href="#">Bookmarks</a>
+        </li>
+        <li>
+          <a href="http://wooyun.org/whitehats/JohnWong">乌云</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/about">About</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
+    <div class="page-content">
+      <div class="wrapper">
+        
+  
+
+  
+    
+  
+
+<div class="container post-middle">
+  <div class="row">
+    <div class="col-md-9" role="main">
+      <div class="post">
+        <div class="post-poster">
+          <img class="feature-img" src="">
+        </div>
+        <h1 class="post-big-title">
+          Android Studio踩坑记
+        </h1>
+        <div class="post-author">
+          <a class="category" href="category.html?cat=Life"><span class="glyphicon glyphicon-time"></span>past</a> | <span id="author" class="author"></span> • Jan 31, 2014
+        </div>
+        <div class="markdown-body">
+          <p>拾起Android项目，需要使用Goolgle Play Services。顺应潮流换了Android Studio，开启了踩坑之旅。</p>
+
+<ul>
+<li><p>尝试直接将Eclipse项目导入AS，结果根本没法用啊。正确的方法应该是升级ADT，在Eclipse下导出build.gradle然后再导入。但是升级的时间还不如直接新建项目把资源拷进去，同时也能了解一下AS默认的项目结构。</p></li>
+<li><p>第一个遇到的问题是新建的项目没有assert和lib目录。java和res等资源都在src/main目录下，于是我将assets和libs目录都放在这了。结果assets目录没问题，但是实际上要在gradle文件中引用libs目录，libs目录应该放在src下。</p></li>
+<li><p>加入jar包没有那么简单，放入libs目录下之后还需要：右击lib选择添加为lib；在项目中添加库引用；在build.gradle中添加对这个jar的依赖；手动在项目目录下运行gradew clean。</p></li>
+<li><p>想要使用gms，最新的方法是在SDK manager中安装Google Play Services和Google Repository，在dependencies中添加：</p></li>
+</ul>
+<div class="highlight"><pre><code class="language-text" data-lang="text">    compile &#39;com.android.support:support-v4:19.0.0&#39;
+    compile &#39;com.android.support:appcompat-v7:19.0.0&#39;
+    compile &#39;com.google.android.gms:play-services:4.1.32&#39;
+</code></pre></div>
+<ul>
+<li><p>这里的版本号也是略坑爹，想知道版本号需要打开目录<SDK>\extras\google\m2repository\com\google\android\gms\play-services，然后就能看到可用的版本号，其他两个包也是类似的方法查看。</p></li>
+<li><p>下载的play services目录重要示例工程，本还想参考一下，结果都没有升级成新的工程结构。</p></li>
+<li><p>Play Services安装文档中指明需要添加：</p></li>
+</ul>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;meta-data android:name=&quot;com.google.android.gms.version&quot;
+           android:value=&quot;@integer/google_play_services_version&quot; /&gt;
+</code></pre></div>
+<p>但是这个版本号略坑。平时看到的都是x.x.xx这样的格式，而不是整数。最终在sdk\extras\google\google<em>play</em>services\libproject\google-play-services_lib\AndroidManifest.xml中找到了版本号4132530，运行之后提示需要的是4132500，为什么要减去30至今没搞明白。需要放在application节点下，我还错误地放在manifest节点下。</p>
+
+<p>最后吐槽一下打开的各种弹窗太大了，我这1366×768分辨率的笔记本经常看不到下边的内容。第一次运行AS的时候还有长时间走滚动条的问题，据说是在下载gradle，不过我没有感觉到。因为用电脑是需要和小外甥打游击，不能被看到，下载的时候把电脑藏起来干别的去了。</p>
+
+<p>jni库始终无法正常加入安装包中。没事升级AS到0.4.3，之前jar包引用又出问题了，就在决定今天无法解决就换回Eclipse之际，一篇帖子帮了大忙：http://blog.csdn.net/look_down/article/details/17557031</p>
+
+<ul>
+<li><p>build.gradle中gradle版本修改为0.7+</p></li>
+<li><p>运行后出错，按照提示修改gradle-wrapper.properties文件中</p></li>
+<li><p>加入so库的代码修改为：</p></li>
+</ul>
+<div class="highlight"><pre><code class="language-text" data-lang="text">task copyNativeLibs(type: Copy) {  
+    from fileTree(dir: &#39;libs&#39;, include: &#39;armeabi/*.so&#39; )  into  &#39;build/lib&#39;  
+}  
+tasks.withType(Compile) {  
+    compileTask -&gt; compileTask.dependsOn copyNativeLibs  
+}  
+
+clean.dependsOn &#39;cleanCopyNativeLibs&#39;  
+
+tasks.withType(com.android.build.gradle.tasks.PackageApplication) { pkgTask -&gt;  
+   pkgTask.jniFolders = [new File(buildDir, &#39;lib&#39;)]  
+}  
+</code></pre></div>
+<p>经过gradlew clean build之后成功了。这下没有理由再用Eclipse了。</p>
+
+        </div>
+        
+        <div id="disqus_head" class="disqus_head">
+  <h2>Comments</h2>
+</div>
+<div id="disqus_thread" class="disqus_thread"></div>
+<script type="text/javascript" async=true src="//johnwong.disqus.com/embed.js"></script>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      </div>
+    </div>
+    <div class="col-md-3 index-right">
+
+      <img class="gravatar index-gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=240">
+<h1 class="index-me">
+  <span>John Wong <a href="https://github.com/JohnWong">@Github</a></span>
+</h1>
+<div class="vcard-stats">
+  <a class="vcard-stat" href="https://github.com/JohnWong/followers">
+    <strong class="vcard-stat-count">18</strong> followers
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/stars">
+    <strong class="vcard-stat-count">43</strong> Starred
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/following">
+    <strong class="vcard-stat-count">9</strong> Following
+  </a>
+  <div class="cf"></div>
+</div>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    
+    <footer class="jw-docs-footer" role="contentinfo">
+  <div class="container">
+    <div class="jw-docs-social">
+      <ul class="jw-docs-social-buttons">
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=JohnWong&type=follow&count=true&size=small" width="165" height="20" title="Follow on GitHub"></iframe>
+        </li>
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://pytool.sinaapp.com/wb-btn?user=2180280355&type=follow&count=true&size=small&encoding=utf-8" width="160" height="20" title="Follow on Weibo"></iframe>
+        </li>
+        <!-- 解决linkedin抓数据500错误前关闭按钮
+                    <li class="github-btn">
+                        <iframe class="github-btn" src="http://pytool.sinaapp.com/in-btn?user=xiaozhe-huang/4b/204/71b&count=true&size=small&encoding=utf-8" width="202" height="20" title="Follow on Weibo"></iframe>
+                    </li>
+                -->
+      </ul>
+    </div>
+    <p>自豪地采用自己做的博客系统
+      <br class="footer-desc-endline">with the help of <a href="http://getbootstrap.com/">Twitter Bootstrap</a> & <a href="https://github.com/jekyll/jekyll">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>
+      <p>
+        <ul class="jw-docs-footer-links muted">
+          <li>© 2014 • <a href="https://github.com/JohnWong">John Wong</a> <span class="rss-subscribe"> | subscribe <a href="/feed.xml">via RSS</a></span>
+          </li>
+        </ul>
+  </div>
+  <div style="display:none">
+    <div style="display: none !important"
+<span id='cnzz_stat_icon_1252918306'></span>
+<script src=' http://s23.cnzz.com/z_stat.php?id=1252918306' type='text/javascript'></script>
+    <script>
+(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-53121297-1', 'auto');
+ga('send', 'pageview');
+</script>
+  </div>
+</footer>
+
+  </body>
+
+</html>

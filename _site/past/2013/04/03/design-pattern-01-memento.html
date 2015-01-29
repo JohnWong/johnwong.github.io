@@ -44,18 +44,6 @@
           <a href="/category/mobile.html">mobile</a>
         </li>
         
-        <li class="">
-          <a href="/category/life.html">life</a>
-        </li>
-        
-        <li class="">
-          <a href="/category/travel.html">travel</a>
-        </li>
-        
-        <li class="">
-          <a href="/category/front end.html">front end</a>
-        </li>
-        
         <li class="active">
           <a href="/category/past.html">past</a>
         </li>
@@ -78,12 +66,6 @@
     <div class="page-content">
       <div class="wrapper">
         
-  
-
-  
-
-  
-
   
 
   
@@ -120,14 +102,14 @@
 
 <span class="k">private</span><span class="o">:</span>
     <span class="k">friend</span> <span class="k">class</span> <span class="nc">Originator</span><span class="p">;</span>
-    <span class="n">Memento</span><span class="p">(</span><span class="k">const</span> <span class="n">State</span><span class="o">&amp;</span><span class="p">;</span> <span class="n">rState</span><span class="p">)</span><span class="o">:</span> <span class="n">state</span><span class="p">(</span><span class="n">rState</span><span class="p">){};</span>
+    <span class="n">Memento</span><span class="p">(</span><span class="k">const</span> <span class="n">State</span><span class="o">&amp;</span> <span class="n">rState</span><span class="p">)</span><span class="o">:</span> <span class="n">state</span><span class="p">(</span><span class="n">rState</span><span class="p">){};</span>
     <span class="n">State</span> <span class="n">state</span><span class="p">;</span>
 <span class="p">};</span>
 
 <span class="k">class</span> <span class="nc">Originator</span>
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
-    <span class="n">Originator</span><span class="p">(</span><span class="k">const</span> <span class="n">State</span><span class="o">&amp;</span><span class="p">;</span> <span class="n">rState</span><span class="p">)</span><span class="o">:</span> <span class="n">state</span><span class="p">(</span><span class="n">rState</span><span class="p">){}</span>
+    <span class="n">Originator</span><span class="p">(</span><span class="k">const</span> <span class="n">State</span><span class="o">&amp;</span> <span class="n">rState</span><span class="p">)</span><span class="o">:</span> <span class="n">state</span><span class="p">(</span><span class="n">rState</span><span class="p">){}</span>
     <span class="n">Memento</span><span class="o">*</span> <span class="n">createMemento</span><span class="p">(){</span>
         <span class="k">return</span> <span class="k">new</span> <span class="n">Memento</span><span class="p">(</span><span class="n">state</span><span class="p">);</span>
     <span class="p">}</span>
@@ -137,7 +119,7 @@
     <span class="kt">void</span> <span class="n">printState</span><span class="p">(){</span>
         <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;State:&quot;</span><span class="o">&lt;&lt;</span><span class="n">state</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
     <span class="p">}</span>
-    <span class="kt">void</span> <span class="n">setState</span><span class="p">(</span><span class="k">const</span> <span class="n">State</span><span class="o">&amp;</span><span class="p">;</span> <span class="n">rState</span><span class="p">){</span>
+    <span class="kt">void</span> <span class="n">setState</span><span class="p">(</span><span class="k">const</span> <span class="n">State</span><span class="o">&amp;</span> <span class="n">rState</span><span class="p">){</span>
         <span class="n">state</span> <span class="o">=</span> <span class="n">rState</span><span class="p">;</span>
     <span class="p">}</span>
 

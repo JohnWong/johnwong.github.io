@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SFS&;Android——SFS客户端全部事件详细"
+title: "SFS&Android——SFS客户端全部事件详细"
 category: Past
 description: SFS是smartfoxserver的缩写。最近公司的一个Android项目要求使用SFS作为服务器。我去，服务器开发目前就我自己在研究。他们也真是放心。因为这个服务器是针对Flash开发的，官网上说支持Android，但是相关资料几乎没有。
 ---

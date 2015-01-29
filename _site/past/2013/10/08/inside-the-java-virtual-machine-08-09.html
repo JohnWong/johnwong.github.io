@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>深入Java虚拟机读书笔记[8:9]</title>
+  <meta name="description" content=""> 
+  
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css ">
+  
+  <script src="/js/common.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/pygments.css">
+  <link rel="stylesheet" href="/css/github-markdown.css">
+  <link rel="canonical" href="/past/2013/10/08/inside-the-java-virtual-machine-08-09.html">
+</head>
+
+  <body>
+
+    <header class="navbar navbar-responsive-top jw-docs-nav" id="top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".jw-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img class="gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=88">
+        <span class="name">John Wong</span>
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse jw-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        
+        <li class="">
+          <a href="/category/mobile.html">mobile</a>
+        </li>
+        
+        <li class="active">
+          <a href="/category/past.html">past</a>
+        </li>
+        
+        <li>
+          <a href="#">Bookmarks</a>
+        </li>
+        <li>
+          <a href="http://wooyun.org/whitehats/JohnWong">乌云</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/about">About</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
+    <div class="page-content">
+      <div class="wrapper">
+        
+  
+
+  
+    
+  
+
+<div class="container post-middle">
+  <div class="row">
+    <div class="col-md-9" role="main">
+      <div class="post">
+        <div class="post-poster">
+          <img class="feature-img" src="">
+        </div>
+        <h1 class="post-big-title">
+          深入Java虚拟机读书笔记[8:9]
+        </h1>
+        <div class="post-author">
+          <a class="category" href="category.html?cat=Life"><span class="glyphicon glyphicon-time"></span>past</a> | <span id="author" class="author"></span> • Oct 8, 2013
+        </div>
+        <div class="markdown-body">
+          <h3>第八章 连接模型</h3>
+
+<h4>1. 动态连接和解析</h4>
+
+<p>每个类或者接口都编译为独立的class文件，他们之间通过接口(Harbor)符号相互联系，或者与Java API class文件相联系。class文件把所有引用符号保存在常量池，每一个class文件有一个常量池，被装载的类或者接口有一份内部版本的运行时常量池。常量池解析：根据符号查找到试题，把符号替换成直接引用。JDBC通常用forName装载时因为传递第三个参数为true时可以确保类被初始化，静态初始化方法会在DriverManger中被注册驱动程序。</p>
+
+<p>装载类型及超类型可能出现错误：</p>
+
+<ul>
+<li>NoClassDefFoundError: 使用newJVM or ClassLoader实例装载的类未找到，属于error。例如编译时类存在，运行时不存在。A.class中的类实际是B。<br></li>
+<li>ClassNotFoundException: 使用forName、findSystemClass或者loadClass方法时，属于Exception。<br></li>
+<li>ClassFormatError: class文件的二进制数据结构不正确。<br></li>
+<li>UnsupportedClassVersionError: class文件的主版本号或者次版本号太高。<br></li>
+<li>LinkageError: 二进制数据传给defineClass，但是当前类装载器命名空间已存在类或接口名字。</li>
+</ul>
+
+<h4>2. 编译时常量解析</h4>
+
+<p>被初始化为编译时常量的static final变量的引用，在编译时解析为常量值的一个本地拷贝.适用于所有的基本类型和String。这样带来两个特性：a) static final变量可以用于switch语句中的case表达式。b)条件编译。条件值是static final时，在编译时对结果做选择。</p>
+
+<h4>3. 直接引用解析</h4>
+
+<p>指向类型、类变量和类方法的直接引用更可能指向方法区的本地指针；指向实例变量和实例方法的直接引用都是偏移量。对象映像中类的实例包含到方法区的指针和变量。能够使用偏移量是由于同一变量在父类的对象映像中变量的偏移量和子类中一致。子类在其后添加新的变量。方法也类似，例外是子类覆盖的方法出现在超类中该方法第一次出现的地方。从接口的引用调用一个方法则无法使用偏移量，必须搜索对象的类的方法表来寻找，比在类的引用上调用实例方法慢很多。</p>
+
+<p>forName和loadClass最大的不同之处在于loadClass试图保证被装载的类型是被装载到用户自定义的类装载器的命名空间里，forName试图保证被装载的类型被装载到当前命名空间中。</p>
+
+<p>多个命名空间共享类型问题：类装载器装载一个类的时候，会被标记为这个类型的初始类装载器。不同的类装载器装载同一个类型的时候，可能引起类型混淆。Java虚拟机第2版中引入了装载约束的概念。装载约束可以让Java虚拟机加强类型的安全性，不仅仅基于全限定名，也基于定义类装载器。发现潜在的类型混淆时，会在一个内部约束列表上加上一个约束。以后所有的解析必须满足这个新约束，如同必须满足这个列表上其他的所有约束一样。这种情况下抛出LinkageError。装载约束可以保证就算存在多个命名空间的情况下，Java的类型安全性在运行时也要坚持。</p>
+
+<h4>第九章 垃圾收集</h4>
+
+<h4>1. 引用计数收集器</h4>
+
+<p>堆中的每一个对象都有一个引用计数。创建时置为1，其他变量被赋值为这个对象的引用时，计数加1。当一个对象的引用超过了生存周期或者被设置为一个新的值时，对象的引用计数减1。任何引用计数为0的对象可以被当作垃圾收集。好处是引用计数收集器可以很快地执行。坏处是无法检测出循环引用，已经不为人所接受。</p>
+
+<h4>2. 跟踪收集器</h4>
+
+<p>标记-清除算法。要么在对象本身设置标记，要么用一个独立的位图来设置标记。分为标记和清除两个步骤。标记阶段垃圾收集器遍历引用树，标记每一个遇到的对象。清除阶段释放未被标记的对象，必须包括对象的终结。</p>
+
+<h4>3. 压缩收集器</h4>
+
+<p>标记-清除-压缩算法。JVM的GC很可能有压缩堆碎片的策略。两个可能的策略是压缩和复制。两个方法都通过移动对象来减少对碎片。压缩收集器将活动的对象越过空闲区域移动到一端。被移动的对象的所有引用也需要更新到新的位置。如果通过一个间接对象引用层可以简化引用更新，但是会带来对象访问的性能损失。</p>
+
+<h4>4. 拷贝收集器</h4>
+
+<p>停止复制算法。堆分为两部分，在一个区域中分配对象，直到耗尽空间。此时程序执行被中止，将所有的活动对象移动到另一个区域，一个挨一个。缺点是任何时候都只能使用堆空间的一半。</p>
+
+<h4>5. 按代收集的收集器</h4>
+
+<p>按代原因：a)大部分对象生命周期很短; b)大多数程序都会创建一些有非常长生命周期的对象。堆分为两个或者多个子堆，最年幼的一代进行最频繁的垃圾收集，如果年幼的对象经过好几次垃圾收集后仍然存货，就成长为寿命更高的一代，转到另一个子堆中。可以应用于拷贝算法或者标记-清除算法。</p>
+
+<h4>6. 自适应收集器</h4>
+
+<p>监视堆中的情形，对应的调整为合适的垃圾收集技术。调整的的时候可能调整某种垃圾收集算法的参数，也可能快速转换到另一种不同的算法。</p>
+
+<h4>7. 火车算法</h4>
+
+<p>如果一种垃圾收集算法可能导致用户可觉察的停顿或者使得程序无法适合实时系统的要求，这种算法是破坏性的。试图达到非破坏性垃圾收集的方法是使用渐进式收集算法。不是一次性发现并回收所有不可触及对象，而是每次发现并回收一部分。通常渐进式收集器是按代收集器。火车算法详细说明了按代收集的垃圾收集器的成熟对象空间的组织。目的是在成熟对象空间提供限定时间的渐进收集。</p>
+
+<p>a) 把成熟对象空间划分成固定长度的内存块，算法在每个块中单独执行。内存块就是车厢，车厢按顺序组成火车，火车按顺序放入站台的不同轨道。新对象到达时，要么打包成车厢挂接到除了最小号码之外的火车的尾部，要么作为一列新的火车开进火车站。</p>
+
+<p>b) 每一次火车算法执行的时候，尝试收集收集整列最小数字火车，否则收集最小数字火车中的最小数字车厢。能否收集取决于内部包含的对象是否被其他车厢引用。收集最小数字车厢时，车厢中有一个对象被成熟对象空间以外引用，这个对象被转移到正在被收集的火车之外的其他火车。如果被成熟对象空间其他火车引用，则转移到引用它的火车中。扫描被转移的对象，查找对原车厢的引用，发现的引用的对象也转移到引用它的火车中。如果接受对象的火车没有空间，则创建新车厢附加到火车尾部。不断重复直到不被其他火车引用。将该车厢内的对象移动到最后一个车厢，同时扫描移动的对象，查找对原被收集车厢的引用，若查找到也移动到火车尾部。重复直到没有引用指向被收集车厢，回收最小数字车厢。移动使得相关对象变得集中，循环引用的对象最终会出现在同一列火车中。</p>
+
+<p>c) 为了促进收集过程，火车算法使用了记忆集合。一个记忆集合包含了所有对一节车厢或者一列火车的外部引用。算法为成熟对象空间的每节车厢和每列火车都维护了一个记忆集合。以及集合中的信息有助于高效更新所有指向被移动对象的引用。</p>
+
+<h4>8. finalize方法</h4>
+
+<p>终结方法在垃圾收集器在释放对象前必须运行。使得垃圾收集器要完成的工作更加复杂。存在终结方法时，第一遍扫描后找到不再被引用的对象，如果声明了终结方法，执行终结方法。之后从根节点开始再次检测不在被引用的对象。因为终结方法可能复活了某些不再被引用的对象，最后垃圾收集器才能释放在第一次和第二次扫描后都没有被引用的对象。如果一个对象不再被引用，终结方法运行过了，那么必须确保即使稍后被复活，并再次不被引用，其终结方法不再被运行。必须记住垃圾收集器运行对象的终结方法。</p>
+
+<h4>9. 对象可触及性的声明周期</h4>
+
+<p>1.2版本之前三种状态：可触及、可复活的、不可触及的。可复活状态：根节点开始追踪图中不可触及但是可能在垃圾收集器执行某些终结方法时触及。在1.2版本之后，可触及状态被称作强可触及。扩充了三个新状态：软可触及、弱可触及和影子可触及。引入引用对象，对应的引用对象时SoftReference、WeakReference和PhantomReference。这三种引用不禁止垃圾回收。引用对象的clear方法可以切断引用，用get取得引用的对象。</p>
+
+<p>可以使用引用队列ReferenceQueue，在对象可触及性改变的时候得到通知。垃圾收集器执行其enqueue方法。程序可以用poll方法取出或者remove方法阻塞式取出。</p>
+
+<p>软引用可以让你在内存中缓存需要从外部数据源费时取回的数据。弱引用使得你可以用关键字和值来创建规范映射。WeakHashMap类就是用弱引用提供这样的规范映射。影子引用用来跟踪对象被垃圾回收的活动，必须和引用队列联合使用。如果发现某个虚引用被加入引用队列，那么可以所引用对象的内存被回收之前采取必要的行动。所有影子引用必须由程序明确清除。</p>
+
+        </div>
+        
+        <div id="disqus_head" class="disqus_head">
+  <h2>Comments</h2>
+</div>
+<div id="disqus_thread" class="disqus_thread"></div>
+<script type="text/javascript" async=true src="//johnwong.disqus.com/embed.js"></script>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      </div>
+    </div>
+    <div class="col-md-3 index-right">
+
+      <img class="gravatar index-gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=240">
+<h1 class="index-me">
+  <span>John Wong <a href="https://github.com/JohnWong">@Github</a></span>
+</h1>
+<div class="vcard-stats">
+  <a class="vcard-stat" href="https://github.com/JohnWong/followers">
+    <strong class="vcard-stat-count">18</strong> followers
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/stars">
+    <strong class="vcard-stat-count">43</strong> Starred
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/following">
+    <strong class="vcard-stat-count">9</strong> Following
+  </a>
+  <div class="cf"></div>
+</div>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    
+    <footer class="jw-docs-footer" role="contentinfo">
+  <div class="container">
+    <div class="jw-docs-social">
+      <ul class="jw-docs-social-buttons">
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=JohnWong&type=follow&count=true&size=small" width="165" height="20" title="Follow on GitHub"></iframe>
+        </li>
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://pytool.sinaapp.com/wb-btn?user=2180280355&type=follow&count=true&size=small&encoding=utf-8" width="160" height="20" title="Follow on Weibo"></iframe>
+        </li>
+        <!-- 解决linkedin抓数据500错误前关闭按钮
+                    <li class="github-btn">
+                        <iframe class="github-btn" src="http://pytool.sinaapp.com/in-btn?user=xiaozhe-huang/4b/204/71b&count=true&size=small&encoding=utf-8" width="202" height="20" title="Follow on Weibo"></iframe>
+                    </li>
+                -->
+      </ul>
+    </div>
+    <p>自豪地采用自己做的博客系统
+      <br class="footer-desc-endline">with the help of <a href="http://getbootstrap.com/">Twitter Bootstrap</a> & <a href="https://github.com/jekyll/jekyll">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>
+      <p>
+        <ul class="jw-docs-footer-links muted">
+          <li>© 2014 • <a href="https://github.com/JohnWong">John Wong</a> <span class="rss-subscribe"> | subscribe <a href="/feed.xml">via RSS</a></span>
+          </li>
+        </ul>
+  </div>
+  <div style="display:none">
+    <div style="display: none !important"
+<span id='cnzz_stat_icon_1252918306'></span>
+<script src=' http://s23.cnzz.com/z_stat.php?id=1252918306' type='text/javascript'></script>
+    <script>
+(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-53121297-1', 'auto');
+ga('send', 'pageview');
+</script>
+  </div>
+</footer>
+
+  </body>
+
+</html>

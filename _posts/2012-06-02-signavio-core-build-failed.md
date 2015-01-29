@@ -29,7 +29,7 @@ BUILD FAILEDD:\signavio\build.xml:64: The following error occurred while executi
 
 解决办法同样PO在了项目issue中，参见
 
-http://code.google.com/p/signavio-core-components/issues/detail?can=2&;start=0&;num=100&;q=&;colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Summary&;groupby=&;sort=&;id=29
+http://code.google.com/p/signavio-core-components/issues/detail?can=2&start=0&num=100&q=&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Summary&groupby=&sort=&id=29
 
-http://code.google.com/p/signavio-core-components/issues/detail?can=2&;start=0&;num=100&;q=&;colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Summary&;groupby=&;sort=&;id=29
+http://code.google.com/p/signavio-core-components/issues/detail?can=2&start=0&num=100&q=&colspec=ID%20Type%20Status%20Priority%20Milestone%20Owner%20Summary&groupby=&sort=&id=29
 

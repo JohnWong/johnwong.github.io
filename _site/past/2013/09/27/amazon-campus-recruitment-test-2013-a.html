@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>2013亚马逊校招机试题A</title>
+  <meta name="description" content=""> 
+  
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css ">
+  
+  <script src="/js/common.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/pygments.css">
+  <link rel="stylesheet" href="/css/github-markdown.css">
+  <link rel="canonical" href="/past/2013/09/27/amazon-campus-recruitment-test-2013-a.html">
+</head>
+
+  <body>
+
+    <header class="navbar navbar-responsive-top jw-docs-nav" id="top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".jw-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img class="gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=88">
+        <span class="name">John Wong</span>
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse jw-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        
+        <li class="">
+          <a href="/category/mobile.html">mobile</a>
+        </li>
+        
+        <li class="active">
+          <a href="/category/past.html">past</a>
+        </li>
+        
+        <li>
+          <a href="#">Bookmarks</a>
+        </li>
+        <li>
+          <a href="http://wooyun.org/whitehats/JohnWong">乌云</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/about">About</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
+    <div class="page-content">
+      <div class="wrapper">
+        
+  
+
+  
+    
+  
+
+<div class="container post-middle">
+  <div class="row">
+    <div class="col-md-9" role="main">
+      <div class="post">
+        <div class="post-poster">
+          <img class="feature-img" src="">
+        </div>
+        <h1 class="post-big-title">
+          2013亚马逊校招机试题A
+        </h1>
+        <div class="post-author">
+          <a class="category" href="category.html?cat=Life"><span class="glyphicon glyphicon-time"></span>past</a> | <span id="author" class="author"></span> • Sep 27, 2013
+        </div>
+        <div class="markdown-body">
+          <p>题目没复制下来，凭印象写的。</p>
+
+<p>删除代码中的的注释。注释分两种，//和/**/。字符串中出现的注释符号不能被当作注释。</p>
+
+<p>解题思路：</p>
+
+<p>以前编译原理课做过类似的程序，分出几个状态，并做状态转移判断即可。</p>
+
+<p>StringBuilder中存放返回的字符串。动作a表示添加当前字符到StringBuilder，b表示删除StringBuilder中最后一个字符。-表示其他字符或者无动作或者状态不转变</p>
+
+<table><thead>
+<tr>
+<th>状态</th>
+<th>字符</th>
+<th>转变状态</th>
+<th>动作</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>&quot;</td>
+<td>1</td>
+<td>a</td>
+</tr>
+<tr>
+<td>0</td>
+<td>/</td>
+<td>2</td>
+<td>a</td>
+</tr>
+<tr>
+<td>0</td>
+<td>-</td>
+<td>-</td>
+<td>a</td>
+</tr>
+<tr>
+<td>1</td>
+<td>&quot;</td>
+<td>0</td>
+<td>a</td>
+</tr>
+<tr>
+<td>1</td>
+<td>-</td>
+<td>-</td>
+<td>a</td>
+</tr>
+<tr>
+<td>2</td>
+<td>*</td>
+<td>3</td>
+<td>b</td>
+</tr>
+<tr>
+<td>2</td>
+<td>/</td>
+<td>4</td>
+<td>b</td>
+</tr>
+<tr>
+<td>2</td>
+<td>-</td>
+<td>0</td>
+<td>a</td>
+</tr>
+<tr>
+<td>3</td>
+<td>*</td>
+<td>5</td>
+<td>-</td>
+</tr>
+<tr>
+<td>3</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>4</td>
+<td>\n</td>
+<td>0</td>
+<td>a</td>
+</tr>
+<tr>
+<td>4</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>5</td>
+<td>/</td>
+<td>0</td>
+<td>-</td>
+</tr>
+<tr>
+<td>5</td>
+<td>*</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>5</td>
+<td>-</td>
+<td>3</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">static</span> <span class="kt">void</span> <span class="nf">backOne</span><span class="o">(</span><span class="n">StringBuilder</span> <span class="n">sb</span><span class="o">)</span> <span class="o">{</span>  
+    <span class="n">sb</span><span class="o">.</span><span class="na">delete</span><span class="o">(</span><span class="n">sb</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="mi">1</span><span class="o">,</span> <span class="n">sb</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>  
+<span class="o">}</span>  
+
+<span class="kd">static</span> <span class="n">String</span> <span class="nf">removeComment</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>  
+    <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">StringBuilder</span><span class="o">();</span>  
+    <span class="kt">int</span> <span class="n">state</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>  
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>  
+        <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>  
+        <span class="k">switch</span> <span class="o">(</span><span class="n">state</span><span class="o">)</span> <span class="o">{</span>  
+        <span class="k">case</span> <span class="mi">0</span><span class="o">:</span>  
+            <span class="k">switch</span> <span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="o">{</span>  
+            <span class="k">case</span> <span class="sc">&#39;&quot;&#39;</span><span class="o">:</span>  
+                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>  
+                <span class="n">state</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>  
+                <span class="k">break</span><span class="o">;</span>  
+            <span class="k">case</span> <span class="sc">&#39;/&#39;</span><span class="o">:</span>  
+                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>  
+                <span class="n">state</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span>  
+                <span class="k">break</span><span class="o">;</span>  
+            <span class="k">default</span><span class="o">:</span>  
+                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>  
+            <span class="o">}</span>  
+            <span class="k">break</span><span class="o">;</span>  
+        <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>  
+            <span class="k">switch</span> <span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="o">{</span>  
+            <span class="k">case</span> <span class="sc">&#39;&quot;&#39;</span><span class="o">:</span>  
+                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>  
+                <span class="n">state</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>  
+                <span class="k">break</span><span class="o">;</span>  
+            <span class="k">default</span><span class="o">:</span>  
+                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>  
+            <span class="o">}</span>  
+            <span class="k">break</span><span class="o">;</span>  
+        <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>  
+            <span class="k">switch</span> <span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="o">{</span>  
+            <span class="k">case</span> <span class="sc">&#39;*&#39;</span><span class="o">:</span>  
+                <span class="n">backOne</span><span class="o">(</span><span class="n">sb</span><span class="o">);</span>  
+                <span class="n">state</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>  
+                <span class="k">break</span><span class="o">;</span>  
+            <span class="k">case</span> <span class="sc">&#39;/&#39;</span><span class="o">:</span>  
+                <span class="n">backOne</span><span class="o">(</span><span class="n">sb</span><span class="o">);</span>  
+                <span class="n">state</span> <span class="o">=</span> <span class="mi">4</span><span class="o">;</span>  
+                <span class="k">break</span><span class="o">;</span>  
+            <span class="k">default</span><span class="o">:</span>  
+                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>  
+                <span class="n">state</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>  
+            <span class="o">}</span>  
+            <span class="k">break</span><span class="o">;</span>  
+        <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>  
+            <span class="k">switch</span> <span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="o">{</span>  
+            <span class="k">case</span> <span class="sc">&#39;*&#39;</span><span class="o">:</span>  
+                <span class="n">state</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>  
+                <span class="k">break</span><span class="o">;</span>  
+            <span class="o">}</span>  
+            <span class="k">break</span><span class="o">;</span>  
+        <span class="k">case</span> <span class="mi">4</span><span class="o">:</span>  
+            <span class="k">switch</span> <span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="o">{</span>  
+            <span class="k">case</span> <span class="sc">&#39;\n&#39;</span><span class="o">:</span>  
+                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">c</span><span class="o">);</span>  
+                <span class="n">state</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>  
+                <span class="k">break</span><span class="o">;</span>  
+            <span class="o">}</span>  
+            <span class="k">break</span><span class="o">;</span>  
+        <span class="k">case</span> <span class="mi">5</span><span class="o">:</span>  
+            <span class="k">switch</span> <span class="o">(</span><span class="n">c</span><span class="o">)</span> <span class="o">{</span>  
+            <span class="k">case</span> <span class="sc">&#39;/&#39;</span><span class="o">:</span>  
+                <span class="n">state</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>  
+                <span class="k">break</span><span class="o">;</span>  
+            <span class="k">case</span> <span class="sc">&#39;*&#39;</span><span class="o">:</span>  
+                <span class="k">break</span><span class="o">;</span>  
+            <span class="k">default</span><span class="o">:</span>  
+                <span class="n">state</span> <span class="o">=</span> <span class="mi">3</span><span class="o">;</span>  
+            <span class="o">}</span>  
+        <span class="o">}</span>  
+    <span class="o">}</span>  
+    <span class="k">return</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>  
+<span class="o">}</span> 
+</code></pre></div>
+        </div>
+        
+        <div id="disqus_head" class="disqus_head">
+  <h2>Comments</h2>
+</div>
+<div id="disqus_thread" class="disqus_thread"></div>
+<script type="text/javascript" async=true src="//johnwong.disqus.com/embed.js"></script>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      </div>
+    </div>
+    <div class="col-md-3 index-right">
+
+      <img class="gravatar index-gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=240">
+<h1 class="index-me">
+  <span>John Wong <a href="https://github.com/JohnWong">@Github</a></span>
+</h1>
+<div class="vcard-stats">
+  <a class="vcard-stat" href="https://github.com/JohnWong/followers">
+    <strong class="vcard-stat-count">18</strong> followers
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/stars">
+    <strong class="vcard-stat-count">43</strong> Starred
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/following">
+    <strong class="vcard-stat-count">9</strong> Following
+  </a>
+  <div class="cf"></div>
+</div>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    
+    <footer class="jw-docs-footer" role="contentinfo">
+  <div class="container">
+    <div class="jw-docs-social">
+      <ul class="jw-docs-social-buttons">
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=JohnWong&type=follow&count=true&size=small" width="165" height="20" title="Follow on GitHub"></iframe>
+        </li>
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://pytool.sinaapp.com/wb-btn?user=2180280355&type=follow&count=true&size=small&encoding=utf-8" width="160" height="20" title="Follow on Weibo"></iframe>
+        </li>
+        <!-- 解决linkedin抓数据500错误前关闭按钮
+                    <li class="github-btn">
+                        <iframe class="github-btn" src="http://pytool.sinaapp.com/in-btn?user=xiaozhe-huang/4b/204/71b&count=true&size=small&encoding=utf-8" width="202" height="20" title="Follow on Weibo"></iframe>
+                    </li>
+                -->
+      </ul>
+    </div>
+    <p>自豪地采用自己做的博客系统
+      <br class="footer-desc-endline">with the help of <a href="http://getbootstrap.com/">Twitter Bootstrap</a> & <a href="https://github.com/jekyll/jekyll">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>
+      <p>
+        <ul class="jw-docs-footer-links muted">
+          <li>© 2014 • <a href="https://github.com/JohnWong">John Wong</a> <span class="rss-subscribe"> | subscribe <a href="/feed.xml">via RSS</a></span>
+          </li>
+        </ul>
+  </div>
+  <div style="display:none">
+    <div style="display: none !important"
+<span id='cnzz_stat_icon_1252918306'></span>
+<script src=' http://s23.cnzz.com/z_stat.php?id=1252918306' type='text/javascript'></script>
+    <script>
+(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-53121297-1', 'auto');
+ga('send', 'pageview');
+</script>
+  </div>
+</footer>
+
+  </body>
+
+</html>

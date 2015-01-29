@@ -9,7 +9,7 @@ Type: Behavioral
 
 Strategy模式：定义一系列的算法，封装每一个，使他们实现通用。让算法相对于使用他的clients可以独立地变化。
 
-```c++
+```cpp
 #include <iostream>  
 using namespace std;  
   

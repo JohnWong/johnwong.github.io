@@ -44,18 +44,6 @@
           <a href="/category/mobile.html">mobile</a>
         </li>
         
-        <li class="">
-          <a href="/category/life.html">life</a>
-        </li>
-        
-        <li class="">
-          <a href="/category/travel.html">travel</a>
-        </li>
-        
-        <li class="">
-          <a href="/category/front end.html">front end</a>
-        </li>
-        
         <li class="active">
           <a href="/category/past.html">past</a>
         </li>
@@ -78,12 +66,6 @@
     <div class="page-content">
       <div class="wrapper">
         
-  
-
-  
-
-  
-
   
 
   
@@ -130,7 +112,7 @@
 <span class="k">public</span><span class="o">:</span>  
     <span class="kt">void</span> <span class="n">interpret</span><span class="p">(</span><span class="n">Context</span><span class="o">*</span> <span class="n">context</span><span class="p">)</span>  
     <span class="p">{</span>
-        <span class="n">string</span> <span class="o">&amp;</span><span class="p">;</span><span class="n">s</span> <span class="o">=</span> <span class="n">context</span><span class="o">-&gt;</span><span class="n">mInput</span><span class="p">;</span>
+        <span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span> <span class="o">=</span> <span class="n">context</span><span class="o">-&gt;</span><span class="n">mInput</span><span class="p">;</span>
         <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;TerminalExpression:&quot;</span><span class="p">;</span>
         <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
             <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;+&#39;</span> <span class="o">||</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;-&#39;</span>  <span class="o">||</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;*&#39;</span>  <span class="o">||</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;/&#39;</span> <span class="p">)</span>
@@ -145,7 +127,7 @@
     <span class="kt">void</span> <span class="n">interpret</span><span class="p">(</span><span class="n">Context</span><span class="o">*</span> <span class="n">context</span><span class="p">)</span>  
     <span class="p">{</span>  
         <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;NonterminalExpression:&quot;</span><span class="p">;</span>
-        <span class="n">string</span> <span class="o">&amp;</span><span class="p">;</span><span class="n">s</span> <span class="o">=</span> <span class="n">context</span><span class="o">-&gt;</span><span class="n">mInput</span><span class="p">;</span>
+        <span class="n">string</span> <span class="o">&amp;</span><span class="n">s</span> <span class="o">=</span> <span class="n">context</span><span class="o">-&gt;</span><span class="n">mInput</span><span class="p">;</span>
         <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
             <span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;0&#39;</span> <span class="o">||</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;1&#39;</span> <span class="o">||</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;2&#39;</span>  <span class="o">||</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;3&#39;</span>  
                     <span class="o">||</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;4&#39;</span> <span class="o">||</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;5&#39;</span> <span class="o">||</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;6&#39;</span>  

@@ -1,10 +1,11 @@
 ---
 layout: post
 title:  CareerCup-PATTERN MATCHING
-category: Mobile
+category: Past
+description: CareerCup是一本相当好Code面试的书，开始研读。
 ---
 
-CareerCup是一本相当好Code面试的书，开始研读
+CareerCup是一本相当好Code面试的书，开始研读。
 
 Description: 
 
@@ -15,7 +16,7 @@ Example:
  A sorted array has been rotated so that the elements might appear in the order 3 4 5 6 7 1 2 How would you find the minimum element?
 
 
-``` c++
+```cpp
 #include <iostream>  
 using namespace std;  
   

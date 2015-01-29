@@ -44,18 +44,6 @@
           <a href="/category/mobile.html">mobile</a>
         </li>
         
-        <li class="">
-          <a href="/category/life.html">life</a>
-        </li>
-        
-        <li class="">
-          <a href="/category/travel.html">travel</a>
-        </li>
-        
-        <li class="">
-          <a href="/category/front end.html">front end</a>
-        </li>
-        
         <li class="active">
           <a href="/category/past.html">past</a>
         </li>
@@ -81,12 +69,6 @@
   
 
   
-
-  
-
-  
-
-  
     
   
 
@@ -104,12 +86,90 @@
           <a class="category" href="category.html?cat=Life"><span class="glyphicon glyphicon-time"></span>past</a> | <span id="author" class="author"></span> • Apr 17, 2013
         </div>
         <div class="markdown-body">
-          <p>Type: Structural</p>
+          <p>Type: Structural
+Composite: 通过递归手段来构造诸如文件系统之类的树形的对象结构；Composite模式所代表的数据构造是一群具有统一接口界面的对象集合，并可以通过一个对象来访问所有的对象（遍历）。</p>
+<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#include &lt;iostream&gt;</span>
+<span class="cp">#include &lt;vector&gt;</span>
+<span class="cp">#include &lt;typeinfo&gt; </span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
-<p>Composite: 将对象组合成树形结构以表示“部分-整体”的层次结构。Composite使得用户对单个对象和组合对象的使用具有一致性。</p>
+<span class="k">class</span> <span class="nc">Component</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">operation</span><span class="p">()</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="n">Component</span><span class="o">*</span> <span class="n">c</span><span class="p">){};</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">remove</span><span class="p">(</span><span class="n">Component</span><span class="o">*</span> <span class="n">c</span><span class="p">){};</span>
+    <span class="k">virtual</span> <span class="n">Component</span><span class="o">*</span> <span class="nf">getChild</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">){};</span>
+<span class="p">};</span>
 
-<p>有时候又叫做部分-整体模式，它使我们树型结构的问题中，模糊了简单元素和复杂元素的概念，客户程序可以向处理简单元素一样来处理复杂元素,从而使得客户程序与复杂元素的内部结构解耦。</p>
+<span class="k">class</span> <span class="nc">Leaf</span><span class="o">:</span> <span class="k">public</span> <span class="n">Component</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">operation</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;Leaf&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">};</span>
 
+<span class="k">class</span> <span class="nc">Composite</span><span class="o">:</span> <span class="k">public</span> <span class="n">Component</span>
+<span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">operation</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;Composite&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="n">Component</span><span class="o">*</span> <span class="n">c</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">mChildren</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">mChildren</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">c</span><span class="p">);</span>
+    <span class="p">};</span>
+    <span class="kt">void</span> <span class="nf">remove</span><span class="p">(</span><span class="n">Component</span><span class="o">*</span> <span class="n">c</span><span class="p">)</span>
+    <span class="p">{</span>        
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">Component</span><span class="o">*&gt;::</span><span class="n">iterator</span> <span class="n">it</span><span class="p">;</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">it</span> <span class="o">=</span> <span class="n">mChildren</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">&lt;</span> <span class="n">mChildren</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="n">it</span><span class="o">++</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="o">*</span><span class="n">it</span> <span class="o">==</span> <span class="n">c</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">mChildren</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>                
+    <span class="p">};</span>
+    <span class="n">Component</span><span class="o">*</span> <span class="nf">getChild</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">mChildren</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+            <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">mChildren</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> 
+    <span class="p">};</span>
+<span class="k">private</span><span class="o">:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">Component</span><span class="o">*&gt;</span> <span class="n">mChildren</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">printComponent</span><span class="p">(</span><span class="n">Component</span><span class="o">*</span> <span class="n">pComponent</span><span class="p">)</span>
+<span class="p">{</span>
+     <span class="n">pComponent</span><span class="o">-&gt;</span><span class="n">operation</span><span class="p">();</span>
+     <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">Composite</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">pComponent</span><span class="p">))</span>
+         <span class="k">return</span><span class="p">;</span>     
+     <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+     <span class="n">Component</span><span class="o">*</span> <span class="n">childComponent</span><span class="p">;</span>
+     <span class="k">while</span><span class="p">(</span><span class="n">childComponent</span> <span class="o">=</span> <span class="n">pComponent</span><span class="o">-&gt;</span><span class="n">getChild</span><span class="p">(</span><span class="n">i</span><span class="o">++</span><span class="p">))</span>
+     <span class="p">{</span>
+         <span class="n">printComponent</span><span class="p">(</span><span class="n">childComponent</span><span class="p">);</span>
+     <span class="p">};</span>
+<span class="p">};</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">Leaf</span> <span class="o">*</span><span class="n">pLeaf1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Leaf</span><span class="p">();</span>
+    <span class="n">Leaf</span> <span class="o">*</span><span class="n">pLeaf2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Leaf</span><span class="p">();</span>
+
+    <span class="n">Composite</span><span class="o">*</span> <span class="n">pComposite</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Composite</span><span class="p">;</span>
+    <span class="n">pComposite</span><span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">pLeaf1</span><span class="p">);</span>
+    <span class="n">pComposite</span><span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">pLeaf2</span><span class="p">);</span>
+    <span class="n">Composite</span><span class="o">*</span> <span class="n">pComposite2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Composite</span><span class="p">;</span>
+    <span class="n">pComposite2</span><span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">pComposite</span><span class="p">);</span>
+    <span class="n">printComponent</span><span class="p">(</span><span class="n">pComposite2</span><span class="p">);</span>
+
+    <span class="n">system</span><span class="p">(</span><span class="s">&quot;pause&quot;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
         </div>
         
         <div id="disqus_head" class="disqus_head">

@@ -26,10 +26,10 @@ production: false
 gravatar_hash: 135dee388c0976f500748a64960038ee # used for gravater
 category_info: 
     - {name: mobile, color: "#62bb47", icon: glyphicon-phone}
-    - {name: life, color: "#fbb726", icon: glyphicon-home}
-    - {name: travel, color: "#e03a3e", icon: glyphicon-road}
-    - {name: "front end", color: "#943b95", icon: glyphicon-link}
-    - {name: past, color: "#a9b7b7", icon: glyphicon-time}
+    # - {name: life, color: "#fbb726", icon: glyphicon-home}
+    # - {name: travel, color: "#e03a3e", icon: glyphicon-road}
+    # - {name: "front end", color: "#943b95", icon: glyphicon-link}
+    - {name: past, color: "#a9b7b7", icon: glyphicon-time, note: "[迁移自旧博客]"}
 
 # Github
 github:

@@ -32,7 +32,7 @@ class TerminalExpression : public AbstractExpression
 public:  
     void interpret(Context* context)  
     {
-        string &;s = context->mInput;
+        string &s = context->mInput;
         cout<<"TerminalExpression:";
         for(int i=0; i<s.length(); i++){
             if(s[i] == '+' || s[i] == '-'  || s[i] == '*'  || s[i] == '/' )
@@ -47,7 +47,7 @@ public:
     void interpret(Context* context)  
     {  
         cout<<"NonterminalExpression:";
-        string &;s = context->mInput;
+        string &s = context->mInput;
         for(int i=0; i<s.length(); i++){
             if(s[i] == '0' || s[i] == '1' || s[i] == '2'  || s[i] == '3'  
                     || s[i] == '4' || s[i] == '5' || s[i] == '6'  

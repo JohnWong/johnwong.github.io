@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Geoguessr游戏破解</title>
+  <meta name="description" content=""> 
+  
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css ">
+  
+  <script src="/js/common.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/pygments.css">
+  <link rel="stylesheet" href="/css/github-markdown.css">
+  <link rel="canonical" href="/past/2014/02/11/hack-geoguessr.html">
+</head>
+
+  <body>
+
+    <header class="navbar navbar-responsive-top jw-docs-nav" id="top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".jw-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img class="gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=88">
+        <span class="name">John Wong</span>
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse jw-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        
+        <li class="">
+          <a href="/category/mobile.html">mobile</a>
+        </li>
+        
+        <li class="active">
+          <a href="/category/past.html">past</a>
+        </li>
+        
+        <li>
+          <a href="#">Bookmarks</a>
+        </li>
+        <li>
+          <a href="http://wooyun.org/whitehats/JohnWong">乌云</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/about">About</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
+    <div class="page-content">
+      <div class="wrapper">
+        
+  
+
+  
+    
+  
+
+<div class="container post-middle">
+  <div class="row">
+    <div class="col-md-9" role="main">
+      <div class="post">
+        <div class="post-poster">
+          <img class="feature-img" src="">
+        </div>
+        <h1 class="post-big-title">
+          Geoguessr游戏破解
+        </h1>
+        <div class="post-author">
+          <a class="category" href="category.html?cat=Life"><span class="glyphicon glyphicon-time"></span>past</a> | <span id="author" class="author"></span> • Feb 11, 2014
+        </div>
+        <div class="markdown-body">
+          <p><a href="http://geoguessr.com/">Geoguessr</a>是一个好玩的根据街景猜位置的游戏。建议先玩玩，充分体会游戏的乐趣。学会了破解的方法就没意思了。接下来进入破解方法。需要Chrome浏览器和Web调试的一点知识。</p>
+
+<p><img src="/images/2014-02-11-hack-geoguessr.png" alt="geoguessr"></p>
+
+<h4>1. 捕捉街景的网络交互。</h4>
+
+<p>按F12打开调试工具。刷新网站，加载完成后在network选项卡下凭借缩略图能够很快找到街景的网络请求。我这里找到的是<code>https://cbks0.googleapis.com/cbk?output=tile&amp;cb_client=apiv3&amp;v=4&amp;zoom=4&amp;x=4&amp;y=3&amp;panoid=GUkoc-YOhxYusUlRmRiuvw&amp;fover=2&amp;onerr=3</code>。其中的参数panoid让我想起了单词panorama，这个就是街景的id。</p>
+
+<p><img src="/images/2014-02-11-hack-geoguessr2.png" alt="geoguessr"></p>
+
+<h4>2. 街景id转成经纬度。</h4>
+
+<p>Google街景的地址的格式是<code>http://maps.google.com/?hl=en&amp;ie=UTF8&amp;ll=42.843751,-68.203125&amp;spn=0,313.461914&amp;z=5&amp;layer=c&amp;cbll=41.916553,-75.883875&amp;panoid=zRjnm1iOEUZN_ueQbq6MlQ&amp;cbp=12,278.28,,0,6.02</code>，把这里的panoid换成刚才得到的街景id。我使用的是新版Google Maps，地址格式是<code>https://www.google.com/maps/preview/@47.528448,-92.168024,3a,75y,294.09h,71.36t/data=!3m4!1e1!3m2!1sGUkoc-YOhxYusUlRmRiuvw!2e0?hl=en</code>，街景id是!1s与!2e之间的部分。打开替换街景id后的链接，就能在地址中找到经纬度47.528448,-92.168024。</p>
+
+<h4>3. 控制地图中心。</h4>
+
+<p>这是可以收到能够拖动地图中心到找到的经纬度。也可以用代码注入的方法控制地图拖动缩放。Google Maps API新建地图的语句是new google.maps.Map。搜索代码功能以前是在调试工具的Resources选项卡下，现在变成了按Esc调出drawer，选中search选项卡搜索。搜到了三处，都在geoguessr.js中。从名字来看，guessMapView这个变量最可能是猜结果的地图。在控制台的变量中找不到这个实例，应该是包在函数中了，就通过断点注入来插入代码。在sources选项卡中找到这个变量定义的地方，可以点击尖括号图标来让Chrome帮你完成代码格式化方便阅读。找一个能访问资源的功能，例如showHelp定义的地方打断点。点击界面的帮助按钮，就会停在断点处。之前记得先在猜的地图上把红色的标记点出来。</p>
+
+<p><img src="/images/2014-02-11-hack-geoguessr3.png" alt="geoguessr"></p>
+
+<p>控制台输入代码：</p>
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">c</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">LatLng</span><span class="p">(</span><span class="mf">47.528448</span><span class="p">,</span><span class="o">-</span><span class="mf">92.168024</span><span class="p">)</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">guessMapView</span><span class="p">.</span><span class="nx">map</span><span class="p">.</span><span class="nx">setCenter</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">guessMapView</span><span class="p">.</span><span class="nx">guessMarker</span><span class="p">.</span><span class="nx">setPosition</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span>
+</code></pre></div>
+<p>继续执行脚本。回到页面点Make Guess就通关了，得到用于炫耀的链接哈哈。<code>http://url.geoguessr.com/6nYg</code></p>
+
+<p>不得不说猜到中国的时候坑比较大啊，因为众所周知的国内地图被要求加一个偏差。其中有一关街景是在湖边的路上，答案要点在湖里面。</p>
+
+        </div>
+        
+        <div id="disqus_head" class="disqus_head">
+  <h2>Comments</h2>
+</div>
+<div id="disqus_thread" class="disqus_thread"></div>
+<script type="text/javascript" async=true src="//johnwong.disqus.com/embed.js"></script>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      </div>
+    </div>
+    <div class="col-md-3 index-right">
+
+      <img class="gravatar index-gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=240">
+<h1 class="index-me">
+  <span>John Wong <a href="https://github.com/JohnWong">@Github</a></span>
+</h1>
+<div class="vcard-stats">
+  <a class="vcard-stat" href="https://github.com/JohnWong/followers">
+    <strong class="vcard-stat-count">18</strong> followers
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/stars">
+    <strong class="vcard-stat-count">43</strong> Starred
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/following">
+    <strong class="vcard-stat-count">9</strong> Following
+  </a>
+  <div class="cf"></div>
+</div>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    
+    <footer class="jw-docs-footer" role="contentinfo">
+  <div class="container">
+    <div class="jw-docs-social">
+      <ul class="jw-docs-social-buttons">
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=JohnWong&type=follow&count=true&size=small" width="165" height="20" title="Follow on GitHub"></iframe>
+        </li>
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://pytool.sinaapp.com/wb-btn?user=2180280355&type=follow&count=true&size=small&encoding=utf-8" width="160" height="20" title="Follow on Weibo"></iframe>
+        </li>
+        <!-- 解决linkedin抓数据500错误前关闭按钮
+                    <li class="github-btn">
+                        <iframe class="github-btn" src="http://pytool.sinaapp.com/in-btn?user=xiaozhe-huang/4b/204/71b&count=true&size=small&encoding=utf-8" width="202" height="20" title="Follow on Weibo"></iframe>
+                    </li>
+                -->
+      </ul>
+    </div>
+    <p>自豪地采用自己做的博客系统
+      <br class="footer-desc-endline">with the help of <a href="http://getbootstrap.com/">Twitter Bootstrap</a> & <a href="https://github.com/jekyll/jekyll">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>
+      <p>
+        <ul class="jw-docs-footer-links muted">
+          <li>© 2014 • <a href="https://github.com/JohnWong">John Wong</a> <span class="rss-subscribe"> | subscribe <a href="/feed.xml">via RSS</a></span>
+          </li>
+        </ul>
+  </div>
+  <div style="display:none">
+    <div style="display: none !important"
+<span id='cnzz_stat_icon_1252918306'></span>
+<script src=' http://s23.cnzz.com/z_stat.php?id=1252918306' type='text/javascript'></script>
+    <script>
+(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-53121297-1', 'auto');
+ga('send', 'pageview');
+</script>
+  </div>
+</footer>
+
+  </body>
+
+</html>

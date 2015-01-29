@@ -16,7 +16,7 @@ BufferedReader br = new BufferedReader(fr);
 
 实际上Java 的I/O API就是使用Decorator实现的,I/O变种很多,如果都采取继承方法,将会产生很多子类,显然相当繁琐.
 
-```c++
+```cpp
 #include <iostream>  
 #define Data int  
 using namespace std;  

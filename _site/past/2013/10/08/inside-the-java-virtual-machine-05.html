@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>深入Java虚拟机读书笔记[5]</title>
+  <meta name="description" content=""> 
+  
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css ">
+  
+  <script src="/js/common.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/pygments.css">
+  <link rel="stylesheet" href="/css/github-markdown.css">
+  <link rel="canonical" href="/past/2013/10/08/inside-the-java-virtual-machine-05.html">
+</head>
+
+  <body>
+
+    <header class="navbar navbar-responsive-top jw-docs-nav" id="top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".jw-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img class="gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=88">
+        <span class="name">John Wong</span>
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse jw-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        
+        <li class="">
+          <a href="/category/mobile.html">mobile</a>
+        </li>
+        
+        <li class="active">
+          <a href="/category/past.html">past</a>
+        </li>
+        
+        <li>
+          <a href="#">Bookmarks</a>
+        </li>
+        <li>
+          <a href="http://wooyun.org/whitehats/JohnWong">乌云</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/about">About</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
+    <div class="page-content">
+      <div class="wrapper">
+        
+  
+
+  
+    
+  
+
+<div class="container post-middle">
+  <div class="row">
+    <div class="col-md-9" role="main">
+      <div class="post">
+        <div class="post-poster">
+          <img class="feature-img" src="">
+        </div>
+        <h1 class="post-big-title">
+          深入Java虚拟机读书笔记[5]
+        </h1>
+        <div class="post-author">
+          <a class="category" href="category.html?cat=Life"><span class="glyphicon glyphicon-time"></span>past</a> | <span id="author" class="author"></span> • Oct 8, 2013
+        </div>
+        <div class="markdown-body">
+          <h3>第五章 Java虚拟机</h3>
+
+<h4>1. Java虚拟机内部体系结构</h4>
+
+<p><img src="/images/2013-10-08-inside-the-java-virtual-machine-05-1.png" alt="2013-10-08-inside-the-java-virtual-machine-05"></p>
+
+<p>在函数中定义的一些基本类型的变量和对象的引用变量都在函数的栈内存中分配。当在一段代码块定义一个变量时，Java就在栈中为这个变量分配内存空间，当超过变量的作用域后，Java会自动释放掉为该变量所分配的内存空间，该内存空间可以立即被另作他用。 </p>
+
+<p>堆内存用来存放由new创建的对象和数组。在堆中分配的内存，由Java虚拟机的自动垃圾回收器来管理。</p>
+
+<h4>2. 数据类型</h4>
+
+<p>Java虚拟机中的数据类型分为基本类型和引用类型。Java语言中的所有基本类型同样为Java虚拟机中的基本类型。Java虚拟机把boolean看作基本类型，但是指令集对boolean的支持十分有限。编译为字节码的时候使用int或byte表示boolean。boolean数组当作byte数组使用，但是在堆区也可能被表示为位域。</p>
+
+<p><img src="/images/2013-10-08-inside-the-java-virtual-machine-05-2.png" alt="2013-10-08-inside-the-java-virtual-machine-05"></p>
+
+<h4>3. 类装载子系统</h4>
+
+<p>顺序：装在、连接、初始化</p>
+
+<p>Java虚拟机中有两种类装载器：启动类装载器和用户自定义类装载器。前者是Java虚拟机实现的一部分，后者则是Java程序的一部分。后者通往虚拟机的通道有defineClass、findSystemClass、resolveClass。</p>
+
+<h4>4. 方法区</h4>
+
+<p>方法去存储关于被装载类型的信息。所有线程共享方法区，因此必须设计为线程安全的。方法区不必固定大小， 不必连续，可以在一个堆中自由分配，允许指定初始大小以及最小最大尺寸。存储的信息包括：
+a) 全限定名
+b) 直接超类全限定名
+c) 类还是接口
+d) 访问修饰符
+e) 直接超接口全限定名的有序列表
+f) 该类型常量池
+g) 字段信息
+h) 方法信息
+i) 除了常量外所有类变量（静态）
+j) 一个到ClassLoader的引用
+k) 一个到Class的引用</p>
+
+<h4>5. 堆</h4>
+
+<p>运行时创建的所有类实例和数组放在同一个堆中。一个Java虚拟机实例中只有一个堆空间，所有线程共享。堆区也不必连续，可以动态扩展或者收缩。对象的内部表示有虚拟机实现者决定。</p>
+
+<p>数组页拥有一个与他们的类相关联的Class实例，具有相同维度和类型的数组都是同一个类的实例。</p>
+
+<h4>6. 程序计数器</h4>
+
+<p>运行中的Java程序每一个线程都有自己的PC。大小是一个字长，可以持有一个指针，也能持有一个returnAddress。 当线程执行某个Java方法时，PC寄存器的内容总是下一条将被执行指令的“地址”，可以是一个本地指针也可以是在方法字节码中相对该方法起始地址的偏移量。如果正在执行本地方法，则值为“undefined”。</p>
+
+<h4>7. Java栈</h4>
+
+<p>每当启动一个新线程的时候，Java虚拟机都会为他分配一个Java栈。Java以帧为单位保存线程的运行状态，虚拟机只会以帧为单位压栈或者出栈。正在执行的方法称为该线程的当前方法，当前方法使用的栈帧称为当前帧，当前方法所属的类称为当前类，当前类常量池称为当前常量池。当虚拟机遇到栈内操作指令的时候，对当前帧内数据执行操作。</p>
+
+<p>Java方法可以以两种方式完成：通过return返回；抛出异常中智。不管哪种方式，虚拟机都会弹出当前Java栈然后释放。栈上的所有数据都是此线程私有的。</p>
+
+<p>Java栈在内存中也不必连续，可以分布在连续的栈里，也可以分布在堆里，或者两者兼而有之 。</p>
+
+<h4>8. 栈帧</h4>
+
+<p>栈帧由三部分组成：局部变量区，操作数栈和帧数据栈。</p>
+
+<p>局部变量区 被组织为一个以字长为单位、从0开始计数的数组。字节码通过从0开始的所以来使用其中的数据。类型为int，float，reference和returnAddress的值在数组中只占一项。类型为byte，short和char值在存入数组前都将被转换为int值，在栈中都当作int处理，只有存回堆或者方法区时才转换为原来的类型。long和double的值在数组中占据连续两项。局部变量区包含对应方法的参数和局部变量。实例方法中隐含reference类型的变量this。方法参数按照声明顺序放到局部变量数组中，而局部变量可以任意决定放置顺序，甚至可以一个索引指代两个局部变量。</p>
+
+<p>操作数栈 和局部变量区一样，组织为字长为单位的数组，数据存储也类似，但是不是通过索引访问，而是通过压栈和出栈来访问。Java虚拟机没有寄存器，程序计数器也无法被程序指令直接访问，因此指令主要是从操作数栈中而不是从寄存器中取得操作数。也可以从字节码流中跟随在操作码之后的字节或者常量池中取得。</p>
+
+<p>帧数据区 除了局部变量区和操作数栈外，还需要一些数据来支持常量池解析、正常方法返回以及异常派发机制。这些信息都保存在帧数据区中。</p>
+
+<h4>9. 本地方法栈</h4>
+
+<p>大小不比固定，可以动态收缩或者扩展。线程调用本地方法的时候，虚拟机保持Java栈不变，不再压入新的帧，动态连接并直接调用指定的本地方法。 传递给该函数的参数以某个确定的顺序压入栈，返回值也以确定的方式传回调用者。和可能本地方法接口需要回调Java虚拟机中的Java方法 ，这种情形下该线程会保存本地方法栈的状态并进入另一个Java栈。</p>
+
+<h4>10. 执行引擎</h4>
+
+<p>在Java虚拟机规范中，执行引擎的行为使用指令集来定义。</p>
+
+<p>指令集 方法的字节码流是由Java虚拟机的指令序列构成的。每一条指令包含一个单字节操作码，后面跟随0个或多个操作数。虚拟机取得操作数的地方包括跟随操作码的操作数、常量池中的项、当前帧的局部变量中的值、当前帧操作数栈顶的值。执行一条指令包含的任务之一就是决定下一条要执行的是什么命令。很多指令的下一个操作码就是当前操作码和操作数之后紧跟的那个字节。另一个指令如goto和return，执行引擎决定下一个操作码时把它当作当前执行指令的一部分。假如抛出异常，执行引擎将搜索合适的catch子句，决定下一条指令。</p>
+
+<p>执行技术 实现可以使用多种执行技术：解释，即使编译，自适应优化，芯片级直接执行。由实现自由选择。最有意义也最迅速的执行技术之一就是自适应优化。监视代码执行情况，判断出某个方法是瓶颈的时候，启动一个后台线程，把字节码编译为本地代码并优化。Java程序运行时特征：方法调用和动态派发。</p>
+
+        </div>
+        
+        <div id="disqus_head" class="disqus_head">
+  <h2>Comments</h2>
+</div>
+<div id="disqus_thread" class="disqus_thread"></div>
+<script type="text/javascript" async=true src="//johnwong.disqus.com/embed.js"></script>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      </div>
+    </div>
+    <div class="col-md-3 index-right">
+
+      <img class="gravatar index-gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=240">
+<h1 class="index-me">
+  <span>John Wong <a href="https://github.com/JohnWong">@Github</a></span>
+</h1>
+<div class="vcard-stats">
+  <a class="vcard-stat" href="https://github.com/JohnWong/followers">
+    <strong class="vcard-stat-count">18</strong> followers
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/stars">
+    <strong class="vcard-stat-count">43</strong> Starred
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/following">
+    <strong class="vcard-stat-count">9</strong> Following
+  </a>
+  <div class="cf"></div>
+</div>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    
+    <footer class="jw-docs-footer" role="contentinfo">
+  <div class="container">
+    <div class="jw-docs-social">
+      <ul class="jw-docs-social-buttons">
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=JohnWong&type=follow&count=true&size=small" width="165" height="20" title="Follow on GitHub"></iframe>
+        </li>
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://pytool.sinaapp.com/wb-btn?user=2180280355&type=follow&count=true&size=small&encoding=utf-8" width="160" height="20" title="Follow on Weibo"></iframe>
+        </li>
+        <!-- 解决linkedin抓数据500错误前关闭按钮
+                    <li class="github-btn">
+                        <iframe class="github-btn" src="http://pytool.sinaapp.com/in-btn?user=xiaozhe-huang/4b/204/71b&count=true&size=small&encoding=utf-8" width="202" height="20" title="Follow on Weibo"></iframe>
+                    </li>
+                -->
+      </ul>
+    </div>
+    <p>自豪地采用自己做的博客系统
+      <br class="footer-desc-endline">with the help of <a href="http://getbootstrap.com/">Twitter Bootstrap</a> & <a href="https://github.com/jekyll/jekyll">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>
+      <p>
+        <ul class="jw-docs-footer-links muted">
+          <li>© 2014 • <a href="https://github.com/JohnWong">John Wong</a> <span class="rss-subscribe"> | subscribe <a href="/feed.xml">via RSS</a></span>
+          </li>
+        </ul>
+  </div>
+  <div style="display:none">
+    <div style="display: none !important"
+<span id='cnzz_stat_icon_1252918306'></span>
+<script src=' http://s23.cnzz.com/z_stat.php?id=1252918306' type='text/javascript'></script>
+    <script>
+(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-53121297-1', 'auto');
+ga('send', 'pageview');
+</script>
+  </div>
+</footer>
+
+  </body>
+
+</html>

@@ -22,14 +22,14 @@ class Memento{
       
 private:
     friend class Originator;
-    Memento(const State&; rState): state(rState){};
+    Memento(const State& rState): state(rState){};
 	State state;
 };
 
 class Originator
 {
 public:
-    Originator(const State&; rState): state(rState){}
+    Originator(const State& rState): state(rState){}
 	Memento* createMemento(){
         return new Memento(state);
     }
@@ -39,7 +39,7 @@ public:
 	void printState(){
         cout<<"State:"<<state<<endl;
     }
-    void setState(const State&; rState){
+    void setState(const State& rState){
         state = rState;
     }
 

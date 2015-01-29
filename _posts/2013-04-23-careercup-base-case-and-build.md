@@ -1,10 +1,11 @@
 ---
 layout: post
 title: CareerCup-BASE CASE AND BUILD
-category: Mobile
+category: Past
+description: 这个题刷起来感觉比编程之美什么的easy多了。
 ---
 
-这个题刷起来感觉比编程之美什么的easy多了
+这个题刷起来感觉比编程之美什么的easy多了。
 
 Description: 
 
@@ -20,7 +21,7 @@ Case “a” --> {a}
 Case “ab” --> {ab, ba}
 Case “abc” --> ?
 
-```c++
+```cpp
 #include <iostream>  
 using namespace std;  
   

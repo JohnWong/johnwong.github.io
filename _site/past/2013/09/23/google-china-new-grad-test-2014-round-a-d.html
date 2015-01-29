@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Google China New Grad Test 2014 Round A Problem D</title>
+  <meta name="description" content=""> 
+  
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css ">
+  
+  <script src="/js/common.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/pygments.css">
+  <link rel="stylesheet" href="/css/github-markdown.css">
+  <link rel="canonical" href="/past/2013/09/23/google-china-new-grad-test-2014-round-a-d.html">
+</head>
+
+  <body>
+
+    <header class="navbar navbar-responsive-top jw-docs-nav" id="top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".jw-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img class="gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=88">
+        <span class="name">John Wong</span>
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse jw-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        
+        <li class="">
+          <a href="/category/mobile.html">mobile</a>
+        </li>
+        
+        <li class="active">
+          <a href="/category/past.html">past</a>
+        </li>
+        
+        <li>
+          <a href="#">Bookmarks</a>
+        </li>
+        <li>
+          <a href="http://wooyun.org/whitehats/JohnWong">乌云</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/about">About</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
+    <div class="page-content">
+      <div class="wrapper">
+        
+  
+
+  
+    
+  
+
+<div class="container post-middle">
+  <div class="row">
+    <div class="col-md-9" role="main">
+      <div class="post">
+        <div class="post-poster">
+          <img class="feature-img" src="">
+        </div>
+        <h1 class="post-big-title">
+          Google China New Grad Test 2014 Round A Problem D
+        </h1>
+        <div class="post-author">
+          <a class="category" href="category.html?cat=Life"><span class="glyphicon glyphicon-time"></span>past</a> | <span id="author" class="author"></span> • Sep 23, 2013
+        </div>
+        <div class="markdown-body">
+          <h3>Problem D. Cross the maze</h3>
+
+<h4>Problem</h4>
+
+<p>Edison, a robot, does not have a right hand or eyes. As a brave robot, he always puts his left hand on the wall no matter he walks or turns around. Because he thinks it is too dangerous, Edison does not walk backward.</p>
+
+<p>Assume that Edison has found himself in a square-shaped maze of NxN square cells which is surrounded by walls from the outside. In the maze, some of the cells are also walls. Edison can only move between two empty cells in four directions, north, south, west and east. In order to get out of the maze, he drafts a plan. He uses his left hand to lean on the wall and goes by following the wall.</p>
+
+<p>Here is the question, is Edison able to get out of the maze in at most 10,000 steps? If he can make it, output the path. By getting out of the maze, he only needs to be in the exit cell. If the starting cell is the same as the exit, Edison won&#39;t need to move and can directly get out of the maze.</p>
+
+<h4>Input</h4>
+
+<p>The first line of the input gives the number of test cases, T. T test cases follow. Each test case starts with an integer N. N is the size of the maze. The following N lines, each line contains N characters which may be &#39;.&#39; or &#39;#&#39;. &#39;.&#39; is an empty cell, &#39;#&#39; is a wall. Followed by a line which contains four integers: sx, sy, ex, ey. (sx, sy) means that Edison is standing on row sx and column sy as his starting cell, (ex, ey) is the exit of the maze. (sx, sy) is guaranteed to be at one of the 4 corners of the maze, and Edison can only touch the wall on 4 adjacent cells(not 8) initially. (ex, ey) can be anywhere in the maze. Note that the top-left corner is at position (1,1).</p>
+
+<h4>Output</h4>
+
+<p>For each test case, output a line containing &quot;Case #x: y&quot;, where x is the case number (starting from 1) and y is &quot;Edison ran out of energy.&quot; (without the quotes) if Edison can&#39;t reach the exit of the maze in at most 10,000 steps, otherwise y should be the number of steps followed by another line which contains y characters to describe the path (each character should be E for east, S for south, W for west or N for north). There is no character to represent the turning around. We don&#39;t care about the turning around steps, please only output the path of how Edison will cross the maze.</p>
+
+<h4>Limits</h4>
+
+<p>1 ≤ T ≤ 30.
+1 ≤ sx, sy, ex, ey ≤ N.
+The starting cell and the exit of the maze will always be an empty cell. And the starting cell and the exit of the maze won&#39;t be the same.</p>
+
+<h4>Small dataset</h4>
+
+<p>2 ≤ N ≤ 10.</p>
+
+<h4>Large dataset</h4>
+
+<p>2 ≤ N ≤ 100.</p>
+
+<h4>Sample</h4>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Input 
+
+3
+2
+.#
+#.
+1 1 2 2
+5
+.##.#
+.....
+...#.
+.###.
+...#.
+1 1 5 3
+3
+...
+.#.
+...
+1 1 3 3
+
+Output
+
+Case #1: Edison ran out of energy.
+Case #2: 22
+SEEENSESSSNNNWWSWWSSEE
+Case #3: 4
+EESS
+</code></pre></div>
+<blockquote>
+<p>Note: </p>
+
+<p>In the 2nd test case after moving 1 cell down from his starting cell, Edison will still be able to lean on the wall at the cell (1,2) by his left hand.<br>
+In the third test case, due to Edison can&#39;t touch the wall at cell (2,2) initially, so he has to go east in his first step.</p>
+</blockquote>
+
+<p>解题思路：看到机器人路径的问题就头大了，没在规定时间内做完。比赛结束去买饭的时候才想明白，这题其实很简单。机器人不能后退和只有左手，实际上大大降低了题目难度。事实上机器人的走路的方式很简单，就是在一个#包围的空间内，贴着边界顺时针方向行走。不需要借助递归，因为始终只有一条路可走。动作只有两种：</p>
+
+<ol>
+<li>根据所扶的墙向前走；<br></li>
+<li>无法向前走时原地顺时针方向转向，寻找新的墙。</li>
+</ol>
+<div class="highlight"><pre><code class="language-java" data-lang="java"><span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>  
+    <span class="kt">int</span> <span class="n">tests</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>  
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">test</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">test</span> <span class="o">&lt;=</span> <span class="n">tests</span><span class="o">;</span> <span class="n">test</span><span class="o">++)</span> <span class="o">{</span>  
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>  
+        <span class="kt">char</span><span class="o">[][]</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="o">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">2</span><span class="o">][</span><span class="n">n</span> <span class="o">+</span> <span class="mi">2</span><span class="o">];</span>  
+        <span class="n">Arrays</span><span class="o">.</span><span class="na">fill</span><span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="sc">&#39;#&#39;</span><span class="o">);</span>  
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>  
+            <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="sc">&#39;#&#39;</span><span class="o">;</span>  
+            <span class="n">String</span> <span class="n">s</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">next</span><span class="o">();</span>  
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span>  
+                <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>  
+            <span class="n">a</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="sc">&#39;#&#39;</span><span class="o">;</span>  
+        <span class="o">}</span>  
+        <span class="n">Arrays</span><span class="o">.</span><span class="na">fill</span><span class="o">(</span><span class="n">a</span><span class="o">[</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="o">],</span> <span class="sc">&#39;#&#39;</span><span class="o">);</span>  
+        <span class="kt">int</span> <span class="n">sx</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>  
+        <span class="kt">int</span> <span class="n">sy</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>  
+        <span class="kt">int</span> <span class="n">ex</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>  
+        <span class="kt">int</span> <span class="n">ey</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="na">nextInt</span><span class="o">();</span>  
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;Case #%d: &quot;</span><span class="o">,</span> <span class="n">test</span><span class="o">));</span>  
+        <span class="kt">int</span> <span class="n">stx</span> <span class="o">=</span> <span class="n">sx</span><span class="o">,</span> <span class="n">sty</span> <span class="o">=</span> <span class="n">sy</span><span class="o">;</span>  
+        <span class="k">if</span><span class="o">(</span><span class="n">sx</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span>  
+            <span class="k">if</span><span class="o">(</span><span class="n">sy</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span>  
+                <span class="n">stx</span><span class="o">--;</span>  
+            <span class="k">else</span>  
+                <span class="n">sty</span><span class="o">++;</span>  
+        <span class="k">else</span>  
+            <span class="nf">if</span><span class="o">(</span><span class="n">sy</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span>  
+                <span class="n">sty</span><span class="o">--;</span>  
+            <span class="k">else</span>  
+                <span class="n">stx</span><span class="o">++;</span>  
+
+        <span class="n">find</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">sx</span><span class="o">,</span> <span class="n">sy</span><span class="o">,</span> <span class="n">ex</span><span class="o">,</span> <span class="n">ey</span><span class="o">,</span> <span class="n">stx</span><span class="o">,</span> <span class="n">sty</span><span class="o">);</span>  
+    <span class="o">}</span>  
+<span class="o">}</span>  
+
+<span class="kt">int</span><span class="o">[]</span> <span class="nf">go</span><span class="o">(</span><span class="kt">char</span><span class="o">[][]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">,</span> <span class="kt">int</span> <span class="n">wx</span><span class="o">,</span> <span class="kt">int</span> <span class="n">wy</span><span class="o">)</span> <span class="o">{</span>  
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">ret</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span><span class="c1">// = new int[]{x, y};  </span>
+    <span class="k">if</span> <span class="o">((</span><span class="n">x</span> <span class="o">==</span> <span class="n">wx</span> <span class="o">||</span> <span class="n">x</span> <span class="o">==</span> <span class="n">wx</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">==</span> <span class="n">wy</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span>  
+            <span class="o">&amp;&amp;</span> <span class="n">a</span><span class="o">[</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="o">][</span><span class="n">y</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;.&#39;</span><span class="o">)</span> <span class="o">{</span>  
+        <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span> <span class="o">{</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="mi">2</span> <span class="o">};</span><span class="c1">// S  </span>
+    <span class="o">}</span>  
+    <span class="k">if</span> <span class="o">((</span><span class="n">x</span> <span class="o">==</span> <span class="n">wx</span> <span class="o">||</span> <span class="n">x</span> <span class="o">==</span> <span class="n">wx</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">==</span> <span class="n">wy</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">0</span>  
+            <span class="o">&amp;&amp;</span> <span class="n">a</span><span class="o">[</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="o">][</span><span class="n">y</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;.&#39;</span><span class="o">)</span> <span class="o">{</span>  
+        <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span> <span class="o">{</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="mi">0</span> <span class="o">};</span><span class="c1">// N  </span>
+    <span class="o">}</span>  
+    <span class="k">if</span> <span class="o">((</span><span class="n">y</span> <span class="o">==</span> <span class="n">wy</span> <span class="o">||</span> <span class="n">y</span> <span class="o">==</span> <span class="n">wy</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">x</span> <span class="o">==</span> <span class="n">wx</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="na">length</span>  
+            <span class="o">&amp;&amp;</span> <span class="n">a</span><span class="o">[</span><span class="n">x</span><span class="o">][</span><span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;.&#39;</span><span class="o">)</span> <span class="o">{</span>  
+        <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span> <span class="o">{</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">1</span> <span class="o">};</span><span class="c1">// E  </span>
+    <span class="o">}</span>  
+    <span class="k">if</span> <span class="o">((</span><span class="n">y</span> <span class="o">==</span> <span class="n">wy</span> <span class="o">||</span> <span class="n">y</span> <span class="o">==</span> <span class="n">wy</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">x</span> <span class="o">==</span> <span class="n">wx</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">0</span>  
+            <span class="o">&amp;&amp;</span> <span class="n">a</span><span class="o">[</span><span class="n">x</span><span class="o">][</span><span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;.&#39;</span><span class="o">)</span> <span class="o">{</span>  
+        <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span> <span class="o">{</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">3</span> <span class="o">};</span><span class="c1">// W  </span>
+    <span class="o">}</span>  
+    <span class="n">debug</span><span class="o">(</span><span class="s">&quot;GO&quot;</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="n">wx</span><span class="o">,</span> <span class="n">wy</span><span class="o">,</span> <span class="n">ret</span><span class="o">);</span>  
+    <span class="k">return</span> <span class="n">ret</span><span class="o">;</span>  
+<span class="o">}</span>  
+
+<span class="kt">int</span><span class="o">[]</span> <span class="nf">turn</span><span class="o">(</span><span class="kt">char</span><span class="o">[][]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">,</span> <span class="kt">int</span> <span class="n">wx</span><span class="o">,</span> <span class="kt">int</span> <span class="n">wy</span><span class="o">)</span> <span class="o">{</span>  
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">ret</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>  
+    <span class="k">if</span> <span class="o">((</span><span class="n">wx</span> <span class="o">==</span> <span class="n">x</span> <span class="o">||</span> <span class="n">wx</span> <span class="o">==</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">wy</span> <span class="o">==</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>  
+        <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span> <span class="o">{</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="o">};</span> <span class="c1">// N  </span>
+    <span class="o">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">wx</span> <span class="o">==</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">wy</span> <span class="o">==</span> <span class="n">y</span> <span class="o">||</span> <span class="n">wy</span> <span class="o">==</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="o">))</span> <span class="o">{</span>  
+        <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span> <span class="o">{</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">2</span> <span class="o">};</span> <span class="c1">// E  </span>
+    <span class="o">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="o">((</span><span class="n">wx</span> <span class="o">==</span> <span class="n">x</span> <span class="o">||</span> <span class="n">wx</span> <span class="o">==</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">wy</span> <span class="o">==</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>  
+        <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span> <span class="o">{</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="mi">3</span> <span class="o">};</span> <span class="c1">// S  </span>
+    <span class="o">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">wx</span> <span class="o">==</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">wy</span> <span class="o">==</span> <span class="n">y</span> <span class="o">||</span> <span class="n">wy</span> <span class="o">==</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="o">))</span> <span class="o">{</span>  
+        <span class="n">ret</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]</span> <span class="o">{</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">4</span> <span class="o">};</span> <span class="c1">// W  </span>
+    <span class="o">}</span>  
+    <span class="n">debug</span><span class="o">(</span><span class="s">&quot;TURN&quot;</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="n">wx</span><span class="o">,</span> <span class="n">wy</span><span class="o">,</span> <span class="n">ret</span><span class="o">);</span>  
+    <span class="k">return</span> <span class="n">ret</span><span class="o">;</span>  
+<span class="o">}</span>  
+
+<span class="kd">static</span> <span class="kt">char</span><span class="o">[]</span> <span class="n">DIR</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="o">[]</span> <span class="o">{</span> <span class="sc">&#39;N&#39;</span><span class="o">,</span> <span class="sc">&#39;E&#39;</span><span class="o">,</span> <span class="sc">&#39;S&#39;</span><span class="o">,</span> <span class="sc">&#39;W&#39;</span> <span class="o">};</span>  
+
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">find</span><span class="o">(</span><span class="kt">char</span><span class="o">[][]</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">sx</span><span class="o">,</span> <span class="kt">int</span> <span class="n">sy</span><span class="o">,</span> <span class="kt">int</span> <span class="n">ex</span><span class="o">,</span> <span class="kt">int</span> <span class="n">ey</span><span class="o">,</span> <span class="kt">int</span> <span class="n">wx</span><span class="o">,</span> <span class="kt">int</span> <span class="n">wy</span><span class="o">)</span> <span class="o">{</span>  
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">sx</span><span class="o">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sy</span><span class="o">;</span>  
+    <span class="kt">int</span><span class="o">[][]</span> <span class="n">dirs</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">][</span><span class="n">a</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>  
+    <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">StringBuilder</span><span class="o">();</span>  
+    <span class="k">while</span> <span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="o">{</span>  
+        <span class="k">if</span> <span class="o">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">ex</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">==</span> <span class="n">ey</span><span class="o">)</span> <span class="o">{</span>  
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sb</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>  
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>  
+            <span class="k">return</span><span class="o">;</span>  
+        <span class="o">}</span>  
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">goRes</span> <span class="o">=</span> <span class="n">go</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="n">wx</span><span class="o">,</span> <span class="n">wy</span><span class="o">);</span>  
+        <span class="k">if</span> <span class="o">(</span><span class="n">goRes</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>  
+            <span class="n">x</span> <span class="o">=</span> <span class="n">goRes</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>  
+            <span class="n">y</span> <span class="o">=</span> <span class="n">goRes</span><span class="o">[</span><span class="mi">1</span><span class="o">];</span>  
+            <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">DIR</span><span class="o">[</span><span class="n">goRes</span><span class="o">[</span><span class="mi">2</span><span class="o">]]);</span>  
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>  
+            <span class="kt">int</span><span class="o">[]</span> <span class="n">tRes</span> <span class="o">=</span> <span class="n">turn</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">,</span> <span class="n">wx</span><span class="o">,</span> <span class="n">wy</span><span class="o">);</span>  
+            <span class="k">if</span> <span class="o">(</span><span class="n">tRes</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>  
+                <span class="k">break</span><span class="o">;</span>  
+            <span class="k">else</span> <span class="o">{</span>  
+                <span class="n">wx</span> <span class="o">=</span> <span class="n">tRes</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>  
+                <span class="n">wy</span> <span class="o">=</span> <span class="n">tRes</span><span class="o">[</span><span class="mi">1</span><span class="o">];</span>  
+                <span class="kt">int</span> <span class="n">dir</span> <span class="o">=</span> <span class="n">tRes</span><span class="o">[</span><span class="mi">2</span><span class="o">];</span>  
+                <span class="k">if</span> <span class="o">((</span><span class="n">dirs</span><span class="o">[</span><span class="n">x</span><span class="o">][</span><span class="n">y</span><span class="o">]</span> <span class="o">&amp;</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">dir</span><span class="o">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>  
+                    <span class="k">break</span><span class="o">;</span>  
+                <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>  
+                    <span class="n">dirs</span><span class="o">[</span><span class="n">x</span><span class="o">][</span><span class="n">y</span><span class="o">]</span> <span class="o">|=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">dir</span><span class="o">;</span>  
+                <span class="o">}</span>  
+            <span class="o">}</span>  
+        <span class="o">}</span>  
+    <span class="o">}</span>  
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Edison ran out of energy.&quot;</span><span class="o">);</span>  
+<span class="o">}</span> 
+</code></pre></div>
+        </div>
+        
+        <div id="disqus_head" class="disqus_head">
+  <h2>Comments</h2>
+</div>
+<div id="disqus_thread" class="disqus_thread"></div>
+<script type="text/javascript" async=true src="//johnwong.disqus.com/embed.js"></script>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      </div>
+    </div>
+    <div class="col-md-3 index-right">
+
+      <img class="gravatar index-gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=240">
+<h1 class="index-me">
+  <span>John Wong <a href="https://github.com/JohnWong">@Github</a></span>
+</h1>
+<div class="vcard-stats">
+  <a class="vcard-stat" href="https://github.com/JohnWong/followers">
+    <strong class="vcard-stat-count">18</strong> followers
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/stars">
+    <strong class="vcard-stat-count">43</strong> Starred
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/following">
+    <strong class="vcard-stat-count">9</strong> Following
+  </a>
+  <div class="cf"></div>
+</div>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    
+    <footer class="jw-docs-footer" role="contentinfo">
+  <div class="container">
+    <div class="jw-docs-social">
+      <ul class="jw-docs-social-buttons">
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=JohnWong&type=follow&count=true&size=small" width="165" height="20" title="Follow on GitHub"></iframe>
+        </li>
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://pytool.sinaapp.com/wb-btn?user=2180280355&type=follow&count=true&size=small&encoding=utf-8" width="160" height="20" title="Follow on Weibo"></iframe>
+        </li>
+        <!-- 解决linkedin抓数据500错误前关闭按钮
+                    <li class="github-btn">
+                        <iframe class="github-btn" src="http://pytool.sinaapp.com/in-btn?user=xiaozhe-huang/4b/204/71b&count=true&size=small&encoding=utf-8" width="202" height="20" title="Follow on Weibo"></iframe>
+                    </li>
+                -->
+      </ul>
+    </div>
+    <p>自豪地采用自己做的博客系统
+      <br class="footer-desc-endline">with the help of <a href="http://getbootstrap.com/">Twitter Bootstrap</a> & <a href="https://github.com/jekyll/jekyll">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>
+      <p>
+        <ul class="jw-docs-footer-links muted">
+          <li>© 2014 • <a href="https://github.com/JohnWong">John Wong</a> <span class="rss-subscribe"> | subscribe <a href="/feed.xml">via RSS</a></span>
+          </li>
+        </ul>
+  </div>
+  <div style="display:none">
+    <div style="display: none !important"
+<span id='cnzz_stat_icon_1252918306'></span>
+<script src=' http://s23.cnzz.com/z_stat.php?id=1252918306' type='text/javascript'></script>
+    <script>
+(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-53121297-1', 'auto');
+ga('send', 'pageview');
+</script>
+  </div>
+</footer>
+
+  </body>
+
+</html>
