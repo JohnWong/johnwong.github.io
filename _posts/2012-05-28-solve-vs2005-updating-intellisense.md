@@ -2,7 +2,7 @@
 layout: post
 title: VS2005 "正在更新 IntelliSense"无法通过的解决办法
 category: Past
-description: 在使用完一段时间VS2005之后，发现不能打开类向导，一直提示“正在更新IntelliSense"
+description: VS2005一个小问题的解决。
 ---
 
 在使用完一段时间VS2005之后，发现不能打开类向导，一直提示“正在更新IntelliSense"

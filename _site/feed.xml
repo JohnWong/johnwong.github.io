@@ -5,9 +5,128 @@
     <description></description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 30 Jan 2015 03:06:42 +0800</pubDate>
-    <lastBuildDate>Fri, 30 Jan 2015 03:06:42 +0800</lastBuildDate>
+    <pubDate>Fri, 30 Jan 2015 13:52:21 +0800</pubDate>
+    <lastBuildDate>Fri, 30 Jan 2015 13:52:21 +0800</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>用FauxPas找到潜在Bug</title>
+        <description>&lt;p&gt;Faux Pas是一个Xcode辅助工具，检查iOS或者Mac项目，找到潜在bug，以及可维护性和风格问题。提供了92条规则可供挑选，支持GUI和CLI。目前发布了beta版，提供30天试用。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://fauxpasapp.com/&quot;&gt;Faux Pas Homepage&lt;/a&gt;
+&lt;a href=&quot;http://fauxpasapp.com/try/&quot;&gt;Faux Pas Donwload&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;亲身试用后，发现了项目中的多处问题。一些需要手动查找的问题，在这里都得到了检查。同时也提供了代码风格的建议和一些细节的优化建议。&lt;/p&gt;
+
+&lt;h2&gt;功能&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;控制潜在bug&lt;/li&gt;
+&lt;li&gt;查找资源文件错误&lt;/li&gt;
+&lt;li&gt;查找本地化错误&lt;/li&gt;
+&lt;li&gt;发现版本控制错误&lt;/li&gt;
+&lt;li&gt;学习和实施最佳实践&lt;/li&gt;
+&lt;li&gt;实施代码风格&lt;/li&gt;
+&lt;li&gt;代码审查清单&lt;/li&gt;
+&lt;li&gt;92条规则可供挑选&lt;/li&gt;
+&lt;li&gt;提供GUI或者CLI&lt;/li&gt;
+&lt;li&gt;在Xcode构建时运行&lt;/li&gt;
+&lt;li&gt;连接外部工具，支持导出结果和自定义脚本&lt;/li&gt;
+&lt;li&gt;按标签选取规则 保存在JSON配置文件中&lt;/li&gt;
+&lt;li&gt;更改打开代码的编辑器&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;使用方法&lt;/h2&gt;
+
+&lt;h3&gt;GUI&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;打开FauxPas&lt;/li&gt;
+&lt;li&gt;选择或者排除一些规则&lt;/li&gt;
+&lt;li&gt;Start Checking&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;CLI&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;打开FauxPas&lt;/li&gt;
+&lt;li&gt;菜单栏Faux Pas &amp;gt; Install CLI Tools…&lt;/li&gt;
+&lt;li&gt;shell&amp;gt; fauxpas -t iCoupon check iCoupon.xcodeproj/&lt;/li&gt;
+&lt;li&gt;可以输出不同格式、挑选检查规则等，参见帮助，例如查找重复资源&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt; fauxpas --onlyRules UnusedResource -o json check MyProject.xcodeproj
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Xcode build时检查&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;确保CLI安装&lt;/li&gt;
+&lt;li&gt;在Xcode项目的target中新增&amp;quot;Run Script&amp;quot; build phase&lt;/li&gt;
+&lt;li&gt;添加如下脚本，build时会执行FauxPas检查&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;[[ ${FAUXPAS_SKIP} == 1 ]] &amp;amp;&amp;amp; exit 0
+
+ FAUXPAS_PATH=&amp;quot;/usr/local/bin/fauxpas&amp;quot;
+ if [[ -f &amp;quot;${FAUXPAS_PATH}&amp;quot; ]]; then
+   &amp;quot;${FAUXPAS_PATH}&amp;quot; check-xcode
+ else
+   echo &amp;quot;warning: Faux Pas was not found at &amp;#39;${FAUXPAS_PATH}&amp;#39;&amp;quot;
+ fi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;建议不使用这种方式，会额外增加build时间。&lt;/p&gt;
+
+&lt;h3&gt;Xcode中手动执行&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;确保CLI安装&lt;/li&gt;
+&lt;li&gt;项目中创建Aggregate类型target&lt;/li&gt;
+&lt;li&gt;在该target下新增&amp;quot;Run Script&amp;quot; build phase&lt;/li&gt;
+&lt;li&gt;添加如下脚本，运行该target时会执行FauxPas检查&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt; /usr/local/bin/fauxpas -o xcode check &amp;quot;PROJECT_NAME.xcodeproj&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;导出结果&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GUI中点击Export Diagnostics，选择格式&lt;/li&gt;
+&lt;li&gt;CLI下-o参数，可选human、json、plist、xcode&lt;/li&gt;
+&lt;li&gt;导出结果可以用其他工具处理&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;实战&lt;/h2&gt;
+
+&lt;p&gt;使用GUI扫描了项目，发现了许多不少有价值的问题，值得我们学习。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;编译参数的有益建议，比如-DNDEBUG&lt;/li&gt;
+&lt;li&gt;多处图片缺少和图片重复&lt;/li&gt;
+&lt;li&gt;非retian与retina图尺寸不是2倍&lt;/li&gt;
+&lt;li&gt;没有前缀或者前缀与SDK冲突，建议至少三字符长度&lt;/li&gt;
+&lt;li&gt;Retain Delegate&lt;/li&gt;
+&lt;li&gt;重载或者调用一些限制的系统方法&lt;/li&gt;
+&lt;li&gt;缺少获取授权的描述&lt;/li&gt;
+&lt;li&gt;Category方法冲突&lt;/li&gt;
+&lt;li&gt;未使用的Error值，建议不关心Error时参数传入NULL&lt;/li&gt;
+&lt;li&gt;设置delegate或者datasource为self时需要在dealloc中置为空&lt;/li&gt;
+&lt;li&gt;对指针和0做比较&lt;/li&gt;
+&lt;li&gt;obj ? obj : other obj将会评估2次。而obj ?: other会评估一次&lt;/li&gt;
+&lt;li&gt;界面字符串缺少本地化，我们的项目实际不需要&lt;/li&gt;
+&lt;li&gt;修改传入参数的值&lt;/li&gt;
+&lt;li&gt;model类包含的对象的@property建议用copy，防止非setter的修改&lt;/li&gt;
+&lt;li&gt;pch中引用过的头文件再次引用多余&lt;/li&gt;
+&lt;li&gt;VCS建议，例如建议Xcode workspace data不忽略&lt;/li&gt;
+&lt;li&gt;在init or dealloc不要使用setter。&lt;/li&gt;
+&lt;li&gt;不和习惯的getter。使用something而非getSomething&lt;/li&gt;
+&lt;li&gt;旧语法，例如+[NSNumber numberWithFloat:], -[NSDictionary objectForKey:]。建议转换为现代语法Edit → Refactor → Convert To Modern Objective-C Syntax&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 29 Aug 2014 00:00:00 +0800</pubDate>
+        <link>/mobile/2014/08/29/using-fauxpas.html</link>
+        <guid isPermaLink="true">/mobile/2014/08/29/using-fauxpas.html</guid>
+        
+        
+        <category>mobile</category>
+        
+      </item>
     
       <item>
         <title>苹果的一些坑</title>
@@ -349,109 +468,6 @@ d) 不易出错，因为不会随意改变对象状态。&lt;/p&gt;&lt;/li&gt;
         <pubDate>Sat, 26 Oct 2013 00:00:00 +0800</pubDate>
         <link>/past/2013/10/26/programming-scala-06-10.html</link>
         <guid isPermaLink="true">/past/2013/10/26/programming-scala-06-10.html</guid>
-        
-        
-        <category>past</category>
-        
-      </item>
-    
-      <item>
-        <title>Scala程序设计读书笔记[1:5]</title>
-        <description>&lt;h2&gt;Scala程序设计: Java虚拟机多核编程实战&lt;/h2&gt;
-
-&lt;p&gt;一直好奇什么样的语言能够不需要加锁解决线程同步问题，能够解决Twitter的性能问题，想了解什么是函数式编程。于是找工作的间隙看了这本书，扩展一下视野。&lt;/p&gt;
-
-&lt;p&gt;Source Code: &lt;a href=&quot;http://media.pragprog.com/titles/vsscala/code/vsscala-code.zip&quot;&gt;http://media.pragprog.com/titles/vsscala/code/vsscala-code.zip&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Scala Online Editor：&lt;/p&gt;
-
-&lt;p&gt;URL: &lt;a href=&quot;http://www.scala-tour.com/#/expression-and-values&quot;&gt;http://www.scala-tour.com/#/expression-and-values&lt;/a&gt;&lt;br&gt;
-API: &lt;a href=&quot;http://www.scala-tour.com/run?code=println(%22abc%22)&quot;&gt;http://www.scala-tour.com/run?code=println(%22abc%22)&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3&gt;第一章 简介&lt;/h3&gt;
-
-&lt;p&gt;Scala混合了函数式和面向对象。用Scala创建多线程应用的时候，你会倾向于函数式编程风格，用不变状态编写无锁代码。Scala提供了一个基于actor的消息传递模型，消除了并发的数据竞争和加锁问题。&lt;/p&gt;
-
-&lt;p&gt;在函数式编程中，和ErLang相比的优势：a) 强类型，b) 运行与JVM，可以与Java互操作。&lt;/p&gt;
-
-&lt;p&gt;与JVM其他语言Groovy、JRuby和Clojure相比，优势是：能通同时提供函数式风格和良好并发支持的强类型语言。&lt;/p&gt;
-
-&lt;p&gt;Scala特性：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;基于事件的并发模型&lt;/li&gt;
-&lt;li&gt;既支持命令式风格，也支持函数式风格&lt;/li&gt;
-&lt;li&gt;纯面向对象的&lt;/li&gt;
-&lt;li&gt;与Java混合&lt;/li&gt;
-&lt;li&gt;强制使用自适应静态类型&lt;/li&gt;
-&lt;li&gt;简洁而又表现力&lt;/li&gt;
-&lt;li&gt;构建于一个微内核之上&lt;/li&gt;
-&lt;li&gt;高度可扩展，用更少代码创建高性能应用&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;第二章 起步&lt;/h3&gt;
-
-&lt;p&gt;下载地址：&lt;a href=&quot;http://www.scala-lang.org&quot;&gt;http://www.scala-lang.org&lt;/a&gt;
-脚本运行建议sublime text+自定义build system。
-编译scala可以使用IDE+插件&lt;a href=&quot;http://www.scala-lang.org/old/node/91&quot;&gt;http://www.scala-lang.org/old/node/91&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3&gt;第三章 Scala步入正轨&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;val相对var初始化后不可改变变量指向其他引用&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;点和括号是可选的&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Scala把一切视作对象&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;元组和多重赋值&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;三引号的多行字符串以及前导符“|”&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;自适应默认做法：&lt;br&gt;
-a) 支持脚本&lt;br&gt;
-b) return可选，自动返回最后的求值表达式。如果使用return需要显式提供方法返回类型&lt;br&gt;
-c) 分号半可选，可能产生歧义的时候需要加&lt;br&gt;
-d) 类和方法默认public，不必显示写&lt;br&gt;
-e) 轻量级JavaBean创建&lt;br&gt;
-f) 不强制捕获不关心的异常&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;默认导入包：
-java.lang：常用java类型；
-scala：Scala类型；
-scalaPredef：类型，隐式转换及常用方法&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;运算符重载，实际没有运算符，是方法名省略了点和括号的方法。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;复制结果是Unit，因此a=b=c在scala中不存在&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;==基于值比较，继承字Any类，为final。特定实现需要改写equals方法。基于引用比较需要使用eq方法。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;细粒度访问控制，private和protected可以加访问控制，this或者包名&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3&gt;第四章 Scala的类&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;定义字段、方法和构造函数
-Scala把主构造函数放到了类定义中。参数中的val转换成private final字段，并创建同名public取值方法。声明为var的定义为private，并创建public取值和赋值方法。都不是的话创建private字段和private的getter和setter。放到类定义中的任何表达式或者可执行语句都作为主函数的一部分。定义变量时_代表使用默认值。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;类继承重写方法需要override关键字。副构造函数可以通过定义this方法实现。副构造函数第一条语句要么调用主构造函数，要么调用副构造函数。只有主构造函数才能往基类构造函数中传参数。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;单例对象
-使用object创建，不能给其主构造函数传递参数。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;伴生对象
-创建一个object和类同名，就是伴生对象。类和伴生对象之间没有界限，可以互相访问private内容。把类的构造函数标记为private就可以实现单例对象。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;static  scala没有静态字段和静态方法，通过伴生对象支持类一级的操作。伴生对象加括号调用其apply方法。&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3&gt;第五章 自适应类型&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;静态类型  又称成编译时类型检查。scala根据定义或赋值推演类型，如果将其他类型赋给将会编译错误。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Scala中特殊类型：Any、Nothing和Option&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;import语句里的下划线相当于java中的星号。如果加在类名后相当于static import。默认引入当前目录。被引用的scala文件需要先scalac编译。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;容器和类型推演  不带类型的容器实际传入了Nothing。因此带类型容器不能赋给不带类型容器的引用。也不能赋给Any类型的容器。只有容器类型相同才能赋给。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Any类型  是所有Scala类型的超类，抽象类。方法由!=, =, asInstanceOf, equals, hashCode, isInstanceOf, toString。直接后代是AnyVal和AnyRef。AnyRef包含了Java的Object方法，如notify，wait，finalize。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Nothing类型  所有类型的子类，实例不会存在，作用是帮助类型推演更加平滑。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Option类型  Some[T]和None都继承自Option[T]。其getOrElse方法可以得到值，如果不存在，得到传入的参数。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;方法返回类型推演  使用等号定义方法启用方法返回类型推演。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;传递变参  如果方法接受参数需要指定参数名字及类型。末尾参数可以接受可变数目的实参，在类型信息后使用星号。但是不能传入数组。如果想将数组展开成离散值，可以用:_*&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Scala不支持协变和你变。子类实例容器赋给基类容器能力称为协变，超类实例容器赋给子类容器的能力称为逆变。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;参数化类型的可变性  通过特殊语法实现子类数组当作父类数组：playWithPets[T &amp;lt;: Pet](pets: Array[T])。也可以将数组的参数化类型限定为源数组参数化类型的超类：copyPets[S, D &amp;gt;: S](fromPets: Array[S], toPets: Array[D])。可以把派生类容器当作基类的容器，实现协变：MyList[+T]；也可以用-T实现逆变。&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-        <pubDate>Sat, 26 Oct 2013 00:00:00 +0800</pubDate>
-        <link>/past/2013/10/26/programming-scala-01-05.html</link>
-        <guid isPermaLink="true">/past/2013/10/26/programming-scala-01-05.html</guid>
         
         
         <category>past</category>

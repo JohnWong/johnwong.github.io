@@ -2,7 +2,7 @@
 layout: post
 title: "安家CSDN"
 category: Past
-description: 写程序到大半夜很爽。决心抛弃其他网络空间。专心在CSDN安家了。把我的成长记录在这里...
+description: 安家CSDN，然后就没有然后了。
 ---
 
 写程序到大半夜很爽。决心抛弃其他网络空间。专心在CSDN安家了。把我的成长记录在这里。

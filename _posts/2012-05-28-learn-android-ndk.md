@@ -2,7 +2,7 @@
 layout: post
 title: "Android NDK学习记录"
 category: Past
-description: 游戏项目开始转向Cocos2d-x来开发。需要用什么NDK、cygwin。硬着头皮开始学习。
+description: 游戏项目开始转向Cocos2d-x来开发。硬着头皮开始学习。
 ---
 游戏项目开始转向Cocos2d-x来开发。需要用什么NDK、cygwin。硬着头皮开始学习。
 

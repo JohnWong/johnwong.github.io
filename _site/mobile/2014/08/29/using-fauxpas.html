@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>SFS&Android——Android例程调试</title>
+  <title>用FauxPas找到潜在Bug</title>
   <meta name="description" content=""> 
   
   <script src="/js/jquery.min.js"></script>
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" href="/css/pygments.css">
   <link rel="stylesheet" href="/css/github-markdown.css">
-  <link rel="canonical" href="/past/2012/05/28/sfs-android.html">
+  <link rel="canonical" href="/mobile/2014/08/29/using-fauxpas.html">
 </head>
 
   <body>
@@ -40,11 +40,11 @@
     <nav class="collapse navbar-collapse jw-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
         
-        <li class="">
+        <li class="active">
           <a href="/category/mobile.html">mobile</a>
         </li>
         
-        <li class="active">
+        <li class="">
           <a href="/category/past.html">past</a>
         </li>
         
@@ -67,9 +67,9 @@
       <div class="wrapper">
         
   
-
-  
     
+  
+
   
 
 <div class="container post-middle">
@@ -77,26 +77,122 @@
     <div class="col-md-9" role="main">
       <div class="post">
         <div class="post-poster">
-          <img class="feature-img" src="">
+          <img class="feature-img" src="/images/2014-08-29-using-fauxpas.jpg">
         </div>
         <h1 class="post-big-title">
-          SFS&Android——Android例程调试
+          用FauxPas找到潜在Bug
         </h1>
         <div class="post-author">
-          <a class="category" href="category.html?cat=Life"><span class="glyphicon glyphicon-time"></span>past</a> | <span id="author" class="author"></span> • May 28, 2012
+          <a class="category" href="category.html?cat=Life"><span class="glyphicon glyphicon-phone"></span>mobile</a> | <span id="author" class="author"></span> • Aug 29, 2014
         </div>
         <div class="markdown-body">
-          <p>自己写了个Java客户端的测试程序，消息收发都没用问题，转而进军Android。这回真是费好大劲了，断断续续debug三四天了。</p>
+          <p>Faux Pas是一个Xcode辅助工具，检查iOS或者Mac项目，找到潜在bug，以及可维护性和风格问题。提供了92条规则可供挑选，支持GUI和CLI。目前发布了beta版，提供30天试用。</p>
 
-<p>Android的BasicServerConnection例程总是运行出错，出错的地方是jar包中的方法不是自己写的方法。冥思苦想一天不得其解。只能自己写了个小程序开始测试SFS在Android中的使用。首先测试连接，翻出毕业设计的服务器端。结果始终连不上服务器，调试一天才发现Android项目忘记加网络访问权限了。巨汗无比下班回家去了。</p>
+<p><a href="http://fauxpasapp.com/">Faux Pas Homepage</a>
+<a href="http://fauxpasapp.com/try/">Faux Pas Donwload</a></p>
 
-<p>然后证明了SFS客户端可以访问服务器，但是依然是出错。最后拜谷歌大神的site搜索，才终于找到了问题所在。就在SFS论坛的不起眼的帖子里版主贴出了常见问题。我愤慨！为毛官网API里面不说一下，代码里说一下也行啊，害我折腾这几天。帖子如下：&nbsp;http://www.smartfoxserver.com/forums/viewtopic.php?t=10370&amp;sid=e8738ca6731e59edf8241634fbef69b4&nbsp;&nbsp;</p>
+<p>亲身试用后，发现了项目中的多处问题。一些需要手动查找的问题，在这里都得到了检查。同时也提供了代码风格的建议和一些细节的优化建议。</p>
 
-<p>http://www.smartfoxserver.com/forums/viewtopic.php?t=10370&amp;sid=e8738ca6731e59edf8241634fbef69b4</p>
+<h2>功能</h2>
 
-<p>这是篇神贴，里面说的三个常见问题我都遇到了。1.Android网络访问权限。2.127.0.0.1不是Android模拟器的本地地址，而应该是10.0.0.2。3.Android客户端默认使用IPv6。要使用IPv4需要加语句：</p>
+<ul>
+<li>控制潜在bug</li>
+<li>查找资源文件错误</li>
+<li>查找本地化错误</li>
+<li>发现版本控制错误</li>
+<li>学习和实施最佳实践</li>
+<li>实施代码风格</li>
+<li>代码审查清单</li>
+<li>92条规则可供挑选</li>
+<li>提供GUI或者CLI</li>
+<li>在Xcode构建时运行</li>
+<li>连接外部工具，支持导出结果和自定义脚本</li>
+<li>按标签选取规则 保存在JSON配置文件中</li>
+<li>更改打开代码的编辑器</li>
+</ul>
 
-<p>System.setProperty(&quot;java.net.preferIPv6Addresses&quot;, &quot;false&quot;);</p>
+<h2>使用方法</h2>
+
+<h3>GUI</h3>
+
+<ul>
+<li>打开FauxPas</li>
+<li>选择或者排除一些规则</li>
+<li>Start Checking</li>
+</ul>
+
+<h3>CLI</h3>
+
+<ul>
+<li>打开FauxPas</li>
+<li>菜单栏Faux Pas &gt; Install CLI Tools…</li>
+<li>shell&gt; fauxpas -t iCoupon check iCoupon.xcodeproj/</li>
+<li>可以输出不同格式、挑选检查规则等，参见帮助，例如查找重复资源</li>
+</ul>
+<div class="highlight"><pre><code class="language-text" data-lang="text"> fauxpas --onlyRules UnusedResource -o json check MyProject.xcodeproj
+</code></pre></div>
+<h3>Xcode build时检查</h3>
+
+<ul>
+<li>确保CLI安装</li>
+<li>在Xcode项目的target中新增&quot;Run Script&quot; build phase</li>
+<li>添加如下脚本，build时会执行FauxPas检查</li>
+</ul>
+<div class="highlight"><pre><code class="language-text" data-lang="text">[[ ${FAUXPAS_SKIP} == 1 ]] &amp;&amp; exit 0
+
+ FAUXPAS_PATH=&quot;/usr/local/bin/fauxpas&quot;
+ if [[ -f &quot;${FAUXPAS_PATH}&quot; ]]; then
+   &quot;${FAUXPAS_PATH}&quot; check-xcode
+ else
+   echo &quot;warning: Faux Pas was not found at &#39;${FAUXPAS_PATH}&#39;&quot;
+ fi
+</code></pre></div>
+<p>建议不使用这种方式，会额外增加build时间。</p>
+
+<h3>Xcode中手动执行</h3>
+
+<ul>
+<li>确保CLI安装</li>
+<li>项目中创建Aggregate类型target</li>
+<li>在该target下新增&quot;Run Script&quot; build phase</li>
+<li>添加如下脚本，运行该target时会执行FauxPas检查</li>
+</ul>
+<div class="highlight"><pre><code class="language-text" data-lang="text"> /usr/local/bin/fauxpas -o xcode check &quot;PROJECT_NAME.xcodeproj&quot;
+</code></pre></div>
+<h3>导出结果</h3>
+
+<ul>
+<li>GUI中点击Export Diagnostics，选择格式</li>
+<li>CLI下-o参数，可选human、json、plist、xcode</li>
+<li>导出结果可以用其他工具处理</li>
+</ul>
+
+<h2>实战</h2>
+
+<p>使用GUI扫描了项目，发现了许多不少有价值的问题，值得我们学习。</p>
+
+<ul>
+<li>编译参数的有益建议，比如-DNDEBUG</li>
+<li>多处图片缺少和图片重复</li>
+<li>非retian与retina图尺寸不是2倍</li>
+<li>没有前缀或者前缀与SDK冲突，建议至少三字符长度</li>
+<li>Retain Delegate</li>
+<li>重载或者调用一些限制的系统方法</li>
+<li>缺少获取授权的描述</li>
+<li>Category方法冲突</li>
+<li>未使用的Error值，建议不关心Error时参数传入NULL</li>
+<li>设置delegate或者datasource为self时需要在dealloc中置为空</li>
+<li>对指针和0做比较</li>
+<li>obj ? obj : other obj将会评估2次。而obj ?: other会评估一次</li>
+<li>界面字符串缺少本地化，我们的项目实际不需要</li>
+<li>修改传入参数的值</li>
+<li>model类包含的对象的@property建议用copy，防止非setter的修改</li>
+<li>pch中引用过的头文件再次引用多余</li>
+<li>VCS建议，例如建议Xcode workspace data不忽略</li>
+<li>在init or dealloc不要使用setter。</li>
+<li>不和习惯的getter。使用something而非getSomething</li>
+<li>旧语法，例如+[NSNumber numberWithFloat:], -[NSDictionary objectForKey:]。建议转换为现代语法Edit → Refactor → Convert To Modern Objective-C Syntax</li>
+</ul>
 
         </div>
         
