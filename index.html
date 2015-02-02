@@ -38,28 +38,16 @@ layout: index
   <li class="{% if paginator.previous_page == null %}disabled{% endif %}">
     <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">«</a>
   </li>
+  <li class="{% if paginator.page == i %}disabled{% endif %}">
+    <a href="{{ '/'' | prepend: site.baseurl }}">1</a>
+  </li>
+  {% for i in (2..paginator.total_pages) %}
+  <li class="{% if paginator.page == i %}disabled{% endif %}">
+    <a href="{{ i | prepend:  '/'' | prepend: site.baseurl }}">{{ i }}</a>
+  </li>
+  {% endfor %}
   <li class="{% if paginator.next_page == null %}disabled{% endif %}">
     <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">»</a>
   </li>
 </ul>
-
-<!-- 
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div> -->
+<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
