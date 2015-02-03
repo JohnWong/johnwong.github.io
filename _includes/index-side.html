@@ -1,15 +1,15 @@
 <img class="gravatar index-gravatar" src="http://gravatar.duoshuo.com/avatar/{{ site.gravatar_hash}}?s=240">
 <h1 class="index-me">
-  <span>{{ site.username }} <a href="{{ site.github.url }}">@Github</a></span>
+  <span>{{ site.username }} <a href="{{ site.github.url }}{{ site.github.username }}">@Github</a></span>
 </h1>
 <div class="vcard-stats">
-  <a class="vcard-stat" href="{{ site.github.url }}/followers">
+  <a class="vcard-stat" href="{{ site.github.url }}{{ site.github.username }}/followers">
     <strong class="vcard-stat-count">{{ site.github.followers }}</strong> followers
   </a>
-  <a class="vcard-stat" href="{{ site.github.url }}/stars">
+  <a class="vcard-stat" href="{{ site.github.url }}stars/{{ site.github.username }}">
     <strong class="vcard-stat-count">{{ site.github.starred }}</strong> Starred
   </a>
-  <a class="vcard-stat" href="{{ site.github.url }}/following">
+  <a class="vcard-stat" href="{{ site.github.url }}{{ site.github.username }}/following">
     <strong class="vcard-stat-count">{{ site.github.following }}</strong> Following
   </a>
   <div class="cf"></div>

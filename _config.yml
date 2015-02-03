@@ -33,7 +33,8 @@ category_info:
 
 # Github
 github:
-    url: "https://github.com/JohnWong"
-    followers: 18
+    url: "https://github.com/"
+    username: "JohnWong"
+    followers: 20
     starred: 43
-    following: 9
+    following: 10
