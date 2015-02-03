@@ -14,7 +14,7 @@ layout: index
     <div class="info">
       <div class="postmeta left">
         <a style="color: {{ category.color }}" class="category" href="{{ "/category/" | prepend: site.baseurl | append: category.name | append: '.html' }}">
-          <span class="glyphicon {{ category.icon }}"></span>{{ category.name }}</a>
+          <span class="glyphicon {{ category.icon }}"></span>&nbsp;{{ category.name }}</a>
       </div>
       <div class="postmeta right">{{ post.author }} • {{ post.date | date: "%b %-d, %Y" }}</div>
     </div>

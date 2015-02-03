@@ -3,6 +3,7 @@ layout: post
 title: "苹果的一些坑"
 category: Past
 description: 汇总近期遇到的苹果的Bug。
+thumb: /images/2014-06-04-bugs-by-apple.jpg
 ---
 嗯嗯，最近踩坑不少，总结一下：
 

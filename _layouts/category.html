@@ -34,13 +34,14 @@ layout: category-basic
   </div>
 </div>
 <div class="articles">
+  {{ content }}
 {% if category %}
   {% for post in category %}
   <article class="index-posts posts cf">
     <div class="info">
       <div class="postmeta left">
         <a style="color: {{ category_info.color }}" class="category" href="{{ "/category/" | prepend: site.baseurl | append: category_info.name | append: '.html' }}">
-          <span class="glyphicon {{ category_info.icon }}"></span>{{ category_info.name }}</a>
+          <span class="glyphicon {{ category_info.icon }}"></span>&nbsp;{{ category_info.name }}</a>
       </div>
       <div class="postmeta right">{{ post.author }} • {{ post.date | date: "%b %-d, %Y" }}</div>
     </div>

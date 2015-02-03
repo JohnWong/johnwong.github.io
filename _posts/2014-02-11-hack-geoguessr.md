@@ -3,10 +3,11 @@ layout: post
 title: Geoguessr游戏破解
 category: Past
 description: 没人比我分高哈哈。
+thumb: /images/2014-02-11-hack-geoguessr.jpg
 ---
 [Geoguessr](http://geoguessr.com/)是一个好玩的根据街景猜位置的游戏。建议先玩玩，充分体会游戏的乐趣。学会了破解的方法就没意思了。接下来进入破解方法。需要Chrome浏览器和Web调试的一点知识。
  
-![geoguessr](/images/2014-02-11-hack-geoguessr.png)
+![geoguessr](/images/2014-02-11-hack-geoguessr.jpg)
 
 #### 1. 捕捉街景的网络交互。
 按F12打开调试工具。刷新网站，加载完成后在network选项卡下凭借缩略图能够很快找到街景的网络请求。我这里找到的是`https://cbks0.googleapis.com/cbk?output=tile&cb_client=apiv3&v=4&zoom=4&x=4&y=3&panoid=GUkoc-YOhxYusUlRmRiuvw&fover=2&onerr=3`。其中的参数panoid让我想起了单词panorama，这个就是街景的id。
