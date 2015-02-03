@@ -5,9 +5,107 @@
     <description></description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 04 Feb 2015 00:35:32 +0800</pubDate>
-    <lastBuildDate>Wed, 04 Feb 2015 00:35:32 +0800</lastBuildDate>
+    <pubDate>Wed, 04 Feb 2015 02:19:57 +0800</pubDate>
+    <lastBuildDate>Wed, 04 Feb 2015 02:19:57 +0800</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>今日公交</title>
+        <description>&lt;h1&gt;&lt;img src=&quot;https://raw.githubusercontent.com/JohnWong/bus-today/master/Docs/icon.png&quot; alt=&quot;应用图标&quot;&gt; BusRider&lt;/h1&gt;
+
+&lt;p&gt;精准的实时公交车应用，包含通知中心插件，查看实时数据更轻松。&lt;/p&gt;
+
+&lt;h3&gt;功能&lt;/h3&gt;
+
+&lt;h4&gt;通知中心&lt;/h4&gt;
+
+&lt;p&gt;随时随地查看实时公交数据。不再需要解锁手机-&amp;gt;打开应用，只需要打开通知中心。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/JohnWong/bus-today/master/Docs/screenshot-today.png&quot; alt=&quot;今日截图&quot;&gt;&lt;/p&gt;
+
+&lt;h4&gt;多城市切换&lt;/h4&gt;
+
+&lt;p&gt;支持杭州、天津、重庆、成都、郑州、兰州、东莞、青岛、苏州、乌鲁木齐、瑞安、佛山、深圳、中山、太原、惠州、武汉、南昌、许昌、开封、邯郸、焦作。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/JohnWong/bus-today/master/Docs/screenshot-city.png&quot; alt=&quot;城市截图&quot;&gt;&lt;/p&gt;
+
+&lt;h4&gt;公交线路收藏搜索&lt;/h4&gt;
+
+&lt;p&gt;支持公交线路搜索和收藏，快速找到您所关注的公交线路。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/JohnWong/bus-today/master/Docs/screenshot-main.png&quot; alt=&quot;线路收藏&quot;&gt;&lt;/p&gt;
+
+&lt;h4&gt;公交线路&lt;/h4&gt;
+
+&lt;p&gt;实时公交信息展示，简洁明了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/JohnWong/bus-today/master/Docs/screenshot-line.png&quot; alt=&quot;公交线路&quot;&gt;&lt;/p&gt;
+
+&lt;h4&gt;公交站点&lt;/h4&gt;
+
+&lt;p&gt;根据站点查询公交，方便了解附近公交。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/JohnWong/bus-today/master/Docs/screenshot-stop.png&quot; alt=&quot;公交线路&quot;&gt;&lt;/p&gt;
+
+&lt;h4&gt;下载&lt;/h4&gt;
+
+&lt;p&gt;暂时没有Apple开发者账号，不能发到App Store。仅支持越狱后下载安装。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/JohnWong/bus-today/releases/download/1.1/BusRider.ipa&quot;&gt;BusRider.ipa v1.1&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4&gt;Homepage&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/JohnWong/bus-today&quot;&gt;https://github.com/JohnWong/bus-today&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4&gt;Stastics&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;2014-12-03&lt;/code&gt; ~ &lt;code&gt;2015-01-22&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;共计55个commit。&lt;/p&gt;
+</description>
+        <pubDate>Thu, 05 Feb 2015 00:00:00 +0800</pubDate>
+        <link>/showcase/2015/02/05/bus-today.html</link>
+        <guid isPermaLink="true">/showcase/2015/02/05/bus-today.html</guid>
+        
+        
+        <category>showcase</category>
+        
+      </item>
+    
+      <item>
+        <title>使用FontForge进行设计</title>
+        <description>&lt;h1&gt;&lt;img src=&quot;/images/2015-02-04-design-with-fontforge-logo.png&quot; alt=&quot;FontForge&quot;&gt; FontForge&lt;/h1&gt;
+
+&lt;p&gt;由于开始研究IconFont，接触到了FontForge这个工具。为了更好地学习这个工具，并且能同时帮助到一些字体设计师，我开始翻译官网的帮助文档。努力做到每天一次commit，最终坚持下来顺利完成。在这个过程中除了学习到FontForge的用法外，还学到了字体设计的不少知识，很有意思。&lt;/p&gt;
+
+&lt;p&gt;除了翻译中文外，我还做了网站语言切换的功能。以前网站首页是所有章节的目录，不同语言的章节混排在一起。我试着学习了Jekyll用到的Liquid语法，做出了不同语言的目录。并且在目录的头部添加了符合原有风格的语言切换链接。&lt;/p&gt;
+
+&lt;p&gt;试着提了Pull Request，一位FontForge的成员Merge了PR，并留言说“WOW!!”，让我觉得倍感欣慰。不久后我被加为组织成员，帮忙打理一些项目的事情。&lt;/p&gt;
+
+&lt;h4&gt;Show&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://designwithfontforge.com/zh-CN/index.html&quot;&gt;http://designwithfontforge.com/zh-CN/index.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/2015-02-04-design-with-fontforge-screenshot.jpg&quot; alt=&quot;FontForge&quot;&gt;&lt;/p&gt;
+
+&lt;h4&gt;Homepage&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/fontforge/designwithfontforge.com&quot;&gt;https://github.com/fontforge/designwithfontforge.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4&gt;Stastics&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;2014-10-16&lt;/code&gt; ~ &lt;code&gt;2014-11-25&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;共计48个commit。&lt;/p&gt;
+</description>
+        <pubDate>Wed, 04 Feb 2015 00:00:00 +0800</pubDate>
+        <link>/showcase/2015/02/04/design-with-fontforge.html</link>
+        <guid isPermaLink="true">/showcase/2015/02/04/design-with-fontforge.html</guid>
+        
+        
+        <category>showcase</category>
+        
+      </item>
     
       <item>
         <title>用FauxPas找到潜在Bug</title>
@@ -370,63 +468,6 @@ Google得到这个产品的默认密码，居然可以登录。后来发现乌�
         
         
         <category>security</category>
-        
-      </item>
-    
-      <item>
-        <title>JavaEE项目切换到Intellij遇到的一个问题</title>
-        <description>&lt;p&gt;换电脑真是一个麻烦的事情，尤其是像我这样需要各种环境的人。第一天折腾xcode，弄好证书什么的，把之前的一个项目跑起来。今天是折腾的第二天，只完成了一件事情，就是在mac上用Intellij Idea把之前一个项目跑起来。真心受不了MyEclipse了，慢就算了，把项目导入遇到问题，结果啥也没导入进来，根本不给修改配置解决问题的机会。&lt;/p&gt;
-
-&lt;p&gt;问题是这样的，用Intellij新建项目，把之前的代码资源拷贝过来，运行没有问题。修改了一点代码，部署的时候代码始终没有更新。项目输出目录下，production下是更新了的，artifacts下是没更新的。重新编译、换web容器都没有用。最后发现是拷贝过来的WEB-INF目录中已经编译好的classes的问题。Eclipse是将编译好的class文件放在这个目录，Intellij编译好的并不放在这里，不知道哪一步就导致这里的classes文件复制到输出目录，并导致新编译的class文件被覆盖。&lt;/p&gt;
-
-&lt;p&gt;解决方法就是把web目录下的classes目录删除掉。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 25 Feb 2014 00:00:00 +0800</pubDate>
-        <link>/past/2014/02/25/javaee-to-intellij.html</link>
-        <guid isPermaLink="true">/past/2014/02/25/javaee-to-intellij.html</guid>
-        
-        
-        <category>past</category>
-        
-      </item>
-    
-      <item>
-        <title>Geoguessr游戏破解</title>
-        <description>&lt;p&gt;&lt;a href=&quot;http://geoguessr.com/&quot;&gt;Geoguessr&lt;/a&gt;是一个好玩的根据街景猜位置的游戏。建议先玩玩，充分体会游戏的乐趣。学会了破解的方法就没意思了。接下来进入破解方法。需要Chrome浏览器和Web调试的一点知识。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/2014-02-11-hack-geoguessr.jpg&quot; alt=&quot;geoguessr&quot;&gt;&lt;/p&gt;
-
-&lt;h4&gt;1. 捕捉街景的网络交互。&lt;/h4&gt;
-
-&lt;p&gt;按F12打开调试工具。刷新网站，加载完成后在network选项卡下凭借缩略图能够很快找到街景的网络请求。我这里找到的是&lt;code&gt;https://cbks0.googleapis.com/cbk?output=tile&amp;amp;cb_client=apiv3&amp;amp;v=4&amp;amp;zoom=4&amp;amp;x=4&amp;amp;y=3&amp;amp;panoid=GUkoc-YOhxYusUlRmRiuvw&amp;amp;fover=2&amp;amp;onerr=3&lt;/code&gt;。其中的参数panoid让我想起了单词panorama，这个就是街景的id。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/2014-02-11-hack-geoguessr2.png&quot; alt=&quot;geoguessr&quot;&gt;&lt;/p&gt;
-
-&lt;h4&gt;2. 街景id转成经纬度。&lt;/h4&gt;
-
-&lt;p&gt;Google街景的地址的格式是&lt;code&gt;http://maps.google.com/?hl=en&amp;amp;ie=UTF8&amp;amp;ll=42.843751,-68.203125&amp;amp;spn=0,313.461914&amp;amp;z=5&amp;amp;layer=c&amp;amp;cbll=41.916553,-75.883875&amp;amp;panoid=zRjnm1iOEUZN_ueQbq6MlQ&amp;amp;cbp=12,278.28,,0,6.02&lt;/code&gt;，把这里的panoid换成刚才得到的街景id。我使用的是新版Google Maps，地址格式是&lt;code&gt;https://www.google.com/maps/preview/@47.528448,-92.168024,3a,75y,294.09h,71.36t/data=!3m4!1e1!3m2!1sGUkoc-YOhxYusUlRmRiuvw!2e0?hl=en&lt;/code&gt;，街景id是!1s与!2e之间的部分。打开替换街景id后的链接，就能在地址中找到经纬度47.528448,-92.168024。&lt;/p&gt;
-
-&lt;h4&gt;3. 控制地图中心。&lt;/h4&gt;
-
-&lt;p&gt;这是可以收到能够拖动地图中心到找到的经纬度。也可以用代码注入的方法控制地图拖动缩放。Google Maps API新建地图的语句是new google.maps.Map。搜索代码功能以前是在调试工具的Resources选项卡下，现在变成了按Esc调出drawer，选中search选项卡搜索。搜到了三处，都在geoguessr.js中。从名字来看，guessMapView这个变量最可能是猜结果的地图。在控制台的变量中找不到这个实例，应该是包在函数中了，就通过断点注入来插入代码。在sources选项卡中找到这个变量定义的地方，可以点击尖括号图标来让Chrome帮你完成代码格式化方便阅读。找一个能访问资源的功能，例如showHelp定义的地方打断点。点击界面的帮助按钮，就会停在断点处。之前记得先在猜的地图上把红色的标记点出来。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/2014-02-11-hack-geoguessr3.png&quot; alt=&quot;geoguessr&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;控制台输入代码：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;google&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;maps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;LatLng&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;47.528448&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;92.168024&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;guessMapView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;guessMapView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;guessMarker&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setPosition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;继续执行脚本。回到页面点Make Guess就通关了，得到用于炫耀的链接哈哈。&lt;code&gt;http://url.geoguessr.com/6nYg&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;不得不说猜到中国的时候坑比较大啊，因为众所周知的国内地图被要求加一个偏差。其中有一关街景是在湖边的路上，答案要点在湖里面。&lt;/p&gt;
-</description>
-        <pubDate>Tue, 11 Feb 2014 00:00:00 +0800</pubDate>
-        <link>/past/2014/02/11/hack-geoguessr.html</link>
-        <guid isPermaLink="true">/past/2014/02/11/hack-geoguessr.html</guid>
-        
-        
-        <category>past</category>
         
       </item>
     
