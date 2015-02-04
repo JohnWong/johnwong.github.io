@@ -22,7 +22,7 @@ thumb: /images/2014-04-02-security-in-bupt-04-03.png
 
 一票Web容器没做访问控制，同时给了列目录权限。这样就等于自己的各种资源分享给了所有人啊，这应该不是初衷吧。 
 
-![/images/2014-04-02-security-in-bupt-04-01.jpg](/images/2014-04-02-security-in-bupt-04-01.jpg)
+![/images/2014-04-02-security-in-bupt-04-01.png](/images/2014-04-02-security-in-bupt-04-01.png)
 
 然后还有一票phpMyAdmin没有访问控制，或者弱口令。据说拿到MySql的远程登录权限甚至能上传程序控制整个主机。 
 

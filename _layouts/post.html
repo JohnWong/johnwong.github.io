@@ -11,14 +11,16 @@ layout: default
   <div class="row">
     <div class="col-md-9" role="main">
       <div class="post">
+        {% if page.thumb %}
         <div class="post-poster">
           <img class="feature-img" alt="{{ page.title }}" src="{{ page.thumb | prepend: site.baseurl }}">
         </div>
+        {% endif %}
         <h1 class="post-big-title">
           {{ page.title }}
         </h1>
         <div class="post-author">
-          <a class="category" href="category.html?cat=Life"><span class="glyphicon {{ category.icon }}"></span>{{ category.name }}</a> | <span id="author" class="author">{{ page.author }}</span> • {{ page.date | date: "%b %-d, %Y" }}
+          <a class="category" href="/category/{{ category.name }}.html"><span class="glyphicon {{ category.icon }}"></span>{{ category.name }}</a> | <span id="author" class="author">{{ page.author }}</span> • {{ page.date | date: "%b %-d, %Y" }}
         </div>
         <div class="markdown-body">
           {{ content }}

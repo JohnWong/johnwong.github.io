@@ -39,11 +39,11 @@ layout: index
     <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">«</a>
   </li>
   <li class="{% if paginator.page == i %}disabled{% endif %}">
-    <a href="{{ '/' | prepend: site.baseurl }}">1</a>
+    <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">1</a>
   </li>
   {% for i in (2..paginator.total_pages) %}
   <li class="{% if paginator.page == i %}disabled{% endif %}">
-    <a href="{{ i | append:  '/' | prepend:  '/' | prepend: site.baseurl }}">{{ i }}</a>
+    <a href="{{ site.paginate_path | prepend: '/' | replace: ':num', i }}">{{ i }}</a>
   </li>
   {% endfor %}
   <li class="{% if paginator.next_page == null %}disabled{% endif %}">

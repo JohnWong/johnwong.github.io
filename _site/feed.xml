@@ -5,8 +5,13 @@
     <description></description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+<<<<<<< HEAD
     <pubDate>Wed, 04 Feb 2015 16:50:54 +0800</pubDate>
     <lastBuildDate>Wed, 04 Feb 2015 16:50:54 +0800</lastBuildDate>
+=======
+    <pubDate>Thu, 05 Feb 2015 01:05:01 +0800</pubDate>
+    <lastBuildDate>Thu, 05 Feb 2015 01:05:01 +0800</lastBuildDate>
+>>>>>>> fix travis-ci error
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -431,7 +436,7 @@ password字段是加密的但是有部分可以简单解出来。学号已经有
 
 &lt;p&gt;一票Web容器没做访问控制，同时给了列目录权限。这样就等于自己的各种资源分享给了所有人啊，这应该不是初衷吧。 &lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/2014-04-02-security-in-bupt-04-01.jpg&quot; alt=&quot;/images/2014-04-02-security-in-bupt-04-01.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/2014-04-02-security-in-bupt-04-01.png&quot; alt=&quot;/images/2014-04-02-security-in-bupt-04-01.png&quot;&gt;&lt;/p&gt;
 
 &lt;p&gt;然后还有一票phpMyAdmin没有访问控制，或者弱口令。据说拿到MySql的远程登录权限甚至能上传程序控制整个主机。 &lt;/p&gt;
 
