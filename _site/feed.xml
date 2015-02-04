@@ -5,8 +5,8 @@
     <description></description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 04 Feb 2015 10:21:07 +0800</pubDate>
-    <lastBuildDate>Wed, 04 Feb 2015 10:21:07 +0800</lastBuildDate>
+    <pubDate>Wed, 04 Feb 2015 10:40:53 +0800</pubDate>
+    <lastBuildDate>Wed, 04 Feb 2015 10:40:53 +0800</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -106,6 +106,120 @@
         
         
         <category>showcase</category>
+        
+      </item>
+    
+      <item>
+        <title>iOS8定位适配</title>
+        <description>&lt;p&gt;iOS8 beta版发布后淘点点尝试适配，其中遇到的一个主要的问题是无法定位，做了一些适配后后能够正常定位。iOS8正式版定位方面没有变动，依然需要做适配。iOS8对定位的改动，基本思路就是将定位细分为Always和WhenInUse两类，要求开发者说明使用定位的用途并酌情使用。此举意在防止定位信息滥用，至于作用就仁者见仁智者见智了。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;更新：&lt;br&gt;
+当使用iOS SDK 8，并且iOS设备或模拟器也是iOS8时，无法定位需要做适配。其他情况下不做适配也可以正常工作。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;定位变更&lt;/h2&gt;
+
+&lt;p&gt;iOS8的变更包括：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;状态栏图标&lt;/li&gt;
+&lt;li&gt;定位服务设置&lt;/li&gt;
+&lt;li&gt;定位授权&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;想要全面了解的同学可以学习WWDC的&lt;code&gt;What&amp;#39;s New in Core Location&lt;/code&gt;一节。这里我们主要介绍定位授权。&lt;/p&gt;
+
+&lt;p&gt;定位授权在iOS8中细分为Always和WhenInUse。如下表，定位可以细分为5类。前三个前台更新，属于Continuous Updates。后两个后台更新，属于Location Monitoring。Always授权可以使用这5类定位，而WhenInUse可以使用Continuous Updates，也就是前三个。&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Location&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;Always&lt;/th&gt;
+&lt;th style=&quot;text-align: right&quot;&gt;WhenInUse&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Location&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Background location&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ranging&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Region monitoring&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Significant location changes&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;Yes&lt;/td&gt;
+&lt;td style=&quot;text-align: right&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;p&gt;iOS8要求应用如果使用定位，需要告诉用户使用的原因。描述放在应用的Info.plist中，当然也可能是其他文件名，取决于项目中的定义。两个授权的key分别为：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;NSLocationAlwaysUsageDescription&lt;/li&gt;
+&lt;li&gt;NSLocationWhenInUseUsageDescription&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;看起来Always授权涵盖了WhenInUse授权，使用Always授权可以一劳永逸了。但是如果应用被授予了Always授权，几天后可能需要再次向用户请求授权。这样是为了让应用按需申请授权，开发者可能需要权衡。&lt;/p&gt;
+
+&lt;p&gt;之前定位授权获取发生在应用使用定位的时候，开发者不需要显式地请求。现在则需要显式地请求授权。两个授权对应的方法在类&lt;code&gt;CLLocationManager&lt;/code&gt;中，分别为：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;requestAlwaysAuthorization&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__OSX_AVAILABLE_STARTING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__MAC_NA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__IPHONE_8_0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;requestWhenInUseAuthorization&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__OSX_AVAILABLE_STARTING&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__MAC_NA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;__IPHONE_8_0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;如何适配&lt;/h2&gt;
+
+&lt;h3&gt;1. 添加定位使用描述&lt;/h3&gt;
+
+&lt;p&gt;在Info.plist中添加应用准备使用的定位授权，例如&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;NSLocationAlwaysUsageDescription&lt;span class=&quot;nt&quot;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;淘点点将获取您的位置，为您提供更精准的餐饮服务&lt;span class=&quot;nt&quot;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;2. 检测并请求授权&lt;/h3&gt;
+
+&lt;p&gt;在调用&lt;code&gt;CLLocationManager&lt;/code&gt;的&lt;code&gt;startUpdatingLocation&lt;/code&gt;前请求授权。首先为了兼容老版本，需要用宏定义在老版本中屏蔽相关代码。然后检测Info.plist中定义授权的描述，根据存的授权的描述决定申请哪个定位授权。以下代码为墨昕编写。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#if __IPHONE_OS_VERSION_MAX_ALLOWED &amp;gt; __IPHONE_7_1&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;floor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSFoundationVersionNumber&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSFoundationVersionNumber_iOS_7_1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;CLLocationManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;authorizationStatus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;kCLAuthorizationStatusNotDetermined&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;BOOL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hasAlwaysKey&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSBundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mainBundle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;objectForInfoDictionaryKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;NSLocationAlwaysUsageDescription&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;BOOL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hasWhenInUseKey&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSBundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mainBundle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;objectForInfoDictionaryKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;NSLocationWhenInUseUsageDescription&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hasAlwaysKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;locationManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requestAlwaysAuthorization&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hasWhenInUseKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;locationManager&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;requestWhenInUseAuthorization&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;NSAssert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hasAlwaysKey&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hasWhenInUseKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;moxin.xt:add NSLocationWhenInUseUsageDescription or NSLocationAlwaysUsageDescription to your info.plist&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;#endif&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;同时建议其他iOS团队写好对用户授权的描述，更多信息参考&lt;a href=&quot;http://www.cocoachina.com/design/20140414/8151.html&quot;&gt;在正确的情境中向用户获取iOS权限&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Refer&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/videos/wwdc/2014/&quot;&gt;WWDC 2014&lt;/a&gt; What&amp;#39;s New in Core Location一节&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/24062509/ios-8-location-services-not-working&quot;&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManager_Class/index.html&quot;&gt;CoreLocation Framework Reference&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 22 Sep 2014 00:00:00 +0800</pubDate>
+        <link>/mobile/2014/09/22/core-location-in-ios8.html</link>
+        <guid isPermaLink="true">/mobile/2014/09/22/core-location-in-ios8.html</guid>
+        
+        
+        <category>mobile</category>
         
       </item>
     
@@ -424,49 +538,6 @@ Google得到这个产品的默认密码，居然可以登录。后来发现乌�
         <pubDate>Tue, 01 Apr 2014 00:00:00 +0800</pubDate>
         <link>/security/2014/04/01/security-in-bupt-02.html</link>
         <guid isPermaLink="true">/security/2014/04/01/security-in-bupt-02.html</guid>
-        
-        
-        <category>security</category>
-        
-      </item>
-    
-      <item>
-        <title>扒一扒北邮的安全问题[1]-学生收费查询系统</title>
-        <description>&lt;h4&gt;漏洞类型：&lt;/h4&gt;
-
-&lt;p&gt;登录绕过/SQL注入&lt;/p&gt;
-
-&lt;h4&gt;相关网站&lt;/h4&gt;
-
-&lt;p&gt;财务处学生收费查询系统&lt;/p&gt;
-
-&lt;h4&gt;问题描述&lt;/h4&gt;
-
-&lt;p&gt;登录存在SQL注入漏洞导致学生姓名和交费信息泄漏&lt;/p&gt;
-
-&lt;h4&gt;漏洞详情&lt;/h4&gt;
-
-&lt;p&gt;&lt;code&gt;http://10.100.52.251/search/xssf/xssf.htm&lt;/code&gt;这个网站有三个模块，第一个学生个人收费查询暂时没有找到破解方法。 
-第三个模块管理员入口，用户一栏填写经典的登录绕过&amp;#39;or&amp;#39;=&amp;#39;or&amp;#39;，成功绕过登陆。 &lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/2014-03-31-security-in-bupt-01-01.png&quot; alt=&quot;2014-03-31-security-in-bupt-01-01.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/2014-03-31-security-in-bupt-01-02.png&quot; alt=&quot;2014-03-31-security-in-bupt-01-02.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;看到了一大批账号，例如gl&lt;em&gt;gy。 
-再来到第二个模块系部查询，用户一栏填写gl&lt;/em&gt;gy&amp;#39;or&amp;#39;，成功以公寓的账号登录系统，能够查询到学生交费信息。 &lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/2014-03-31-security-in-bupt-01-03.png&quot; alt=&quot;2014-03-31-security-in-bupt-01-03.png&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;PS. lz是刚毕业的菜硕，非安全专业的，课余时间搞搞，发现好多有意思的事情分享给大家，同时也希望大家能够重视安全问题。 &lt;/p&gt;
-
-&lt;h4&gt;原帖&lt;/h4&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://bbs.byr.cn/#!article/WWWTechnology/24212&quot;&gt;http://bbs.byr.cn/#!article/WWWTechnology/24212&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 31 Mar 2014 00:00:00 +0800</pubDate>
-        <link>/security/2014/03/31/security-in-bupt-01.html</link>
-        <guid isPermaLink="true">/security/2014/03/31/security-in-bupt-01.html</guid>
         
         
         <category>security</category>

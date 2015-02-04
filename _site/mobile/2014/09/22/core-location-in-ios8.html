@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>iOS8定位适配</title>
+  <meta name="description" content=""> 
+  
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css ">
+  
+  <script src="/js/common.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/pygments.css">
+  <link rel="stylesheet" href="/css/github-markdown.css">
+  <link rel="canonical" href="/mobile/2014/09/22/core-location-in-ios8.html">
+</head>
+
+  <body>
+
+    <header class="navbar navbar-responsive-top jw-docs-nav" id="top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".jw-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">
+        <img class="gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=88">
+        <span class="name">John Wong</span>
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse jw-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        
+        <li class="active">
+          <a href="/category/mobile.html">mobile</a>
+        </li>
+        
+        <li class="">
+          <a href="/category/security.html">security</a>
+        </li>
+        
+        <li class="">
+          <a href="/category/showcase.html">showcase</a>
+        </li>
+        
+        <li class="">
+          <a href="/category/past.html">past</a>
+        </li>
+        
+        <li>
+          <a href="#">Bookmarks</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/about.html" target="_blank">About</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    
+    <div class="page-content">
+      <div class="wrapper">
+        
+  
+    
+  
+
+  
+
+  
+
+  
+
+<div class="container post-middle">
+  <div class="row">
+    <div class="col-md-9" role="main">
+      <div class="post">
+        <div class="post-poster">
+          <img class="feature-img" src="/images/2014-09-22-core-location-in-ios8.png">
+        </div>
+        <h1 class="post-big-title">
+          iOS8定位适配
+        </h1>
+        <div class="post-author">
+          <a class="category" href="category.html?cat=Life"><span class="glyphicon glyphicon-phone"></span>mobile</a> | <span id="author" class="author"></span> • Sep 22, 2014
+        </div>
+        <div class="markdown-body">
+          <p>iOS8 beta版发布后淘点点尝试适配，其中遇到的一个主要的问题是无法定位，做了一些适配后后能够正常定位。iOS8正式版定位方面没有变动，依然需要做适配。iOS8对定位的改动，基本思路就是将定位细分为Always和WhenInUse两类，要求开发者说明使用定位的用途并酌情使用。此举意在防止定位信息滥用，至于作用就仁者见仁智者见智了。</p>
+
+<blockquote>
+<p>更新：<br>
+当使用iOS SDK 8，并且iOS设备或模拟器也是iOS8时，无法定位需要做适配。其他情况下不做适配也可以正常工作。</p>
+</blockquote>
+
+<h2>定位变更</h2>
+
+<p>iOS8的变更包括：</p>
+
+<ul>
+<li>状态栏图标</li>
+<li>定位服务设置</li>
+<li>定位授权</li>
+</ul>
+
+<p>想要全面了解的同学可以学习WWDC的<code>What&#39;s New in Core Location</code>一节。这里我们主要介绍定位授权。</p>
+
+<p>定位授权在iOS8中细分为Always和WhenInUse。如下表，定位可以细分为5类。前三个前台更新，属于Continuous Updates。后两个后台更新，属于Location Monitoring。Always授权可以使用这5类定位，而WhenInUse可以使用Continuous Updates，也就是前三个。</p>
+
+<table><thead>
+<tr>
+<th>Location</th>
+<th style="text-align: center">Always</th>
+<th style="text-align: right">WhenInUse</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Location</td>
+<td style="text-align: center">Yes</td>
+<td style="text-align: right">Yes</td>
+</tr>
+<tr>
+<td>Background location</td>
+<td style="text-align: center">Yes</td>
+<td style="text-align: right">Yes</td>
+</tr>
+<tr>
+<td>Ranging</td>
+<td style="text-align: center">Yes</td>
+<td style="text-align: right">Yes</td>
+</tr>
+<tr>
+<td>Region monitoring</td>
+<td style="text-align: center">Yes</td>
+<td style="text-align: right"></td>
+</tr>
+<tr>
+<td>Significant location changes</td>
+<td style="text-align: center">Yes</td>
+<td style="text-align: right"></td>
+</tr>
+</tbody></table>
+
+<p>iOS8要求应用如果使用定位，需要告诉用户使用的原因。描述放在应用的Info.plist中，当然也可能是其他文件名，取决于项目中的定义。两个授权的key分别为：</p>
+
+<ul>
+<li>NSLocationAlwaysUsageDescription</li>
+<li>NSLocationWhenInUseUsageDescription</li>
+</ul>
+
+<p>看起来Always授权涵盖了WhenInUse授权，使用Always授权可以一劳永逸了。但是如果应用被授予了Always授权，几天后可能需要再次向用户请求授权。这样是为了让应用按需申请授权，开发者可能需要权衡。</p>
+
+<p>之前定位授权获取发生在应用使用定位的时候，开发者不需要显式地请求。现在则需要显式地请求授权。两个授权对应的方法在类<code>CLLocationManager</code>中，分别为：</p>
+<div class="highlight"><pre><code class="language-objective-c" data-lang="objective-c"><span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">requestAlwaysAuthorization</span> <span class="n">__OSX_AVAILABLE_STARTING</span><span class="p">(</span><span class="n">__MAC_NA</span><span class="p">,</span> <span class="n">__IPHONE_8_0</span><span class="p">);</span>
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">requestWhenInUseAuthorization</span> <span class="n">__OSX_AVAILABLE_STARTING</span><span class="p">(</span><span class="n">__MAC_NA</span><span class="p">,</span> <span class="n">__IPHONE_8_0</span><span class="p">);</span>
+</code></pre></div>
+<h2>如何适配</h2>
+
+<h3>1. 添加定位使用描述</h3>
+
+<p>在Info.plist中添加应用准备使用的定位授权，例如</p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;key&gt;</span>NSLocationAlwaysUsageDescription<span class="nt">&lt;/key&gt;</span>
+<span class="nt">&lt;string&gt;</span>淘点点将获取您的位置，为您提供更精准的餐饮服务<span class="nt">&lt;/string&gt;</span>
+</code></pre></div>
+<h3>2. 检测并请求授权</h3>
+
+<p>在调用<code>CLLocationManager</code>的<code>startUpdatingLocation</code>前请求授权。首先为了兼容老版本，需要用宏定义在老版本中屏蔽相关代码。然后检测Info.plist中定义授权的描述，根据存的授权的描述决定申请哪个定位授权。以下代码为墨昕编写。</p>
+<div class="highlight"><pre><code class="language-objective-c" data-lang="objective-c"><span class="cp">#if __IPHONE_OS_VERSION_MAX_ALLOWED &gt; __IPHONE_7_1</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">floor</span><span class="p">(</span><span class="n">NSFoundationVersionNumber</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">NSFoundationVersionNumber_iOS_7_1</span> <span class="o">&amp;&amp;</span> <span class="p">[</span><span class="bp">CLLocationManager</span> <span class="n">authorizationStatus</span><span class="p">]</span> <span class="o">==</span> <span class="n">kCLAuthorizationStatusNotDetermined</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">BOOL</span> <span class="n">hasAlwaysKey</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSBundle</span> <span class="n">mainBundle</span><span class="p">]</span> <span class="nl">objectForInfoDictionaryKey</span><span class="p">:</span><span class="s">@&quot;NSLocationAlwaysUsageDescription&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">nil</span><span class="p">;</span>
+        <span class="kt">BOOL</span> <span class="n">hasWhenInUseKey</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSBundle</span> <span class="n">mainBundle</span><span class="p">]</span> <span class="nl">objectForInfoDictionaryKey</span><span class="p">:</span><span class="s">@&quot;NSLocationWhenInUseUsageDescription&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="nb">nil</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">hasAlwaysKey</span><span class="p">)</span> <span class="p">{</span>
+            <span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">locationManager</span> <span class="n">requestAlwaysAuthorization</span><span class="p">];</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">hasWhenInUseKey</span><span class="p">)</span> <span class="p">{</span>
+            <span class="p">[</span><span class="nb">self</span><span class="p">.</span><span class="n">locationManager</span> <span class="n">requestWhenInUseAuthorization</span><span class="p">];</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">NSAssert</span><span class="p">(</span><span class="n">hasAlwaysKey</span> <span class="o">||</span> <span class="n">hasWhenInUseKey</span><span class="p">,</span> <span class="s">@&quot;moxin.xt:add NSLocationWhenInUseUsageDescription or NSLocationAlwaysUsageDescription to your info.plist&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="cp">#endif</span>
+</code></pre></div>
+<p>同时建议其他iOS团队写好对用户授权的描述，更多信息参考<a href="http://www.cocoachina.com/design/20140414/8151.html">在正确的情境中向用户获取iOS权限</a></p>
+
+<h2>Refer</h2>
+
+<p><a href="https://developer.apple.com/videos/wwdc/2014/">WWDC 2014</a> What&#39;s New in Core Location一节</p>
+
+<p><a href="http://stackoverflow.com/questions/24062509/ios-8-location-services-not-working">Stack Overflow</a></p>
+
+<p><a href="https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManager_Class/index.html">CoreLocation Framework Reference</a></p>
+
+        </div>
+        
+        <div id="disqus_head" class="disqus_head">
+  <h2>Comments</h2>
+</div>
+<div id="disqus_thread" class="disqus_thread"></div>
+<script type="text/javascript" async=true src="//johnwong.disqus.com/embed.js"></script>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+      </div>
+    </div>
+    <div class="col-md-3 index-right">
+
+      <img class="gravatar index-gravatar" src="http://gravatar.duoshuo.com/avatar/135dee388c0976f500748a64960038ee?s=240">
+<h1 class="index-me">
+  <span>John Wong <a href="https://github.com/JohnWong">@Github</a></span>
+</h1>
+<div class="vcard-stats">
+  <a class="vcard-stat" href="https://github.com/JohnWong/followers">
+    <strong class="vcard-stat-count">20</strong> followers
+  </a>
+  <a class="vcard-stat" href="https://github.com/stars/JohnWong">
+    <strong class="vcard-stat-count">43</strong> Starred
+  </a>
+  <a class="vcard-stat" href="https://github.com/JohnWong/following">
+    <strong class="vcard-stat-count">10</strong> Following
+  </a>
+  <div class="cf"></div>
+</div>
+
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    
+    <footer class="jw-docs-footer" role="contentinfo">
+  <div class="container">
+    <div class="jw-docs-social">
+      <ul class="jw-docs-social-buttons">
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=JohnWong&type=follow&count=true&size=small" width="165" height="20" title="Follow on GitHub"></iframe>
+        </li>
+        <li class="github-btn">
+          <iframe class="github-btn" src="http://pytool.sinaapp.com/wb-btn?user=2180280355&type=follow&count=true&size=small&encoding=utf-8" width="160" height="20" title="Follow on Weibo"></iframe>
+        </li>
+        <!-- 解决linkedin抓数据500错误前关闭按钮
+                    <li class="github-btn">
+                        <iframe class="github-btn" src="http://pytool.sinaapp.com/in-btn?user=xiaozhe-huang/4b/204/71b&count=true&size=small&encoding=utf-8" width="202" height="20" title="Follow on Weibo"></iframe>
+                    </li>
+                -->
+      </ul>
+    </div>
+    <p>自豪地采用自己做的博客系统
+      <br class="footer-desc-endline">with the help of <a href="http://getbootstrap.com/">Twitter Bootstrap</a> & <a href="https://github.com/jekyll/jekyll">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>
+      <p>
+        <ul class="jw-docs-footer-links muted">
+          <li>© 2014 • <a href="https://github.com/JohnWong">John Wong</a> <span class="rss-subscribe"> | subscribe <a href="/feed.xml">via RSS</a></span>
+          </li>
+        </ul>
+  </div>
+  <div style="display:none">
+    <div style="display: none !important"
+<span id='cnzz_stat_icon_1252918306'></span>
+<script src=' http://s23.cnzz.com/z_stat.php?id=1252918306' type='text/javascript'></script>
+    <script>
+(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+ga('create', 'UA-53121297-1', 'auto');
+ga('send', 'pageview');
+</script>
+  </div>
+</footer>
+
+  </body>
+
+</html>
