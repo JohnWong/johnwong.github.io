@@ -36,7 +36,11 @@ layout: index
 </div>
 <ul id="pagination" class="pagination">
   <li class="{% if paginator.previous_page == null %}disabled{% endif %}">
+    {% if paginator.previous_page == null %}
+    <span>«<span>
+    {% else %}
     <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">«</a>
+    {% endif %}
   </li>
   <li class="{% if paginator.page == i %}disabled{% endif %}">
     <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">1</a>
@@ -47,6 +51,10 @@ layout: index
   </li>
   {% endfor %}
   <li class="{% if paginator.next_page == null %}disabled{% endif %}">
+    {% if paginator.next_page == null %}
+    <span>»</span>
+    {% else %}
     <a href="{{ paginator.next_page_path | prepend: site.baseurl }}">»</a>
+    {% endif %}
   </li>
 </ul>

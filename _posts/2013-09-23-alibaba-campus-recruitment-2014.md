@@ -4,7 +4,7 @@ title: "阿里巴巴2014校招笔试错误汇总"
 category: Past
 description: 还好通过了。。。
 ---
-试题参见：[http://7-sun.com/text/9484.html](http://7-sun.com/text/9484.html)
+试题参见：`http://7-sun.com/text/9484.html`（已失效）
 
 1\. C 觉得内存和SSD都使用闪存芯片，速度应该接近。实际上还受限于接口等，内存纳秒级时间可以访问。
 
