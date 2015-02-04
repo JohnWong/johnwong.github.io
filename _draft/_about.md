@@ -1,8 +1,7 @@
 # John Wong
 ## Mobile Development Engineer
 
-> [Download PDF](resume.pdf)  
-> [huangxiaozhe1988@gmail.com](huangxiaozhe1988@gmail.com)  
+> [huangxiaozhe1988@gmail.com](mailto:huangxiaozhe1988@gmail.com)  
 > [Github](https://github.com/JohnWong)
 
 ------
@@ -49,6 +48,6 @@ CDL, IBM
 
 ### Footer
 
-John Wong -- [huangxiaozhe1988@gmail.com](huangxiaozhe1988@gmail.com) -- [Github](https://github.com/JohnWong)
+John Wong -- [huangxiaozhe1988@gmail.com](mailto:huangxiaozhe1988@gmail.com) -- [Github](https://github.com/JohnWong)
 
 ------

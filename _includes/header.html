@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
       </button>
       <a href="/" class="navbar-brand">
-        <img class="gravatar" src="http://gravatar.duoshuo.com/avatar/{{ site.gravatar_hash}}?s=88">
+        <img class="gravatar" alt="{{ site.username }}" src="http://gravatar.duoshuo.com/avatar/{{ site.gravatar_hash}}?s=88">
         <span class="name">{{ site.username }}</span>
       </a>
     </div>
@@ -19,9 +19,9 @@
           <a href="{{ "/category/" | prepend: site.baseurl | append: category_item.name | append: '.html' }}">{{ category_item.name }}</a>
         </li>
         {% endfor %}
-        <li>
+        <!-- <li>
           <a href="#">Bookmarks</a>
-        </li>
+        </li> -->
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/about.html" target="_blank">About</a>

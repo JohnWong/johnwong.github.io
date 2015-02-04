@@ -2,6 +2,7 @@
 title: John Wong's Blog
 email: huangxiaozhe1988@gmail.com
 description: > # John Wong's Blog.
+placeholder: /images/octocat-180.png
 # baseurl: "" # the subpath of your site, e.g. /blog/
 # url: "http://localhost" # the base hostname & protocol for your site
 
@@ -22,7 +23,7 @@ paginate_path: ":num"
 # Extent settings
 username: John Wong
 motto: 一个热爱编程的傻瓜
-production: false
+production: true
 gravatar_hash: 135dee388c0976f500748a64960038ee # used for gravater
 category_info: 
     - {name: mobile, color: "#62bb47", icon: glyphicon-phone}

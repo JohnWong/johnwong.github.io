@@ -21,7 +21,7 @@ layout: index
     <div class="left left-col">
       <div class="image feature-img thumb-180">
         <a href="{{ post.url | prepend: site.baseurl }}">
-          <img class="feature-img" src="{% if post.thumb %}{{ post.thumb | prepend: site.baseurl }}{% else %}/images/octocat-180.png{% endif %}">
+          <img class="feature-img" alt="{{ post.title }}" src="{% if post.thumb %}{{ post.thumb | prepend: site.baseurl }}{% else %}{{ site.placeholder }}{% endif %}">
         </a>
       </div>
     </div>
@@ -39,11 +39,11 @@ layout: index
     <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">«</a>
   </li>
   <li class="{% if paginator.page == i %}disabled{% endif %}">
-    <a href="{{ '/'' | prepend: site.baseurl }}">1</a>
+    <a href="{{ '/' | prepend: site.baseurl }}">1</a>
   </li>
   {% for i in (2..paginator.total_pages) %}
   <li class="{% if paginator.page == i %}disabled{% endif %}">
-    <a href="{{ i | prepend:  '/'' | prepend: site.baseurl }}">{{ i }}</a>
+    <a href="{{ i | append:  '/' | prepend:  '/' | prepend: site.baseurl }}">{{ i }}</a>
   </li>
   {% endfor %}
   <li class="{% if paginator.next_page == null %}disabled{% endif %}">
