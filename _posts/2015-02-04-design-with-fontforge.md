@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 使用FontForge进行设计
+title: FontForge 与字体设计
 category: Showcase
 description: 一边学习FontForge一边翻译官方帮助网站。
 thumb: "/images/2015-02-04-design-with-fontforge-thumb.jpg"
