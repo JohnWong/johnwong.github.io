@@ -22,12 +22,15 @@ thumb:
 action
 
 短期
+
 1. 写好周报
 2. 做好Scrum Master
 3. 练好签名
 4. 学习极限编程
+5. WebP
 
 长期
+
 1. 预研Apple Watch
 2. 从部门的角度考虑自己能做的
 3. 学习Google移动端代码复用

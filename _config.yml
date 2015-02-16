@@ -3,7 +3,7 @@ title: John Wong's Blog
 email: huangxiaozhe1988@gmail.com
 description: > # John Wong's Blog.
 placeholder: /images/octocat-180.png
-# baseurl: "" # the subpath of your site, e.g. /blog/
+baseurl: /blog/ # the subpath of your site, e.g. /blog/
 # url: "http://localhost" # the base hostname & protocol for your site
 
 exclude:
@@ -37,6 +37,6 @@ category_info:
 github:
     url: "https://github.com/"
     username: "JohnWong"
-    followers: 20
-    starred: 43
+    followers: 21
+    starred: 64
     following: 10
