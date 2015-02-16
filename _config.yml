@@ -2,8 +2,8 @@
 title: John Wong's Blog
 email: huangxiaozhe1988@gmail.com
 description: > # John Wong's Blog.
-placeholder: /blog/images/octocat-180.png
-baseurl: /blog/ # the subpath of your site, e.g. /blog/
+placeholder: /images/octocat-180.png
+# baseurl: /blog/ # the subpath of your site, e.g. /blog/
 # url: "http://localhost" # the base hostname & protocol for your site
 
 exclude:
