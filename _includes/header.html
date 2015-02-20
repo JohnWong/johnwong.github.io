@@ -15,7 +15,7 @@
     <nav class="collapse navbar-collapse jw-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
         {% for category_item in site.category_info %}
-        <li class="{% if page.categories[0] == category_item.name %}active{% endif %}">
+        <li class="{% if page.categories[0] == category_item.name or page.dir == "/category" and page.name contains category_item.name %}active{% endif %}">
           <a href="{{ "/category/" | prepend: site.baseurl | append: category_item.name | append: '.html' }}">{{ category_item.name }}</a>
         </li>
         {% endfor %}

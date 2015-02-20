@@ -20,9 +20,6 @@
         border-left: none;
     }
     .jw-docs-nav .navbar-nav>.active>a, .jw-docs-nav .navbar-nav>.active>a:hover {
-        color: #2a6496;
-        font-weight: 600;
-        background-color: #eee;
         border-bottom: 2px solid #2a6496;
         border-left: none;
     }
