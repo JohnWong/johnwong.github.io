@@ -22,7 +22,6 @@ thumb: /images/2015-02-19-png-compress-02.png
 
 [ImageOptim]是一款非常优秀的无损图片压缩工具，相信大多数iOS开发者都知道它。它通过优化压缩参数，移除无用的文件元数据和不必要的颜色配置来实现图片的无损压缩。它集成了最好的压缩工具，包括[PNGOUT]，[Zopfli], [Pngcrush], [AdvPNG]，[OptiPNG]，[JpegOptim]，[JPEGrescan]，[Jpegtran]和[Gifsicle]。除了压缩效率高，它还支持[命令行](https://imageoptim.com/command-line.html)、充分利用多核、批量处理和拖拽操作方式。
 
-[ImageOptim]的
 关于其算法可以参考项目的[issue讨论](https://github.com/pornel/ImageOptim/issues/79)。基本方法是利用用多个工具压缩图片，选取体积最小的替换原图。如果所有方法压缩后变大则保留原图（比如已经被其压缩过一次的图片可能再压变大）。作者期望压缩算法按照一定顺序进行，前一次如果压缩有效，后一次基于前一次的压缩结果进行。实际情况下几种工具大多基于原图进行压缩，这可能是一个值得以后改进的地方。
 
 ### ImageOptim with pngquant
