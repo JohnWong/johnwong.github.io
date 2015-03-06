@@ -45,8 +45,8 @@ thumb: /images/2015-02-19-png-compress-02.png
 
 ### Next
 
-- PNG压缩目前没有更好的方法了，有空的时候研究一下WebP，看看能不能图片体积。
-- [jpeg-archive]是JPEGmini的一个免费替代品，尝试用它进来压缩JPEG图片。
+- PNG压缩目前没有更好的方法了，有空的时候研究一下WebP，看看能不能让图片体积变得更小。
+- [jpeg-archive]是JPEGmini的一个免费替代品，尝试加入它来压缩JPEG图片。
 
 ### Further Reading
 
