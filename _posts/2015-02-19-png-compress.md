@@ -34,6 +34,8 @@ thumb: /images/2015-02-19-png-compress-02.png
 
 你可以自行编译或者下载[编译好的应用](https://github.com/JohnWong/ImageOptim/releases/download/1.5.4/ImageOptim-with-pngquant.zip)
 
+需要注意的是压缩之前做好版本控制或者备份，因为压缩是有损的并且会修改原文件，可能会变得失真严重。所以我一般是在把版本控制下的项目里的图片拖进工具，提交之前在SourceTree中预览一下压缩前后的图片，以防失真严重。虽然目前为止这样的压缩都几乎不会感受到品质的损失，但是还是小心为上。另外用ImageOptim压缩有个特点，就是压缩之后再次压缩体积可能反而变大，所以如果做iOS开发，需要将Xcode编译设置中的PNG压缩关掉，可以参考[ImageOptim上关于Xcode的文章](https://imageoptim.com/xcode.html)。另外如果要在IE下使用，那么需要修改运行[pngquant]的参数。如果有同学遇到这样的需求请联系我，我再来支持这个功能。
+
 ### 压缩工具对比
 
 [ImageOptim-CLI]项目的`gh-pages`分支里面提供了测试压缩工具效果的方法。需要注意的是失真的计算依赖于[ImageMagick](http://www.imagemagick.org/)，需要先安装它。 对于几种压缩工具的对比参见[http://jamiemason.github.io/ImageOptim-CLI/](http://jamiemason.github.io/ImageOptim-CLI/)。
