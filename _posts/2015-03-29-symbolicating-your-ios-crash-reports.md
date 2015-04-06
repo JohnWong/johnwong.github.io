@@ -99,7 +99,7 @@ UUID: 3F3BE3C6-DD2E-3E23-A603-A18097C9317F (arm64) Crasher.app.dSYM/Contents/Res
 
 如果你仍然感到困惑，小心检查符号化的日志。符号化工具试图通过匹配你的app和其他动态框架的UUID来定位到合适的文件。查找你的app名称或者UUID来看是否匹配。
 
-> …….fetching symbol file for Crasher[K–[undef]
+> …….fetching symbol file for Crasher[K–[undef]
 Searching []…– NO MATCH
 Searching in Spotlight for dsym with UUID of b00cdf0c29653095b1e86078b12d79e5
 ...
