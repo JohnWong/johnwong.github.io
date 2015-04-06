@@ -20,6 +20,10 @@ thumb: /images/2015-03-30-color-in-interface-builder.png
 
 再后来找到了[replace srgb to calibratedRGB]，命令行一句话解决，就它了！
 
+```bash
+find . \( -name "*.xib" -or -name "*.storyboard" \) -print0 | xargs -0 sed -i '' -e 's/colorSpace="custom" customColorSpace="sRGB"/colorSpace="calibratedRGB"/g'
+```
+
 [Stack Overflow]:http://stackoverflow.com/questions/7488378/weird-colors-in-xcode-interface-builder
 [Xcode Color Fixer]:https://github.com/duowan/XCode-Color-Fixer
 [replace srgb to calibratedRGB]:https://www.snip2code.com/Snippet/343014/replace-srgb-to-calibratedRGB
