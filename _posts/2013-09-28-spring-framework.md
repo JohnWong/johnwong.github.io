@@ -6,7 +6,7 @@ description: 我觉得Java中最好的框架。
 ---
 Link: [http://www.ibm.com/developerworks/cn/java/wa-spring1/](http://www.ibm.com/developerworks/cn/java/wa-spring1/)
 
-![2013-09-28-spring-framework](/images/2013-09-28-spring-framework.gif)
+![2013-09-28-spring-framework](//dn-johnwong.qbox.me/images/2013-09-28-spring-framework.gif)
 
 Spring模块功能如下：
 

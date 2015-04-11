@@ -6,10 +6,10 @@
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{{ site.description }}"> 
   {% if site.production == true  %}
-  <script src="//ajax.lug.ustc.edu.cn/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  <script src="//dn-johnwong.qbox.me/js/jquery.min.js"></script>
+  <script src="//dn-johnwong.qbox.me/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="//dn-johnwong.qbox.me/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//dn-johnwong.qbox.me/css/bootstrap-theme.min.css">
   {% else %}
   <script src="{{ "/js/jquery.min.js" | prepend: site.baseurl }}"></script>
   <script src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>

@@ -16,7 +16,7 @@ c, System ClassLoader/系统类加载器
 b, User Custom ClassLoader/用户自定义类加载器(java.lang.ClassLoader的子类)在程序运行期间, 通过java.lang.ClassLoader的子类动态加载class文件, 体现java动态实时类装入特性.
 加载顺序是：自底向上检查类是否已经装在，有则返回，否则自顶向下尝试加载类。
 
-![2013-06-03-learning-java-classloader](/images/2013-06-03-learning-java-classloader.png)
+![2013-06-03-learning-java-classloader](//dn-johnwong.qbox.me/images/2013-06-03-learning-java-classloader.png)
 
 2. 类装入的方式有两种 —— 显式 或 隐式，两者之间有些细微差异。显式 类装入发生在使用以下方法调用装入的类的时候：
 cl.loadClass()（cl 是 java.lang.ClassLoader 的实例）

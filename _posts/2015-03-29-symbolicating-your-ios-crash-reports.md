@@ -3,7 +3,7 @@ layout: post
 title: "符号化你的iOS崩溃报告"
 category: Mobile
 description: 做完小工具就发烧，意识模糊的情况下翻译的。。。
-thumb: /images/2015-03-29-symbolicating-your-ios-crash-reports.jpg
+thumb: //dn-johnwong.qbox.me/images/2015-03-29-symbolicating-your-ios-crash-reports.jpg
 ---
 
 ## 前言

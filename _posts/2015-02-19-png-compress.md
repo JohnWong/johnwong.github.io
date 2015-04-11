@@ -3,14 +3,14 @@ layout: post
 title: PNG图片极限压缩
 category: Showcase
 description: 春节假期写代码，除夕夜总结出文章，想想也是醉了。
-thumb: /images/2015-02-19-png-compress-02.png
+thumb: //dn-johnwong.qbox.me/images/2015-02-19-png-compress-02.png
 ---
 
 之前面对应用体积压缩的问题时，找到了目前比较好的PNG压缩方法[ImageAlpha]+[ImageOptim]。这种方法一个不便之处在于[ImageAlpha]是一个单张图片处理工具，而且需要手动保存图片。图片较多时非常费力。如果有工具能够将两个工具结合到一起，提供批量处理的能力，将会很有帮助。[ImageOptim]作者也考虑过[添加有损压缩功能](https://github.com/pornel/ImageOptim/issues/17)，项目中也包含了[pngquant]，只是8个月过去了还没结果。[ImageOptim-CLI]是一个集成了这两个工具和JPEGmini的命令行工具，利用AppleScript实现对图形界面程序的操纵。用起来发现有时候会出现大图未被压缩的问题，同时命令行的交互相比图形界面在易用性上还是有差距。因此我花了些时间将[ImageAlpha]的有损压缩功能集成到[ImageOptim]中，可以对PNG图片实现微小失真下高压缩率。并且利用[ImageOptim-CLI]的对比方法比较了这些工具的压缩效率。
 
 ### ImageAlpha
 
-![ImageAlpha Screenshot](/images/2015-02-19-png-compress-01.png)
+![ImageAlpha Screenshot](//dn-johnwong.qbox.me/images/2015-02-19-png-compress-01.png)
 
 [ImageAlpha]是一个Mac OS X下的图形化有损图片压缩工具，内置了[pngquant]，[pngnq-s9]，Blurizer和[posterizer]四种压缩工具。这些工具减少PNG文件大小并保留透明度通道。ImageAlpha采用PyObjC编写，但是作者对这种方式已经累觉不爱。使用一段时间后的经验是内置的几种压缩工具看起来[pngquant]最有效的，压缩时颜色数采用256可以在难以分辨出质量损失的情况下大幅压缩图片体积。虽然对于颜色数较少的图片可以通过减少颜色数来进一步压缩体积，但这种方式依赖人工并不能实现自动化。
 
@@ -18,7 +18,7 @@ thumb: /images/2015-02-19-png-compress-02.png
 
 ### ImageOptim
 
-![ImageOptim Screenshot](/images/2015-02-19-png-compress-02.png)
+![ImageOptim Screenshot](//dn-johnwong.qbox.me/images/2015-02-19-png-compress-02.png)
 
 [ImageOptim]是一款非常优秀的无损图片压缩工具，相信大多数iOS开发者都知道它。它通过优化压缩参数，移除无用的文件元数据和不必要的颜色配置来实现图片的无损压缩。它集成了最好的压缩工具，包括[PNGOUT]，[Zopfli], [Pngcrush], [AdvPNG]，[OptiPNG]，[JpegOptim]，[JPEGrescan]，[Jpegtran]和[Gifsicle]。除了压缩效率高，它还支持[命令行](https://imageoptim.com/command-line.html)、充分利用多核、批量处理和拖拽操作方式。
 
