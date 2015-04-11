@@ -3,7 +3,7 @@ layout: post
 title: "2014年终总结"
 category: Nonetech
 description: 订婚前夜写年终总结，再醉一次。
-thumb: //dn-johnwong.qbox.me/images/2015-02-20-annual-review.png
+thumb: /images/2015-02-20-annual-review.png
 ---
 过年了，本该元旦写的年终总结拖到了现在。入职到现在已经十月有余，周围同事都很Nice，每天上班也觉得挺开心的。总结一下做过的事情：
 

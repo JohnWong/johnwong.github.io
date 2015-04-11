@@ -3,7 +3,7 @@ layout: post
 title: "扒一扒北邮的安全问题[3]-摄像头这么多"
 category: Security
 description: 毕业前把自己无聊玩的抖出来。
-thumb: //dn-johnwong.qbox.me/images/2014-04-02-security-in-bupt-03-01.png
+thumb: /images/2014-04-02-security-in-bupt-03-01.png
 ---
 
 #### 漏洞类型： 

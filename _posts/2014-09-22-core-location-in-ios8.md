@@ -3,7 +3,7 @@ layout: post
 title: iOS8定位适配
 category: Mobile
 description: iOS8推出后定位做了改动，不适配无位可定。
-thumb: "//dn-johnwong.qbox.me/images/2014-09-22-core-location-in-ios8.png"
+thumb: /images/2014-09-22-core-location-in-ios8.png
 ---
 iOS8 beta版发布后淘点点尝试适配，其中遇到的一个主要的问题是无法定位，做了一些适配后后能够正常定位。iOS8正式版定位方面没有变动，依然需要做适配。iOS8对定位的改动，基本思路就是将定位细分为Always和WhenInUse两类，要求开发者说明使用定位的用途并酌情使用。此举意在防止定位信息滥用，至于作用就仁者见仁智者见智了。
 

@@ -3,7 +3,7 @@ layout: post
 title: PNG图片极限压缩
 category: Showcase
 description: 春节假期写代码，除夕夜总结出文章，想想也是醉了。
-thumb: //dn-johnwong.qbox.me/images/2015-02-19-png-compress-02.png
+thumb: /images/2015-02-19-png-compress-02.png
 ---
 
 之前面对应用体积压缩的问题时，找到了目前比较好的PNG压缩方法[ImageAlpha]+[ImageOptim]。这种方法一个不便之处在于[ImageAlpha]是一个单张图片处理工具，而且需要手动保存图片。图片较多时非常费力。如果有工具能够将两个工具结合到一起，提供批量处理的能力，将会很有帮助。[ImageOptim]作者也考虑过[添加有损压缩功能](https://github.com/pornel/ImageOptim/issues/17)，项目中也包含了[pngquant]，只是8个月过去了还没结果。[ImageOptim-CLI]是一个集成了这两个工具和JPEGmini的命令行工具，利用AppleScript实现对图形界面程序的操纵。用起来发现有时候会出现大图未被压缩的问题，同时命令行的交互相比图形界面在易用性上还是有差距。因此我花了些时间将[ImageAlpha]的有损压缩功能集成到[ImageOptim]中，可以对PNG图片实现微小失真下高压缩率。并且利用[ImageOptim-CLI]的对比方法比较了这些工具的压缩效率。

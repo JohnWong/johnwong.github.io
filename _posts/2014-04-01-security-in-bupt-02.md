@@ -3,7 +3,7 @@ layout: post
 title: "扒一扒北邮的安全问题[2]-如何查看女神照片"
 category: Security
 description: 毕业前把自己无聊玩的抖出来。
-thumb: //dn-johnwong.qbox.me/images/2014-04-01-security-in-bupt-02-02.png
+thumb: /images/2014-04-01-security-in-bupt-02-02.png
 ---
 
 #### 漏洞类型： 

@@ -3,7 +3,7 @@ layout: post
 title: "IB中颜色值的坑"
 category: Mobile
 description: 最近看到的文章终于解答了心中的疑惑
-thumb: //dn-johnwong.qbox.me/images/2015-03-30-color-in-interface-builder.png
+thumb: /images/2015-03-30-color-in-interface-builder.png
 ---
 
 之前练手的时候用了下story board，快速开发的神器。可是在IB中设置颜色遇到了一些问题，设置的RGB值在运行时明显感觉到变掉了。

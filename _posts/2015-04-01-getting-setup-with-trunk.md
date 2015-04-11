@@ -3,7 +3,7 @@ layout: post
 title: "开始建立你的trunk"
 category: Mobile
 description: 等待提交CocoaPod的时候顺带翻译了帮助文档
-thumb: //dn-johnwong.qbox.me/images/2015-04-01-getting-setup-with-trunk.png
+thumb: /images/2015-04-01-getting-setup-with-trunk.png
 ---
 
 本文翻译自[Getting Setup With Trunk](http://guides.cocoapods.org/making/getting-setup-with-trunk.html)。等待提交CocoaPod的时候顺带翻译的。夜间翻墙速度飞起，很顺利地完成了提交。打开官方Specs网站你会发现所有的commit都是由机器人[CocoaPodsBot](https://github.com/CocoaPodsBot)代为提交的。这机器人还有6个follower。你如果闲的慌可以订阅这个账号的feed，估计会被最新Specs各种刷屏。CocoaPods用得越多，越觉得很灵活有意思。顺带推荐下CocoaPods Specs[Gitcafe镜像(https://gitcafe.com/yellowxz/Specs)，不定期更新。

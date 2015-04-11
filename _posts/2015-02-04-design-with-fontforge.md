@@ -3,7 +3,7 @@ layout: post
 title: FontForge 与字体设计
 category: Showcase
 description: 一边学习FontForge一边翻译官方帮助网站。
-thumb: "//dn-johnwong.qbox.me/images/2015-02-04-design-with-fontforge-thumb.jpg"
+thumb: /images/2015-02-04-design-with-fontforge-thumb.jpg
 ---
 
 ![FontForge](//dn-johnwong.qbox.me/images/2015-02-04-design-with-fontforge-logo.png) FontForge

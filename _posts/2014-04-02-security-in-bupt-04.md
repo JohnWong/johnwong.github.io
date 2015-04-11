@@ -3,7 +3,7 @@ layout: post
 title: "扒一扒北邮的安全问题[4]-一大波访问控制问题"
 category: Security
 description: 毕业前把自己无聊玩的抖出来。
-thumb: //dn-johnwong.qbox.me/images/2014-04-02-security-in-bupt-04-03.png
+thumb: /images/2014-04-02-security-in-bupt-04-03.png
 ---
 
 #### 漏洞类型： 

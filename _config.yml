@@ -33,6 +33,8 @@ category_info:
     # - {name: "front end", color: "#943b95", icon: glyphicon-link}
     - {name: past, color: "#a9b7b7", icon: glyphicon-time, note: "[迁移自旧博客]"}
 
+cdnhost: "//dn-johnwong.qbox.me/"
+
 # Github
 github:
     url: "https://github.com/"

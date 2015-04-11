@@ -3,7 +3,7 @@ layout: post
 title: "苹果的一些坑"
 category: Mobile
 description: 汇总近期遇到的苹果的Bug。
-thumb: //dn-johnwong.qbox.me/images/2014-06-04-bugs-by-apple.jpg
+thumb: /images/2014-06-04-bugs-by-apple.jpg
 ---
 嗯嗯，最近踩坑不少，总结一下：
 

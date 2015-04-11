@@ -13,7 +13,7 @@ layout: default
       <div class="post">
         {% if page.thumb %}
         <div class="post-poster">
-          <img class="feature-img" alt="{{ page.title }}" src="{{ page.thumb | prepend: site.baseurl }}">
+          <img class="feature-img" alt="{{ page.title }}" src="{{ page.thumb | prepend: site.cdnhost }}">
         </div>
         {% endif %}
         <h1 class="post-big-title">

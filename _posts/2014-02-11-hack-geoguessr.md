@@ -3,7 +3,7 @@ layout: post
 title: Geoguessr游戏破解
 category: Past
 description: 没人比我分高哈哈。
-thumb: //dn-johnwong.qbox.me/images/2014-02-11-hack-geoguessr.jpg
+thumb: /images/2014-02-11-hack-geoguessr.jpg
 ---
 [Geoguessr](http://geoguessr.com/)是一个好玩的根据街景猜位置的游戏。建议先玩玩，充分体会游戏的乐趣。学会了破解的方法就没意思了。接下来进入破解方法。需要Chrome浏览器和Web调试的一点知识。
  
