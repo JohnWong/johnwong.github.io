@@ -8,7 +8,7 @@ thumb: /images/2015-04-20-cross-platform-and-hybrid.jpg
 
 最近做了iOS平台上Hybrid的调研，水平有限，结合以前尝试Hybrid的一点点经验做个小小的分析。概述了跨平台开发的的各种方案，并通过阅读[Cordova-iOS]和[WebViewJavascriptBridge]的源码，分析Hybrid的实现原理和设计。
 
-##跨平台开发
+# 跨平台开发
 
 这可能是移动开发领域的一个迷梦，无数人在用不同的方式想做好这一件事情，现在看起来还没有一套解决方案可以一统江湖。移动领域的跨平台开发可以从几个层面来切入（以下观点给予多年前的调研和最近的整理，出错了欢迎指出）。
 
@@ -37,7 +37,7 @@ Hybrid App顾名思义，就是混合了Web和Native的开发方式。它本质�
 纯浏览器解决方案，对Native的能力使用十分有限。优点嘛，就是更新方便，无需安装。 
 
 
-## Hybrid App
+# Hybrid App
 
 这种开发模式之所以出现是由于它有一些优点：
 
@@ -58,7 +58,7 @@ Hybrid App顾名思义，就是混合了Web和Native的开发方式。它本质�
 
 我花了些时间挑选了两个比较有代表性的Hybrid项目，研究了它们的结构和实现细节。这两个项目分别是WebViewJavascriptBridge和Cordova-iOS。
 
-### WebViewJavascriptBridge
+## WebViewJavascriptBridge
 
 [WebViewJavascriptBridge](https://github.com/marcuswestin/WebViewJavascriptBridge)是一个不错的JavaScript与Native之间双向通信的库，多个厂家包括Facebook在使用。项目结构简单，非常适合掌握Hybrid的实现原理。Native与JS间通信使用Web View来作为媒介。它们与Web View之间的交互放到了bridge层来处理，分别是Native Bridge和JS Bridge。首先需要学习的是Web View加载完成后Native给JS发消息的时序。可以分为3个阶段：
 
@@ -160,7 +160,7 @@ JS Bridge->JS: execute callback
 
 
 
-### Cordova-iOS
+## Cordova-iOS
 
 这里有必要说一下Cordova和PhoneGap的关系。简单说来就是Cordova是PhoneGap的开源部分，PhoneGap是Cordova的发行版。有兴趣深入了解可以阅读[PhoneGap, Cordova, and what’s in a name?]。三年多前接过一个外包，要出Android和iOS两个版本，时间紧但用户体验要求不高。当时做选型，看过当时有的几个框架PhoneGap、Titanium、Corona SDK等，选择了学习成本最低开发最快的PhoneGap。最后也在很短时间内完成了开发。学习源码时我发现[Cordova-iOS]的源码中一些插件（比如定位、电池状态、联系人等）的实现放在了各自的库中。下载[PhoneGap]后打开其中的iOS 工程会看到加入各种插件后的源代码，学习起来更方便。Cordova有一些好的特色，值得学习：
 
@@ -213,7 +213,7 @@ Cordova支持多种JS向Native发送信息的模式：
 * IFRAME_HASH_WITH_PAYLOAD
 * WK_WEBVIEW_BINDING
 
-各种模式的限制和对比可以参见[exec.js源代码](https://github.com/apache/cordova-ios/blob/master/cordova-js-src/exec.js)。IFRAME_NAV模式是最快的。由于这种模式存在一些问题，目前默认的发送消息方式改为XHR_OPTIONAL_PAYLOAD。参见[修改JavaScript到Native的桥接模式](https://github.com/apache/cordova-ios/blob/master/guides/Changing%20the%20JavaScript%20to%20Native%20Bridge%20Mode.md)
+各种模式的限制和对比可以参见[exec.js源代码](https://github.com/apache/cordova-ios/blob/master/cordova-js-src/exec.js)。`IFRAME_NAV`模式是最快的。由于这种模式存在一些问题，目前默认的发送消息方式改为`XHR_OPTIONAL_PAYLOAD`。参见[修改JavaScript到Native的桥接模式](https://github.com/apache/cordova-ios/blob/master/guides/Changing%20the%20JavaScript%20to%20Native%20Bridge%20Mode.md)
 
 [PhoneGap, Cordova, and what’s in a name?]:http://phonegap.com/2012/03/19/phonegap-cordova-and-what%E2%80%99s-in-a-name/ 
 [Cordova-ios]:https://github.com/apache/cordova-ios 
