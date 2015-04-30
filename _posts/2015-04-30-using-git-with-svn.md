@@ -26,7 +26,7 @@ git svn clone http://PATH_TO_SVN
 Can’t locate SVN/Core.pm in @INC (you may need to install the SVN::Core module)
 ```
 
-解决方法是参考这里(http://blog.puhao.me/%E5%90%90%E6%A7%BD/OS-X-Yosemite(10.10)%E4%B8%8B%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8git-svn%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/)：
+解决方法是参考[这里](http://blog.puhao.me/%E5%90%90%E6%A7%BD/OS-X-Yosemite(10.10)%E4%B8%8B%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8git-svn%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/)：
 
 ```
 sudo ln -s /Applications/Xcode.app/Contents/Developer/Library/Perl/5.18/darwin-thread-multi-2level/SVN /System/Library/Perl/Extras/5.18/SVN
