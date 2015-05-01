@@ -64,8 +64,7 @@ thumb: /images/2015-05-01-apple-watch-report-from-developer-01.jpg
 
 健康和运动算是苹果作为宣传核心的应用，功能实用，界面简洁明快。每天行走、站立、运动变成游戏任务，还可以赢取徽章。久坐提醒功能是我一直想要的，对于我这种写代码一坐下就不想动的简直是福音。心跳频率检测功能非常诱惑，运动消耗的卡路里计算与心跳频率相关。之前找过许多运动手表或者手环，能够记录心跳的寥寥无几。运动功能可以脱离手机运行，运动记录基本上可以满足需求。如果GPS功能不依赖手机就更好了。
 
-![运动](/images/2015-05-01-apple-watch-report-from-developer-04.jpg)	
-![健康](/images/2015-05-01-apple-watch-report-from-developer-06.jpg)
+![运动](/images/2015-05-01-apple-watch-report-from-developer-04.jpg)	 ![健康](/images/2015-05-01-apple-watch-report-from-developer-06.jpg)
 
 ![运动](/images/2015-05-01-apple-watch-report-from-developer-05.jpg)
 
