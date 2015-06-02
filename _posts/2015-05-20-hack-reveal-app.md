@@ -74,3 +74,11 @@ gdb Reveal
 每次打开都会弹窗都会提示这个，还是不爽。试着用签名的方法解决，遇到问题签名失败。读这个提示框的内容，看到了Sparkle，应该是个应用升级组件。那么把升级功能去掉应该就不会弹窗了。搜索`Sparkle`，找到一个方法`-[IBAAppDelegate configureSparkle]`。我们能够看到方法内先判断是否Sparkle是否enable，然后做Sparkle的初始化。我们只需要把跳转语句je改为jne，那么升级功能就会去掉，也就不会弹出那个框。试了一下果真如此。至此过程全部结束。
 
 ![img1](//dn-johnwong.qbox.me/images/2015-05-20-hack-reveal-app-03.png)
+
+### 去掉标题栏过期提示
+
+窗口右上角的过期提示有点惹眼，去掉。
+
+```
+000000010007be25 nop
+```
