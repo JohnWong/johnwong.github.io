@@ -12,7 +12,7 @@ iOS应用调试利器Reveal不必多介绍。应用可以免费试用。目测�
 
 ### 寻找关键代码
 
-先把Reveal拖入Hopper。根据提示我们猜测使用过期的一些代码可能与“trial”有关，在左侧的搜索框搜索这个词。
+使用的是1.5.1的Reveal，先拖入Hopper。根据提示我们猜测使用过期的一些代码可能与“trial”有关，在左侧的搜索框搜索这个词。
 
 ![img1](//dn-johnwong.qbox.me/images/2015-05-20-hack-reveal-app-01.png)
 

@@ -3,7 +3,7 @@ layout: post
 title: 用FauxPas找到潜在Bug
 category: Mobile
 description: 一个不错的Xcode检查工具，只是略贵。
-thumb: /images/2014-08-29-using-fauxpas.jpg
+thumb: /images/2015-06-02-hack-fauxpas.jpg
 ---
 Faux Pas是一个Xcode辅助工具，检查iOS或者Mac项目，找到潜在bug，以及可维护性和风格问题。提供了92条规则可供挑选，支持GUI和CLI。目前发布了beta版，提供30天试用。
 
