@@ -107,3 +107,4 @@ Gemspec的作用类似CocoaPods的Podspec。模版生成的文件已经放了不
 
 Ruby gem的工具集非常完善，做下来非常轻松。感觉CocoaPods的发布应该是参考了Ruby gem。以前总觉得Python语法舒服，库齐全，无法比拟。现在看起来Ruby也不差。
 
+安装RVM后发现Ruby和gem都变成了RVM安装的版本，以前安装的一些gemset出问题了。简单改Ruby的链接后一堆问题，干脆Ruby和gemset都使用RVM的版本，重装了一些gem后看起来没问题了。
