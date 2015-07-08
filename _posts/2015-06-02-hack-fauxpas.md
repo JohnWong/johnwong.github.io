@@ -3,7 +3,7 @@ layout: post
 title: FauxPas试用时间破解
 category: Mobile
 description: 抽空试着hack一下FauxPas。
-thumb: images/2015-06-02-hack-fauxpas.jpg
+thumb: /images/2015-06-02-hack-fauxpas.jpg
 ---
 
 以下内容仅用于学习逆向工程。用到的工具有Hopper，lldb。

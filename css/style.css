@@ -1,3 +1,6 @@
+body {
+    font-size: 16px;
+}
 .jw-docs-nav .navbar-brand, .jw-docs-nav .navbar-nav>li>a {
     font-weight: 500;
 }

@@ -3,7 +3,7 @@ layout: post
 title: Reveal App试用时间破解
 category: Mobile
 description: 抽空试着hack一下应用调试利器Reveal。
-thumb: images/2015-05-20-hack-reveal-app.png
+thumb: /images/2015-05-20-hack-reveal-app.png
 ---
 
 以下内容仅用于学习逆向工程。用到的工具有Hopper，lldb。

@@ -3,7 +3,7 @@ layout: post
 title: 学习编写Ruby gem
 category: Mobile
 description: 假期get新技能，编写Ruby gem
-thumb: images/2015-06-21-write-a-ruby-gem.png
+thumb: /images/2015-06-21-write-a-ruby-gem.png
 ---
 
 之前写过一个IP反查地理位置的服务[http://pytool.sinaapp.com/](http://pytool.sinaapp.com/)。在命令行中使用的时候经常需要先根据域名反查ip。然后浏览器打开反查地理位置的网址，拼接ip。于是想把这个功能封装到命令行里。比较好的平台有Ruby gem与npm。最后选择了Ruby gem。

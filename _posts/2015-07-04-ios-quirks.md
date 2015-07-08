@@ -3,7 +3,7 @@ layout: post
 title: iOS开发的奇技淫巧
 category: Mobile
 description: 说多了都是泪
-thumb: images/2015-07-04-ios-quirks1.png
+thumb: /images/2015-07-04-ios-quirks1.png
 ---
 
 ## UIRefreshControl的使用

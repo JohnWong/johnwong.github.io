@@ -23,7 +23,6 @@ paginate_path: ":num/"
 # Extent settings
 username: John Wong
 motto: 一个热爱编程的傻瓜
-production: true
 gravatar_hash: 135dee388c0976f500748a64960038ee # used for gravater
 category_info: 
     - {name: mobile, color: "#62bb47", icon: glyphicon-phone}
