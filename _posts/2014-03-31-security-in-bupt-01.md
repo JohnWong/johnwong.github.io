@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "扒一扒北邮的安全问题[1]-学生收费查询系统"
-category: Security
+category: Past
 description: 毕业前把自己无聊玩的抖出来。
 thumb: /images/2014-03-31-security-in-bupt-01-02.png
 ---

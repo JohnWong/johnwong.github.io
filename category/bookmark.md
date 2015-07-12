@@ -58,13 +58,17 @@ title: "书签"
 ### 图标
 ---
 
-#### [iconfont.cn](http://iconfont.cn/)
+#### [Iconfont](http://iconfont.cn/)
 
 > 寻找图标的第一选择，异常丰富。
 
-#### [iconsDB](http://www.iconsdb.com/)
+#### [FlatIcon](http://www.flaticon.com/)
 
-> 寻找图标第二选择，有不少成套图标。
+> 图标丰富，支持多种格式，比如Iconfont、PNG、SVG、EPS、PSD。
+
+#### [IconsDB](http://www.iconsdb.com/)
+
+> 图标丰富，有不少成套图标。
 
 #### [App Icon Template](http://www.appicontemplate.com/)
 
@@ -86,6 +90,8 @@ title: "书签"
 #### [Uber商标指南](http://brand.uber.com/)
 
 #### [Dropbox商标指南](https://www.dropbox.com/branding)
+
+#### [免费badge设计](http://www.cssauthor.com/free-badges/)
 
 ### 其他资源
 ---

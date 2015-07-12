@@ -26,7 +26,7 @@ motto: 一个热爱编程的傻瓜
 gravatar_hash: 135dee388c0976f500748a64960038ee # used for gravater
 category_info: 
     - {name: mobile, color: "#62bb47", icon: glyphicon-phone}
-    - {name: security, color: "#fbb726", icon: glyphicon-eye-open, note: "[只是解闷<a href='http://wooyun.org/whitehats/JohnWong'>JohnWong@乌云</a>]"}
+    # - {name: security, color: "#fbb726", icon: glyphicon-eye-open, note: "[只是解闷<a href='http://wooyun.org/whitehats/JohnWong'>JohnWong@乌云</a>]"}
     - {name: "showcase", color: "#943b95", icon: glyphicon-film, note: "[课余时间玩的东西]"}
     - {name: "nonetech", color: "#e03a3e", icon: glyphicon-hand-right, note: "[只谈非技术]"}
     # - {name: "front end", color: "#943b95", icon: glyphicon-link}

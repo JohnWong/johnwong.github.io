@@ -21,7 +21,8 @@
         {% endfor %}
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/category/about.html" target="_blank">About</a>
+        <li class="{% if page.name contains "achievements" %}active{% endif %}"><a href="/category/achievements.html">Achievements</a>
+        </li><li><a href="/category/about.html" target="_blank">About</a>
         </li>
       </ul>
     </nav>
