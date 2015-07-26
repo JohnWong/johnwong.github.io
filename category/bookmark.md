@@ -56,6 +56,10 @@ title: "书签"
 
 > 通过使用`DWARF`而非`DWARF with dSYMFile`，不使用`–O4`优化标识来减少编译时间。
 
+####[watchOS API Blog](https://www.watchosapi.com/category/watchos/)
+
+> 汇集了各种watchOS的API与知识。
+
 # 视觉交互资源
 ---
 
