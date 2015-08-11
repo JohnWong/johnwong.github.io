@@ -88,7 +88,11 @@ title: "书签"
 
 #### [1624 Gorgeous Swifticons Icons](http://www.mightydeals.com/deal/swifticons.html)
 
-> 语哥推荐的收费图标，先收藏了。
+> 语哥推荐的收费图标，最终还是花了29刀买下了。
+
+### [IconStore](http://iconstore.co/)
+
+> 微博上发现的图标网站，逼格很高。
 
 ### 设计
 ---

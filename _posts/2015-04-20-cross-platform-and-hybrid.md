@@ -26,7 +26,7 @@ thumb: /images/2015-04-20-cross-platform-and-hybrid.jpg
 
 ####Semi-hybrid App
 
-介于Native和Hybrid之间，也类似于容器兼容，容器是JavaScript运行环境。使用JavaScript开发的同时提供原生界面，这样可以在享受Hybrid开发便利的同时提供原生的用户体验。这方面有[React Native](https://github.com/facebook/react-native)、[Native Script](https://www.nativescript.org/)、[Titanium]。[React Native]目前大热，支持iOS、Android和Web，目前只放出了iOS版。[Native Script]目前支持iOS、Android，Windows Phone在计划中。[Titanium]是一个老牌跨平台应用开发平台，支持Android、iOS 和Web。使用HTML、CSS、JavaScript开发，也支持PHP，Ruby和Python。当年在黑苹果上打开IDE点击运行，看到iPhone、Android和浏览器同时运行应用，内心还有点小激动呢。[BeeFramework]目前只支持iOS还不算跨平台，据说计划在1.0版本开始做跨平台。这里提到是因为他们最新的开发演示视频太酷了。
+介于Native和Hybrid之间，也类似于容器兼容，容器是JavaScript运行环境。使用JavaScript开发的同时提供原生界面，这样可以在享受Hybrid开发便利的同时提供原生的用户体验。这方面有[React Native](https://github.com/facebook/react-native)、[Native Script](https://www.nativescript.org/)、[Titanium]。React Native目前大热，支持iOS、Android和Web，目前只放出了iOS版。Native Script目前支持iOS、Android，Windows Phone在计划中。Titanium是一个老牌跨平台应用开发平台，支持Android、iOS 和Web。使用HTML、CSS、JavaScript开发，也支持PHP，Ruby和Python。当年在黑苹果上打开IDE点击运行，看到iPhone、Android和浏览器同时运行应用，内心还有点小激动呢。[BeeFramework]目前只支持iOS还不算跨平台，据说计划在1.0版本开始做跨平台。这里提到是因为他们最新的开发演示视频太酷了。
 
 ####Hybrid App
 
