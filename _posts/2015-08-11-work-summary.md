@@ -3,7 +3,7 @@ layout: post
 title: 支付宝9.0项目工作总结
 category: Nonetech
 description: 要有阶段性总结
-thumb: /images/2015-07-12-alipay-v9.png
+thumb: /images/2015-08-11-work-summary.jpg
 ---
 
 距离支付宝9.0发布已经一个月了，是时候总结一下了。

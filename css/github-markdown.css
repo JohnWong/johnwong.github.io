@@ -490,7 +490,7 @@
   margin: 0;
   overflow: initial;
   line-height: inherit;
-  word-wrap: normal;
+  word-wrap: break-word;
   background-color: transparent;
   border: 0;
 }

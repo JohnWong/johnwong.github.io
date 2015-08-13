@@ -202,7 +202,7 @@ body {
     width: 100%;
 }
 .post-poster {
-    max-height: 500px;
+    /*max-height: 500px;*/
     overflow: hidden;
 }
 /*@media (min-width: 1200px) {
