@@ -36,3 +36,28 @@ sudo ln -s /Applications/Xcode.app/Contents/Developer/Library/Perl/5.18/darwin-t
 然后就可以开心地继续开发了。
 
 ![git-svn](//dn-johnwong.qbox.me/images/2015-04-30-using-git-with-svn.png)
+
+#### 自定义Action
+
+使用过程中，因为我有一些改动不需要提交到svn上，所以每次提交或者更新时都需要先stash，完成操作再放回来。这样3步操作可以通过Source Tree的自定义Action合成一步。
+
+定义了一些脚本`pull.sh`和`push.sh`，例如：
+
+```shell
+#!/bin/sh
+cd "$REPO"
+git stash
+git svn fetch
+git svn rebase
+git stash apply
+```
+
+```shell
+#!/bin/sh
+cd "$REPO"
+git stash
+git svn dcommit
+git stash apply
+```
+
+打开Source Tree的`Preferences->Custom Actions`，新建pull与push，选择这两个脚本。以后打开项目后，就可以在`Actions->Custom Actions`下找到你添加的这两个Action。
