@@ -32,6 +32,10 @@ title: "书签"
 
 > 方便查询一些系统的类的信息，使用的是classdump。
 
+#### [iOS字体](http://iosfonts.com/)
+
+> 列出了iOS设备中字体及加入的版本。
+
 #### [Apple开源](http://opensource.apple.com/)
 
 > 一些苹果开源的类，比如可以查到NSString的hash实现。
@@ -44,10 +48,6 @@ title: "书签"
 
 > 对iOS开发进阶的忠告。
 
-#### [Xcode: One Weird Debugging Trick That Will Save Your Life](http://natashatherobot.com/xcode-debugging-trick/?utm_campaign=iOS%2BDev%2BWeekly&utm_medium=email&utm_source=iOS_Dev_Weekly_Issue_205)
-
-> 使用`po $arg1`打印出调试异常抛出时的信息。
-
 #### [github优秀开源项目大全-iOS](http://foggry.com/blog/2014/04/25/githubyou-xiu-xiang-mu-ios/)
 
 > GitHub上用于iOS开发的各种项目。
@@ -56,9 +56,61 @@ title: "书签"
 
 > 通过使用`DWARF`而非`DWARF with dSYMFile`，不使用`–O4`优化标识来减少编译时间。
 
-####[watchOS API Blog](https://www.watchosapi.com/category/watchos/)
+#### [watchOS API Blog](https://www.watchosapi.com/category/watchos/)
 
 > 汇集了各种watchOS的API与知识。
+
+#### [通知中心唤起设置等](http://www.iapps.im/jc/745.html)
+
+> 原来iOS5可以使用的打开设置的链接依然存在，只是被屏蔽了。从通知中心就可以唤起了。
+
+#### [提高iOS访问权限通过率](http://36kr.com/p/211441.html)
+
+> 提高iOS访问权限通过率的方法介绍。
+
+# 效率提升
+---
+
+#### [打造高效的 Finder](http://zhuanlan.zhihu.com/MacTips/20130167)
+
+> Finder使用中确实有不便之处。微小的改变带来不错的效果。
+
+#### [你应该知道的 iTerm2 使用方法](http://wulfric.me/2015/08/iterm2/)
+
+> 用了iTerm2后就再也不碰原生Terminal了。高级用法还在学习中。
+
+#### [在线编译器](http://www.compileonline.com/)
+
+> 如果你想尝试一门语言，又不想在自己电脑上安装一堆运行时环境，那么试试在线编译器吧，浏览器就够了。
+
+#### [Codding Ground](http://www.tutorialspoint.com/codingground.htm)
+
+> 另一个在线写代码的平台。
+
+#### [解决Xcode下载Simulator,Doc慢的问题](http://www.cnblogs.com/Roki/p/4620623.html)
+
+# 逆向与安全
+---
+
+#### [iOS应用逆向工程：分析与实战](http://book.douban.com/subject/25826902/)
+
+> 首推这本书，很快可以看完。收获不少。
+
+#### [逆向工程工具](http://iphonedevwiki.net/index.php/Reverse_Engineering_Tools)
+
+> 逆向工程工具科普。
+
+#### [反编译工具下载](http://down.52pojie.cn/Tools/Disassemblers/)
+
+> 下载一系列反编译工具。
+
+#### [钟馗之眼](http://www.zoomeye.org/)
+
+> 让你像Google搜索一样寻找漏洞。
+
+#### [xmd5.org](http://www.xmd5.org/)
+
+> 目前看起来最好的md5反查网站。
 
 # 视觉交互资源
 ---
@@ -94,7 +146,7 @@ title: "书签"
 
 > 微博上发现的图标网站，逼格很高。
 
-### 设计
+### 视觉设计
 ---
 
 #### [Do UI Kit](http://www.invisionapp.com/do)
@@ -107,8 +159,7 @@ title: "书签"
 
 #### [谷歌设计的Sketch教程](https://medium.com/google-design/sketch-tutorial_01-b76271a095e3)
 
-### 其他资源
----
+#### [应用设计库](http://www.appdesignvault.com/)
 
 #### [千图网](http://www.58pic.com/)
 
@@ -119,6 +170,16 @@ title: "书签"
 > 根据图片识别出所使用的字体。
 
 #### [cfxr](http://thirdcog.eu/apps/cfxr)
+
+### 交互设计
+---
+
+#### [Origami官方文档翻译](http://www.ui.cn/detail/43336.html)
+
+#### [原型设计工具Framer](http://framerjs.com/)
+
+### 其他资源
+---
 
 > 构建声音特效。
 
@@ -141,7 +202,15 @@ title: "书签"
 # 其他
 ---
 
-#### [解决Xcode下载Simulator,Doc慢的问题](http://www.cnblogs.com/Roki/p/4620623.html)
+#### [archive.org](http://archive.org/web/)
+
+> 查找网站的历史快照。很强大。
+
+#### [在线解密](http://riddle.arthurluk.net/express/love.php)
+
+> IT屌丝无聊了玩这个最开心了
+
+
 
 
 
