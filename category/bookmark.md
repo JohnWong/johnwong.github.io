@@ -28,6 +28,10 @@ title: "书签"
 # 移动开发
 ---
 
+#### [《Effective Objective-C 2.0：编写高质量iOS与OS X代码的52个有效方法》](http://book.douban.com/subject/21370593/)
+
+> 关于OC开发非常不错的一本书。看过之后帮你有效减少bug。
+
 #### [iOS头文件](http://developer.limneos.net/)
 
 > 方便查询一些系统的类的信息，使用的是classdump。
@@ -68,6 +72,16 @@ title: "书签"
 
 > 提高iOS访问权限通过率的方法介绍。
 
+#### [Inside Code Signing](http://www.objc.io/issues/17-security/inside-code-signing/)
+
+> 一篇比较老的介绍苹果代码签名机制的文章，包含了code sign、entitlement、provision profile等概念的介绍。
+
+#### [绕过iPhone代码签名](http://www.saurik.com/id/8)
+
+> Cydia创始人Jay Freeman写的绕过iPhone代码签名的文章。还有大神憋了好久做出来的工具[ldid](http://gitweb.saurik.com/ldid.git)。
+
+
+
 # 效率提升
 ---
 
@@ -92,7 +106,7 @@ title: "书签"
 # 逆向与安全
 ---
 
-#### [iOS应用逆向工程：分析与实战](http://book.douban.com/subject/25826902/)
+#### [《iOS应用逆向工程：分析与实战》](http://book.douban.com/subject/25826902/)
 
 > 首推这本书，很快可以看完。收获不少。
 
@@ -210,6 +224,9 @@ title: "书签"
 
 > IT屌丝无聊了玩这个最开心了
 
+#### [Geoguessr](https://geoguessr.com/)
+
+> 谷歌街景，把你扔到荒郊野外，去推测自己所在的位置。
 
 
 

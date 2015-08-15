@@ -43,7 +43,7 @@ sudo ln -s /Applications/Xcode.app/Contents/Developer/Library/Perl/5.18/darwin-t
 
 定义了一些脚本`pull.sh`和`push.sh`，例如：
 
-```shell
+```PowerShell
 #!/bin/sh
 cd "$REPO"
 git stash
@@ -52,7 +52,7 @@ git svn rebase
 git stash apply
 ```
 
-```shell
+```PowerShell
 #!/bin/sh
 cd "$REPO"
 git stash
