@@ -87,4 +87,10 @@ Xcode的issue navigator通常对issue的内容只会显示2行，点击后才能
 
 每次Xcode升级的时候都会出现插件消失的情况。这是由于插件开发时，需要声明兼容的Xcode的UUID列表。升级Xcode后需要插件作者更新插件支持新的Xcode，开发这升级Xcode。如果开发者没及时更新就暂时不能用了。[Stack Overflow](http://stackoverflow.com/questions/22324303/the-plugin-didnt-work-on-xcode-5-1)上有一个简单的办法，将新Xcode的UUID写入已经安装的Xcode插件的兼容列表。手动一个一个地修改太过繁琐，同事写了一段脚本来实现这个功能[Xcode Plugin Auto Compatible.sh](https://gist.github.com/sodabiscuit/41196f0ceb80bb9fdcd5)。大多数情况下这么做就可以让插件在新的Xcode下可以使用。有些情况下有可能出现某个插件在引起Xcode崩溃。这时就比较麻烦了，需要尝试一个一个地禁用插件来找到出问题的那个，卸载掉。
 
+## 开发Xcode插件
+
+如果你对开发Xcode插件感兴趣，那么Alcatraz也可以帮到你。打开`Package Manager`窗口，搜索Xcode Plugin。你将会找到这个类型的模版，安装它。之后新建工程，选择Xcode Plugin，就可以新建Xcode插件项目。
+
+建立插件最快速的方式是在自己用过的Xcode插件中寻找一个交互最类似的，然后参考它。[raywenderlich](http://www.raywenderlich.com/94020/creating-an-xcode-plugin-part-1)上也有一些文章可以参考。
+
 [Alcatraz]:https://github.com/supermarin/Alcatraz
