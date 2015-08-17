@@ -80,7 +80,9 @@ title: "书签"
 
 > Cydia创始人Jay Freeman写的绕过iPhone代码签名的文章。还有大神憋了好久做出来的工具[ldid](http://gitweb.saurik.com/ldid.git)。
 
+#### [The technology behind preview photos](https://code.facebook.com/posts/991252547593574/the-technology-behind-preview-photos/)
 
+> Facebook对弱网络下用户封面照片加载做了优化。将传统的获取URL、下载图片两次请求优化为第一次请求附带200字节图片。要实现图片限制在200字节内，使用了高速模糊、寻找合适的图片尺寸、选择了JPEG压缩格式、使用固定JPEG头不必每张图传输一次。中文译文[Facebook移动端照片预览背后的技术](http://www.infoq.com/cn/news/2015/08/facebook-photo-preview)省略了图片，并且部分内容有差别。
 
 # 效率提升
 ---
