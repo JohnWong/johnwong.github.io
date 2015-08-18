@@ -84,6 +84,10 @@ title: "书签"
 
 > Facebook对弱网络下用户封面照片加载做了优化。将传统的获取URL、下载图片两次请求优化为第一次请求附带200字节图片。要实现图片限制在200字节内，使用了高速模糊、寻找合适的图片尺寸、选择了JPEG压缩格式、使用固定JPEG头不必每张图传输一次。中文译文[Facebook移动端照片预览背后的技术](http://www.infoq.com/cn/news/2015/08/facebook-photo-preview)省略了图片，并且部分内容有差别。
 
+#### [String Localization](http://www.objc.io/issues/9-strings/string-localization/)
+
+> objc.io上一篇字符串本地化文章。项目还是做本地化，需要掌握这方面的知识了。另外FauxPas挺不错，扫一下就能看到所有未做本地化的地方。
+
 # 效率提升
 ---
 
