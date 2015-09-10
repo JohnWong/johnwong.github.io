@@ -99,6 +99,10 @@ title: "书签"
 
 > 用了iTerm2后就再也不碰原生Terminal了。高级用法还在学习中。
 
+#### [](https://codeanywhere.com/)
+
+> 现在看起来最棒的在线写代码平台，支持多种语言，多种操作系统。
+
 #### [在线编译器](http://www.compileonline.com/)
 
 > 如果你想尝试一门语言，又不想在自己电脑上安装一堆运行时环境，那么试试在线编译器吧，浏览器就够了。
@@ -107,7 +111,13 @@ title: "书签"
 
 > 另一个在线写代码的平台。
 
-#### [解决Xcode下载Simulator,Doc慢的问题](http://www.cnblogs.com/Roki/p/4620623.html)
+#### [解决Xcode下载Simulator, Doc慢的问题](http://www.cnblogs.com/Roki/p/4620623.html)
+
+> 用Charles解决下载慢的问题。目前用的代理还可以，下载速度暂时不用担心。
+
+#### [Sublime Text](http://www.sublimetext.com/)
+
+> 非常好用的编辑器。Sublime Text 2可以免费试用。一定要安装[Package Control](https://packagecontrol.io/installation)。
 
 # 逆向与安全
 ---
