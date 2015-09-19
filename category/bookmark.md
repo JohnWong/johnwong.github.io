@@ -88,6 +88,13 @@ title: "书签"
 
 > objc.io上一篇字符串本地化文章。项目还是做本地化，需要掌握这方面的知识了。另外FauxPas挺不错，扫一下就能看到所有未做本地化的地方。
 
+#### [如何检查iOS系统版本](http://stackoverflow.com/questions/3339722/how-to-check-ios-version/)
+
+> 不要再这么写了：[[[UIDevice currentDevice] systemVersion] floatValue]
+
+#### [Sublime Text插件](http://www.zhihu.com/question/24736400)
+
+
 # 效率提升
 ---
 
