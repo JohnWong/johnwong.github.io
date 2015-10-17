@@ -92,8 +92,12 @@ title: "书签"
 
 > 不要再这么写了：[[[UIDevice currentDevice] systemVersion] floatValue]
 
-#### [Sublime Text插件](http://www.zhihu.com/question/24736400)
+#### [让你快速上手Runtime
+](http://www.jianshu.com/p/e071206103a4)
 
+> Runtime的文章先收藏，还没来得及看。
+
+#### [Sublime Text插件](http://www.zhihu.com/question/24736400)
 
 # 效率提升
 ---
