@@ -92,8 +92,7 @@ title: "书签"
 
 > 不要再这么写了：[[[UIDevice currentDevice] systemVersion] floatValue]
 
-#### [让你快速上手Runtime
-](http://www.jianshu.com/p/e071206103a4)
+#### [让你快速上手Runtime](http://www.jianshu.com/p/e071206103a4)
 
 > Runtime的文章先收藏，还没来得及看。
 
