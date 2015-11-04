@@ -32,6 +32,10 @@ title: "书签"
 
 > 建立自己的Homebrew tap。比如我的[https://github.com/JohnWong/homebrew-tap](https://github.com/JohnWong/homebrew-tap)。Homebrew开发也这样顺畅，让我想起了gem与cocoapods。
 
+#### [iExplorer](https://www.macroplant.com/iexplorer/)
+
+> Mac电脑上文件管理工具，访问非App Store安装的应用的沙盒文件。
+
 #### [《Effective Objective-C 2.0：编写高质量iOS与OS X代码的52个有效方法》](http://book.douban.com/subject/21370593/)
 
 > 关于OC开发非常不错的一本书。看过之后帮你有效减少bug。
