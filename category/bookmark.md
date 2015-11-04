@@ -28,14 +28,6 @@ title: "书签"
 # 移动开发
 ---
 
-#### [](http://formalfriday.club/2015/01/05/creating-your-own-homebrew-tap-and-formula.html)
-
-> 建立自己的Homebrew tap。比如我的[https://github.com/JohnWong/homebrew-tap](https://github.com/JohnWong/homebrew-tap)。Homebrew开发也这样顺畅，让我想起了gem与cocoapods。
-
-#### [iExplorer](https://www.macroplant.com/iexplorer/)
-
-> Mac电脑上文件管理工具，访问非App Store安装的应用的沙盒文件。
-
 #### [《Effective Objective-C 2.0：编写高质量iOS与OS X代码的52个有效方法》](http://book.douban.com/subject/21370593/)
 
 > 关于OC开发非常不错的一本书。看过之后帮你有效减少bug。
@@ -105,6 +97,27 @@ title: "书签"
 > Runtime的文章先收藏，还没来得及看。
 
 #### [Sublime Text插件](http://www.zhihu.com/question/24736400)
+
+> Sublime Text真的非常赞。一些插件可以帮助提升效率。
+
+#### [Creating your own homebrew tap and formula](http://formalfriday.club/2015/01/05/creating-your-own-homebrew-tap-and-formula.html)
+
+> 建立自己的Homebrew tap。比如我的[https://github.com/JohnWong/homebrew-tap](https://github.com/JohnWong/homebrew-tap)。Homebrew开发也这样顺畅，让我想起了gem与cocoapods。
+
+#### [iExplorer](https://www.macroplant.com/iexplorer/)
+
+> Mac电脑上文件管理工具，访问非App Store安装的应用的沙盒文件。
+
+#### [iOS 7 模拟器中运行Xcode 7编译的包](https://forums.developer.apple.com/thread/17108)
+
+> Build it with Xcode 7.
+>
+> Use xcode-select to select your Xcode 6.
+>
+> Boot your device in the Xcode 6 Simulator.
+>
+> Use 'xcrun simctl install booted /path/to/the/app' to install what you built in step 1.
+
 
 # 效率提升
 ---
