@@ -118,6 +118,9 @@ title: "书签"
 >
 > Use 'xcrun simctl install booted /path/to/the/app' to install what you built in step 1.
 
+#### [Launchkit](https://launchkit.io/)
+
+> 一系列方便构建、运行和管理移动应用的工具。
 
 # 效率提升
 ---
@@ -230,7 +233,6 @@ title: "书签"
 
 > 根据图片识别出所使用的字体。
 
-#### [cfxr](http://thirdcog.eu/apps/cfxr)
 
 ### 交互设计
 ---
@@ -241,6 +243,8 @@ title: "书签"
 
 ### 其他资源
 ---
+
+#### [cfxr](http://thirdcog.eu/apps/cfxr)
 
 > 构建声音特效。
 
