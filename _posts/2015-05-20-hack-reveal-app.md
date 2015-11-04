@@ -10,6 +10,8 @@ thumb: /images/2015-05-20-hack-reveal-app.png
 
 iOS应用调试利器Reveal不必多介绍。应用可以免费试用。目测时间校验并不严谨，修改系统时间就可以将试用状态从已过期变为未过期。先改时间到多天以后，运行会弹出“Your free trial of Reveal has expired”。接下来切入正题。
 
+> 更新：以下方法在1.6.1版本中仍然试用。如果你不关心探索过程，`寻找关键代码`这一节掠过，动手的时候`绕过应用自身校验`这一节与`绕过过期弹窗`交换顺序。
+
 ### 寻找关键代码
 
 使用的是1.5.1的Reveal，先拖入Hopper。根据提示我们猜测使用过期的一些代码可能与“trial”有关，在左侧的搜索框搜索这个词。
@@ -77,7 +79,7 @@ gdb Reveal
 
 ### 去掉标题栏过期提示
 
-窗口右上角的过期提示有点惹眼，去掉。
+窗口右上角的过期提示有点惹眼，去掉。找到`-[IBAMainWindowController configureTitleBarAccessoryView]`这个方法
 
 ```
 000000010007be25 nop
