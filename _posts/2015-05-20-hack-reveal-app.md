@@ -79,7 +79,7 @@ gdb Reveal
 
 ### 去掉标题栏过期提示
 
-窗口右上角的过期提示有点惹眼，去掉。找到`-[IBAMainWindowController configureTitleBarAccessoryView]`这个方法
+窗口右上角的过期提示有点惹眼，去掉。找到`-[IBAMainWindowController configureTitleBarAccessoryView]`这个方法，把下面的第一个跳转语句改成nop。
 
 ```
 000000010007be25 nop
