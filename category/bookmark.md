@@ -40,6 +40,10 @@ title: "书签"
 
 > 列出了iOS设备中字体及加入的版本。
 
+#### [iOS设备速查表](http://iosres.com/)
+
+> 快速查找iOS各种的试图相关的参数。
+
 #### [Apple开源](http://opensource.apple.com/)
 
 > 一些苹果开源的类，比如可以查到NSString的hash实现。
