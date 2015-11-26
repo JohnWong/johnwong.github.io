@@ -54,6 +54,10 @@ title: "书签"
 
 #### [Leveling Up](https://www.bignerdranch.com/blog/leveling-up/)
 
+> [Supercharging Your Xcode Efficiency](http://www.raywenderlich.com/72021/supercharging-xcode-efficiency)
+
+#### 提升Xcode效率的方法。
+
 > 对iOS开发进阶的忠告。
 
 #### [github优秀开源项目大全-iOS](http://foggry.com/blog/2014/04/25/githubyou-xiu-xiang-mu-ios/)
