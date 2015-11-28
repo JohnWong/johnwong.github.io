@@ -10,6 +10,7 @@ exclude:
   - README.md
   - .travis.yml
   - Gemfile
+  - vendor
 
 # Build settings
 markdown: redcarpet
@@ -39,6 +40,6 @@ cdnhost: "//dn-johnwong.qbox.me/"
 github:
     url: "https://github.com/"
     username: "JohnWong"
-    followers: 35
-    starred: 135
-    following: 24
+    followers: 44
+    starred: 301
+    following: 30
