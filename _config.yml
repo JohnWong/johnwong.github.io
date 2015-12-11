@@ -1,3 +1,5 @@
+gems: [jekyll-paginate]
+
 # Site settings
 title: John Wong's Blog
 email: huangxiaozhe1988@gmail.com
@@ -24,7 +26,7 @@ paginate_path: ":num/"
 # Extent settings
 username: John Wong
 motto: 一个热爱编程的傻瓜
-gravatar_hash: 135dee388c0976f500748a64960038ee # used for gravater
+gravatar_hash: 107ce8be1c08392d453302506e5e5bfa # used for gravater
 category_info: 
     - {name: mobile, color: "#62bb47", icon: glyphicon-phone}
     # - {name: security, color: "#fbb726", icon: glyphicon-eye-open, note: "[只是解闷<a href='http://wooyun.org/whitehats/JohnWong'>JohnWong@乌云</a>]"}
@@ -40,6 +42,6 @@ cdnhost: "//dn-johnwong.qbox.me/"
 github:
     url: "https://github.com/"
     username: "JohnWong"
-    followers: 44
-    starred: 301
-    following: 30
+    followers: 46
+    starred: 320
+    following: 35
