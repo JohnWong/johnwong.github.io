@@ -149,6 +149,10 @@ title: "书签"
 
 > Mozilla关于CSS flexbox的指南，用到的时候可以翻一下。
 
+#### [React-Inspired Views](https://www.objc.io/issues/22-scale/facebook/)
+
+> ComponentKit采用函数式、声明式的方式构建UI。灵感来在React，强调从不可变models到不可变components的单向数据流动。介绍了主要思想、适用的场景和一些挑战。顺便对比了React Native与AsyncDisplayKit。
+
 # 效率提升
 ---
 
