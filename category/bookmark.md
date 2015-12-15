@@ -13,17 +13,12 @@ title: "书签"
 - [NSHipster](http://nshipster.cn)
 - [Ray Wenderlich](http://www.raywenderlich.com/)
 - [Objc.io](http://www.objc.io)
+- [Natasha The Robot](http://natashatherobot.com/)
 - [iOS Dev Weekly](https://iosdevweekly.com/)
 - [iOS Development Tips](http://iosdevtips.co/)
 - [Glow技术团队博客](http://tech.glowing.com/)
-- [I'm TualatriX](http://imtx.me)
-- [Kevin Blog](http://imkevin.me)
-- [OneV's Den](http://onevcat.com)
-- [Bang's Blog](http://feeds.feedburner.com)
-- [Answer Huang](http://answerhuang.duapp.com)
-- [唐巧的技术博客](http://blog.devtang.com)
-- [不掏蜂窝的熊](http://www.hotobear.com)
-- [念茜的博客](http://nianxi.net)
+
+全部RSS订阅参见[Gist](https://gist.github.com/JohnWong/6d86259dba41ae23fb1c)，OPML格式，适用于Feedly。
 
 # 移动开发
 ---
@@ -54,11 +49,11 @@ title: "书签"
 
 #### [Leveling Up](https://www.bignerdranch.com/blog/leveling-up/)
 
-> [Supercharging Your Xcode Efficiency](http://www.raywenderlich.com/72021/supercharging-xcode-efficiency)
-
-#### 提升Xcode效率的方法。
-
 > 对iOS开发进阶的忠告。
+
+#### [Supercharging Your Xcode Efficiency](http://www.raywenderlich.com/72021/supercharging-xcode-efficiency)
+
+> 提升Xcode效率的方法。
 
 #### [github优秀开源项目大全-iOS](http://foggry.com/blog/2014/04/25/githubyou-xiu-xiang-mu-ios/)
 
@@ -91,6 +86,10 @@ title: "书签"
 #### [The technology behind preview photos](https://code.facebook.com/posts/991252547593574/the-technology-behind-preview-photos/)
 
 > Facebook对弱网络下用户封面照片加载做了优化。将传统的获取URL、下载图片两次请求优化为第一次请求附带200字节图片。要实现图片限制在200字节内，使用了高速模糊、寻找合适的图片尺寸、选择了JPEG压缩格式、使用固定JPEG头不必每张图传输一次。中文译文[Facebook移动端照片预览背后的技术](http://www.infoq.com/cn/news/2015/08/facebook-photo-preview)省略了图片，并且部分内容有差别。
+
+#### [Optimizing Facebook for iOS start time](https://code.facebook.com/posts/1675399786008080/optimizing-facebook-for-ios-start-time/)
+
+> Facebook对应用启动的优化经验。
 
 #### [String Localization](http://www.objc.io/issues/9-strings/string-localization/)
 
@@ -130,6 +129,22 @@ title: "书签"
 
 > 一系列方便构建、运行和管理移动应用的工具。
 
+#### [Replacing Photoshop With NSString](http://cocoamine.net/blog/2015/03/20/replacing-photoshop-with-nsstring/)
+
+> 用字符串来生成图片。非常酷的想法，想象无极限。
+
+#### [iOS图片加载速度极限优化—FastImageCache解析](http://blog.cnbang.net/tech/2578/)
+
+> FastImageCache的解析，暂时还没时间看。
+
+#### [iOS Architecture Patterns](https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52)
+
+> 快速了解一些常见的架构MVC, MVP, MVVM and VIPER。
+
+#### [Swift 反射 API 及用法](http://segmentfault.com/a/1190000004035357)
+
+> Swift反射用法的中文翻译。SwiftGG貌似不错啊，看到一堆不错的文章。
+
 # 效率提升
 ---
 
@@ -160,6 +175,14 @@ title: "书签"
 #### [Sublime Text](http://www.sublimetext.com/)
 
 > 非常好用的编辑器。Sublime Text 2可以免费试用。一定要安装[Package Control](https://packagecontrol.io/installation)。
+
+#### [湾区日报的第一个“员工”：Slack/Hubot](https://wanqu.co/blog/2015-08-19-slack-hubot.html)
+
+> 试着用了一下Slack，添加了一堆集成。Feel like the king of code.
+
+#### [Tables Generator](http://www.tablesgenerator.com/markdown_tables)
+
+> 帮助生成makrdown等格式的表格。
 
 # 逆向与安全
 ---
@@ -287,7 +310,8 @@ title: "书签"
 
 > 谷歌街景，把你扔到荒郊野外，去推测自己所在的位置。
 
+#### [Python Challenge](http://www.pythonchallenge.com/pc/def/ocr.html)
 
-
+> Python Challenge是一个在线解谜网站。
 
 
