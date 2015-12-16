@@ -276,7 +276,13 @@ title: "书签"
 ### 交互设计
 ---
 
+### [Fuse](https://www.fusetools.com/)
+
+> 非常酷的交互设计工具
+
 #### [Origami官方文档翻译](http://www.ui.cn/detail/43336.html)
+
+> Facebook依赖Quartz Composer做出来的原型设计工具，开源。
 
 #### [原型设计工具Framer](http://framerjs.com/)
 
