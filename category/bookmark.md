@@ -153,6 +153,10 @@ title: "书签"
 
 > ComponentKit采用函数式、声明式的方式构建UI。灵感来在React，强调从不可变models到不可变components的单向数据流动。介绍了主要思想、适用的场景和一些挑战。顺便对比了React Native与AsyncDisplayKit。
 
+#### [iOS 视图，动画渲染机制探究](http://mp.weixin.qq.com/s?__biz=MzA3NTYzODYzMg==&mid=402348480&idx=1&sn=7f737a96b9a9e7baad12b48ebc6b1efe)
+
+> 还没来得及看，先收藏
+
 # 效率提升
 ---
 
