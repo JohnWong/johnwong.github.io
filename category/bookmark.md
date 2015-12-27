@@ -27,7 +27,7 @@ title: "书签"
 
 > 关于OC开发非常不错的一本书。看过之后帮你有效减少bug。
 
-#### [iOS头文件](http://developer.limneos.net/)
+#### [iOS头文件](http://developer.limneos.net/?ios=8.0)
 
 > 方便查询一些系统的类的信息，使用的是classdump。
 
@@ -215,7 +215,7 @@ title: "书签"
 
 > 下载一系列反编译工具。
 
-#### [钟馗之眼](http://www.zoomeye.org/)
+#### [钟馗之眼](https://www.zoomeye.org/)
 
 > 让你像Google搜索一样寻找漏洞。
 

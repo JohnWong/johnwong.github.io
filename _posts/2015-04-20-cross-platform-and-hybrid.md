@@ -213,7 +213,7 @@ Cordova支持多种JS向Native发送信息的模式：
 * IFRAME_HASH_WITH_PAYLOAD
 * WK_WEBVIEW_BINDING
 
-各种模式的限制和对比可以参见[exec.js源代码](https://github.com/apache/cordova-ios/blob/master/cordova-js-src/exec.js)。`IFRAME_NAV`模式是最快的。由于这种模式存在一些问题，目前默认的发送消息方式改为`XHR_OPTIONAL_PAYLOAD`。参见[修改JavaScript到Native的桥接模式](https://github.com/apache/cordova-ios/blob/master/guides/Changing%20the%20JavaScript%20to%20Native%20Bridge%20Mode.md)
+各种模式的限制和对比可以参见[exec.js源代码](https://github.com/apache/cordova-ios/blob/master/cordova-js-src/exec.js)。`IFRAME_NAV`模式是最快的。由于这种模式存在一些问题，目前默认的发送消息方式改为`XHR_OPTIONAL_PAYLOAD`。参见[修改JavaScript到Native的桥接模式](https://github.com/apache/cordova-ios/blob/3.9.x/guides/Changing%20the%20JavaScript%20to%20Native%20Bridge%20Mode.md)
 
 [PhoneGap, Cordova, and what’s in a name?]:http://phonegap.com/2012/03/19/phonegap-cordova-and-what%E2%80%99s-in-a-name/ 
 [Cordova-ios]:https://github.com/apache/cordova-ios 
