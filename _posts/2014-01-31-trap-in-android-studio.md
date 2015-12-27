@@ -20,7 +20,7 @@ description: 上手Android Studio
     compile 'com.android.support:appcompat-v7:19.0.0'
     compile 'com.google.android.gms:play-services:4.1.32'
 ```
-* 这里的版本号也是略坑爹，想知道版本号需要打开目录<SDK>\extras\google\m2repository\com\google\android\gms\play-services，然后就能看到可用的版本号，其他两个包也是类似的方法查看。
+* 这里的版本号也是略坑爹，想知道版本号需要打开目录 `<SDK>\extras\google\m2repository\com\google\android\gms\play-services` ，然后就能看到可用的版本号，其他两个包也是类似的方法查看。
 
 * 下载的play services目录重要示例工程，本还想参考一下，结果都没有升级成新的工程结构。
 

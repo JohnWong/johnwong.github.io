@@ -21,13 +21,13 @@ layout: index
     <div class="left left-col">
       <div class="image feature-img thumb-180">
         <a href="{{ post.url | prepend: site.baseurl }}">
-          <img class="feature-img" alt="{{ post.title }}" src="{% if post.thumb %}{{ post.thumb | prepend: site.cdnhost | append: '?imageView2/2/w/360' }}{% else %}{{ site.placeholder }}{% endif %}">
+          <img class="feature-img" alt="{{ post.title | xml_escape }}" src="{% if post.thumb %}{{ post.thumb | prepend: site.cdnhost | append: '?imageView2/2/w/360' }}{% else %}{{ site.placeholder }}{% endif %}">
         </a>
       </div>
     </div>
     <div class="right-col">
       <h1 class="item-title">
-        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | xml_escape }}</a>
       </h1>
       <p class="item-desc">{{ post.description }}</p>
     </div>

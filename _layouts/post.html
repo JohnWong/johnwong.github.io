@@ -13,11 +13,11 @@ layout: default
       <div class="post">
         {% if page.thumb %}
         <div class="post-poster">
-          <img class="feature-img" alt="{{ page.title }}" src="{{ page.thumb | prepend: site.cdnhost }}">
+          <img class="feature-img" alt="{{ page.title | xml_escape }}" src="{{ page.thumb | prepend: site.cdnhost }}">
         </div>
         {% endif %}
         <h1 class="post-big-title">
-          {{ page.title }}
+          {{ page.title | xml_escape }}
         </h1>
         <div class="post-author">
           <a class="category" href="/category/{{ category.name }}.html"><span class="glyphicon {{ category.icon }}"></span>{{ category.name }}</a> | <span id="author" class="author">{{ page.author }}</span> • {{ page.date | date: "%b %-d, %Y" }}

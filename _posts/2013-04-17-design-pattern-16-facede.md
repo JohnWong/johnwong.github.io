@@ -36,7 +36,7 @@ public class DBCompare {
 } 
 ```
 
-在应用中,经常需要对数据库操作,每次都写上述一段代码肯定比较麻烦,需要将其中不变的部分提炼出来,做成一个接口,这就引入了facade外观对象.如果以后我们更换Class.forName中的<driver>也非常方便,比如从Mysql数据库换到Oracle数据库,只要更换facade接口中的driver就可以。
+在应用中,经常需要对数据库操作,每次都写上述一段代码肯定比较麻烦,需要将其中不变的部分提炼出来,做成一个接口,这就引入了facade外观对象.如果以后我们更换Class.forName中的`<driver>`也非常方便,比如从Mysql数据库换到Oracle数据库,只要更换facade接口中的driver就可以。
 
 ```java
 public class DBCompare {  

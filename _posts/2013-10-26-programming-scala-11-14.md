@@ -42,7 +42,7 @@ description: Programming Scala
 
 2. 读写文件  写文件：val writer = new PrintWriter(new File("a.txt"))   writer write "abc"   writer.close()。读文件：import scala.io.Source  Source.fromFile("a.txt").foreach{print}。如果需要一次读一行，就用getLines方法。fromURL方法接收java.net.URL对象，从网络读取数据。getLine方法返回指定行，以1为起始索引。
 
-3. XML作为一等公民  Scala中可以将xml文档之间放入代码就像int或Double一样。 val xml = <symbols><symbol>a</symbol></symbols>。类似XPath的查询提取方法xml \ "symbol"，查找其直接后代，传入的字符串@起始，则查找属性。如果要从目标元素出发，搜出层次结构里所有元素，就要用\\方法。text方法获取元素里的文本节点。可以使用模式匹配来提取xml中的信息
+3. XML作为一等公民  Scala中可以将xml文档之间放入代码就像int或Double一样。 `val xml = <symbols><symbol>a</symbol></symbols>`。类似XPath的查询提取方法xml \ "symbol"，查找其直接后代，传入的字符串@起始，则查找属性。如果要从目标元素出发，搜出层次结构里所有元素，就要用\\方法。text方法获取元素里的文本节点。可以使用模式匹配来提取xml中的信息
 
 4. 读写XML  `import scala.xml.*  XML.load("stocks.xml")。XML.save("stocks2.xml", xml)`
 

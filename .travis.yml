@@ -3,5 +3,7 @@
 language: ruby
 rvm:
 - 2.1.1
-script:
-- bundle exec jekyll build && bundle exec htmlproof ./_site --verbose
+branches:
+  only:
+  - master
+script: "bundle exec rake test"
