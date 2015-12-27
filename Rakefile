@@ -5,8 +5,7 @@ task :test do
     HTML::Proofer.new("./_site", {
         :check_html => true,
         :typhoeus => { 
-           :timeout => 60,
-           :verbose => true 
+           :timeout => 60
         }
     }).run
 end
