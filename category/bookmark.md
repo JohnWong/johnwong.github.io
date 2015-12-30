@@ -284,6 +284,8 @@ title: "书签"
 
 #### [千图网](http://www.58pic.com/)
 
+#### [Google material design colors](http://www.google.cn/design/spec/style/color.html)
+
 > 一个国内的免费素材网站。
 
 #### [求字体](http://www.qiuziti.com/)
@@ -303,6 +305,8 @@ title: "书签"
 > Facebook依赖Quartz Composer做出来的原型设计工具，开源。
 
 #### [原型设计工具Framer](http://framerjs.com/)
+
+> 应用免费试用。JS版本工具开源。
 
 ### 其他资源
 ---
