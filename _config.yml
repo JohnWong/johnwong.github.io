@@ -36,12 +36,12 @@ category_info:
     - {name: past, color: "#a9b7b7", icon: glyphicon-time, note: "[迁移自旧博客]"}
     - {name: bookmark}
 
-cdnhost: ""
+cdnhost: "//dn-johnwong.qbox.me/"
 
 # Github
 github:
     url: "https://github.com/"
     username: "JohnWong"
-    followers: 50
-    starred: 369
+    followers: 51
+    starred: 385
     following: 44
