@@ -157,6 +157,8 @@ title: "书签"
 
 > 还没来得及看，先收藏
 
+#### [iOS Code Review: Loose Guidelines](https://robots.thoughtbot.com/ios-code-review-guidlines)
+
 # 效率提升
 ---
 
