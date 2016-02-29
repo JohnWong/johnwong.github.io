@@ -24,11 +24,11 @@ See [StackOverflow](http://stackoverflow.com/a/15591984/3284570)
 
 默认下拉时，UIRefreshControl的位置会固定在scrollview的上方，在下拉时会露出来。
 
-![iOS Quirks 1](/images/2015-07-04-ios-quirks-1.gif)
+![iOS Quirks 1](//dn-johnwong.qbox.me/images/2015-07-04-ios-quirks-1.gif)
 
 给UIRefreshControl加入背景色，即使是clearColor，它的位置将会随着下拉逐渐从上部出现。
 
-![iOS Quirks 2](/images/2015-07-04-ios-quirks-2.gif)
+![iOS Quirks 2](//dn-johnwong.qbox.me/images/2015-07-04-ios-quirks-2.gif)
 
 ## UITableView的header阻止浮动
 
@@ -92,5 +92,9 @@ See [StackOverflow](http://stackoverflow.com/a/19794084/3284570)
 tableView.tableFooterView = [[UIView alloc] init];
 ```
 
+## UILabel文本前后字符串会被自动trim
 
+试过半角全角空格，都会被trim掉。tab不会被 trim，但是空白区域过大。最后找到了一个nice trick，在空白字符后添加"ZERO WIDTH NON-JOINER" character (U+200C)。也就是 Objective-C 下`@"\U0000200C"`或者 Swift 下`"\u{200c}"`。
+
+See: [http://stackoverflow.com/questions/31534742/space-being-removed-from-end-of-string-uilabel-swift](http://stackoverflow.com/questions/31534742/space-being-removed-from-end-of-string-uilabel-swift)
 
