@@ -274,7 +274,7 @@ title: "书签"
 
 #### [Do UI Kit](http://www.invisionapp.com/do)
 
-#### [Uber商标指南](http://brand.uber.com/)
+#### [Uber商标指南](https://brand.uber.com/)
 
 #### [Dropbox商标指南](https://www.dropbox.com/branding)
 
