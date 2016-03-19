@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 设计模式[8]-Iterator
-category: Past
+category: past
 description: 在Java容器类中常用的迭代器。
 ---
 

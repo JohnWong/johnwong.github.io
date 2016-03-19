@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "阿里智勇大闯关通关方法"
-category: Past
+category: past
 description: 通关阿里前端校招的游戏。
 ---
 公布了答案可能就没意思了，本来想等结束了再贴。后来看别人贴了也就贴出来了。网址：`http://ued.campus.alibaba.com/quiz3/`（已失效）

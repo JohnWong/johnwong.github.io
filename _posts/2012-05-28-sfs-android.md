@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SFS&Android——Android例程调试"
-category: Past
+category: past
 description: SFS的Android例程踩坑。
 ---
 自己写了个Java客户端的测试程序，消息收发都没用问题，转而进军Android。这回真是费好大劲了，断断续续debug三四天了。

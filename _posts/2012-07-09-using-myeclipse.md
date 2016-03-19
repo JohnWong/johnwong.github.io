@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Myeclipse知识"
-category: Past
+category: past
 description: 没有系统地学习使用MyEclipse，用到就记一点。
 ---
 

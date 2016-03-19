@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "java.lang.OutOfMemoryError: PermGen space及其解决方法"
-category: Past
+category: past
 description: PermGen space的全称是Permanent Generation space，是指内存的永久保存区域。
 ---
 

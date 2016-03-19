@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  CareerCup-PATTERN MATCHING
-category: Past
+category: past
 description: CareerCup是一本相当好Code面试的书，开始研读。
 ---
 

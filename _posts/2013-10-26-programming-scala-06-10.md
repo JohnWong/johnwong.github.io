@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Scala程序设计读书笔记[6:10]"
-category: Past
+category: past
 description: Programming Scala
 ---
 ### 第六章 函数值和闭包

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "长期的空闲时间计划"
-category: Past
+category: past
 description: 长期计划。现在看起来做掉了1和2。
 ---
 面对找工作的压力，暂时无法做自己想做的事情。这里列出来，以后空闲的时候，尽情做这些事情

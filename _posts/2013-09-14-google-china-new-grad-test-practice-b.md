@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Google 2014校招测试赛 Problem B"
-category: Past
+category: past
 description: Google校招测试赛第二题。
 ---
 ### Problem B. Captain Hammer

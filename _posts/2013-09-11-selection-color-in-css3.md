@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "使用CSS3改变文本选中的颜色"
-category: Past
+category: past
 description: 今天发现TechCrunch中文网站文字选区是绿色，跟网站整体风格非常协调。
 ---
 今天打开TechCrunch的中文网站，选中文字时选区颜色变成了绿色，跟网站整体的绿色风&#26684;非常协调。于是对实现细节感兴趣，一探究竟。

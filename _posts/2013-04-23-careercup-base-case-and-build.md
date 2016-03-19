@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CareerCup-BASE CASE AND BUILD
-category: Past
+category: past
 description: 这个题刷起来感觉比编程之美什么的easy多了。
 ---
 

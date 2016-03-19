@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Spring框架简介"
-category: Past
+category: past
 description: 我觉得Java中最好的框架。
 ---
 Link: [http://www.ibm.com/developerworks/cn/java/wa-spring1/](http://www.ibm.com/developerworks/cn/java/wa-spring1/)

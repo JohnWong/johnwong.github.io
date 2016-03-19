@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "看书发现IE的大坑"
-category: Past
+category: past
 description: 今天看Dojo权威指南，里面提到了IE的一个大坑。
 ---
 今天看dojo权威指南，里面提到了IE的一个大坑：

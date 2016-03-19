@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  秀一下SAE高级开发者证书
-category: Past
+category: past
 description: 想起来了，秀一下上学期得到的SAE开发者证书。
 ---
 

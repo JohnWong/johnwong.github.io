@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 设计模式[10]-Mediator
-category: Past
+category: past
 description: 通过中间人来促进松散耦合。
 ---
 Type: Behavioral

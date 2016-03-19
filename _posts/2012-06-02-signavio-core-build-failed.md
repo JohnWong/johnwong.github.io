@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "signavio-core-components ant build-all-in-one-war failed"
-category: Past
+category: past
 description: 最近搞了下signavio-core-components项目，遇到了一些问题。
 ---
 最近搞了下signavio-core-components项目，网址是http://code.google.com/p/signavio-core-components

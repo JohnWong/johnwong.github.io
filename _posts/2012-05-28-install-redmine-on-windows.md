@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Redmine on windows安装"
-category: Past
+category: past
 description: Redmine是用Ruby开发的基于web的项目管理软件，很好很强大。
 ---
 

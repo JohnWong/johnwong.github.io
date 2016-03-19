@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 设计模式[16]-Facede
-category: Past
+category: past
 description: 典型应用是数据库JDBC的应用。
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 设计模式[1]-Memento
-category: Past
+category: past
 description: 开始研究设计模式。
 ---
 开始研究设计模式。一个非常perfect的设计模式示意图http://www.mcdonaldland.info/2007/11/28/40/

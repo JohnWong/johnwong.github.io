@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "IB中颜色值的坑"
-category: Mobile
+category: mobile
 description: 最近看到的文章终于解答了心中的疑惑
 thumb: /images/2015-03-30-color-in-interface-builder.png
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Java SecurityManager"
-category: Past
+category: past
 description: Java的SecurityManager用于完成对一些本地方法的权限管理。
 ---
 Java的SecurityManager用于完成对一些本地方法的权限管理。其他安全特性可以保证程序Java程序安全运行，但是当调用本地方法时，Java安全沙箱完全不起作用，因此需要在调用本地方法前确认它是可信任的。

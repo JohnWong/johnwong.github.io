@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 跨平台移动开发与Hybrid学习笔记
-category: Mobile
+category: mobile
 description: 借React Native大热之际总结跨平台移动开发方案，学习典型Hybrid框架
 thumb: /images/2015-04-20-cross-platform-and-hybrid.jpg
 ---

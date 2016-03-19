@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Code Jam 2010 Round 1A Problem C"
-category: Past
+category: past
 description: Code Jam练习
 ---
 ### Problem C. Number Game

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 用Git的方式使用SVN
-category: Mobile
+category: mobile
 description: 必须用SVN但还是喜欢Git，还好有git-svn
 thumb: /images/2015-04-30-using-git-with-svn.png
 ---

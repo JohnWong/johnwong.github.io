@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Java代码签名与认证
-category: Past
+category: past
 description: 看了这一章的内容，觉得有的部分很熟悉，因为Android签名用到了。
 ---
 

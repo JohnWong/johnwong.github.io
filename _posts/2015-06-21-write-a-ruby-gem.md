@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 学习编写Ruby gem
-category: Mobile
+category: mobile
 description: 假期get新技能，编写Ruby gem
 thumb: /images/2015-06-21-write-a-ruby-gem.png
 ---

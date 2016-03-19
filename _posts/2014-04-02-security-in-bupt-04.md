@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "扒一扒北邮的安全问题[4]-一大波访问控制问题"
-category: Past
+category: past
 description: 毕业前把自己无聊玩的抖出来。
 thumb: /images/2014-04-02-security-in-bupt-04-03.png
 ---

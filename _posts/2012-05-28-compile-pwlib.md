@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Pwlib编译"
-category: Past
+category: past
 description: Pwlib编译
 ---
 参考文档有http://www.voxgratia.org/docs/pwlib_windows.html#download 和 http://www.cnblogs.com/VOIP/archive/2010/04/30/1724665.html 

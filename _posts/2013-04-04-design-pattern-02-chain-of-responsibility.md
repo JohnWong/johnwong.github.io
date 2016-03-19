@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 设计模式[2]-Chain of Responsibility
-category: Past
+category: past
 description: 响应链最常用的场景就是界面上对点击等的处理
 ---
 Type: Behavioral

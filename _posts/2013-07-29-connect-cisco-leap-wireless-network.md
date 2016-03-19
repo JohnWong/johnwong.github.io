@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "笔记本连接Cisco: LEAP网络"
-category: Past
+category: past
 description: "公司无线覆盖，但是加密类型是Cisco: LEAP遇到一点问题。"
 ---
 笔记本是Thinkpad T420i。公司无线覆盖，但是加密类型是Cisco: LEAP。直接连接，在无线网络的加密类型中找不到这个。病急乱投医，插上Realtec 8188 USB网卡，安装USB网卡的驱动，然后就能连接无线了。拔掉USB网卡，使用自带网卡，依然能够连接。卸载了USB网卡驱动，又无法连接了。

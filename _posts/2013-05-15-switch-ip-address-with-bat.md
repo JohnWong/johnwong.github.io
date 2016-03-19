@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "bat实现IP切换"
-category: Past
+category: past
 description: 出差调试设备，需要在几个网段之间切换，因此做了个bat实现快速切换。
 ---
 出差调试设备，需要在几个网段之间切换，因此做了个bat实现快速切换。

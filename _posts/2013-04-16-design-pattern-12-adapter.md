@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 设计模式[12]-Adapter
-category: Past
+category: past
 description: 将原接口适配成目标接口。
 ---
 

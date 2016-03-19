@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 设计模式[15]-Decorator
-category: Past
+category: past
 description: 动态给一个对象添加一些额外的职责。
 ---
 

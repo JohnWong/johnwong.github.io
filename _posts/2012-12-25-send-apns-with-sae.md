@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "用SAE发送APNS"
-category: Past
+category: past
 description: 为了外包项目用SAE发送APNS
 ---
 

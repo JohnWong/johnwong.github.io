@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Scala程序设计读书笔记[1:5]"
-category: Past
+category: past
 description: Programming Scala
 ---
 ## Scala程序设计: Java虚拟机多核编程实战

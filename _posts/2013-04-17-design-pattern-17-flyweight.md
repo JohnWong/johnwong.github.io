@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  设计模式[17]-Flyweight
-category: Past
+category: past
 description: 避免大量拥有相同内容的小类的开销，使大家共享一个类。
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "FineReport简明教程"
-category: Past
+category: past
 description: 帆爷让帮忙研究一下FineReport，可能在项目中使用。
 ---
 软件安装及帮助

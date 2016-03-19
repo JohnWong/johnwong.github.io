@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "深入Java虚拟机读书笔记[5]"
-category: Past
+category: past
 description: Inside the Java Virtual Machine
 ---
 ### 第五章 Java虚拟机

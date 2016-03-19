@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "深入Java虚拟机读书笔记[1:4]"
-category: Past
+category: past
 description: Inside the Java Virtual Machine
 ---
 ### 第一章 Java体系结构

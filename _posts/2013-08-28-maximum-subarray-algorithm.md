@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Maximum Subarray Algorithm"
-category: Past
+category: past
 description: 算法导论4.2-5提供了一种线性时间内解决的方法。
 ---
 算法导论4.2-5提供了一种线性时间内解决的方法。

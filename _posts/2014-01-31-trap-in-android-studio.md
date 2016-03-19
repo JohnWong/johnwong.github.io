@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Android Studio踩坑记
-category: Past
+category: past
 description: 上手Android Studio
 ---
 

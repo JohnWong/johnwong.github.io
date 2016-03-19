@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Java ClassLoader详解"
-category: Past
+category: past
 description: 深入Java虚拟机，ClassLoader是其中重要的一个环节。
 ---
 深入Java虚拟机，ClassLoader是其中重要的一个环节。看书&#43;查资料&#43;动手，整理出如下要点：

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: PNG图片极限压缩
-category: Showcase
+category: showcase
 description: 春节假期写代码，除夕夜总结出文章，想想也是醉了。
 thumb: /images/2015-02-19-png-compress-02.png
 ---

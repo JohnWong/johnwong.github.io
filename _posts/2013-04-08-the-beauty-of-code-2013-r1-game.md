@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "2013编程之美全国挑战赛第一场-传话游戏"
-category: Past
+category: past
 description: 喜欢这样的比赛，只是自己能力有限。
 ---
 传话游戏

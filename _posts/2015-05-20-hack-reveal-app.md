@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Reveal App试用时间破解
-category: Mobile
+category: mobile
 description: 抽空试着hack一下应用调试利器Reveal。
 thumb: /images/2015-05-20-hack-reveal-app.png
 ---

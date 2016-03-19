@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 一个苹果开发者的苹果表体验报告
-category: Mobile
+category: mobile
 description: 使用苹果表一周多，感觉不错
 thumb: /images/2015-05-01-apple-watch-report-from-developer-01.jpg
 ---

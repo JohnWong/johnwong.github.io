@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 设计模式[6]-Interpreter
-category: Past
+category: past
 description: 最常用场景在于语法分析
 ---
 Type: Behavioral

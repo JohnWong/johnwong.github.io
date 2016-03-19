@@ -1,7 +1,7 @@
 ---
 layout: post
 title: FauxPas试用时间破解
-category: Mobile
+category: mobile
 description: 抽空试着hack一下FauxPas。
 thumb: /images/2015-06-02-hack-fauxpas.jpg
 ---

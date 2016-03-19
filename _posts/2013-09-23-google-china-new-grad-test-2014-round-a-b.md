@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Google China New Grad Test 2014 Round A Problem B"
-category: Past
+category: past
 description: Google校招留下遗憾。
 ---
 ### Problem B. Rational Number Tree

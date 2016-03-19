@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 阿里实习面试总结
-category: Past
+category: past
 description: 这次妥妥的倒在了一面上。还是基础不够扎实。
 ---
 

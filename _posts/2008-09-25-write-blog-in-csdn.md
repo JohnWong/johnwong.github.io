@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "安家CSDN"
-category: Past
+category: past
 description: 安家CSDN，然后就没有然后了。
 ---
 

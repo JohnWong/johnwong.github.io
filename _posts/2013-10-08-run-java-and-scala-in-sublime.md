@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sublime中编译运行java和scala"
-category: Past
+category: past
 description: 了解Sublime神器。
 ---
 1\. 运行Java参考[http://www.oschina.net/translate/compile-and-run-java-programs-in-sublime-text-2](http://www.oschina.net/translate/compile-and-run-java-programs-in-sublime-text-2)

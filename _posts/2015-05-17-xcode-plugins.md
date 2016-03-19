@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 使用Xcode插件加速开发
-category: Mobile
+category: mobile
 description: 入行iOS以来对Xcode插件的总结。
 thumb: /images/2015-05-17-xcode-plugins.png
 ---

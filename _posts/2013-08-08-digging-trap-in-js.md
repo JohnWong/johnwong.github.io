@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "开始挖掘js与dojo可能踩的坑"
-category: Past
+category: past
 description: 开始研究Dojo，开了个头但是中止了。
 ---
 1. && 与 || 操作符

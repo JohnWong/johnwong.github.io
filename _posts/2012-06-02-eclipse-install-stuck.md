@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Eclipse安装软件长时间停留在calculating requirements and dependencies"
-category: Past
+category: past
 description: 解决Eclipse安装插件长时间卡住的问题
 ---
 选择了网站或者压缩包后，把“Contact all update sites during install to find required software”（寻找指定的软件前先访问所有更新站点）前面的勾去掉

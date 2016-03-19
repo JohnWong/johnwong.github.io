@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  MySQL重置root密码
-category: Past
+category: past
 description: 重置MySQL的root密码
 ---
 

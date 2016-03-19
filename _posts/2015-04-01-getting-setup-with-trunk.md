@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "开始建立你的trunk"
-category: Mobile
+category: mobile
 description: 等待提交CocoaPod的时候顺带翻译了帮助文档
 thumb: /images/2015-04-01-getting-setup-with-trunk.png
 ---

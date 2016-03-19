@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "一个IP地址搜索服务"
-category: Past
+category: past
 description: 今天偶然发现了有道的ip地址搜索服务
 ---
 

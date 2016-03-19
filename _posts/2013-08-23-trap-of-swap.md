@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  交换两个数不使用临时变量的陷阱
-category: Past
+category: past
 description: 这个问题告诉我们有的面试题就真的是面试题，看起来很美但是一般人不这么写。
 ---
 

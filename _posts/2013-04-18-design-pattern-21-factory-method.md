@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 设计模式[21]-Factory Method
-category: Past
+category: past
 description: 定义一个创建对象的接口，但是让子类决定实例化哪个类。
 ---
 

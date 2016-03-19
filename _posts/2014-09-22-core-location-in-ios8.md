@@ -1,7 +1,7 @@
 ---
 layout: post
 title: iOS8定位适配
-category: Mobile
+category: mobile
 description: iOS8推出后定位做了改动，不适配无位可定。
 thumb: /images/2014-09-22-core-location-in-ios8.png
 ---

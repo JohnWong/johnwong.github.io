@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "jQuery上传文件大小校验"
-category: Past
+category: past
 description: 为jQuery的Validator增加一个filesize方法，在前端校验文件大小。
 ---
 jQuery的Validator增加一个filesize方法。为了在IE下可以使用前端校验，需要判断浏览器类型。如果是IE需要使用ActiveX来校验。客户端需要修改IE设置才能运行，具体为：

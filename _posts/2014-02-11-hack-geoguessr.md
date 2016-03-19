@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Geoguessr游戏破解
-category: Past
+category: past
 description: 没人比我分高哈哈。
 thumb: /images/2014-02-11-hack-geoguessr.jpg
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "取cookie的正则表达式"
-category: Past
+category: past
 description: 尝试正则表达式解决问题。
 ---
 想用正则取cookie，cookie以“;”为分隔符，但是最后一条记录后不包含分隔符，因此可能的做法：

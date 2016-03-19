@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "创新工场的一道笔试题"
-category: Past
+category: past
 description: 创新工场笔试打酱油了。
 ---
 整个卷子出错的问题是堆排序，堆调整有一个参数写错了。几周不看，就出错了，看来考前一定要温习。

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "2013亚马逊校招机试题B"
-category: Past
+category: past
 description: 没通过还错过了有道面试。
 ---
 题目参考[这里](https://oj.leetcode.com/discuss/223/jump-game-ii)，我觉得是个动态规划问题，写出的解法最终2/10个用例失败。做题太投入，看错了有道的面试时间，痛心疾首啊！

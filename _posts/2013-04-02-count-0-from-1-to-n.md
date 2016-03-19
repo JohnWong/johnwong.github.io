@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 从1到n的正数中0的出现次数
-category: Past
+category: past
 description: 准备找工作了，上次搞这些算法数据结构还是研究生复试上机考试。现在必须得重操旧业了。
 ---
 

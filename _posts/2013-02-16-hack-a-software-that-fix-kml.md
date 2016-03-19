@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "某kml纠偏软件数据破解"
-category: Past
+category: past
 description: 为了提高纠偏数据库的准确性，破解了一款kml纠偏软件拿到了数据库。
 ---
 

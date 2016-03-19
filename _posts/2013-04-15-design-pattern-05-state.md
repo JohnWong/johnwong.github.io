@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 设计模式[5]-State
-category: Past
+category: past
 description: 状态模式
 ---
 Type: Behavioral

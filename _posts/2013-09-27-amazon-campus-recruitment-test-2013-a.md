@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "2013亚马逊校招机试题A"
-category: Past
+category: past
 description: 没通过还错过了有道面试。
 ---
 题目没复制下来，凭印象写的。

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 设计模式[4]-Command
-category: Past
+category: past
 description: 将调用操作的对象和知道如何实现该操作的对象解耦。
 ---
 Type: Behavioral

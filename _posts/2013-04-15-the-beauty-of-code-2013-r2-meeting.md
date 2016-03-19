@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 2013编程之美全国挑战赛第二场-集会
-category: Past
+category: past
 description: 思路是对的，遗憾没AC。
 ---
 

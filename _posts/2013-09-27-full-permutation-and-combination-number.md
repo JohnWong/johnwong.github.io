@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "不使用递归求全排列和组合数"
-category: Past
+category: past
 description: 经典面试题。
 ---
 同学遇到的面试问题，大意是M台机器放在N个房间，不使用递归求打印所有情况

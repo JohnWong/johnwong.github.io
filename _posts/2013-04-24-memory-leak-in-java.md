@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Java内存泄露
-category: Past
+category: past
 description: Java内存泄漏与C++原理不同。
 ---
 

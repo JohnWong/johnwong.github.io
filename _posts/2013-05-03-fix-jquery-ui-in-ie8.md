@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "jQuery UI在Server 2008 IE8下DatePicker问题修复"
-category: Past
+category: past
 description: jQuery UI的DatePicker在Server 2008的IE8下出现问题。
 ---
 这真是个WTF的问题，类似参见[Stack Overflow](http://stackoverflow.com/questions/5454489/jquery-datepicker-having-trouble-in-ie8)

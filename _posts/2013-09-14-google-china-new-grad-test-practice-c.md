@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Google 2014校招测试赛 Problem C"
-category: Past
+category: past
 description: Google校招测试赛第三题。
 ---
 ### Problem C. Moist

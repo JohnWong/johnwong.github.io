@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Java Hotswap"
-category: Past
+category: past
 description: 小例子来了解Java的Hotswap原理。
 ---
 Link: [http://www.ibm.com/developerworks/cn/java/j-lo-hotswapcls/](http://www.ibm.com/developerworks/cn/java/j-lo-hotswapcls/)

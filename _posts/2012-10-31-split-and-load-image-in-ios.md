@@ -1,7 +1,7 @@
 ---
 layout: post
 title: iOS大图加载与切割
-category: Past
+category: past
 description: 做cocos-2d-x开发的时候了解一点iOS大图加载切割的知识。
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "阿里巴巴2014校招笔试错误汇总"
-category: Past
+category: past
 description: 还好通过了。。。
 ---
 试题参见：`http://7-sun.com/text/9484.html`（已失效）

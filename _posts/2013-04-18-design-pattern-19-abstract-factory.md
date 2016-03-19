@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "设计模式[19]-Abstract Factory"
-category: Past
+category: past
 description: 提供一个接口创建一系列相关或者依赖的对象，而无需指定其实现类。
 ---
 Type: Creational

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[算法]-Longest Increasing Subsequence"
-category: Past
+category: past
 description: 看微软笔试题遇到的。
 ---
 

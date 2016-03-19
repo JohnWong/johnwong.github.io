@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 支付宝9.0项目工作总结
-category: Nonetech
+category: nonetech
 description: 要有阶段性总结
 thumb: /images/2015-08-11-work-summary.jpg
 ---

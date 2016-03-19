@@ -1,7 +1,7 @@
 ---
 layout: post
 title: VS2005 "正在更新 IntelliSense"无法通过的解决办法
-category: Past
+category: past
 description: VS2005一个小问题的解决。
 ---
 

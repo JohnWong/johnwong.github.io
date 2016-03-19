@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "找两个链表的公共节点"
-category: Past
+category: past
 description: 编程之美 3.6
 ---
 首先考虑两个链表无环的情况。

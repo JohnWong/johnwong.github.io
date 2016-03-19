@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  微软2013暑期实习生笔试题错误汇总
-category: Past
+category: past
 description: 有幸通过了笔试。
 ---
 

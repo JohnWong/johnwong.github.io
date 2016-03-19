@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 设计模式[14]-Composite
-category: Past
+category: past
 description: 将对象组合成树形结构以表示“部分-整体”的层次结构。
 ---
 Type: Structural

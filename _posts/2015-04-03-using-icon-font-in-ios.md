@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "使用IconFont减小iOS应用体积"
-category: Mobile
+category: mobile
 description: 既然IconFont项目已经开源，那么文章也可以发出来啦
 thumb: /images/2015-04-03-using-icon-font-in-ios.png
 ---

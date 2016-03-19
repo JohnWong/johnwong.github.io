@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "在Java下使用NTP获取时间"
-category: Past
+category: past
 description: NTP全称网络时间协议，是仍在使用中的最古老的网络协议之一。
 ---
 NTP是仍在使用中的最古老的网络协议之一（在1985年前开始）。NTP最初由德拉瓦州大学的Dave Mills设计，他与一群志愿者仍在维护NTP。

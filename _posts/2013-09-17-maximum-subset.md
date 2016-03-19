@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 1-0组成的串中，1和0个数相等的最长子串
-category: Past
+category: past
 description: 同学面试遇到的题。
 ---
 同学面试遇到的题，我以尽量简单的方式描述，偶子串这个概念是为了表述创造的概念。

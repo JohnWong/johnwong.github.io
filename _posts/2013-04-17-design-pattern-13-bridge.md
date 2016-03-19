@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 设计模式[13]-Bridge
-category: Past
+category: past
 description: 将抽象部分与实现部分分离，使它们都可以独立的变化。
 ---
 Type: Structural

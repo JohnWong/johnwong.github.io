@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "人生第一份工作"
-category: Nonetech
+category: nonetech
 description: 上周五入职了，开始人生的第一份工作。
 thumb: /images/2014-04-22-first-job-in-my-life.jpg
 ---

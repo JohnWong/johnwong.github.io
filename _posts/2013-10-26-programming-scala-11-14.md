@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Scala程序设计读书笔记[11:14]"
-category: Past
+category: past
 description: Programming Scala
 ---
 ### 第十一章 与Java互操作

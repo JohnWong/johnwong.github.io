@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 设计模式[7]-Strategy
-category: Past
+category: past
 description: 实现算法具体实现和抽象接口之间的解耦。
 ---
 

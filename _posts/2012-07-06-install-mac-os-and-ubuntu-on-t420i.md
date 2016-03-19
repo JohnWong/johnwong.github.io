@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  T420i安装Mac OS与Ubuntu
-category: Past
+category: past
 description: 想当年花费了那么多时间来折腾黑苹果。
 ---
 

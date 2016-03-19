@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 用FauxPas找到潜在Bug
-category: Mobile
+category: mobile
 description: 一个不错的Xcode检查工具，只是略贵。
 thumb: /images/2015-06-02-hack-fauxpas.jpg
 ---

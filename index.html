@@ -42,7 +42,7 @@ layout: index
     <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}">«</a>
     {% endif %}
   </li>
-  <li class="{% if paginator.page == i %}disabled{% endif %}">
+  <li class="{% if paginator.page == 1 %}disabled{% endif %}">
     <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">1</a>
   </li>
   {% for i in (2..paginator.total_pages) %}

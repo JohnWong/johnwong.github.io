@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 设计模式[18]-Proxy
-category: Past
+category: past
 description: 提供一个替代品或者占位符来控制对一个对象的访问。
 ---
 

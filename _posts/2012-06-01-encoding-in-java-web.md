@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MySQL编码、Spring配置中编码、Struts中文问题"
-category: Past
+category: past
 description: 今天遇到的中文编码有关的三个问题，包括MySQL、Spring和Struts。
 ---
 

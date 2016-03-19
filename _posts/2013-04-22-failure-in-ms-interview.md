@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  微软面试教训总结
-category: Past
+category: past
 description: 人生第一次面试，挂了。
 ---
 

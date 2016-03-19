@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Strassen’s algorithm for matrix multiplication"
-category: Past
+category: past
 description: Strassen算法对矩阵乘法时间复杂度有提升。
 ---
 Strassen算法能够在![time cost](//dn-johnwong.qbox.me/images/2013-08-30-strassens-algorithm-for-matrix-multiplication.png)时间内完成矩阵乘法。

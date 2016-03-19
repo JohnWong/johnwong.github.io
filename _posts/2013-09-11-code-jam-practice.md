@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Code Jam练习"
-category: Past
+category: past
 description: 今年Google笔试用Code Jam。今天试试怎么用。
 ---
 今年Google笔试用Code Jam。今天试试怎么用。这东西很威武啊，支持各种语言，只要免费许可的都可以，还可以下载别人提交的code。做了几个非常简单的，结果就遇到坑了。

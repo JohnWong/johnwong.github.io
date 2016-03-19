@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "苹果的一些坑"
-category: Mobile
+category: mobile
 description: 汇总近期遇到的苹果的Bug。
 thumb: /images/2014-06-04-bugs-by-apple.jpg
 ---

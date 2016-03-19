@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "PhoneGap开发的一点体会"
-category: Past
+category: past
 description: 在一个被坑了的外包项目中使用PhoneGap的一点体会。
 ---
 1. viewport可以在加载的时候通过js来动态设置，如果想通过viewport来缩放以解决分辨率适配的问题，必须将user-scalable设为yes。这样导致的问题是页面中的float设为fixed的元素不会固定。同样要使fixed生效必须使用user-scalable=no。设为可缩放的时候jquery等等的固定的ui均失效。真是个鱼与熊掌不可得兼的问题。最后的解决办法是将body的css加入zoom属性，通过zoom来控制页面缩放。body的背景图片缩放使用background-size:640px

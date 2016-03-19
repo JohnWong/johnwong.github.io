@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 设计模式[9]-Template Method
-category: Past
+category: past
 description: 将算法的一些步骤推迟到子类中实现。
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  从MyEclipse导入Eclipse导致不能识别为web项目
-category: Past
+category: past
 description: 老师给的实例代码由MyEclipse生成。导入MyEclipse之后识别为Java项目。
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "扒一扒北邮的安全问题[5]-教务账号外泄到鲜次元"
-category: Past
+category: past
 description: 毕业前把自己无聊玩的抖出来。
 thumb: /images/2014-04-06-security-in-bupt-05-01.png
 ---

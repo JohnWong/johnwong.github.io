@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "东京大学ACM Java模板"
-category: Past
+category: past
 description: 工欲善其事，必先利其器。模版在手可以将注意力放在问题本身。
 ---
 ```java

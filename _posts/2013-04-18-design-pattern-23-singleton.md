@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 设计模式[23]-Singleton
-category: Past
+category: past
 description: 保证一个类只有一个示例，并且提供一个全局指针指向他。
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 设计模式[3]-Observer
-category: Past
+category: past
 description: 在对象间定义一对多的依赖关系，这样当一个对象改变状态时，自动通知更新依赖他的对象。
 ---
 Type: Behavioral

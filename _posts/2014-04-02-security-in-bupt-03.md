@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "扒一扒北邮的安全问题[3]-摄像头这么多"
-category: Past
+category: past
 description: 毕业前把自己无聊玩的抖出来。
 thumb: /images/2014-04-02-security-in-bupt-03-01.png
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sencha Touch跨域问题解决"
-category: Past
+category: past
 description: 解决跨域问题
 ---
 之前对于跨域问题仅有粗浅的认识，一般是浏览器层面出于安全性的考虑，不允许调用其他页面的对象。这次在Sencha Touch中解决这个问题额外花掉不少时间。

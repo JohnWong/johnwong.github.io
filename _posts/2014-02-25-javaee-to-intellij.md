@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "JavaEE项目切换到Intellij遇到的一个问题"
-category: Past
+category: past
 description: 买了MBP开心换电脑。
 ---
 换电脑真是一个麻烦的事情，尤其是像我这样需要各种环境的人。第一天折腾xcode，弄好证书什么的，把之前的一个项目跑起来。今天是折腾的第二天，只完成了一件事情，就是在mac上用Intellij Idea把之前一个项目跑起来。真心受不了MyEclipse了，慢就算了，把项目导入遇到问题，结果啥也没导入进来，根本不给修改配置解决问题的机会。

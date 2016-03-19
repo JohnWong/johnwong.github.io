@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 生活与工作的切换
-category: Nonetech
+category: nonetech
 description: 搬家了，迎接变化
 thumb: /images/2015-04-29-life-change.jpg
 ---

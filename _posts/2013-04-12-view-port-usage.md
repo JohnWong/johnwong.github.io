@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "端口占用问题"
-category: Past
+category: past
 description: 查看占用指定端口的进程
 ---
 查看占用制定端口的进程

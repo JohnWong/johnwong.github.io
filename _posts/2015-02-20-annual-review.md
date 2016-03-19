@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "2014年终总结"
-category: Nonetech
+category: nonetech
 description: 订婚前夜写年终总结，再醉一次。
 thumb: /images/2015-02-20-annual-review.png
 ---

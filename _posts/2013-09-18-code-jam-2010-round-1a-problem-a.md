@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Code Jam 2010 Round 1A Problem A"
-category: Past
+category: past
 description: Code Jam练习
 ---
 [https://code.google.com/codejam/contest/544101/dashboard#s=p0](https://code.google.com/codejam/contest/544101/dashboard#s=p0)

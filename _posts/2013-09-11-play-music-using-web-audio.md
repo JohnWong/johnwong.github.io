@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "HTML5 Web Audio API实现【董小姐】播放"
-category: Past
+category: past
 description: 论坛有人发了matlab实现的董小姐，于是想在自己熟悉的领域也试试看。
 ---
 论坛有人发了matlab实现的董小姐，于是想在自己熟悉的领域也试试看。之前用Python做过发出指定频率的声音，但是这个对第三方库的依赖较大。于是准备在JavaScript中实现。

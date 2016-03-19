@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "深入Java虚拟机读书笔记[6:7]"
-category: Past
+category: past
 description: Inside the Java Virtual Machine
 ---
 ### 第六章 Java class文件

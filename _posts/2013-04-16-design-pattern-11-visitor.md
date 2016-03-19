@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 设计模式[11]-Visitor
-category: Past
+category: past
 description: 在Java中，Visitor模式实际上是分离了容器中的元素和对这些元素进行操作的行为。
 ---
 Type: Behavioral
