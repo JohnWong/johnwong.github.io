@@ -1,16 +1,30 @@
-<img class="gravatar index-gravatar" alt="{{ site.username }}" src="http://gravatar.com/avatar/{{ site.gravatar_hash}}?s=480">
+<script type="text/javascript">
+  $.get("//api.github.com/users/{{ site.github.username }}", function(data) {
+    $("#github-followers").text('' + data.followers);
+    $("#github-following").text('' + data.following);
+  });
+  $.get("https://api.github.com/users/{{ site.github.username }}/starred?per_page=1", function(data, result, request) {
+    var link = request.getResponseHeader("Link");
+    var match = link.match(/&page=(\d*)>; rel="last"/);
+    if (match.length == 2) {
+      var starred = match[1];
+      $("#github-starred").text('' + starred);
+    }
+  });
+</script>
+<img class="gravatar index-gravatar" alt="{{ site.username }}" src="//gravatar.com/avatar/{{ site.gravatar_hash}}?s=480">
 <h1 class="index-me">
   <span>{{ site.username }} <a href="{{ site.github.url }}{{ site.github.username }}">@Github</a></span>
 </h1>
 <div class="vcard-stats">
   <a class="vcard-stat" href="{{ site.github.url }}{{ site.github.username }}/followers">
-    <strong class="vcard-stat-count">{{ site.github.followers }}</strong> followers
+    <strong id="github-followers" class="vcard-stat-count">{{ site.github.followers }}</strong> followers
   </a>
   <a class="vcard-stat" href="{{ site.github.url }}stars/{{ site.github.username }}">
-    <strong class="vcard-stat-count">{{ site.github.starred }}</strong> Starred
+    <strong id="github-starred" class="vcard-stat-count">{{ site.github.starred }}</strong> Starred
   </a>
   <a class="vcard-stat" href="{{ site.github.url }}{{ site.github.username }}/following">
-    <strong class="vcard-stat-count">{{ site.github.following }}</strong> Following
+    <strong id="github-followers" class="vcard-stat-count">{{ site.github.following }}</strong> Following
   </a>
   <div class="cf"></div>
 </div>
