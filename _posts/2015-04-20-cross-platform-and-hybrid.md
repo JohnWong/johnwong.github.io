@@ -174,7 +174,7 @@ Cordova将各种平台的一些原生功能封装成插件提供。新建应用�
 
 建立一个插件的方法可以参考[PhoneGap 插件指南](http://docs.phonegap.com/en/edge/guide_hybrid_plugins_index.md.html)。这里简单介绍一下建立插件的方法。首先需要先定义一个插件配置文件`plugin.xml`，在其中指定各个平台的实现的源代码和使用这个功能的JS文件。在iOS平台，需要新建一个类继承`CDVPlugin`，定义一些方法供外部调用。在方法内调用其`commandDelegate`的`sendPluginResult`方法即可完成返回结果给JS。例如：
 
-```objective-c
+``` objc
 - (void)getDeviceInfo:(CDVInvokedUrlCommand*)command
 {
     NSDictionary* deviceProperties = [self deviceProperties];

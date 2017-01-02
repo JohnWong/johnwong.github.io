@@ -39,7 +39,7 @@ iOS8要求应用如果使用定位，需要告诉用户使用的原因。描述�
 
 之前定位授权获取发生在应用使用定位的时候，开发者不需要显式地请求。现在则需要显式地请求授权。两个授权对应的方法在类`CLLocationManager`中，分别为：
 
-``` objective-c
+``` objc
 - (void)requestAlwaysAuthorization __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_8_0);
 - (void)requestWhenInUseAuthorization __OSX_AVAILABLE_STARTING(__MAC_NA, __IPHONE_8_0);
 ```
@@ -59,7 +59,7 @@ iOS8要求应用如果使用定位，需要告诉用户使用的原因。描述�
 在调用`CLLocationManager`的`startUpdatingLocation`前请求授权。首先为了兼容老版本，需要用宏定义在老版本中屏蔽相关代码。然后检测Info.plist中定义授权的描述，根据存的授权的描述决定申请哪个定位授权。以下代码为墨昕编写。
 
 
-``` objective-c
+``` objc
 #if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_7_1
     if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1 && [CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
         BOOL hasAlwaysKey = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSLocationAlwaysUsageDescription"] != nil;
