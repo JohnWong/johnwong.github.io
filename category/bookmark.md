@@ -125,6 +125,10 @@ title: "书签"
 >
 > Use 'xcrun simctl install booted /path/to/the/app' to install what you built in step 1.
 
+#### [iOS符号表恢复](http://blog.imjun.net/2016/08/25/iOS%E7%AC%A6%E5%8F%B7%E8%A1%A8%E6%81%A2%E5%A4%8D-%E9%80%86%E5%90%91%E6%94%AF%E4%BB%98%E5%AE%9D/)
+
+> 运行时调试砸壳的包，堆栈信息解决没有符号表的问题。
+
 #### [Launchkit](https://launchkit.io/)
 
 > 一系列方便构建、运行和管理移动应用的工具。
