@@ -55,7 +55,7 @@ title: "书签"
 
 > 提升Xcode效率的方法。
 
-#### [github优秀开源项目大全-iOS](http://foggry.com/blog/2014/04/25/githubyou-xiu-xiang-mu-ios/)
+#### [GitHub优秀开源项目大全-iOS](http://foggry.com/blog/2014/04/25/githubyou-xiu-xiang-mu-ios/)
 
 > GitHub上用于iOS开发的各种项目。
 
@@ -98,6 +98,10 @@ title: "书签"
 #### [如何检查iOS系统版本](http://stackoverflow.com/questions/3339722/how-to-check-ios-version/)
 
 > 不要再这么写了：[[[UIDevice currentDevice] systemVersion] floatValue]
+
+#### [Appium 从入门到原理](http://www.jianshu.com/p/3932a1c24b93
+
+> 自动化测试框架原理的探讨。
 
 #### [让你快速上手Runtime](http://www.jianshu.com/p/e071206103a4)
 
