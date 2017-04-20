@@ -1,5 +1,5 @@
 <script type="text/javascript">
-  $.get("//api.github.com/users/{{ site.github.username }}", function(data) {
+  $.get("https://api.github.com/users/{{ site.github.username }}", function(data) {
     $("#github-followers").text('' + data.followers);
     $("#github-following").text('' + data.following);
   });
@@ -24,7 +24,7 @@
     <strong id="github-starred" class="vcard-stat-count">{{ site.github.starred }}</strong> Starred
   </a>
   <a class="vcard-stat" href="{{ site.github.url }}{{ site.github.username }}/following">
-    <strong id="github-followers" class="vcard-stat-count">{{ site.github.following }}</strong> Following
+    <strong id="github-following" class="vcard-stat-count">{{ site.github.following }}</strong> Following
   </a>
   <div class="cf"></div>
 </div>
