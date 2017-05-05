@@ -12,27 +12,27 @@ thumb: /images/2015-04-20-cross-platform-and-hybrid.jpg
 
 这可能是移动开发领域的一个迷梦，无数人在用不同的方式想做好这一件事情，现在看起来还没有一套解决方案可以一统江湖。移动领域的跨平台开发可以从几个层面来切入（以下观点给予多年前的调研和最近的整理，出错了欢迎指出）。
 
-####交叉编译
+#### 交叉编译
 
 交叉编译是用一种语言开发，编译成不同平台的机器码。可以复用的是商业逻辑以及数据存取部分。典型代表是[Xamarin]，包含收费版和功能有限的免费版。使用C#作为开发语言，完成共享代码部分的编写，通过封装好的 C# API 来访问和操控Native UI。支持iOS，Android，Mac及Windows。除了提供IDE外还提供了云端测试、监控平台，非常有吸引力。
 
-####编程语言翻译
+#### 编程语言翻译
 
 将源编程语言翻译成不同平台的目标语言，实现一定程度上的代码复用。这类方案一般可以复用的是商业逻辑以及数据存取，适合逻辑复杂的应用。这样的解决方案有[J2ObjC]，免费开源。使用Java作为开发语言，在iOS平台翻译成OC。另外有Google Web Tookit可以将Java语言翻译为JavaScript，可以支持开发。实际应用可以阅读[Google Inbox如何跨平台重用代码？]，目前资源和成功示例还非常有限。Google放出了iOS示例项目[J2ObjC sample]问题多多，我还去提了个pull request。
 
-####容器兼容 
+#### 容器兼容 
 
 同一种编程语言在多个平台运行，让容器成为语言和不同平台沟通的桥梁。这方面的先驱恐怕要数Java了吧，JVM完成了容器的作用。游戏平台普遍用这种这种方式，比如[Cocos2d-x]、[Unity]和[Corona SDK]。[Cocos2d-x]是用户最多的免费开源游戏开发平台，拥有发达的开发者社区。提供了C++和Lua API，支持iOS、Android、WinPhone 8, Windows, Mac OS X, Linux。[Unity]使用也非常广，提供了功能有限的免费版和收费版。[Corona SDK](https://coronalabs.com/)占有率较小，使用Lua作为开发语言，以前收费现在免费。另外还有[RubyMotion](http://www.rubymotion.com/)，用Ruby语言做跨平台开发。Ruby程序员的福音，但是价格略贵。
 
-####Semi-hybrid App
+#### Semi-hybrid App
 
 介于Native和Hybrid之间，也类似于容器兼容，容器是JavaScript运行环境。使用JavaScript开发的同时提供原生界面，这样可以在享受Hybrid开发便利的同时提供原生的用户体验。这方面有[React Native](https://github.com/facebook/react-native)、[Native Script](https://www.nativescript.org/)、[Titanium]。React Native目前大热，支持iOS、Android和Web，目前只放出了iOS版。Native Script目前支持iOS、Android，Windows Phone在计划中。Titanium是一个老牌跨平台应用开发平台，支持Android、iOS 和Web。使用HTML、CSS、JavaScript开发，也支持PHP，Ruby和Python。当年在黑苹果上打开IDE点击运行，看到iPhone、Android和浏览器同时运行应用，内心还有点小激动呢。[BeeFramework]目前只支持iOS还不算跨平台，据说计划在1.0版本开始做跨平台。这里提到是因为他们最新的开发演示视频太酷了。
 
-####Hybrid App
+#### Hybrid App
 
 Hybrid App顾名思义，就是混合了Web和Native的开发方式。它本质上应用是一个WebView，大多数开发基于HTML、CSS和JavaScript，Native只是一个壳。这方面的平台有[PhoneGap/Cordova](http://phonegap.com/)、[Intel XDK](http://xdk-software.intel.com/)(原AppMobi XDK)和国内的产品[AppCan](http://www.appcan.cn/) 。有人会把Sencha Touch也列为Hybrid的一个平台。这样是不严谨的，实际上底层还是使用了Cordova来打包。
 
-####Mobile Web
+#### Mobile Web
 
 纯浏览器解决方案，对Native的能力使用十分有限。优点嘛，就是更新方便，无需安装。 
 
