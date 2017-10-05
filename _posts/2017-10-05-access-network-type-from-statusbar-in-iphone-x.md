@@ -8,7 +8,7 @@ thumb: /images/2017-10-05-access-network-type-from-statusbar-in-iphone.jpg
 
 获取网络状态常用的库是`Reachability`。但是这个库存在一些问题，替代的方法是从状态栏获取网络状态。一般的写法是：
 
-```
+```objc
 typedef enum {
     NetWorkType_None = 0,
     NetWorkType_2G,
@@ -162,7 +162,7 @@ struct StatusBarData {
     return networkType;
 }
 ```
-之所以结构体内字段没有按照原来的名字，是担心审核不通过。加入这个方法的应用已经在审核中，还没有结果。
+之所以结构体内字段没有按照原来的名字，是担心审核不通过。加入这个方法的应用已经在审核中，还没有结果。需要注意的是这个方法在iOS 11下才可以这样调用。因为返回的结构体在不同的iOS版本中不同。如果希望在各个版本都用这样的方法，那么需要了解所有支持的版本的返回结构体构造。
 
 接下来探索下修改状态栏。用Method Swizzling的方法修改这个方法的返回值。
 
