@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "iPhone X 上获取状态栏网络状态的方法"
-category: nonetech
+category: mobile
 description: 深入UIKit
-thumb: /images/2017-10-05-access-network-type-from-statusbar-in-iphone-x.jpg.jpg
+thumb: /images/2017-10-05-access-network-type-from-statusbar-in-iphone-x.jpg
 ---
 
 获取网络状态常用的库是`Reachability`。但是这个库存在一些问题，替代的方法是从状态栏获取网络状态。一般的写法是：
