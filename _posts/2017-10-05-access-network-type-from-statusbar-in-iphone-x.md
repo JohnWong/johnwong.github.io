@@ -2,7 +2,7 @@
 layout: post
 title: "iPhone X 上获取状态栏网络状态的方法"
 category: mobile
-description: 深入UIKit
+description: 探索UIKit
 thumb: /images/2017-10-05-access-network-type-from-statusbar-in-iphone.jpg
 ---
 
