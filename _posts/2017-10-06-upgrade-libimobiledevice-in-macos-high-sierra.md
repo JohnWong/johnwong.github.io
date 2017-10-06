@@ -3,7 +3,7 @@ layout: post
 title: "解决 libimobiledevice 在 macOS High Sierra 上使用的问题"
 category: mobile
 description: 尝试对 libimobiledevice 升级
-thumb: /images/2017-10-06-upgrade-libimobiledevice-in-macos-high-sierra.jpg
+thumb: /images/2017-10-06-upgrade-libimobiledevice-in-macos-high-sierra-2.jpg
 ---
 
 [https://github.com/libimobiledevice/libimobiledevice](https://github.com/libimobiledevice/libimobiledevice)这个库非常方便，对于 iOS 开发来说可以提升效率。升级到 macOS High Sierra 后发现这个库无法使用，各种命令都是无法连接到 lockdownd，比如`ERROR: Could not connect to lockdownd, error code -17`。在 issue 里搜了下也没有找到解决办法，自己尝试解决了一下。
