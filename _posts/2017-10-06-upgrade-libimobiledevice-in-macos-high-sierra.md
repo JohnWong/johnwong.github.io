@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "解决 libimobiledevice 在 macOS High Sierra 上使用的问题"
+title: "解决系统升级后 libimobiledevice 使用的问题"
 category: mobile
 description: 尝试对 libimobiledevice 升级
 thumb: /images/2017-10-06-upgrade-libimobiledevice-in-macos-high-sierra-2.jpg
