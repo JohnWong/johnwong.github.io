@@ -167,6 +167,8 @@ title: "书签"
 
 #### [iOS Code Review: Loose Guidelines](https://robots.thoughtbot.com/ios-code-review-guidlines)
 
+#### [AppleTrace dance with MonkeyDev](http://everettjf.com/2017/10/12/appletrace-dancewith-monkeydev/)
+
 # 效率提升
 ---
 
