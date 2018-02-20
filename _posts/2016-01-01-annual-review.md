@@ -18,7 +18,7 @@ thumb: /images/2016-01-01-annual-review.png
 
 今年学习方面有了很大的进步。工作之余看了《Effective Objective-C 2.0》和《iOS编程第四版》这两本书，不过许多知识是工作中已经掌握的，收获有限。每天用slack来订阅优秀博客，挑选文章阅读。学习Swift，上架了应用课本；学习Apple Watch开发，加入到今日公交应用中。
 
-这一年对Github越来越依赖。每天都会花一些时间来看看有趣的项目。去年翻译了fontforge网站，今年已经开始各处做贡献，不过都是小打小闹，比如[AsyncDisplaykit](https://github.com/facebook/AsyncDisplayKit)、[docs.travis-ci.com](https://github.com/travis-ci/docs-travis-ci-com)、[j2objc-sample](https://github.com/tomball/j2objc-sample-reversi)。自己写了一个[IFMDebugTool](https://github.com/JohnWong/IFMDebugTool)用来在开发中管理应用沙盒内文件。还有2个小项目在开发中。[mibox](https://github.com/JohnWong/mibox)是研究了小米盒子遥控器的协议，后面准备做个酷一点的应用。[github-stars](https://github.com/JohnWong/github-stars)可以方便的给Github上的项目打星。比较遗憾的是自己Github上的iOS项目星星不多，follower只有51人。
+这一年对GitHub越来越依赖。每天都会花一些时间来看看有趣的项目。去年翻译了fontforge网站，今年已经开始各处做贡献，不过都是小打小闹，比如[AsyncDisplaykit](https://github.com/facebook/AsyncDisplayKit)、[docs.travis-ci.com](https://github.com/travis-ci/docs-travis-ci-com)、[j2objc-sample](https://github.com/tomball/j2objc-sample-reversi)。自己写了一个[IFMDebugTool](https://github.com/JohnWong/IFMDebugTool)用来在开发中管理应用沙盒内文件。还有2个小项目在开发中。[mibox](https://github.com/JohnWong/mibox)是研究了小米盒子遥控器的协议，后面准备做个酷一点的应用。[github-stars](https://github.com/JohnWong/github-stars)可以方便的给GitHub上的项目打星。比较遗憾的是自己GitHub上的iOS项目星星不多，follower只有51人。
 
 然后就是乱点技能树了。今年提交了1个Ruby Gem和3个Cocoapods。写了一个Safari扩展，1个Chrome扩展和1个Xcode插件。逆向研究了几个应用。最近在学习Sketch和Framerjs，想把自己应用的视觉和交互提升一点。不过我始终告诉自己要专注在移动开发，这些并没有占用很多时间。
 

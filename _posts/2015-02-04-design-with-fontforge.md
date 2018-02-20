@@ -9,7 +9,7 @@ thumb: /images/2015-02-04-design-with-fontforge-thumb.jpg
 ![FontForge](//dn-johnwong.qbox.me/images/2015-02-04-design-with-fontforge-logo.png) FontForge
 ===========
 
-[FontForge](http://fontforge.github.io/)是一个易于使用，支持多平台的字体设计软件，支持很多字体格式。它是自由开源软件。起初它是由George Williams创造的，目前由[Github社区](https://github.com/orgs/fontforge/people)来维护。
+[FontForge](http://fontforge.github.io/)是一个易于使用，支持多平台的字体设计软件，支持很多字体格式。它是自由开源软件。起初它是由George Williams创造的，目前由[GitHub社区](https://github.com/orgs/fontforge/people)来维护。
 
 由于开始研究IconFont，接触到了FontForge这个工具。为了更好地学习这个工具，并且能同时帮助到一些字体设计师，我开始翻译官网的帮助文档。努力做到每天一次commit，最终坚持下来顺利完成。在这个过程中除了学习到FontForge的用法外，还学到了字体设计的不少知识，很有意思。
 

@@ -202,7 +202,7 @@ IconFont项目已经整理开源出来：[IconFont项目]。工程中包含核�
 
 PDF也可以存储矢量图。Xcode6下新建TabViewController后，tab的图标采用的是PDF文件。我们想类似使用PDF图标。[Using Vector images in Xcode6]文章中指出，实际上Xcode6下使用PDF只是在编译时根据PDF生成不同倍数图片，并不在应用中使用矢量图。并且Asset Catalog从iOS7开始才能使用。从兼容性和缩小图片体积的考虑，这种方法没有帮助。
 
-[UIImage-PDF]是Github上收获Star比较多的一个项目，实现了PDF绘制图片的功能，并且没有系统版本兼容的问题。相比与IconFont，PDF方案可以可以存储颜色信息，可以像Sprite一样从一个PDF导出多张图片。但是相比IconFont，占用体积也要大得多。另外发现AI文件直接导出PDF后体积很大，转为SVG后再转为PDF体积会减小一些。目前用一个比较复杂的矢量图转换，PDF的体积与原图的体积大致一样，因此这种方法对体积减小并无帮助。
+[UIImage-PDF]是GitHub上收获Star比较多的一个项目，实现了PDF绘制图片的功能，并且没有系统版本兼容的问题。相比与IconFont，PDF方案可以可以存储颜色信息，可以像Sprite一样从一个PDF导出多张图片。但是相比IconFont，占用体积也要大得多。另外发现AI文件直接导出PDF后体积很大，转为SVG后再转为PDF体积会减小一些。目前用一个比较复杂的矢量图转换，PDF的体积与原图的体积大致一样，因此这种方法对体积减小并无帮助。
 
 ### 字符串绘制矢量图
 

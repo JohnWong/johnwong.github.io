@@ -2,7 +2,7 @@
 ## Mobile Development Engineer
 
 > [huangxiaozhe1988@gmail.com](mailto:huangxiaozhe1988@gmail.com)  
-> [Github](https://github.com/JohnWong)
+> [GitHub](https://github.com/JohnWong)
 
 ------
 
@@ -48,6 +48,6 @@ CDL, IBM
 
 ### Footer
 
-John Wong -- [huangxiaozhe1988@gmail.com](mailto:huangxiaozhe1988@gmail.com) -- [Github](https://github.com/JohnWong)
+John Wong -- [huangxiaozhe1988@gmail.com](mailto:huangxiaozhe1988@gmail.com) -- [GitHub](https://github.com/JohnWong)
 
 ------
