@@ -35,7 +35,7 @@ sudo ln -s /Applications/Xcode.app/Contents/Developer/Library/Perl/5.18/darwin-t
 
 然后就可以开心地继续开发了。
 
-![git-svn](//dn-johnwong.qbox.me/images/2015-04-30-using-git-with-svn.png)
+![git-svn](/images/2015-04-30-using-git-with-svn.png)
 
 #### 自定义Action
 

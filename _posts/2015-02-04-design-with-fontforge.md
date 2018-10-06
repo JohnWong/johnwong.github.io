@@ -6,7 +6,7 @@ description: 一边学习FontForge一边翻译官方帮助网站。
 thumb: /images/2015-02-04-design-with-fontforge-thumb.jpg
 ---
 
-![FontForge](//dn-johnwong.qbox.me/images/2015-02-04-design-with-fontforge-logo.png) FontForge
+![FontForge](/images/2015-02-04-design-with-fontforge-logo.png) FontForge
 ===========
 
 [FontForge](http://fontforge.github.io/)是一个易于使用，支持多平台的字体设计软件，支持很多字体格式。它是自由开源软件。起初它是由George Williams创造的，目前由[GitHub社区](https://github.com/orgs/fontforge/people)来维护。
@@ -21,7 +21,7 @@ thumb: /images/2015-02-04-design-with-fontforge-thumb.jpg
 
 [http://designwithfontforge.com/zh-CN/index.html](http://designwithfontforge.com/zh-CN/index.html)
 
-![FontForge](//dn-johnwong.qbox.me/images/2015-02-04-design-with-fontforge-screenshot.jpg)
+![FontForge](/images/2015-02-04-design-with-fontforge-screenshot.jpg)
 
 #### Homepage
 

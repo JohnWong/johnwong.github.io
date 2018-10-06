@@ -8,7 +8,7 @@ description: Inside the Java Virtual Machine
 
 #### 1. Java虚拟机内部体系结构
 
-![2013-10-08-inside-the-java-virtual-machine-05](//dn-johnwong.qbox.me/images/2013-10-08-inside-the-java-virtual-machine-05-1.png)
+![2013-10-08-inside-the-java-virtual-machine-05](/images/2013-10-08-inside-the-java-virtual-machine-05-1.png)
 
 在函数中定义的一些基本类型的变量和对象的引用变量都在函数的栈内存中分配。当在一段代码块定义一个变量时，Java就在栈中为这个变量分配内存空间，当超过变量的作用域后，Java会自动释放掉为该变量所分配的内存空间，该内存空间可以立即被另作他用。 
 
@@ -18,7 +18,7 @@ description: Inside the Java Virtual Machine
 
 Java虚拟机中的数据类型分为基本类型和引用类型。Java语言中的所有基本类型同样为Java虚拟机中的基本类型。Java虚拟机把boolean看作基本类型，但是指令集对boolean的支持十分有限。编译为字节码的时候使用int或byte表示boolean。boolean数组当作byte数组使用，但是在堆区也可能被表示为位域。
 
-![2013-10-08-inside-the-java-virtual-machine-05](//dn-johnwong.qbox.me/images/2013-10-08-inside-the-java-virtual-machine-05-2.png)
+![2013-10-08-inside-the-java-virtual-machine-05](/images/2013-10-08-inside-the-java-virtual-machine-05-2.png)
 
 #### 3. 类装载子系统
 

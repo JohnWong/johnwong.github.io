@@ -38,7 +38,7 @@ IconFont技术起源于Web领域的Web Font技术。随着时间的推移，网�
 
 上传：在[iconfont.cn]网站上创建一个共用项目，设计师将图标上传这个项目中，并调整好图标的位置。建议在图标的上下左右边界留出一点空白，以确保图标显示完整。iconfont.cn上的字体一般在四个方向留下1/16的空白，如下图所示。修改图标位置大小的方法是在上传的图标上悬停，点击弹出的编辑按钮。编辑窗口可以调整图标的大小、位置、旋转角度。缩放和移动的粒度通过右上角网格尺寸来控制，例如填写16时一次调整粒度是图标的1/16。
 
-![iconfont_cn_edit](//dn-johnwong.qbox.me/images/2015-04-03-using-icon-font-in-ios-iconfont-edit.png)
+![iconfont_cn_edit](/images/2015-04-03-using-icon-font-in-ios-iconfont-edit.png)
 
 分发：
 iOS与Android团队分别建立各自的项目，由各自的字体管理者将共用项目中各自用到的图标导入到建立的项目中。以后有新图标需要加入时，分发的工作也可以由用到新图标的开发者自行加入导入项目。
@@ -51,9 +51,9 @@ iOS与Android团队分别建立各自的项目，由各自的字体管理者将�
 
 [FontForge]是一个自由免费的工具，支持Linux/Mac/Windows（Mac下基于X11，Windows下基于MSYS）。不仅易于上手适合初学者学习字型设计，而且也提供了一系列高级工具。下图为FontForge的主界面和绘制窗口。更详细的帮助参考[Design With FontForge]。使用FontForge制作字体的过程如下。
 
-![fontforge_overview](//dn-johnwong.qbox.me/images/2015-04-03-using-icon-font-in-ios-fontforge-overview.png)
+![fontforge_overview](/images/2015-04-03-using-icon-font-in-ios-fontforge-overview.png)
 
-![fontforge_draw](//dn-johnwong.qbox.me/images/2015-04-03-using-icon-font-in-ios-fontforge.png)
+![fontforge_draw](/images/2015-04-03-using-icon-font-in-ios-fontforge.png)
 
 #### 1. 调整配置
 
@@ -192,7 +192,7 @@ PNG图片加载的速度受像素大小影响很小。字体生成图片的方�
 
 目前淘点点iOS插件版中的图标有半数替换为IconFont。新需求用到的图标也会优先采用IconFont。一个典型的应用IconFont的页面比如我的页面。应用每个页面都有的Tabbar的四个图标、列表中的四个彩色图标、头部的四个白色图标和导航栏的消息图标。目前已经上线，读者可以将手机淘宝最新的ipa下载解压，查看Payload/Taobao4iPhone中的文件，就会发现找不到上面提到这几个图标的图片文件。同时会看到LLIconfont.ttf文件，也就是点点使用的字体库。
 
-![taodiandian](//dn-johnwong.qbox.me/images/2015-04-03-using-icon-font-in-ios-taodiandian.png)
+![taodiandian](/images/2015-04-03-using-icon-font-in-ios-taodiandian.png)
 
 IconFont项目已经整理开源出来：[IconFont项目]。工程中包含核心代码和Demo，核心功能最低兼容iOS5。已经放到了CocoaPods上，名称是`IconFont`。
 

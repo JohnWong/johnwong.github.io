@@ -24,11 +24,11 @@ See [StackOverflow](http://stackoverflow.com/a/15591984/3284570)
 
 默认下拉时，UIRefreshControl的位置会固定在scrollview的上方，在下拉时会露出来。
 
-![iOS Quirks 1](//dn-johnwong.qbox.me/images/2015-07-04-ios-quirks-1.gif)
+![iOS Quirks 1](/images/2015-07-04-ios-quirks-1.gif)
 
 给UIRefreshControl加入背景色，即使是clearColor，它的位置将会随着下拉逐渐从上部出现。
 
-![iOS Quirks 2](//dn-johnwong.qbox.me/images/2015-07-04-ios-quirks-2.gif)
+![iOS Quirks 2](/images/2015-07-04-ios-quirks-2.gif)
 
 ## UITableView的header阻止浮动
 

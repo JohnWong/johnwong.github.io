@@ -16,4 +16,4 @@ thumb: /images/2015-04-29-life-change.jpg
 
 绩效调薪都谈过了。以前自己总是不去想晋升，只关注自己技术上的成长。主管找我谈话时沟通了这个问题，现在觉得应该把晋升作为一个阶段性的目标，作为对自己技术成长的检验。未来加油！
 
-![支付宝](//dn-johnwong.qbox.me/images/2015-04-29-life-switch.jpg)
+![支付宝](/images/2015-04-29-life-switch.jpg)

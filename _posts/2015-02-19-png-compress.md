@@ -10,7 +10,7 @@ thumb: /images/2015-02-19-png-compress-02.png
 
 ### ImageAlpha
 
-![ImageAlpha Screenshot](//dn-johnwong.qbox.me/images/2015-02-19-png-compress-01.png)
+![ImageAlpha Screenshot](/images/2015-02-19-png-compress-01.png)
 
 [ImageAlpha]是一个Mac OS X下的图形化有损图片压缩工具，内置了[pngquant]，[pngnq-s9]，Blurizer和[posterizer]四种压缩工具。这些工具减少PNG文件大小并保留透明度通道。ImageAlpha采用PyObjC编写，但是作者对这种方式已经累觉不爱。使用一段时间后的经验是内置的几种压缩工具看起来[pngquant]最有效的，压缩时颜色数采用256可以在难以分辨出质量损失的情况下大幅压缩图片体积。虽然对于颜色数较少的图片可以通过减少颜色数来进一步压缩体积，但这种方式依赖人工并不能实现自动化。
 
@@ -18,7 +18,7 @@ thumb: /images/2015-02-19-png-compress-02.png
 
 ### ImageOptim
 
-![ImageOptim Screenshot](//dn-johnwong.qbox.me/images/2015-02-19-png-compress-02.png)
+![ImageOptim Screenshot](/images/2015-02-19-png-compress-02.png)
 
 [ImageOptim]是一款非常优秀的无损图片压缩工具，相信大多数iOS开发者都知道它。它通过优化压缩参数，移除无用的文件元数据和不必要的颜色配置来实现图片的无损压缩。它集成了最好的压缩工具，包括[PNGOUT]，[Zopfli], [Pngcrush], [AdvPNG]，[OptiPNG]，[JpegOptim]，[JPEGrescan]，[Jpegtran]和[Gifsicle]。除了压缩效率高，它还支持[命令行](https://imageoptim.com/command-line.html)、充分利用多核、批量处理和拖拽操作方式。
 

@@ -90,7 +90,7 @@ Native Bridge->Native Bridge: find callback by id
 Native Bridge->Native: execute callback
 ```
 {% endcomment %}
-![Sequence1](//dn-johnwong.qbox.me/images/2015-04-20-cross-platform-and-hybrid-01.png)
+![Sequence1](/images/2015-04-20-cross-platform-and-hybrid-01.png)
 
 上图中Native Bridge与JS Bridge间的消息发送是简化的，实际上都需要经过Web View。Native Bridge给JS Bridge发消息的关键方法是UIWebView的stringByEvaluatingJavaScriptFromString：
 
@@ -127,7 +127,7 @@ Native Bridge->Native Bridge: find callback by id
 Native Bridge->Native: execute callback
 ```
 {% endcomment %}
-![Sequence2](//dn-johnwong.qbox.me/images/2015-04-20-cross-platform-and-hybrid-02.png)
+![Sequence2](/images/2015-04-20-cross-platform-and-hybrid-02.png)
 
 JS给Native发消息的过程非常类似：
 
@@ -150,7 +150,7 @@ JS Bridge->JS Bridge: find callback by id
 JS Bridge->JS: execute callback
 ```
 {% endcomment %}
-![Sequence3](//dn-johnwong.qbox.me/images/2015-04-20-cross-platform-and-hybrid-03.png)
+![Sequence3](/images/2015-04-20-cross-platform-and-hybrid-03.png)
 
 这个库有一些值得注意的特性或者实现细节：
 

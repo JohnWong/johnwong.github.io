@@ -4,7 +4,7 @@ gems: [jekyll-paginate]
 title: John Wong's Blog
 email: huangxiaozhe1988@gmail.com
 description: > # John Wong's Blog.
-placeholder: //dn-johnwong.qbox.me/images/octocat-180.png
+placeholder: /images/octocat-180.png
 # baseurl: /blog/ # the subpath of your site, e.g. /blog/
 # url: "http://localhost" # the base hostname & protocol for your site
 

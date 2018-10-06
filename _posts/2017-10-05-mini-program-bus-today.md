@@ -30,6 +30,6 @@ thumb: /images/2017-10-05-mini-program-bus-today.jpg
 
 源代码：[https://github.com/JohnWong/bus-minigram/tree/master](https://github.com/JohnWong/bus-minigram/tree/master)
 
-![截图](//dn-johnwong.qbox.me/images/2017-10-05-mini-program-bus-today-1.jpg)
+![截图](/images/2017-10-05-mini-program-bus-today-1.jpg)
 
-![二维码](//dn-johnwong.qbox.me/images/2017-10-05-mini-program-bus-today-2.jpg)
+![二维码](/images/2017-10-05-mini-program-bus-today-2.jpg)
