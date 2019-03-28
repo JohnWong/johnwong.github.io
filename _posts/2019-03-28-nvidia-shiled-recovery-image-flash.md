@@ -3,7 +3,7 @@ layout: post
 title: "Nvidia Shield 刷机踩坑"
 category: mobile
 description: 
-thumb: /images/2019-03-28-nvidia-shiled-recovery-image-flash.png
+thumb: /images/2019-03-28-nvidia-shiled-recovery-image-flash.jpg
 ---
 
 买了电视盒子神器 nvidia shiled，用起来感觉性能确实不错，配上索尼电视看4K很爽。使用了一段时间想看看Youtube和Twitch，路由器翻墙，装了谷歌服务，也能看。谷歌的商店安装应用偶尔会有一些问题，也凑合能用。最棘手的是盒子自带了奇异玩应用商店，爱奇艺和优酷之类的应用更新必须通过这个商店。商店里的版本很老不更新，感觉几乎是放弃的状态。用adb调试也可以安装，但是每次要用电脑还是麻烦。还有语音识别，经常识别错误。于是就萌生了安装美版的想法，体验下原装的shiled。
