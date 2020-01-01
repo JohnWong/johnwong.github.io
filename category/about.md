@@ -8,7 +8,8 @@ title: "关于"
 无线开发专家 @阿里巴巴
 
 - E-mail: [huangxiaozhe1988@gmail.com](mailto:huangxiaozhe1988@gmail.com)
-- GitHub: [GitHub/JohnWong](https://github.com/JohnWong)
+- GitHub: [https://github.com/JohnWong](https://github.com/JohnWong)
+- Stack Overflow: [https://stackoverflow.com/users/3284570/](https://stackoverflow.com/users/3284570/john-wong)
 
 ------
 
