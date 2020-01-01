@@ -10,7 +10,7 @@
   overflow: hidden;
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 26px;
   word-wrap: break-word;
 }
 
@@ -346,7 +346,7 @@
 }
 
 .markdown-body hr {
-  height: 4px;
+  height: 1px;
   padding: 0;
   margin: 16px 0;
   background-color: #e7e7e7;
@@ -388,6 +388,7 @@
 }
 
 .markdown-body blockquote {
+  font-size: 16px;
   padding: 0 15px;
   color: #777;
   border-left: 4px solid #ddd;
@@ -435,12 +436,13 @@
 }
 
 .markdown-body code {
+  color: black;
   padding: 0;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
   margin: 0;
   font-size: 85%;
-  background-color: rgba(0,0,0,0.04);
+  background-color: rgba(0,0,0,0.06);
   border-radius: 3px;
 }
 
@@ -462,6 +464,7 @@
 
 .markdown-body .highlight {
   margin-bottom: 16px;
+  border-radius: 3px;
 }
 
 .markdown-body .highlight pre,
@@ -470,8 +473,10 @@
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
-  background-color: #f7f7f7;
-  border-radius: 3px;
+}
+
+.markdown-body pre code {
+  color: white;
 }
 
 .markdown-body .highlight pre {
@@ -658,4 +663,8 @@
   z-index: 1;
   position: relative;
   border-color: #4183c4;
+}
+
+.highlight .dl {
+    color: #e6db74;
 }

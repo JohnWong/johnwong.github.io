@@ -166,7 +166,7 @@ struct StatusBarData {
 
 接下来探索下修改状态栏。用Method Swizzling的方法修改这个方法的返回值。
 
-```
+```objc
 @implementation NSObject (Hook)
 
 + (void)load

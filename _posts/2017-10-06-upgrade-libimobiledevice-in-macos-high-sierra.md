@@ -16,7 +16,7 @@ thumb: /images/2017-10-06-upgrade-libimobiledevice-in-macos-high-sierra-2.jpg
 
 把源代码拉下来，按照README的指引尝试安装，报错`OpenSSL support explicitly requested but OpenSSL could not be found`。大概搜了下，原因是 High Sierra 把 SSL 库从 OpenSSL 0.9.8zh 切换到 LibreSSL。而且通过 homebrew 安装的 OpenSSL 也是 keg-only 的，并且禁止通过 brew link openssl 添加软链接。换条思路禁用 openssl，提示需要安装GnuTLS。用 homebrew 安装了`gnutls`和`libgcrypt`，之后再安装就没问题了。
 
-```
+```bash
 brew install gnutls
 brew install libgcrypt
 ./autogen.sh --disable-openssl
