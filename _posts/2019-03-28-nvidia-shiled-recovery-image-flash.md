@@ -2,7 +2,7 @@
 layout: post
 title: "Nvidia Shield 刷机踩坑"
 category: mobile
-description: 
+description: 最强电视盒子
 thumb: /images/2019-03-28-nvidia-shiled-recovery-image-flash.jpg
 ---
 
