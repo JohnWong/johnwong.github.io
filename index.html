@@ -21,7 +21,7 @@ layout: index
     <div class="left left-col">
       <div class="image feature-img thumb-180">
         <a href="{{ post.url | prepend: site.baseurl }}">
-          <img class="feature-img" alt="{{ post.title | xml_escape }}" src="{% if post.thumb %}{{ post.thumb | prepend: site.cdnhost | append: '?imageView2/2/w/360' }}{% else %}{{ site.placeholder }}{% endif %}">
+          <img class="feature-img" alt="{{ post.title | xml_escape }}" src="{% if post.thumb %}{{ post.thumb | prepend: site.cdnhost | append: '_360.jpg' }}{% else %}{{ site.placeholder }}{% endif %}">
         </a>
       </div>
     </div>
