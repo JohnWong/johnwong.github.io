@@ -456,7 +456,7 @@ body {
     position: relative;
     padding-bottom: 56.25%; /* 16:9, for an aspect ratio of 1:1 change to this value to 100% */ 
 }
-iframe {
+.markdown-body iframe {
     position: absolute;
     top: 0;
     left: 0;
