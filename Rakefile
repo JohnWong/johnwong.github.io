@@ -3,6 +3,10 @@ require 'html-proofer'
 task :test do
     sh "bundle exec jekyll build"
     HTMLProofer.check_directory("./_site", {
+        :url_ignore => [
+            /archive.org/,
+            /developer.limneos.net/
+        ],
         :check_html => true,
         :typhoeus => { 
             :timeout => 60
