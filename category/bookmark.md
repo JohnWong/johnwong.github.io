@@ -55,18 +55,6 @@ title: "书签"
 
 > 提升Xcode效率的方法。
 
-#### [GitHub优秀开源项目大全-iOS](http://foggry.com/blog/2014/04/25/githubyou-xiu-xiang-mu-ios/)
-
-> GitHub上用于iOS开发的各种项目。
-
-#### [iOS开发中可以节省50%编译等待时间的几个措施](http://ios.jobbole.com/82124/)
-
-> 通过使用`DWARF`而非`DWARF with dSYMFile`，不使用`–O4`优化标识来减少编译时间。
-
-#### [watchOS API Blog](https://www.watchosapi.com/category/watchos/)
-
-> 汇集了各种watchOS的API与知识。
-
 #### [通知中心唤起设置等](http://www.iapps.im/jc/745.html)
 
 > 原来iOS5可以使用的打开设置的链接依然存在，只是被屏蔽了。从通知中心就可以唤起了。
@@ -79,7 +67,7 @@ title: "书签"
 
 > 一篇比较老的介绍苹果代码签名机制的文章，包含了code sign、entitlement、provision profile等概念的介绍。
 
-#### [绕过iPhone代码签名](http://www.saurik.com/id/8)
+#### [绕过iPhone代码签名](https://www.theiphonewiki.com/wiki/Bypassing_iPhone_Code_Signatures)
 
 > Cydia创始人Jay Freeman写的绕过iPhone代码签名的文章。还有大神憋了好久做出来的工具[ldid](http://gitweb.saurik.com/ldid.git)。
 
@@ -133,7 +121,7 @@ title: "书签"
 
 > 运行时调试砸壳的包，堆栈信息解决没有符号表的问题。
 
-#### [Launchkit](https://launchkit.io/)
+#### [Launchkit](http://launchkit.io/)
 
 > 一系列方便构建、运行和管理移动应用的工具。
 
@@ -167,7 +155,7 @@ title: "书签"
 
 #### [iOS Code Review: Loose Guidelines](https://robots.thoughtbot.com/ios-code-review-guidlines)
 
-#### [AppleTrace dance with MonkeyDev](http://everettjf.com/2017/10/12/appletrace-dancewith-monkeydev/)
+#### [AppleTrace dance with MonkeyDev](https://everettjf.github.io/2017/10/12/appletrace-dancewith-monkeydev/)
 
 # 效率提升
 ---
@@ -253,10 +241,6 @@ title: "书签"
 
 > 图标丰富，有不少成套图标。
 
-#### [App Icon Template](http://www.appicontemplate.com/)
-
-> 应用图标的PSD模版，非常推荐。
-
 #### [Fort Awesome Kit](http://fortawesome.github.io/Font-Awesome/icons/)
 
 > 另一个icon font的网站，图标不少但是导出png略烦。
@@ -275,8 +259,6 @@ title: "书签"
 #### [Dribbble](https://dribbble.com/)
 
 #### [Behance](https://www.behance.net/)
-
-#### [Siiimple](http://www.siiimple.com/)
 
 #### [Land Book](http://land-book.com/)
 
@@ -322,10 +304,6 @@ title: "书签"
 
 ### 其他资源
 ---
-
-#### [cfxr](http://thirdcog.eu/apps/cfxr)
-
-> 构建声音特效。
 
 #### [Texture Packer](https://www.codeandweb.com/texturepacker/download)
 

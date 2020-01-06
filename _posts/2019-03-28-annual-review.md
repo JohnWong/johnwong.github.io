@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "2018年终总结"
-category: nonetech
+category: life
 description: 搬家、WWDC、做饭
 thumb: /images/2019-03-28-annual-review.jpg
 ---

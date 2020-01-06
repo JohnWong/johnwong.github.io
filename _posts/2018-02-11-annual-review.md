@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "2017年终总结"
-category: nonetech
+category: life
 description: 忙于跑步、读书、装修的一年
 thumb: /images/2018-02-11-annual-review.jpg
 ---

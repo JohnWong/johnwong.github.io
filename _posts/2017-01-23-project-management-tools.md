@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "浅谈项目管理工具"
-category: nonetech
+category: life
 description: 一个轻度项目管理工具用户的体验
 thumb: /images/2017-01-23-project-management-tools.jpg
 ---

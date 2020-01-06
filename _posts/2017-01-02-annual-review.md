@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "2016年终总结"
-category: nonetech
+category: life
 description: 忙碌的一年
 thumb: /images/2017-01-02-annual-review-2.jpg
 ---

@@ -5,8 +5,13 @@ task :test do
     HTMLProofer.check_directory("./_site", {
         :url_ignore => [
             /archive.org/,
-            /developer.limneos.net/
+            /developer.limneos.net/,
+            /formalfriday.club/,
+            /riddle.arthurluk.net/,
+            /thirdcog.eu/,
+            /www.ui.cn/
         ],
+        :http_status_ignore => [521],
         :check_html => true,
         :typhoeus => { 
             :timeout => 60
