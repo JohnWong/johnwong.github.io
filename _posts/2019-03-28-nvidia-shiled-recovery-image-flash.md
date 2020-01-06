@@ -11,7 +11,7 @@ thumb: /images/2019-03-28-nvidia-shiled-recovery-image-flash.jpg
 主要参考的文档包括：
 - [Nvidia Shield TV 2017 国行刷美版固件指南
 ](https://github.com/JACK-THINK/Nvidia-Shield-TV-2017-Cookbook/blob/master/How%20to%20flash%20Nvidia%20Shield%20TV%202017%20China%20Editon%20with%20the%20Android%20generic%20recovery%20image.md)
-- [HowTO Flash Recovery Image](https://developer.download.nvidia.cn/assets/gameworks/downloads/regular/HowToFlash/HowTO-Flash-Recovery-Image.txt)
+- [HowTO Flash Recovery Image](http://developer.download.nvidia.com/mobile/shield/ROM/SHIELD_ATV/6.3.0/HowTo-Flash-Recovery-Image.txt)
 - [Nvidia Shield 下载中心](https://developer.nvidia.com/gameworksdownload#?tx=$additional,shield)
 
 下载中心固件这里有区分平台 Windows 和 Linux。我用的是 Mac，本以为跟 Linux很接近，用到的 adb 和 fastboot 也都已经安装，就直接用 Mac 去刷机。结果刷机过程中会卡在刷镜像不动，试过好多个镜像都不成功。心里一凉，感觉要变砖了。后面试试装了 Windows 虚拟机来刷，竟然没有遇到问题，很顺利刷机成功了。万万没想到对 Mac 的兼容性比 Windows 要差。还好救回来了。
