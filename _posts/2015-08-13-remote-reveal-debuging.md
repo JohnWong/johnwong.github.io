@@ -10,7 +10,7 @@ Reveal是iOS开发中经常用到的调试利器。在公司使用中遇到了�
 
 ## Reveal通信方法
 
-想了解手机上Reveal的库与Mac上客户端的通信方法，找到了一篇官方帮助文档很有价值：[Bonjour Debuging](http://support.revealapp.com/kb/tips-tricks/bonjour-debugging-why-cant-i-connect-to-my-app)。这里我们知道了服务发现用的是Bonjour，下面是一些有用的方法：
+想了解手机上Reveal的库与Mac上客户端的通信方法，找到了一篇官方帮助文档很有价值：[Bonjour Debuging](https://support.revealapp.com/hc/en-us/articles/360022667731-Bonjour-Debugging-Why-can-t-I-connect-to-my-app-)。这里我们知道了服务发现用的是Bonjour，下面是一些有用的方法：
 
 获取周围所有reveal服务列表
 

@@ -21,8 +21,6 @@ curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh 
 
 使用方法非常简单，通过`Window > Package Manager`来打开下图窗口。在窗口内可以浏览或者搜索插件、主题或者模版。每个插件都会有一张动图来演示插件的使用效果。点击前面的`Install`或者`Remove`就可以安装或者卸载。
 
-![Install](http://alcatraz.io/images/screenshot@2x.png)
-
 ## 插件推荐
 
 以下是我常用或者觉得有用的插件。读者还可以参考其他Xcode插件推荐文章，比如NSHipster的文章[Xcode Plugins](http://nshipster.com/xcode-plugins/)，[那些不能错过的Xcode插件](http://www.cocoachina.com/industry/20130918/7022.html)。

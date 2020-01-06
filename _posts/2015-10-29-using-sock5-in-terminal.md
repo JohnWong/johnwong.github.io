@@ -9,7 +9,7 @@ thumb: /images/2015-10-29-using-sock5-in-terminal.jpg
 
 ## 一个sock5代理
 
-首先你要有一个sock5代理。我使用的是[https://eurekavpt.com/](https://eurekavpt.com/)。安装和配置参考网站的文档。建立sock5代理的方法是在GoAgentX中新建一个SSLedge服务，选择带✧的服务器，并勾选Socks Mode。记住它的端口，比如我使用的是8032。
+首先你要有一个sock5代理。安装和配置参考网站的文档。建立sock5代理的方法是在GoAgentX中新建一个SSLedge服务，选择带✧的服务器，并勾选Socks Mode。记住它的端口，比如我使用的是8032。
 
 ## proxychains的安装与配置
 

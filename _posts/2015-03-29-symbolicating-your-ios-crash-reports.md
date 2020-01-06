@@ -63,15 +63,15 @@ sh symbolicate.sh Crasher.crash Example/Crasher.app.dsym > Crasher_Symbolicated.
 
 将你的`.crash`，`.app`和`.dSYM`文件放在同一个目录下并运行：
 
-> symbolicatecrash -v ScaryCrash.crash > Symbolicated.crash
+> symbolicatecrash ScaryCrash.crash > Symbolicated.crash
 
 你可能需要制定app的二进制：
 
 > symbolicatecrash -v ScaryCrash.crash ./Crasher.app/Crasher > Symbolicated.crash
 
-如果你在使用[Crasher](https://github.com/chaledoubleencore/Crasher)的示例中方便的脚本，可以省略verbose标记：
+你或许需要明确指定app的二进制
 
-> sh symbolicate6.sh ScaryCrash.crash ./Crasher.app/Crasher > Symbolicated.crash
+> symbolicatecrash ScaryCrash.crash ./Crasher.app/Crasher > Symbolicated.crash
 
 ## 验证你的符号化
 

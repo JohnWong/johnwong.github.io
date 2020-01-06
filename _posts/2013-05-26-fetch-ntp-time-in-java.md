@@ -6,7 +6,7 @@ description: NTP全称网络时间协议，是仍在使用中的最古老的网�
 ---
 NTP是仍在使用中的最古老的网络协议之一（在1985年前开始）。NTP最初由德拉瓦州大学的Dave Mills设计，他与一群志愿者仍在维护NTP。
 
-常用的NTP服务器参考[https://www.douban.com/note/171309770/](https://www.douban.com/note/171309770/)
+常用的NTP服务器参考[https://www.jianshu.com/p/28864ab7fdd9](https://www.jianshu.com/p/28864ab7fdd9)
 
 身在北邮，当然是使用北邮的NTP服务器最快，但是在外网发现访问不到。推荐上海交通大学的NTP服务，在其他网络仍然能够访问到。
 

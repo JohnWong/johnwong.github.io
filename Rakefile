@@ -9,9 +9,10 @@ task :test do
             /formalfriday.club/,
             /riddle.arthurluk.net/,
             /thirdcog.eu/,
-            /www.ui.cn/
+            /www.ui.cn/,
+            /alcatraz.io/
         ],
-        :http_status_ignore => [521],
+        :http_status_ignore => [521,302],
         :check_html => true,
         :typhoeus => { 
             :timeout => 60

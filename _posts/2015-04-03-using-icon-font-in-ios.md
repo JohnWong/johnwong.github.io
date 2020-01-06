@@ -247,8 +247,6 @@ Charles Parnot贴出了博文[用NSString替换Photoshop](http://cocoamine.net/b
 
 [FontForge]:https://github.com/fontforge/fontforge
 
-[Image Sprites vs Web IconFonts]:http://www.jontetzlaff.com/blog/2013/04/29/image-sprites-vs-web-icon-fonts/
-
 [FontAwesomeKit]:https://github.com/PrideChung/FontAwesomeKit
 
 [FontasticIcons]:https://github.com/AlexDenisov/FontasticIcons
@@ -270,5 +268,3 @@ Charles Parnot贴出了博文[用NSString替换Photoshop](http://cocoamine.net/b
 [AI导出SVG的优化]:http://www.adobe.com/inspire/2013/09/exporting-svg-illustrator.html
 
 [Using Vector images in Xcode6]:http://martiancraft.com/blog/2014/09/vector-images-xcode6/
-
-[在iOS中使用icon font]:http://ued.taobao.org/blog/2013/09/icon-font-in-ios/
