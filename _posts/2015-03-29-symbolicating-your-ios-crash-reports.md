@@ -26,7 +26,7 @@ sh symbolicate.sh Crasher.crash Example/Crasher.app.dsym > Crasher_Symbolicated.
 
 你一定已经处理过你的app的崩溃报告，但是其堆栈回溯包含难以辨认的内存地址。作为一个开发者该怎么办呢？简单说来，你需要将调试符号应用在堆栈追踪上使其可读，这个过程被称作符号化。
 
-但是在我们准备开始之前，你可以使用[Crasher](https://github.com/chaledoubleencore/Crasher)，它提供了一个示例崩溃报告让你来解码。
+但是在我们准备开始之前，你可以使用 https://github.com/chaledoubleencore/Crasher，它提供了一个示例崩溃报告让你来解码。
 
 你应该有`.crash`文件。如果没有，你可以从iTunes Connect上获取，通过Xcode（Window > Devices）直接从链接的设备上获取，从连接的设备（Settings > Privacy > Diagnostics & Usage），或者亲自动手使用PLCrashReporter框架。你可能已经使用第三方崩溃报告服务，它将会在你正确设置后为你符号化崩溃报告。
 

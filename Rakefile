@@ -10,7 +10,10 @@ task :test do
             /riddle.arthurluk.net/,
             /thirdcog.eu/,
             /www.ui.cn/,
-            /alcatraz.io/
+            /alcatraz.io/,
+            /www.snip2code.com/,
+            /gitcafe.com/,
+            /bbs.pcbeta.com/
         ],
         :http_status_ignore => [521,302],
         :check_html => true,
